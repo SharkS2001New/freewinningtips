@@ -3,8 +3,8 @@ import { Buffer } from 'buffer';
 
 async function getGithubSiteContent(page_url) {
     try {
-      const token = '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';
-      const url = 'https://api.github.com/repos/Shark-S2001/free-tips-seo-content/contents/'+page_url;
+      const token = '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';
+      const url = 'https://api.github.com/repos/SharkS2001New/free-tips-seo-content/contents/'+page_url;
       const headers = {
         'Authorization': `token ${token}`
       };
