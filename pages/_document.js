@@ -17,6 +17,7 @@ export default function Document() {
 
         <div id='zone_2090840204'></div>
 
+        <div id='zone_1706993458'></div>
         <Main />
         <NextScript />
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous" defer></script>
@@ -64,6 +65,30 @@ export default function Document() {
                   }
                   e(g,w,r);
                   w[r](cid,{id:2090840204,domain:w[r+'h']});
+              })(window,document,'script',['ftd.agency'],'ABNS');
+            `,
+          }}
+        />
+
+          <Script
+          id="ftd-agency-script-1706993458"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,o,g,r,a,m){
+                  var cid='zone_1706993458';
+                  w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
+                  function e(b,w,r){
+                      if((w[r+'h']=b.pop())&&!w.ABN){
+                          var a=d.createElement(o),p=d.getElementsByTagName(o)[0];
+                          a.async=1;
+                          a.src='https://cdn.'+w[r+'h']+'/libs/e.js';
+                          a.onerror=function(){e(g,w,r)};
+                          p.parentNode.insertBefore(a,p);
+                      }
+                  }
+                  e(g,w,r);
+                  w[r](cid,{id:1706993458,domain:w[r+'h']});
               })(window,document,'script',['ftd.agency'],'ABNS');
             `,
           }}
