@@ -40,6 +40,7 @@ function Footer(){
               <li className="nav-item mb-2"><a href="/contact-us" className="nav-a p-0 text-light">Contact Us</a></li>
               <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://tipsxtra.com/" className="nav-a p-0 text-light">TipsXtra</a></li>
              <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://www.accuratestakes.com/" className="nav-a p-0 text-light">Accurate prediction</a></li>
+             <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://www.bettingtips.co.ke/" className="nav-a p-0 text-light">Sure Win Football Predictions</a></li>
             </ul>
           </div>
           <div className="col-md-3">
