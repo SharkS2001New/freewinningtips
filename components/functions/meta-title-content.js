@@ -475,6 +475,15 @@ function MetaContent() {
         page_title = "Best Free Football Prediction & Jackpot Predictions";
 
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+        
+    } else if(router.asPath.substring(1) == "predictions/direct-win-prediction"){
+
+        title ="Direct Win Football Predictions(100%)";
+        meta_desc_content = "FreeWinningTips provides quality daily Direct Win football predictions and free betting tips for football fans worldwide";
+        meta_keywords = "Direct Win Prediction";
+        page_title = "Direct Win Prediction";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
     } else if(current_url ==="") {
         //Homepage url descriptions (route "/")
         title ="Best and Accurate Prediction Site for Football Betting Tips	";
