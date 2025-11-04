@@ -17,6 +17,8 @@ export default function Document() {
 
         <div id='zone_2090840204'></div>
 
+        <div className="clever-core-ads"></div>
+
         {/* <div id='zone_1706993458'></div> */}
         <Main />
         <NextScript />
@@ -66,6 +68,36 @@ export default function Document() {
                   e(g,w,r);
                   w[r](cid,{id:2090840204,domain:w[r+'h']});
               })(window,document,'script',['ftd.agency'],'ABNS');
+            `,
+          }}
+        />
+
+        {/* Clever Core Script  */}
+        <Script
+          id="clever-core"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function (document, window) {
+                var a, c = document.createElement("script"), f = window.frameElement;
+
+                c.id = "CleverCoreLoader78681";
+                c.src = "https://scripts.cleverwebserver.com/dd81450c8861a32004d657e2b04f386d.js";
+                c.async = true;
+                c.type = "text/javascript";
+                c.setAttribute("data-target", window.name || (f && f.getAttribute("id")));
+                c.setAttribute("data-callback", "put-your-callback-function-here");
+                c.setAttribute("data-callback-url-click", "put-your-click-macro-here");
+                c.setAttribute("data-callback-url-view", "put-your-view-macro-here");
+
+                try {
+                  a = parent.document.getElementsByTagName("script")[0] || document.getElementsByTagName("script")[0];
+                } catch (e) {
+                  a = false;
+                }
+                a || (a = document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]);
+                a.parentNode.insertBefore(c, a);
+              })(document, window);
             `,
           }}
         />
