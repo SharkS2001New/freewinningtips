@@ -93,7 +93,7 @@ function Footer(){
               <h5 className="text-center mb-3">Sponsors</h5>
               <ul className="sponsors-list">
        <li className="mb-0">
-                <a target="_blank" rel="noreferrer" href="https://www.authorandrewsmith.com/" title="Xoi Lac TV">Xoi Lac TV.com</a>
+                <a target="_blank" rel="noreferrer" href="https://www.authorandrewsmith.com/" title="Xoi Lac TV">Xoi Lac TV</a>
               </li>
               <li className="mb-0"> 
                 <a target="_blank" rel="noreferrer" href="https://www.docandrewmurray.com/" title="Socolive xem bong da">Socolive xem bong da</a>
