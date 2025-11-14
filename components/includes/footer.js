@@ -90,7 +90,7 @@ function Footer(){
                      <hr className="my-3"/>
         <div className="row">
           <div className="col-12 mb-0">
-              <h5 className="text-center mb-3">Text Links</h5>
+              <h5 className="text-center mb-3">Text Link</h5>
               <ul className="sponsors-list">
        <li className="mb-0">
                 <a target="_blank" rel="noreferrer" href="https://www.authorandrewsmith.com/" title="Xoi Lac TV">Xoi Lac TV</a>
