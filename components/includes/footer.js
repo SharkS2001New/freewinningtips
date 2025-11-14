@@ -87,6 +87,21 @@ function Footer(){
               </div>
           </div>
         </div>
+                     <hr className="my-3"/>
+        <div className="row">
+          <div className="col-12 mb-0">
+              <h5 className="text-center mb-3">Sponsors</h5>
+              <ul className="sponsors-list">
+       <li className="mb-0">
+                <a target="_blank" rel="noreferrer" href="https://www.authorandrewsmith.com/" title="Xoi Lac TV">Xoi Lac TV.com</a>
+              </li>
+              <li className="mb-0"> 
+                <a target="_blank" rel="noreferrer" href="https://www.docandrewmurray.com/" title="Socolive xem bong da">Socolive xem bong da</a>
+              </li>
+          </ul >
+        </div >
+      </div >
+                    
       <hr className="my-3"/>
         {/* <!-- Section: Copyright --> */}
         <section className="p-0 pt-0 fixturesTextSize">
