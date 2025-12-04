@@ -20,6 +20,7 @@ function Footer(){
           <div className="col-6 col-md-2"> 
             <span className="mb-4 font-weight-bold footerLinks">Quick links</span><br/><br/>
             <ul className="nav flex-column fixturesTextSize footerPart3 footer-links">
+              <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://windrawtips.com/" className="nav-a p-0 text-light">Windrawtips</a></li>
               <li className="nav-item mb-2"><a href="/" className="nav-a p-0 text-light">Free Tips</a></li>
               <li className="nav-item mb-2"><a href="/free-vip-tips-today" className="nav-a p-0 text-light">VIP Tips</a></li>
               <li className="nav-item mb-2"><a href="/jackpot-predictions" className="nav-a p-0 text-light">Jackpots Tips</a></li>
@@ -86,6 +87,21 @@ function Footer(){
               </div>
           </div>
         </div>
+                     <hr className="my-3"/>
+        <div className="row">
+          <div className="col-12 mb-0">
+              <h5 className="text-center mb-3">Text Link</h5>
+              <ul className="sponsors-list">
+       <li className="mb-0">
+                <a target="_blank" rel="noreferrer" href="https://www.authorandrewsmith.com/" title="Xoi Lac TV">Xoi Lac TV</a>
+              </li>
+              <li className="mb-0"> 
+                <a target="_blank" rel="noreferrer" href="https://www.docandrewmurray.com/" title="Socolive xem bong da">Socolive xem bong da</a>
+              </li>
+          </ul >
+        </div >
+      </div >
+                    
       <hr className="my-3"/>
         {/* <!-- Section: Copyright --> */}
         <section className="p-0 pt-0 fixturesTextSize">
