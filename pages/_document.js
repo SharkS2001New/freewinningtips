@@ -19,7 +19,8 @@ export default function Document() {
 
         <div className="clever-core-ads"></div>
 
-        {/* <div id='zone_1706993458'></div> */}
+        <div id='zone_1322491250' ></div>
+        
         <Main />
         <NextScript />
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossOrigin="anonymous" defer></script>
@@ -101,18 +102,20 @@ export default function Document() {
             `,
           }}
         />
-{/* 
-          <Script
-          id="ftd-agency-script-1706993458"
+
+        {/**1xbet popup banner */}
+        <Script
+          id="ftd-agency-script-1322491250"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,o,g,r,a,m){
-                  var cid='zone_1706993458';
+                  var cid='zone_1322491250';
                   w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
                   function e(b,w,r){
                       if((w[r+'h']=b.pop())&&!w.ABN){
-                          var a=d.createElement(o),p=d.getElementsByTagName(o)[0];
+                          var a=d.createElement(o),
+                              p=d.getElementsByTagName(o)[0];
                           a.async=1;
                           a.src='https://cdn.'+w[r+'h']+'/libs/e.js';
                           a.onerror=function(){e(g,w,r)};
@@ -120,11 +123,11 @@ export default function Document() {
                       }
                   }
                   e(g,w,r);
-                  w[r](cid,{id:1706993458,domain:w[r+'h']});
+                  w[r](cid,{id:1322491250,domain:w[r+'h']});
               })(window,document,'script',['ftd.agency'],'ABNS');
             `,
           }}
-        /> */}
+        />
         </body>
     </Html>
   )
