@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import '../styles/globals.css';
+import "../styles/blog.css"; 
 import Head from 'next/head';
 import Navbar from '../components/includes/navbar'
 import Footer from '../components/includes/footer';

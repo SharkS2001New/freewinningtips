@@ -590,3 +590,70 @@ ins.adsbygoogle[data-ad-status=unfilled] {
   color: white;
 }
 
+
+/*Small Devices */
+@media (max-width:768px) {
+  .sectionTitle {
+    border-radius: 0;    background-color: var(--color-support-1);
+    border-radius: 0;
+    color: var(--color-support-4);
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
+/* Large devices table */
+@media screen and (min-width: 769px){
+  .sectionTitle {
+    border-radius: 0;    background-color: var(--color-support-1);
+    border-radius: 0;
+    color: var(--color-support-4);
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+/* Large devices table */
+@media screen and (min-width: 992px){
+  .sectionTitle {
+    border-radius: 0;    
+    background-color: var(--color-support-1);
+    border-radius: 0;
+    color: var(--color-support-4);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 6px 12px;
+    text-transform: uppercase;
+  }
+}
+
+.post-item {
+  border: 1px solid #ddd;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  color: #000;
+  min-height: 150px; 
+  max-height: 150px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.linkTxt3{
+  color: #000;
+  font-weight: bold;
+  margin-top:  20px;
+}
+
+.linkTxt3:hover{
+  color: blue;
+}
+
+.read-more-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
