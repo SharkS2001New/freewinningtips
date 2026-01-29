@@ -42,7 +42,7 @@ export default function Blogs() {
           <>
             <div className="row g-4">
               {currentBlogs.map((blog) => (
-                <div key={blog.id} className="col-12 col-lg-6">
+                <div key={blog.id} className="col-12 col-lg-4">
                   <div className="blog-card">
                     <div className="blog-content">
                         <small className="blog-category mb-3">
