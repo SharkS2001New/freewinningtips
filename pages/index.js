@@ -4,8 +4,7 @@ import getFormattedCurrentDate from '@/components/functions/GetTodaysDate';
 import getFreePredictionsData from '@/components/functions/get-free-football-predictions';
 import { useRouter } from 'next/router';
 import LatestVIPWins from '@/components/shared/latest-vip-wins';
-// import SeoContentDisplay from '@/components/shared/seo_content_display';
-// import getGithubSiteContent from '@/components/functions/GithubPagesContent';
+import ShortBlogPosts from "../components/shared/short-blog-posts";
 
 export default function Home() {
   const router = useRouter();  
@@ -70,6 +69,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ShortBlogPosts/>
       <LatestVIPWins title="Latest VIP Prediction Wins"/>
       <div className="container">
             <h2>Accurate Soccer Predictions</h2>

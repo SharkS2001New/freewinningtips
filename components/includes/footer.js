@@ -28,6 +28,7 @@ function Footer(){
               <li className="nav-item mb-2"><a href="/tomorrows-free-football-predictions" className="nav-a p-0 text-light">Tomorrows Predictions</a></li> 
               <li className="nav-item mb-2"><a href="/yesterdays-free-football-predictions" className="nav-a p-0 text-light">Yesterday Predictions</a></li> 
               <li className="nav-item mb-2"><a href="/sitemaps" className="nav-a p-0 text-light">Sitemaps</a></li>
+              <li className="nav-item mb-2"><a href="/blog" className="nav-a p-0 text-light">Blogs</a></li>
             </ul>
           </div>
           <div className="col-6 col-md-2">
