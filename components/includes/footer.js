@@ -43,6 +43,9 @@ function Footer(){
               <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://tipsxtra.com/" className="nav-a p-0 text-light">TipsXtra</a></li>
              <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://www.accuratestakes.com/" className="nav-a p-0 text-light">Accurate prediction</a></li>
              <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://www.bettingtips.co.ke/" className="nav-a p-0 text-light">Sure Win Football Predictions</a></li>
+              <li className="nav-item mb-2"><a href="https://sportiya.com/raja-win678-com" target="_blank" rel="noreferrer" className="nav-a p-0 text-light">Raja Win678.com</a></li>
+              <li className="nav-item mb-2"><a href="https://forebetpredict.com/soccervista" target="_blank" rel="noreferrer" className="nav-a p-0 text-light">Soccervista</a></li>
+              <li className="nav-item mb-2"><a href="https://thisweekpoolresult.com" target="_blank" rel="noreferrer" className="nav-a p-0 text-light">This Week Pool Result</a></li>
             </ul>
           </div>
           <div className="col-md-3">

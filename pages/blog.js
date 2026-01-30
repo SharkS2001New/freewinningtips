@@ -90,7 +90,6 @@ export default function Blogs() {
                       <span><i className="bi bi-clock"></i> {blog.read_time} Minutes</span>
                     </div>
                   </div>
-
                   </div>
                 </div>
               ))}
