@@ -19,7 +19,8 @@ export default function Document() {
 
         <div className="clever-core-ads"></div>
 
-        <div id='zone_1322491250' ></div>
+        {/**1xbet popup banner */}
+        {/* <div id='zone_1322491250' ></div> */}
         
         <Main />
         <NextScript />
@@ -80,7 +81,7 @@ export default function Document() {
         />
 
         {/**1xbet popup banner */}
-        <Script
+        {/* <Script
           id="ftd-agency-script-1322491250"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -103,7 +104,7 @@ export default function Document() {
               })(window,document,'script',['ftd.agency'],'ABNS');
             `,
           }}
-        />
+        /> */}
         </body>
     </Html>
   )
