@@ -51,10 +51,10 @@ export default function Document() {
         /> */}
 
         {/**Taifa bet advert */}
-        <Script
+        {/* <Script
           src="https://tafatips.com/tafatips-popup-ads.js"
           strategy="afterInteractive"
-        />
+        /> */}
         {/* Clever Core Script  */}
         <Script
           id="clever-core"
