@@ -90,6 +90,9 @@ function Footer(){
                 </div>
               </div>
           </div>
+        </div>
+                    
+      <hr className="my-3"/>
         {/* <!-- Section: Copyright --> */}
         <section className="p-0 pt-0 fixturesTextSize">
             <div className="row">
