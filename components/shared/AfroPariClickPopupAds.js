@@ -5,15 +5,15 @@ import { useEffect } from "react";
 function AfroPariClickPopupAds() {
   useEffect(() => {
     // Dynamically load the script only once
-    const existing = document.getElementById("ads-zone-1669527766-script");
+    const existing = document.getElementById("ads-zone-1966122272-script");
     if (existing) return;
 
     const script = document.createElement("script");
-    script.id = "ads-zone-1669527766-script";
+    script.id = "ads-zone-1966122272-script"; 
     script.async = true;
     script.innerHTML = `
       (function(w,d,o,g,r,a,m){
-          var cid='zone_1669527766';
+          var cid='zone_1966122272';
           w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
           function e(b,w,r){
               if((w[r+'h']=b.pop())&&!w.ABN){
@@ -25,13 +25,13 @@ function AfroPariClickPopupAds() {
               }
           }
           e(g,w,r);
-          w[r](cid,{id:1669527766,domain:w[r+'h']});
+          w[r](cid,{id:1966122272,domain:w[r+'h']});
       })(window,document,'script',['ftd.agency'],'ABNS');
     `;
     document.body.appendChild(script);
   }, []);
 
-  return <div id="zone_1669527766"></div>;
+  return <div id="zone_1966122272"></div>;
 }
 
 export default AfroPariClickPopupAds;
