@@ -22,6 +22,8 @@ function App({ Component, pageProps }) {
   //Restore scroll position after data has been loaded and displayed
   useScrollRestoration(router); 
   
+  const path = router.pathname;
+
   // Excluded routes
   const excludedRoutes = [
     "/",
@@ -110,7 +112,7 @@ function App({ Component, pageProps }) {
                     <Component {...pageProps} />
                   </div>
 
-                  {showAds && (
+                  {shouldShowAd && (
                     <AfroPariClickUnderAds/>
                   )}
 
