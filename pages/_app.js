@@ -11,6 +11,8 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import MetaContent from '@/components/functions/meta-title-content';
 import useScrollRestoration from '@/components/functions/useScrollRestoration';
+import AfroPariClickUnderAds from '@/components/shared/AfroPariClickUnderAds';
+import AfroPariClickPopupAds from '@/components/shared/AfroPariClickPopupAds';
 
 function App({ Component, pageProps }) {
   var meta_content_data = MetaContent(); //Meta content dynamic data
@@ -20,6 +22,16 @@ function App({ Component, pageProps }) {
   //Restore scroll position after data has been loaded and displayed
   useScrollRestoration(router); 
   
+  // Excluded routes
+  const excludedRoutes = [
+    "/",
+    "/blog",
+    "/predictions/must-win-teams-today"
+  ];
+
+  // Check if ad should show (not excluded and not auth page)
+  const shouldShowAd = !excludedRoutes.includes(path);
+
   return (
     <React.Fragment>
       {/* Inject seo content for static pages excluding the dynamic pages such as match details and football predictions by date*/}
@@ -97,6 +109,12 @@ function App({ Component, pageProps }) {
                   <div style={{marginTop: "0px"}}>
                     <Component {...pageProps} />
                   </div>
+
+                  {showAds && (
+                    <AfroPariClickUnderAds/>
+                  )}
+
+                  <AfroPariClickPopupAds/>
                 </div>           
             </div>
           </div>
