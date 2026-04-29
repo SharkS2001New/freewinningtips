@@ -11,8 +11,9 @@ import { useRouter } from 'next/router';
 import Script from 'next/script';
 import MetaContent from '@/components/functions/meta-title-content';
 import useScrollRestoration from '@/components/functions/useScrollRestoration';
-import AfroPariClickUnderAds from '@/components/shared/AfroPariClickUnderAds';
-import AfroPariClickPopupAds from '@/components/shared/AfroPariClickPopupAds';
+import AdsterraAd from '@/components/shared/AdsterraAd';
+// import AfroPariClickUnderAds from '@/components/shared/AfroPariClickUnderAds';
+// import AfroPariClickPopupAds from '@/components/shared/AfroPariClickPopupAds';
 
 function App({ Component, pageProps }) {
   var meta_content_data = MetaContent(); //Meta content dynamic data
@@ -112,11 +113,15 @@ function App({ Component, pageProps }) {
                     <Component {...pageProps} />
                   </div>
 
-                  {shouldShowAd && (
+                  {/* {shouldShowAd && (
                     <AfroPariClickUnderAds/>
+                  )} */}
+
+                  {shouldShowAd && (
+                    <AdsterraAd/>
                   )}
 
-                  <AfroPariClickPopupAds/>
+                  {/* <AfroPariClickPopupAds/> */}
                 </div>           
             </div>
           </div>
