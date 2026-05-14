@@ -1,7 +1,6 @@
 // components/includes/Navbar.js
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
-import Link from "next/link";
 import nookies from 'nookies';
 import SearchModal from "../shared/SearchModal";
 
@@ -127,31 +126,31 @@ function Navbar({ toggleSidebar }) {
 
                         {/* Logo */}
                         <div className="logo-container">
-                            <Link href="/" className="logo-link">
+                            <a href="/" className="logo-link">
                                 <img src="/freewinningtipslogo.png" alt="Free Winning Tips - Football Betting Tips and Match Predictions" />
-                            </Link>
+                            </a>
                         </div>
 
                         {/* Desktop Navigation Links */}
                         <div className="nav-links-wrapper">
                             <ul className="nav-links">
                                 <li className="nav-item">
-                                    <Link href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</Link>
+                                    <a href="/" className={`nav-link ${router.pathname === '/' ? 'active' : ''}`}>Home</a>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/tip-of-the-day" className={`nav-link ${router.pathname.includes('/tip-of-the-day') ? 'active' : ''}`}>💡 Tip of the Day</Link>
+                                    <a href="/tip-of-the-day" className={`nav-link ${router.pathname.includes('/tip-of-the-day') ? 'active' : ''}`}>💡 Tip of the Day</a>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/predictions/todays-predictions" className={`nav-link ${router.pathname.includes('/predictions') ? 'active' : ''}`}>📊 All Predictions</Link>
+                                    <a href="/predictions/todays-predictions" className={`nav-link ${router.pathname.includes('/predictions') ? 'active' : ''}`}>📊 All Predictions</a>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/predictions/must-win-teams-today" className={`nav-link ${router.pathname.includes('/must-win') ? 'active' : ''}`}>🔥 Must Win Today</Link>
+                                    <a href="/predictions/must-win-teams-today" className={`nav-link ${router.pathname.includes('/must-win') ? 'active' : ''}`}>🔥 Must Win Today</a>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/free-vip-tips-today" className={`nav-link ${router.pathname.includes('/free-vip-tips-today') ? 'active' : ''}`}>⭐ VIP Tips</Link>
+                                    <a href="/free-vip-tips-today" className={`nav-link ${router.pathname.includes('/free-vip-tips-today') ? 'active' : ''}`}>⭐ VIP Tips</a>
                                 </li>
                                 <li className="nav-item">
-                                    <Link href="/jackpot-predictions" className={`nav-link ${router.pathname.includes('/jackpot') ? 'active' : ''}`}>Jackpot Predictions</Link>
+                                    <a href="/jackpot-predictions" className={`nav-link ${router.pathname.includes('/jackpot') ? 'active' : ''}`}>Jackpot Predictions</a>
                                 </li>
                             </ul>
                         </div>

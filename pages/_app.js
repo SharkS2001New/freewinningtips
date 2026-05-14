@@ -18,18 +18,18 @@ import Subnavbar from '@/components/includes/subnavbar';
 function App({ Component, pageProps }) {
   var meta_content_data = MetaContent();
   const router = useRouter();
-
-  const path = router.pathname;
-
-  // Check if the current page includes 'auth' in its route
-  const isAuthPage = router.pathname.includes("auth");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useScrollRestoration(router);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   
-  // Excluded routes where sidebar might not be needed
+  const path = router.pathname;
+  
+  // Check if the current page includes 'auth' in its route
+  const isAuthPage = router.pathname.includes("auth");
+  
+  // Excluded routes where sidebar should NOT be shown
   const excludedRoutes = ["/blog"];
-  const showSidebar = !excludedRoutes.includes(path);
+  const shouldShowSidebar = !excludedRoutes.includes(path) && !isAuthPage;
 
   // Close sidebar on route change
   useEffect(() => {
@@ -108,18 +108,17 @@ function App({ Component, pageProps }) {
           <div className="d-flex" id="wrapper">
             <div id="page-content-wrapper" style={{ width: '100%' }}>
               <div className="row">
-                {/* Main Content Column - col-md-9 */}
-                <div className={`${router.pathname.includes("auth") ? "col-lg-12 col-12" : "col-lg-9 col-12"}`}>
+                {/* Main Content Column - full width on auth pages, 9 cols otherwise */}
+                <div className={`${isAuthPage ? "col-lg-12 col-12" : "col-lg-9 col-12"}`}>
                   <Subnavbar/>
                   <div style={{ marginTop: "0px" }}>
                     <Component {...pageProps} />
                   </div>
                 </div>
                 
-                {/* Sidebar Column - col-md-3 */}
-                {!isAuthPage && 
-                showSidebar && (
-                  <div className="col-md-3 col-12 sidebar-sticky-column">
+                {/* Sidebar Column - ONLY hidden on auth pages and blog */}
+                {shouldShowSidebar && (
+                  <div className="col-lg-3 col-12 sidebar-sticky-column">
                     <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
                   </div>
                 )}

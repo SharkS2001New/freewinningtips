@@ -454,71 +454,6 @@ body {
 }
 
 /* ============================================ */
-/* FILTER BAR */
-/* ============================================ */
-.filter-bar {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.filter-scroll {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 12px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
-}
-
-.filter-tab {
-  display: inline-block;
-  padding: 8px 20px;
-  border-radius: 40px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-muted);
-  cursor: pointer;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  white-space: nowrap;
-  transition: all 0.2s ease;
-  text-decoration: none;
-}
-
-.filter-tab:hover {
-  background: var(--off-white);
-  color: var(--green-bright);
-  border-color: var(--green-bright);
-  transform: translateY(-1px);
-}
-
-.filter-tab.active {
-  background: var(--green-bright);
-  color: var(--white);
-  border-color: var(--green-bright);
-  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.25);
-}
-
-.filter-tab:first-child {
-  background: var(--gold);
-  color: var(--green-deep);
-  border-color: var(--gold);
-}
-
-.filter-tab:first-child.active {
-  background: var(--gold);
-  color: var(--green-deep);
-  border-color: var(--gold);
-}
-
-.filter-tab:first-child:hover {
-  background: #e0b800;
-  border-color: #e0b800;
-}
-
-/* ============================================ */
 /* MAIN LAYOUT */
 /* ============================================ */
 .main-layout {
@@ -1287,7 +1222,6 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 22px;
   letter-spacing: 1.5px;
-  color: var(--green-deep);
   margin: 28px 0 10px;
 }
 
@@ -1298,14 +1232,14 @@ body {
 .seo-inner p {
   font-size: 14px;
   line-height: 1.8;
-  color: var(--text-muted);
+  /* color: var(--text-muted); */
   margin-bottom: 10px;
 }
 
-.seo-inner a {
+/* .seo-inner a {
   color: var(--green-bright);
   text-decoration: none;
-}
+} */
 
 .seo-inner a:hover {
   text-decoration: underline;
@@ -2135,6 +2069,7 @@ body {
   transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.15s;
   cursor: pointer;
 }
+
 .jp-btn:hover {
   background: #e8f5e9;
   border-color: #2e7d32;
@@ -2609,4 +2544,71 @@ body {
     .suggestion-league {
         max-width: 100px;
     }
+}
+
+/**Subnavbar **/
+.subnav-bar {
+  padding: 10px 16px;
+}
+
+/* ── SCROLLABLE ROW ── */
+.subnav-inner {
+  display: flex;
+  flex-wrap: wrap;          /* wraps to next line on smaller viewports */
+  gap: 8px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ── PILL BUTTON — inactive ── */
+.pill-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 16px;
+  border-radius: 999px;           /* full pill */
+  border: 1.5px solid #c8e6c9;   /* soft green border like the image */
+  background: #fff;
+  color: #333;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+}
+
+.pill-tab:hover {
+  background: #f1f8f1;
+  border-color: #2e7d32;
+  color: #1a4a1f;
+}
+
+/* ── PILL BUTTON — active (filled green) ── */
+.pill-active {
+  background: #2e7d32;
+  border-color: #2e7d32;
+  color: #fff;
+  font-weight: 500;
+}
+
+.pill-active:hover {
+  background: #1b5e20;
+  border-color: #1b5e20;
+  color: #fff;
+}
+
+/* ── MOBILE: horizontal scroll if too many tabs ── */
+@media (max-width: 600px) {
+  .subnav-inner {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .subnav-inner::-webkit-scrollbar { display: none; }
+  .pill-tab { font-size: 12px; padding: 4px 13px; }
 }
