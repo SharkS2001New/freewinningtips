@@ -1,69 +1,66 @@
-// add bootstrap css 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
+// pages/_app.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/globals.css';
 import "../styles/blog.css"; 
+import "../styles/auth-css.css";
 import Head from 'next/head';
-import Navbar from '../components/includes/navbar'
+import Navbar from '../components/includes/navbar';
 import Footer from '../components/includes/footer';
-import React from "react";
+import Sidebar from '../components/includes/Sidebar';
+import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import MetaContent from '@/components/functions/meta-title-content';
 import useScrollRestoration from '@/components/functions/useScrollRestoration';
-import AdsterraAd from '@/components/shared/AdsterraAd';
-// import AfroPariClickUnderAds from '@/components/shared/AfroPariClickUnderAds';
-// import AfroPariClickPopupAds from '@/components/shared/AfroPariClickPopupAds';
+import Subnavbar from '@/components/includes/subnavbar';
 
 function App({ Component, pageProps }) {
-  var meta_content_data = MetaContent(); //Meta content dynamic data
- 
-  const router = useRouter(); //fetch page link data  
+  var meta_content_data = MetaContent();
+  const router = useRouter();
 
-  //Restore scroll position after data has been loaded and displayed
-  useScrollRestoration(router); 
-  
   const path = router.pathname;
 
-  // Excluded routes
-  const excludedRoutes = [
-    "/",
-    "/blog",
-    "/predictions/must-win-teams-today"
-  ];
+  // Check if the current page includes 'auth' in its route
+  const isAuthPage = router.pathname.includes("auth");
 
-  // Check if ad should show (not excluded and not auth page)
-  const shouldShowAd = !excludedRoutes.includes(path);
+  useScrollRestoration(router);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  // Excluded routes where sidebar might not be needed
+  const excludedRoutes = ["/blog"];
+  const showSidebar = !excludedRoutes.includes(path);
+
+  // Close sidebar on route change
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsSidebarOpen(false);
+    };
+    router.events.on('routeChangeStart', handleRouteChange);
+    return () => router.events.off('routeChangeStart', handleRouteChange);
+  }, [router]);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
 
   return (
     <React.Fragment>
-      {/* Inject seo content for static pages excluding the dynamic pages such as match details and football predictions by date*/}
       <Head>
         <title>{meta_content_data[0]}</title>
         <link rel="dns-prefetch" href="https://freewinningtips.com" crossOrigin />
         <link rel="preconnect" href="https://freewinningtips.com" crossOrigin />
-
         <link rel="dns-prefetch" href="https://api.pitchpredictions.com" crossOrigin />
         <link rel="preconnect" href="https://api.pitchpredictions.com" crossOrigin />
-
         <link rel="canonical" href={`https://freewinningtips.com${router.pathname}`} key="canonical" />
-        <meta name="robots" content="index, follow"></meta>
-        <meta name="language" content="en"></meta>
-        <meta name="revisit-after" content="7 days"></meta>
-        <meta name="copyright" content="© 2025 Freewinningtips All rights reserved."  />
-  
-        <link rel="dns-prefetch" href="https://adservice.google.com/" crossOrigin />
-        <link rel="preconnect" href="https://adservice.google.com/" crossOrigin />
-
-        <link rel='dns-prefetch' href="https://pagead2.googlesyndication.com" />
-        <link rel='preconnect' href="https://pagead2.googlesyndication.com" />
-
-        <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/" crossOrigin />
-        <link rel="preconnect" href="https://googleads.g.doubleclick.net/" crossOrigin /> 
-
-        <link rel="dns-prefetch" href="https://www.googletagservices.com/" crossOrigin />
-        <link rel="preconnect" href="https://www.googletagservices.com/" crossOrigin /> 
-
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="en" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="copyright" content="© 2025 Freewinningtips All rights reserved." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#202c3c" />
         <meta name="description" content={meta_content_data[1]} />
@@ -84,52 +81,57 @@ function App({ Component, pageProps }) {
         <meta property="og:url" content={`https://freewinningtips.com${router.pathname}`} />
       </Head>
 
-    {/* <!-- Google tag (gtag.js) --> */}
-    <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-KH2W81P2ZD" async></Script>
-    <Script id='google-analytics' strategy="afterInteractive" async dangerouslySetInnerHTML={{
+      {/* Google Analytics */}
+      <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-KH2W81P2ZD" async />
+      <Script id='google-analytics' strategy="afterInteractive" dangerouslySetInnerHTML={{
         __html: `
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-KH2W81P2ZD', {
-        page_path: window.location.pathname,
+          page_path: window.location.pathname,
         });
         `,
-    }}></Script>
+      }} />
 
-      <Navbar/>
-      <div> {/**style={{backgroundColor:"#212830"}} */}
-        {/**The page title */}
-      {meta_content_data[3] != null ? 
-          <div className="d-flex flex-wrap justify-content-center pb-1 pt-2"  style={{backgroundColor:"rgb(25, 118, 210)",color: "white",fontWeight:"bold" }}>
-              <h1 className="h1headerTitle">{meta_content_data[3]}</h1>
-          </div> 
-        : ""}
-        <div className="container-mob desktop-container-resize"> 
+      <Navbar toggleSidebar={toggleSidebar} />
+      
+      <div>
+        {/* Page Title */}
+        {meta_content_data[3] != null && (
+          <div className="d-flex flex-wrap justify-content-center pb-1 pt-2" style={{ backgroundColor: "#05386B", color: "white", fontWeight: "bold" }}>
+            <h1 className="h1headerTitle">{meta_content_data[3]}</h1>
+          </div>
+        )}
+        
+        <div className="container-mob desktop-container-resize">
           <div className="d-flex" id="wrapper">
-            <div id="page-content-wrapper" >
-                <div className="col-lg-12 col-12">                  
-                  <div style={{marginTop: "0px"}}>
+            <div id="page-content-wrapper" style={{ width: '100%' }}>
+              <div className="row">
+                {/* Main Content Column - col-md-9 */}
+                <div className={`${router.pathname.includes("auth") ? "col-lg-12 col-12" : "col-lg-9 col-12"}`}>
+                  <Subnavbar/>
+                  <div style={{ marginTop: "0px" }}>
                     <Component {...pageProps} />
                   </div>
-
-                  {/* {shouldShowAd && (
-                    <AfroPariClickUnderAds/>
-                  )} */}
-
-                  {shouldShowAd && (
-                    <AdsterraAd/>
-                  )}
-
-                  {/* <AfroPariClickPopupAds/> */}
-                </div>           
+                </div>
+                
+                {/* Sidebar Column - col-md-3 */}
+                {!isAuthPage && 
+                showSidebar && (
+                  <div className="col-md-3 col-12 sidebar-sticky-column">
+                    <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      <Footer/> 
-      </div>   
+        
+        <Footer />
+      </div>
     </React.Fragment>
-  )  
+  );
 }
 
-export default  App;
+export default App;

@@ -12,15 +12,18 @@
   "dependencies": {
     "@ctrl/react-adsense": "^1.7.0",
     "@next/font": "13.1.1",
+    "axios": "^1.16.1",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
     "cookies-next": "^2.1.1",
     "date-fns-tz": "^2.0.1",
+    "fs": "^0.0.1-security",
     "jquery": "^3.6.3",
     "js-cookie": "^3.0.1",
     "marked": "^4.2.12",
     "next": "^13.2.3",
     "next-sitemap": "^3.1.52",
+    "nookies": "^2.5.2",
     "react-bootstrap": "^2.7.2"
   },
   "devDependencies": {

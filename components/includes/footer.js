@@ -1,115 +1,161 @@
-import Script from "next/script";
-import React from "react";
+// components/Footer.js
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
-function Footer(){
-    return (
-    <footer className="py-2 text-lg-start text-white footer" style={{backgroundColor:"#05386B"}}>
-       <div className="container-mob desktop-container-resize p-3 pb-0">
-        <div className="row">
-          <div className="col-md-5 mb-4">
-              <span className="mb-2 font-weight-bold footerLinks">
-                What is Free Winning Tips ?
-              </span><br/><br/>
-              <p className="fixturesTextSize">
-              FreeWinningTips is your trusted football predictions platform, which offers free predictions, VIP predictions, Jackpot predictions, 
-              and tipster tips with a high success rate. Our expert analysis covers all groups provided by bookmarkers to ensure our users get the 
-              most reliable tips to maximize their chances of winning multi-bets and jackpot bonuses. Join us now and experience football betting at 
-              its best.
-              </p>           
-          </div>
-          <div className="col-6 col-md-2"> 
-            <span className="mb-4 font-weight-bold footerLinks">Quick links</span><br/><br/>
-            <ul className="nav flex-column fixturesTextSize footerPart3 footer-links">
-              <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://windrawtips.com/" className="nav-a p-0 text-light">Windrawtips</a></li>
-              <li className="nav-item mb-2"><a href="/" className="nav-a p-0 text-light">Free Tips</a></li>
-              <li className="nav-item mb-2"><a href="/free-vip-tips-today" className="nav-a p-0 text-light">VIP Tips</a></li>
-              <li className="nav-item mb-2"><a href="/jackpot-predictions" className="nav-a p-0 text-light">Jackpots Tips</a></li>
-              {/* <li className="nav-item mb-2"><a href="/tip-of-the-day" className="nav-a p-0 text-light">Tip of the Day</a></li> */}
-              <li className="nav-item mb-2"><a href="/tomorrows-free-football-predictions" className="nav-a p-0 text-light">Tomorrows Predictions</a></li> 
-              <li className="nav-item mb-2"><a href="/yesterdays-free-football-predictions" className="nav-a p-0 text-light">Yesterday Predictions</a></li> 
-              <li className="nav-item mb-2"><a href="/sitemaps" className="nav-a p-0 text-light">Sitemaps</a></li>
-              <li className="nav-item mb-2"><a href="/blog" className="nav-a p-0 text-light">Blogs</a></li>
-            </ul>
-          </div>
-          <div className="col-6 col-md-2">
-            <span className="mb-4 font-weight-bold footerLinks">Support Links</span><br/><br/>
-            <ul className="nav flex-column fixturesTextSize footer-links"> 
-              <li className="nav-item mb-2"><a href="/our-terms-and-conditions" className="nav-a p-0 text-light">Terms and Conditions</a></li>
-              <li className="nav-item mb-2"><a href="/our-privacy-policy" className="nav-a p-0 text-light">Privacy Policy</a></li>
-              <li className="nav-item mb-2"><a href="/about-us" className="nav-a p-0 text-light">About Us</a></li>
-              <li className="nav-item mb-2"><a href="/payment-methods" className="nav-a p-0 text-light">Payment Methods</a></li>
-              <li className="nav-item mb-2"><a href="/our-partners" className="nav-a p-0 text-light">Partners</a></li>
-              <li className="nav-item mb-2"><a href="/contact-us" className="nav-a p-0 text-light">Contact Us</a></li>
-              <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://tipsxtra.com/" className="nav-a p-0 text-light">TipsXtra</a></li>
-             <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://www.accuratestakes.com/" className="nav-a p-0 text-light">Accurate prediction</a></li>
-             <li className="nav-item mb-2"><a target="_blank" rel="noreferrer" href="https://www.bettingtips.co.ke/" className="nav-a p-0 text-light">Sure Win Football Predictions</a></li>
-              <li className="nav-item mb-2"><a href="https://sportiya.com/raja-win678-com" target="_blank" rel="noreferrer" className="nav-a p-0 text-light">Raja Win678.com</a></li>
-              <li className="nav-item mb-2"><a href="https://forebetpredict.com/soccervista" target="_blank" rel="noreferrer" className="nav-a p-0 text-light">Soccervista</a></li>
-              <li className="nav-item mb-2"><a href="https://thisweekpoolresult.com" target="_blank" rel="noreferrer" className="nav-a p-0 text-light">This Week Pool Result</a></li>
-            </ul>
-          </div>
-          <div className="col-md-3">
-            <span className="font-weight-bold footerLinks mb-5">Connect With Us</span><br/><br/>
-              {/* <!-- Skype --> */}
-              <a
-                className="btn btn-outline-light btn-floating m-1"
-                role="button" aria-label="Action 3"
-                href="https://join.skype.com/invite/GEStaB3D3Ard" target="_blank"
-                rel="noopener noreferrer"
-              ><i className="bi bi-skype"></i></a>
-              
-            {/* <!-- Facebook --> */}
-            <a
-                  className="btn btn-outline-light btn-floating m-1"
-                  role="button" aria-label="Action 1"
-                  href="https://www.facebook.com/freewinningtips1x2" target="_blank"
-                  rel="noopener noreferrer"
-                  ><i className="bi bi-facebook"></i></a>
+function Footer() {
+  const year = new Date().getFullYear();
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
-              {/* <!-- Twitter --> */}
-              <a
-                  className="btn btn-outline-light btn-floating m-1"
-                  role="button" aria-label="Action 2"
-                  href="https://twitter.com/FWT1x2"  target="_blank"
-                  rel="noopener noreferrer"
-                  ><i className="bi bi-twitter"></i></a>
+  // Show/hide back to top button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    };
 
-              {/* <!-- Instagram --> */}
-              <a
-                className="btn btn-outline-light btn-floating m-1"
-                role="button" aria-label="Action 3"
-                href="https://instagram.com/freewinningtips1x2?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"
-                rel="noopener noreferrer"
-              ><i className="bi bi-instagram"></i></a>
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-              <br/><br/>
-              <div className="card">
-                <div className="container text-center mb-2">
-                  <p style={{color: "black"}}>For free tips and Free Jackpot tips, Join our Telegram Channel.</p>
-                  <a href="https://t.me/s/freewinningtips1x2" style={{color: "white", fontWeight: "bold"}} className="btn btn-info" rel="noopener noreferrer" target="_blank">&nbsp;&nbsp;<i className="bi bi-telegram"></i>&nbsp;&nbsp;VIEW CHANNEL</a>
-                </div>
-              </div>
-          </div>
-        </div>
-                    
-      <hr className="my-3"/>
-        {/* <!-- Section: Copyright --> */}
-        <section className="p-0 pt-0 fixturesTextSize">
-            <div className="row">
-                <div className="text-center">
-                    Copyright ©<span id="year"></span> Freewinningtips.com  All rights reserved.
-                </div>  
-                <div className="text-right text-md-end">
-                    <button type="button" className="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-                        <i className="bi bi-arrow-up-circle-fill" role="button" aria-label="Back To Top"></i>
-                    </button>
-                </div>           
-            </div>              
-        </section>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <footer className="site-footer">
+
+      {/* ── TOP DIVIDER ── */}
+      <div className="footer-divider" />
+
+      {/* ── TOP NAV: About | Contact | Blog ── */}
+      <div className="footer-top-nav">
+        <Link href="/about-us" className="footer-top-link">About</Link>
+        <Link href="/contact-us" className="footer-top-link">Contact</Link>
+        <Link href="/blog" className="footer-top-link">Blog</Link>
       </div>
-      <Script src="../../../js/scripts.js" />     
+
+      {/* ── COPYRIGHT ── */}
+      <div className="footer-copy-row">
+        <p className="footer-copyright">
+          Copyright © 2023 - {year} FreeWinningTips.com. All rights reserved.
+        </p>
+        <p className="footer-tags">
+          <a href="https://www.pitchpredictions.com" target="_blank" rel="noopener noreferrer">PitchPredictions.com</a> |{' '}
+          <a href="https://www.betsassured.com" target="_blank" rel="noopener noreferrer">Betsassured.com</a> |{' '}
+          <a href="https://windrawtips.com" target="_blank" rel="noopener noreferrer">Windrawtips.com</a> |{' '}
+          <a href="/our-partners" className="footer-partner-link">Our Partners</a>
+        </p>
+      </div>
+
+      {/* ── 18+ WARNING ── */}
+      <div className="footer-age-row">
+        <span className="badge-18">18+</span>
+        <p>You must be 18 years old or over to use this site. Please bet responsibly.</p>
+      </div>
+
+      {/* ── SOCIAL ICONS ── */}
+      <div className="footer-social-row">
+        <span className="footer-follow-label">Follow FreeWinningTips on:</span>
+        <div className="footer-socials">
+
+          {/* Facebook */}
+          <a href="https://www.facebook.com/freewinningtips1x2" target="_blank" rel="noopener noreferrer"
+             className="social-icon social-fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="white" width="15" height="15">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+
+          {/* X / Twitter */}
+          <a href="https://x.com/FWT1x2" target="_blank" rel="noopener noreferrer"
+             className="social-icon social-x" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="white" width="14" height="14">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+
+          {/* Instagram */}
+          <a href="https://instagram.com/freewinningtips1x2" target="_blank" rel="noopener noreferrer"
+             className="social-icon social-ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"
+                 strokeLinecap="round" strokeLinejoin="round" width="15" height="15">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+
+          {/* Telegram */}
+          <a href="https://t.me/s/freewinningtips1x2" target="_blank" rel="noopener noreferrer"
+             className="social-icon social-tg" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="white" width="15" height="15">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.15.67-.543.833-1.097.518l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.214-3.053 5.56-5.023c.242-.214-.053-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.202-.657-.643.136-.953l11.574-4.463c.535-.194 1.003.13.91.6z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      {/* ── LEGAL LINKS ── */}
+      <div className="footer-legal-row">
+        <Link href="/our-terms-and-conditions" className="footer-legal-link">T&amp;C</Link>
+        <span className="footer-sep">|</span>
+        <Link href="/our-privacy-policy" className="footer-legal-link">Privacy Policy</Link>
+        <span className="footer-sep">|</span>
+        <Link href="/payment-methods" className="footer-legal-link">Payment Methods</Link>
+        <span className="footer-sep">|</span>
+        <Link href="/sitemaps" className="footer-legal-link">Sitemap</Link>
+      </div>
+
+      {/* ── RESPONSIBLE GAMBLING ── */}
+      <div className="footer-gamble-row">
+        <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-link">
+          Safer. Better. Together
+        </a>
+        <span className="footer-sep">|</span>
+        <a href="https://www.gambleaware.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-link">
+          GambleAware
+        </a>
+        <span className="footer-sep">|</span>
+        <a href="https://www.gamblingtherapy.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-link">
+          GamblingTherapy
+        </a>
+      </div>
+
+      {/* ── RESPONSIBLE GAMBLING DETAIL ── */}
+      <hr className="footer-hr" />
+
+      <div className="footer-responsible">
+        <strong>⚠️ Responsible Gambling:</strong> FreeWinningTips provides predictions and
+        analysis for informational and entertainment purposes only. Betting involves financial
+        risk — never bet more than you can afford to lose. Gambling can be addictive. If
+        gambling is affecting you or someone you know, seek help at{' '}
+        <a
+          href="https://www.begambleaware.org"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          className="footer-warn-link"
+        >
+          BeGambleAware.org
+        </a>{' '}
+        or contact your national gambling helpline. You must be 18 years or older to use
+        betting services. FreeWinningTips does not guarantee any prediction outcomes.
+      </div>
+
+      {/* ── BACK TO TOP — fixed floating bottom-right (appears after scrolling) ── */}
+      {showBackToTop && (
+        <button
+          className="back-to-top"
+          onClick={scrollToTop}
+          aria-label="Back to top"
+        >
+          ↑
+        </button>
+      )}
     </footer>
-    )
+  );
 }
 
 export default Footer;

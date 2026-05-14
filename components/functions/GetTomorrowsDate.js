@@ -1,25 +1,18 @@
-function getTomorrowsDate(num_of_days) {
+// components/functions/GetTomorrowsDate.js
+function getTomorrowsDate() {
   try {
-    if (num_of_days >= 0) {
-      // Declare current date
-      const today = new Date();
-      // Declare next day's date and initialize
-      const tomorrow = new Date(today);
-      // Compute days and add days to get date needed
-      tomorrow.setDate(tomorrow.getDate() + parseInt(num_of_days));
-      // Get the year, month, and day from the next date
-      const year = tomorrow.getFullYear();
-      const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
-      const day = String(tomorrow.getDate()).padStart(2, '0');
-      // Format the date in "YYYY-MM-DD" format
-      const formatted_date = `${year}-${month}-${day}`;
-
-      return formatted_date;
-    } else {
-      return "Invalid number of days provided";
-    }
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
+    const year = tomorrow.getFullYear();
+    const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+    const day = String(tomorrow.getDate()).padStart(2, '0');
+    
+    return `${year}-${month}-${day}`;
   } catch (err) {
     console.log(err.message);
+    return null;
   }
 }
 
