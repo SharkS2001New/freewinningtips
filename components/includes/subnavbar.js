@@ -11,7 +11,7 @@ const Subnavbar = () => {
     { name: '1.5 Goals', href: '/predictions/1-5-goals' },
     { name: '2.5 Goals', href: '/predictions/2-5-goals' },
     { name: 'Over 3.5 Goals', href: '/predictions/3-5-goals' },
-    { name: 'Acca Tips', href: '/acca-tips' },
+    { name: 'Acca Tips', href: '/predictions/accumulator-tips' },
     { name: 'BTTS', href: '/predictions/gg-no-gg' },
     { name: 'Draw No Bet', href: '/predictions/draw' },
     { name: 'Double Chance', href: '/predictions/double-chance' },
@@ -21,13 +21,13 @@ const Subnavbar = () => {
     <div className="filter-bar">
       <div className="filter-scroll">
         {tabs.map((tab) => (
-          <Link
+          <a
             key={tab.name}
             href={tab.href}
             className={`filter-tab ${currentPath === tab.href ? 'active' : ''}`}
           >
             {tab.name}
-          </Link>
+          </a>
         ))}
       </div>
     </div>
