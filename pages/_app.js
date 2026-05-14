@@ -109,7 +109,7 @@ function App({ Component, pageProps }) {
             <div id="page-content-wrapper" style={{ width: '100%' }}>
               <div className="row">
                 {/* Main Content Column - full width on auth pages, 9 cols otherwise */}
-                <div className={`${isAuthPage ? "col-lg-12 col-12" : "col-lg-9 col-12"}`}>
+                <div className={`${isAuthPage ? "col-lg-12 col-md-12 col-12" : "col-lg-9 col-md-9 col-12"}`}>
                   <Subnavbar/>
                   <div style={{ marginTop: "0px" }}>
                     <Component {...pageProps} />
@@ -118,7 +118,7 @@ function App({ Component, pageProps }) {
                 
                 {/* Sidebar Column - ONLY hidden on auth pages and blog */}
                 {shouldShowSidebar && (
-                  <div className="col-lg-3 col-12 sidebar-sticky-column">
+                  <div className="col-lg-3 col-md-3 col-12 sidebar-sticky-column">
                     <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
                   </div>
                 )}
