@@ -2,8 +2,6 @@
 import HomepageContent from '@/components/seo-content/homepage';
 import BlogPostsSection from '@/components/shared/short-blog-posts';
 import FixturesRow from '@/components/shared/FixturesRow';
-import Head from 'next/head';
-import Link from 'next/link';
 
 function getFormattedCurrentDate() {
   const now = new Date();
@@ -22,9 +20,9 @@ export default function Home({ fixtures, fetchDate }) {
           <FixturesRow fixtures={fixtures} predictionType="all" />
           
           <div className="view-more-wrap">
-            <Link href="/predictions/todays-predictions" className="btn-view-more">
+            <a href="/predictions/todays-predictions" className="btn-view-more">
               View More Predictions &nbsp;↗
-            </Link>
+            </a>
           </div>
         </div>
 

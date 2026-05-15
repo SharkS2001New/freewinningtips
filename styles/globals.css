@@ -575,7 +575,7 @@ body {
   border: none;
   border-bottom: 1px solid var(--border);
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--green-deep);
   transition: background 0.18s;
@@ -3143,7 +3143,7 @@ body {
 
 /* League card spacing */
 .league-card {
-  margin-bottom: 3px !important;
+  margin-bottom: 5px !important;
 }
 
 /* Hide some elements if needed on extremely small screens */
