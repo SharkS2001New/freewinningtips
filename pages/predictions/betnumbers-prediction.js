@@ -15,7 +15,7 @@ export default function BetnumbersPackages({ fixtures, fetchDate }) {
       <div className="page-root">
         {/* MAIN CONTENT - FIXTURES ROW (Reusable Component) */}
         <div className="container-main">
-          <FixturesRow fixtures={fixtures} />
+          <FixturesRow fixtures={fixtures} predictionType="all" />
         </div>
 
         {/* SEO CONTENT */}

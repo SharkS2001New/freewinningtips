@@ -8,7 +8,7 @@ export default function MustWinGames({ fixtures }) {
     <div className="page-root">
         {/* MAIN CONTENT - FIXTURES ROW (Reusable Component) */}
         <div className="container-main">
-          <FixturesRow fixtures={fixtures} />
+          <FixturesRow fixtures={fixtures} predictionType="gg-no-gg" />
         </div>
 
         {/* SEO CONTENT */}

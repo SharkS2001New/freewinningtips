@@ -19,7 +19,7 @@ export default function Home({ fixtures, fetchDate }) {
       <div className="page-root">
         {/* MAIN CONTENT - FIXTURES ROW (Reusable Component) */}
         <div className="container-main">
-          <FixturesRow fixtures={fixtures} />
+          <FixturesRow fixtures={fixtures} predictionType="all" />
           
           <div className="view-more-wrap">
             <Link href="/predictions/todays-predictions" className="btn-view-more">

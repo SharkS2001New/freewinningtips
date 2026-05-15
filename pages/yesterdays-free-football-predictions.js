@@ -8,7 +8,7 @@ export default function YesterdayGames({ fixtures }) {
   return (
     <div className="page-root">
       <div className="container-main">
-        <FixturesRow fixtures={fixtures} />
+          <FixturesRow fixtures={fixtures} predictionType="all" />
       </div>
       <YesterdaysPageContent />
     </div>

@@ -20,7 +20,41 @@ const JackpotFixturesTable = ({
       { label: "2", value: awayPct },
     ];
     percentages.sort((a, b) => b.value - a.value);
-    return percentages.slice(0, 2).map(p => p.label).sort().join("");
+    // Restore natural 1 / X / 2 order so we get "1X", "12", "X2" — never reversed
+    const top2 = new Set(percentages.slice(0, 2).map(p => p.label));
+    return ["1", "X", "2"].filter(l => top2.has(l)).join("");
+  };
+
+  const wonStyle = {
+    fontWeight: "bold", borderRadius: "50%", width: "18px", height: "18px",
+    display: "inline-flex", alignItems: "center", justifyContent: "center",
+    backgroundColor: "green", color: "white", fontSize: "11px", marginLeft: "4px",
+    flexShrink: 0,
+  };
+
+  const lostStyle = {
+    fontWeight: "bold", borderRadius: "50%", width: "18px", height: "18px",
+    display: "inline-flex", alignItems: "center", justifyContent: "center",
+    backgroundColor: "red", color: "white", fontSize: "11px", marginLeft: "4px",
+    flexShrink: 0,
+  };
+
+  // Green if pred1x2 OR double-chance won; red only when both lost
+  const getResultIcon = (pred1x2, predDC, goalsHome, goalsAway) => {
+    if (goalsHome === "-" || goalsAway === "-") return null;
+    const h = parseInt(goalsHome);
+    const a = parseInt(goalsAway);
+    const wonWith = (tip) => {
+      if (tip === "1")  return h > a;
+      if (tip === "X")  return h === a;
+      if (tip === "2")  return h < a;
+      if (tip === "1X") return h >= a;
+      if (tip === "X2") return h <= a;
+      if (tip === "12") return h !== a;
+      return false;
+    };
+    if (wonWith(pred1x2) || wonWith(predDC)) return <span style={wonStyle}>✓</span>;
+    return <span style={lostStyle}>✗</span>;
   };
 
   const parseScores = (fixture) => {
@@ -177,13 +211,17 @@ const JackpotFixturesTable = ({
         }
 
         .td-scores {
-          width: 50px;
+          width: 70px;
         }
 
         .score-line {
-          padding: 2px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
           color: #555;
           font-size: 12px;
+          font-weight: 600;
         }
 
         /* 1x2 — horizontal 3 badges */
@@ -284,7 +322,7 @@ const JackpotFixturesTable = ({
 
           .jp-card-grid {
             display: grid;
-            grid-template-columns: 18px 1fr 30px 40px 50px 44px;
+            grid-template-columns: 18px 1fr 50px 40px 50px 44px;
             align-items: center;
             gap: 3px;
           }
@@ -324,8 +362,13 @@ const JackpotFixturesTable = ({
             gap: 2px;
           }
 
-          .mc-score {
+          .mc-score-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
             font-size: 11px;
+            font-weight: 600;
             color: #555;
           }
 
@@ -412,7 +455,7 @@ const JackpotFixturesTable = ({
                   <th style={{ width: 30 }}>#</th>
                   {showDateColumn && <th style={{ width: 85 }}>Date</th>}
                   <th className="th-teams">Teams</th>
-                  <th>Scores</th>
+                  <th>Score</th>
                   <th>1x2</th>
                   <th>Preds</th>
                   <th>Odds</th>
@@ -433,6 +476,9 @@ const JackpotFixturesTable = ({
                   const homeOdd = fixture.bets_home || null;
                   const drawOdd = fixture.bets_draw || null;
                   const awayOdd = fixture.bets_away || null;
+
+                  // Win/lost icon — only when real scores are available
+                  const resultIcon = getResultIcon(pred1x2, predDC, scores.home, scores.away);
 
                   return (
                     <tr key={fixture.fixture_id || index} className="fixture-row">
@@ -455,8 +501,14 @@ const JackpotFixturesTable = ({
                         </div>
                       </td>
                       <td className="td-scores">
-                        <div className="score-line">{String(scores.home)}</div>
-                        <div className="score-line">{String(scores.away)}</div>
+                        <div className="score-line">
+                          {resultIcon ? (
+                            <>
+                              {scores.home} : {scores.away}
+                              {resultIcon}
+                            </>
+                          ) : (scores.home !== "-" ? `${scores.home} : ${scores.away}` : <span style={{ color: '#aaa' }}>-</span>)}
+                        </div>
                       </td>
                       <td className="td-1x2">
                         <div className="pct-row">
@@ -509,6 +561,9 @@ const JackpotFixturesTable = ({
                 const drawOdd = fixture.bets_draw || null;
                 const awayOdd = fixture.bets_away || null;
 
+                // Win/lost icon — only when real scores are available
+                const resultIcon = getResultIcon(pred1x2, predDC, scores.home, scores.away);
+
                 return (
                   <div key={fixture.fixture_id || index} className="jp-card">
                     <div className="jp-card-grid">
@@ -526,8 +581,14 @@ const JackpotFixturesTable = ({
                       </div>
 
                       <div className="mc-scores">
-                        <span className="mc-score">{String(scores.home)}</span>
-                        <span className="mc-score">{String(scores.away)}</span>
+                        <div className="mc-score-line">
+                          {resultIcon ? (
+                            <>
+                              {scores.home} : {scores.away}
+                              {resultIcon}
+                            </>
+                          ) : (scores.home !== "-" ? `${scores.home} : ${scores.away}` : <span style={{ color: '#aaa' }}>-</span>)}
+                        </div>
                       </div>
 
                       <div className="mc-pcts">

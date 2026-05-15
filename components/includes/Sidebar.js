@@ -179,7 +179,7 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
         </div>
         <div className="sidebar-scroll-content">
           <div className="sidebar-section">
-            <div className="section-header">📌 NAVIGATION</div>
+            <div className="section-header">📌 QUICK LINKS</div>
             <div className="nav-links-list">
               {[1,2,3,4,5,6].map(i => <div key={i} className="skeleton-row" />)}
             </div>
@@ -215,7 +215,7 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
         <div className="sidebar-scroll-content">
           {/* ===== NAVIGATION SECTION ===== */}
           <div className="sidebar-section mobile-only">
-            <div className="section-header">📌 NAVIGATION</div>
+            <div className="section-header">📌 QUICK LINKS</div>
             <div className="nav-links-list">
               {navLinks.map((link) => (
                 <Link

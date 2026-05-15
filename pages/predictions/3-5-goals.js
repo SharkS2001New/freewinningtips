@@ -8,7 +8,7 @@ export default function Over15Games({ fixtures }) {
     <div className="page-root">
         {/* MAIN CONTENT - FIXTURES ROW (Reusable Component) */}
         <div className="container-main">
-          <FixturesRow fixtures={fixtures} />
+          <FixturesRow fixtures={fixtures} predictionType="3-5-goals"/>
         </div>
 
         {/* SEO CONTENT */}
