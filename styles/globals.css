@@ -31,6 +31,88 @@ body {
 }
 
 /* ============================================ */
+/* LAYOUT WRAPPER - FLEX/GRID BASED (No Bootstrap Columns) */
+/* ============================================ */
+
+.layout-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  min-width: 0; /* Prevents flex overflow */
+  width: 100%;
+}
+
+/* Sidebar Wrapper */
+.sidebar-wrapper {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+/* Sidebar Container - Adds top spacing like Bootstrap */
+.sidebar-container {
+  position: sticky;
+  top: 20px;
+}
+
+/* Full width when no sidebar */
+.main-content.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive for Tablet */
+@media (max-width: 1024px) {
+  .layout-wrapper {
+    gap: 20px;
+  }
+  
+  .sidebar-wrapper {
+    width: 280px;
+  }
+}
+
+/* Mobile - Stack layout */
+@media (max-width: 768px) {
+  .layout-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .sidebar-wrapper {
+    width: 100%;
+  }
+  
+  .sidebar-container {
+    position: static;
+    top: auto;
+  }
+  
+  .main-content {
+    width: 100%;
+  }
+}
+
+/* Ensure ads don't break layout */
+.main-content :global(ins.adsbygoogle) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Fix for any ad containers */
+.main-content :global(.adsbygoogle) {
+  max-width: 100%;
+}
+
+
+/* ============================================ */
 /* TOP BAR */
 /* ============================================ */
 .top-bar {

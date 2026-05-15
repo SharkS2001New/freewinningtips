@@ -99,31 +99,29 @@ function App({ Component, pageProps }) {
       <div>
         {/* Page Title */}
         {meta_content_data[3] != null && (
-          <div className="d-flex flex-wrap justify-content-center pb-1 pt-2" style={{ backgroundColor: "#05386B", color: "white", fontWeight: "bold" }}>
+          <div className="d-flex flex-wrap justify-content-center pb-1 pt-2" style={{ color: "black", fontWeight: "bold" }}>
             <h1 className="h1headerTitle">{meta_content_data[3]}</h1>
           </div>
         )}
         
         <div className="container-mob desktop-container-resize">
-          <div className="d-flex" id="wrapper">
-            <div id="page-content-wrapper" style={{ width: '100%' }}>
-              <div className="row">
-                {/* Main Content Column - full width on auth pages, 9 cols otherwise */}
-                <div className={`${isAuthPage ? "col-lg-12 col-md-12 col-12" : "col-lg-9 col-md-9 col-12"}`}>
-                  <Subnavbar/>
-                  <div style={{ marginTop: "0px" }}>
-                    <Component {...pageProps} />
-                  </div>
-                </div>
-                
-                {/* Sidebar Column - ONLY hidden on auth pages and blog */}
-                {shouldShowSidebar && (
-                  <div className="col-lg-3 col-md-3 col-12 sidebar-sticky-column">
-                    <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
-                  </div>
-                )}
+          <div className="layout-wrapper">
+            {/* Main Content Area */}
+            <div className={`main-content ${isAuthPage || !shouldShowSidebar ? 'full-width' : ''}`}>
+              <Subnavbar/>
+              <div style={{ marginTop: "0px" }}>
+                <Component {...pageProps} />
               </div>
             </div>
+            
+            {/* Sidebar - Only shown when needed */}
+            {shouldShowSidebar && (
+              <div className="sidebar-wrapper">
+                <div className="sidebar-container">
+                  <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+                </div>
+              </div>
+            )}
           </div>
         </div>
         
