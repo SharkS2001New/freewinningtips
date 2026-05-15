@@ -1,5 +1,4 @@
 // components/Footer.js
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 function Footer() {
@@ -32,9 +31,9 @@ function Footer() {
 
       {/* ── TOP NAV: About | Contact | Blog ── */}
       <div className="footer-top-nav">
-        <Link href="/about-us" className="footer-top-link">About</Link>
-        <Link href="/contact-us" className="footer-top-link">Contact</Link>
-        <Link href="/blog" className="footer-top-link">Blog</Link>
+        <a href="/about-us" className="footer-top-a">About</a>
+        <a href="/contact-us" className="footer-top-a">Contact</a>
+        <a href="/blog" className="footer-top-a">Blog</a>
       </div>
 
       {/* ── COPYRIGHT ── */}
@@ -46,7 +45,7 @@ function Footer() {
           <a href="https://www.pitchpredictions.com" target="_blank" rel="noopener noreferrer">PitchPredictions.com</a> |{' '}
           <a href="https://www.betsassured.com" target="_blank" rel="noopener noreferrer">Betsassured.com</a> |{' '}
           <a href="https://windrawtips.com" target="_blank" rel="noopener noreferrer">Windrawtips.com</a> |{' '}
-          <a href="/our-partners" className="footer-partner-link">Our Partners</a>
+          <a href="/our-partners" className="footer-partner-a">Our Partners</a>
         </p>
       </div>
 
@@ -98,28 +97,28 @@ function Footer() {
         </div>
       </div>
 
-      {/* ── LEGAL LINKS ── */}
+      {/* ── LEGAL aS ── */}
       <div className="footer-legal-row">
-        <Link href="/our-terms-and-conditions" className="footer-legal-link">T&amp;C</Link>
+        <a href="/our-terms-and-conditions" className="footer-legal-a">T&amp;C</a>
         <span className="footer-sep">|</span>
-        <Link href="/our-privacy-policy" className="footer-legal-link">Privacy Policy</Link>
+        <a href="/our-privacy-policy" className="footer-legal-a">Privacy Policy</a>
         <span className="footer-sep">|</span>
-        <Link href="/payment-methods" className="footer-legal-link">Payment Methods</Link>
+        <a href="/payment-methods" className="footer-legal-a">Payment Methods</a>
         <span className="footer-sep">|</span>
-        <Link href="/sitemaps" className="footer-legal-link">Sitemap</Link>
+        <a href="/sitemaps" className="footer-legal-a">Sitemap</a>
       </div>
 
       {/* ── RESPONSIBLE GAMBLING ── */}
       <div className="footer-gamble-row">
-        <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-link">
+        <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-a">
           Safer. Better. Together
         </a>
         <span className="footer-sep">|</span>
-        <a href="https://www.gambleaware.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-link">
+        <a href="https://www.gambleaware.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-a">
           GambleAware
         </a>
         <span className="footer-sep">|</span>
-        <a href="https://www.gamblingtherapy.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-link">
+        <a href="https://www.gamblingtherapy.org" target="_blank" rel="noopener noreferrer" className="footer-gamble-a">
           GamblingTherapy
         </a>
       </div>
@@ -136,7 +135,7 @@ function Footer() {
           href="https://www.begambleaware.org"
           target="_blank"
           rel="nofollow noopener noreferrer"
-          className="footer-warn-link"
+          className="footer-warn-a"
         >
           BeGambleAware.org
         </a>{' '}

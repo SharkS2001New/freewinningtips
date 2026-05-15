@@ -29,7 +29,7 @@ function App({ Component, pageProps }) {
   
   // Excluded routes where sidebar should NOT be shown
   const excludedRoutes = ["/blog"];
-  const shouldShowSidebar = !excludedRoutes.includes(path) && !isAuthPage;
+  const shouldShowSidebar = !isAuthPage; //!excludedRoutes.includes(path) &&
 
   // Close sidebar on route change
   useEffect(() => {
