@@ -1,7 +1,7 @@
 // components/FixturesRow.js
 import { useState } from 'react';
 
-// Import the prediction functions (make sure these paths are correct)
+// Import the prediction functions
 import DoubleChanceWinningTeam from "../functions/double_chance_winning_team_and_odd";
 import WinningTeamPred1x2 from "../functions/determine_winning_team_and_odd";
 import ComputeFixtureAverage from "../functions/ComputefixtureAverage";
@@ -41,7 +41,7 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
   const hasScore = homeScore !== '' && awayScore !== '';
   const matchStatus = fixture.status_short || (hasScore ? 'FT' : 'NS');
 
-  // Calculate predictions using the same logic as your original code
+  // Calculate predictions
   const winningtip = WinningTeamPred1x2(
     fixture.percent_pred_home,
     fixture.percent_pred_draw,
@@ -69,12 +69,12 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
 
   const winning_team_probs = UnderOverWinningTeamAndOdd(fixturesAverage, false);
 
-  // Determine which tip to show based on predictionType
+  // Determine which tip to show
   let tipText = '';
   let tipOdds = '-';
   let tipProb = '74';
+  let tipResult = null;
 
-  // Helper: ensure odds is always a plain string, never JSX or undefined
   const safeOdds = (val) => {
     if (!val || (typeof val !== 'string' && typeof val !== 'number')) return '-';
     return String(val);
@@ -85,6 +85,7 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
       tipText = doubleChancewinningTip[0];
       tipOdds = safeOdds(doubleChancewinningTip[1] || fixture.bets_home);
       tipProb = doubleChancewinningTip[2] || '65';
+      tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
       break;
 
     case '1-5-goals':
@@ -92,6 +93,7 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
         tipText = winning_team_probs + '1.5';
         tipOdds = safeOdds(fixture.bets_home);
         tipProb = winning_team_probs === "Over" ? '68' : '72';
+        tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
       } else {
         tipText = '-';
       }
@@ -102,6 +104,7 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
         tipText = winning_team_probs + '2.5';
         tipOdds = safeOdds(fixture.bets_home);
         tipProb = winning_team_probs === "Over" ? '65' : '70';
+        tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
       } else {
         tipText = '-';
       }
@@ -112,6 +115,7 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
         tipText = winning_team_probs + '3.5';
         tipOdds = safeOdds(fixture.bets_home);
         tipProb = winning_team_probs === "Over" ? '60' : '68';
+        tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
       } else {
         tipText = '-';
       }
@@ -121,18 +125,21 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
       tipText = fixture.both_team_to_score || 'GG';
       tipOdds = safeOdds(fixture.bets_home);
       tipProb = fixture.both_team_to_score_prob || '55';
+      tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
       break;
 
-    default: // 'all' or '1x2'
+    default:
       if ((fixturesAverage < 2.0 || fixturesAverage > 3.0) && fixturesAverage !== "-") {
         if (parseFloat(fixturesAverage) > 2.5) {
           tipText = "Over2.5";
           tipOdds = safeOdds(fixture.bets_home);
           tipProb = '68';
+          tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
         } else {
           tipText = "Under2.5";
           tipOdds = safeOdds(fixture.bets_home);
           tipProb = '72';
+          tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
         }
       } else {
         if ((winningtip[0] === "1" && parseFloat(fixture.percent_pred_home) < 49) ||
@@ -141,17 +148,22 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
           tipText = doubleChancewinningTip[0];
           tipOdds = safeOdds(doubleChancewinningTip[1] || fixture.bets_home);
           tipProb = doubleChancewinningTip[2] || '65';
+          tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
         } else {
           tipText = winningtip[0];
           tipOdds = safeOdds(winningtip[1] || fixture.bets_home);
           tipProb = winningtip[2] || '60';
+          tipResult = DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away);
         }
       }
       break;
   }
 
-  // Format time if no score
+  // Format time
   const matchTime = fixture.date ? fixture.date.split(' ')[1] : (fixture.kickoff_time || '19:00');
+
+  // Check if result icon should be shown (only for finished matches)
+  const showResultIcon = hasScore && tipResult;
 
   return (
     <div className="match-row">
@@ -163,15 +175,17 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
         </div>
       </div>
 
-      {/* CENTER: STATUS, SCORE or TIME, VS */}
+      {/* CENTER: TIME/SCORE */}
       <div className="match-center">
         {hasScore ? (
           <>
             <span className="match-status">{matchStatus}</span>
-            <span className="match-score">
-              {homeScore} - {awayScore}
-              {tipText && tipText !== '-' && DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away)}
-            </span>
+            <div className="match-score-wrapper">
+              <span className="match-score">
+                {homeScore} - {awayScore}
+              </span>
+              {showResultIcon && tipResult}
+            </div>
           </>
         ) : (
           <>
@@ -189,14 +203,14 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
         </div>
       </div>
 
-      {/* TIPS / ODDS / PROB BADGES */}
+      {/* BADGES - Mobile Friendly */}
       <div className="match-badges">
         <div className="badge-pill">
-          <span className="badge-label">TIPS</span>
+          <span className="badge-label">TIP</span>
           <span className="badge-val">{tipText}</span>
         </div>
         <div className="badge-pill">
-          <span className="badge-label">ODDS</span>
+          <span className="badge-label">ODD</span>
           <span className="badge-val">{tipOdds}</span>
         </div>
         <div className="badge-pill">
@@ -208,7 +222,7 @@ const MatchRow = ({ fixture, predictionType = 'all' }) => {
   );
 };
 
-// League Card Component (Collapsible)
+// League Card Component
 const LeagueCard = ({ league, fixtures, predictionType, defaultOpen = true }) => {
   const [open, setOpen] = useState(defaultOpen);
 
@@ -247,7 +261,6 @@ const LeagueCard = ({ league, fixtures, predictionType, defaultOpen = true }) =>
 
 // Main Fixtures Component
 const FixturesRow = ({ fixtures, emptyMessage = "No predictions available for today. Check back soon!", predictionType = 'all' }) => {
-  // Group fixtures by league
   const groupByLeague = (fixturesList) => {
     const map = new Map();
     fixturesList.forEach(f => {

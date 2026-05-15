@@ -559,7 +559,7 @@ body {
   background: var(--white);
   border-radius: 14px;
   box-shadow: var(--shadow);
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border: 1px solid var(--border);
   overflow: hidden;
 }
@@ -781,6 +781,98 @@ body {
     padding-top: 0;
     border-top: none;
     justify-content: flex-end;
+  }
+}
+
+/* Match score wrapper */
+.match-score-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Ensure result icons are properly sized */
+.match-score-wrapper span:last-child {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile optimizations for match row */
+@media (max-width: 768px) {
+  .match-row {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+
+  .team-home, .team-away {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .match-center {
+    min-width: 80px;
+  }
+
+  .match-badges {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .badge-pill {
+    min-width: 70px;
+  }
+
+  .team-name {
+    font-size: 13px;
+  }
+
+  .form-dot {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-home, .team-away {
+    min-width: 100px;
+  }
+
+  .team-name {
+    font-size: 11px;
+  }
+
+  .match-time {
+    font-size: 12px;
+  }
+
+  .match-score {
+    font-size: 14px;
+  }
+
+  .badge-pill {
+    min-width: 60px;
+  }
+
+  .badge-pill .badge-val {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+
+  .badge-pill .badge-label {
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+
+  .form-dot {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
   }
 }
 
@@ -2824,3 +2916,252 @@ body {
   }
 }
 
+/* Add to your existing CSS - Mobile Optimizations for Small Screens */
+
+/* Fix for very small screens (344px width and similar) */
+@media (max-width: 380px) {
+  /* Logo resizing */
+  .logo-link img {
+    height: 28px !important;
+    width: auto;
+  }
+  
+  /* League header text size */
+  .league-header {
+    padding: 10px 12px !important;
+    font-size: 11px !important;
+  }
+  
+  .league-name {
+    font-size: 11px !important;
+    gap: 6px !important;
+  }
+  
+  .league-flag {
+    font-size: 14px !important;
+  }
+  
+  .league-chev {
+    font-size: 10px !important;
+  }
+  
+  /* Team names */
+  .team-name {
+    font-size: 10px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  /* Form dots */
+  .form-dot {
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 8px !important;
+  }
+  
+  .form-dots {
+    gap: 3px !important;
+  }
+  
+  /* Match center */
+  .match-center {
+    min-width: 60px !important;
+    gap: 3px !important;
+  }
+  
+  .match-time {
+    font-size: 10px !important;
+  }
+  
+  .match-vs {
+    font-size: 8px !important;
+  }
+  
+  .match-score {
+    font-size: 11px !important;
+  }
+  
+  .match-status {
+    font-size: 8px !important;
+    padding: 2px 6px !important;
+  }
+  
+  /* Result icons - smaller */
+  .match-score-wrapper span:last-child {
+    font-size: 11px !important;
+    margin-left: 2px !important;
+  }
+  
+  .match-result-icon {
+    width: 14px !important;
+    height: 14px !important;
+    font-size: 9px !important;
+  }
+  
+  /* Badges */
+  .match-badges {
+    gap: 6px !important;
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+  }
+  
+  .badge-pill {
+    min-width: 50px !important;
+  }
+  
+  .badge-pill .badge-label {
+    font-size: 7px !important;
+    padding: 3px 4px !important;
+  }
+  
+  .badge-pill .badge-val {
+    font-size: 9px !important;
+    padding: 4px 4px !important;
+  }
+  
+  /* Match row padding */
+  .match-row {
+    padding: 10px !important;
+    gap: 8px !important;
+  }
+  
+  /* Team containers */
+  .team-home, .team-away {
+    min-width: 85px !important;
+  }
+  
+  /* Hide form dots on extremely small screens if needed */
+  @media (max-width: 340px) {
+    .form-dots {
+      display: none !important;
+    }
+  }
+}
+
+/* For screens between 381px and 480px */
+@media (min-width: 381px) and (max-width: 480px) {
+  .logo-link img {
+    height: 32px !important;
+  }
+  
+  .league-header {
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+  }
+  
+  .team-name {
+    font-size: 11px !important;
+  }
+  
+  .form-dot {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 9px !important;
+  }
+  
+  .match-score {
+    font-size: 12px !important;
+  }
+  
+  .badge-pill {
+    min-width: 55px !important;
+  }
+  
+  .badge-pill .badge-val {
+    font-size: 9px !important;
+    padding: 4px 6px !important;
+  }
+}
+
+/* Fix for navbar on very small screens */
+@media (max-width: 400px) {
+  .navbar-inner {
+    gap: 5px !important;
+  }
+  
+  .hamburger-btn {
+    padding: 5px 8px !important;
+    font-size: 20px !important;
+    margin-right: 5px !important;
+  }
+  
+  .mobile-search-btn {
+    padding: 5px !important;
+    font-size: 18px !important;
+  }
+  
+  /* Hero section */
+  .hero-title {
+    font-size: 28px !important;
+  }
+  
+  .hero-sub {
+    font-size: 12px !important;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+  }
+
+  .team-away {
+    text-align: center !important;
+  }
+}
+
+/* Fix for win/loss icons specifically - ensure they don't overflow */
+.match-score-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  flex-wrap: nowrap !important;
+}
+
+.match-score-wrapper span:last-child {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Ensure green tick and red X are properly sized */
+[style*="color: green"], [style*="color: red"] {
+  font-size: inherit !important;
+}
+
+/* Override any inline styles for result icons on mobile */
+@media (max-width: 480px) {
+  .match-score-wrapper span[style*="color"] {
+    font-size: 11px !important;
+    width: auto !important;
+    height: auto !important;
+    margin-left: 2px !important;
+  }
+
+  .team-away {
+    text-align: center !important;
+  }
+}
+
+/* League card spacing */
+.league-card {
+  margin-bottom: 3px !important;
+}
+
+/* Hide some elements if needed on extremely small screens */
+@media (max-width: 320px) {
+  .stats-bar {
+    display: none !important;
+  }
+  
+  .hero {
+    padding: 30px 16px !important;
+  }
+  
+  .hero-badge {
+    font-size: 9px !important;
+    padding: 3px 10px !important;
+  }
+
+  .team-away {
+    text-align: center !important;
+  }
+}
