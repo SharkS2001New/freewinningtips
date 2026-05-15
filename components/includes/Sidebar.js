@@ -14,6 +14,7 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
   const [pinnedLeagues, setPinnedLeagues] = useState([]);
   const [otherLeagues, setOtherLeagues] = useState([]);
   const [openCountries, setOpenCountries] = useState({});
+  const [expandedCountries, setExpandedCountries] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(COUNTRIES_PER_PAGE);
 
@@ -125,6 +126,12 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
     setOpenCountries(prev => ({ ...prev, [name]: !prev[name] }));
   }, []);
 
+  // Toggle expanded leagues for a country
+  const toggleExpandLeagues = useCallback((countryName, e) => {
+    e.stopPropagation();
+    setExpandedCountries(prev => ({ ...prev, [countryName]: !prev[countryName] }));
+  }, []);
+
   /* ── load on mount ── */
   useEffect(() => {
     setMounted(true);
@@ -159,7 +166,7 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
   const leagueHref = l =>
     `/league/${l.league_name?.replace(/\s+/g, '-').toLowerCase()}-${l.league_id}`;
 
-  // Get top 5 popular leagues for display
+  // Get top 8 popular leagues for display
   const topPopularLeagues = popularLeaguesList.slice(0, 8);
 
   /* ── skeleton ── */
@@ -170,22 +177,24 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
           <span className="sidebar-logo">⚽ FreeWinningTips</span>
           <button className="sidebar-close" onClick={onClose}>×</button>
         </div>
-        <div className="sidebar-section">
-          <div className="section-header">📌 NAVIGATION</div>
-          <div className="nav-links-list">
-            {[1,2,3,4,5,6].map(i => <div key={i} className="skeleton-row" />)}
+        <div className="sidebar-scroll-content">
+          <div className="sidebar-section">
+            <div className="section-header">📌 NAVIGATION</div>
+            <div className="nav-links-list">
+              {[1,2,3,4,5,6].map(i => <div key={i} className="skeleton-row" />)}
+            </div>
           </div>
-        </div>
-        <div className="sidebar-section">
-          <div className="section-header">🏆 POPULAR LEAGUES</div>
-          <div className="leagues-list">
-            {[1,2,3,4,5,6].map(i => <div key={i} className="skeleton-row" />)}
+          <div className="sidebar-section">
+            <div className="section-header">🏆 POPULAR LEAGUES</div>
+            <div className="leagues-list">
+              {[1,2,3,4,5,6].map(i => <div key={i} className="skeleton-row" />)}
+            </div>
           </div>
-        </div>
-        <div className="sidebar-section">
-          <div className="section-header">🌍 COUNTRIES</div>
-          <div className="countries-list">
-            {[1,2,3,4,5,6].map(i => <div key={i} className="skeleton-row" />)}
+          <div className="sidebar-section">
+            <div className="section-header">🌍 COUNTRIES</div>
+            <div className="countries-list">
+              {[1,2,3,4,5,6].map(i => <div key={i} className="skeleton-row" />)}
+            </div>
           </div>
         </div>
       </aside>
@@ -195,122 +204,133 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
   /* ── full render ── */
   return (
     <>
-      {/* Overlay for mobile */}
       <div className={`sidebar-overlay ${isOpen ? 'active' : ''}`} onClick={onClose}></div>
       
       <aside className={`sidebar ${isOpen ? 'open' : ''}`} suppressHydrationWarning>
-        {/* Sidebar Header - ONLY SHOWS ON MOBILE */}
         <div className="sidebar-header">
           <span className="sidebar-logo">⚽ FreeWinningTips</span>
           <button className="sidebar-close" onClick={onClose}>×</button>
         </div>
 
-        {/* ===== NAVIGATION SECTION ===== */}
-        <div className="sidebar-section mobile-only">
-          <div className="section-header">📌 NAVIGATION</div>
-          <div className="nav-links-list">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`nav-link-item ${router.pathname === link.href ? 'active' : ''}`}
-                onClick={onClose}
-              >
-                <span className="nav-icon">{link.icon}</span>
-                <span className="nav-name">{link.name}</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* ===== POPULAR LEAGUES SECTION ===== */}
-        <div className="sidebar-section">
-          <div className="section-header">🏆 POPULAR LEAGUES</div>
-          <div className="leagues-list">
-            {topPopularLeagues.map((league, i) => (
-              <a 
-                key={i} 
-                href={leagueHref(league)} 
-                className="league-item" 
-                onClick={onClose}
-              >
-                {league.downloaded_country_flag
-                  ? <img src={league.downloaded_country_flag} alt={league.country_name} className="league-flag-img" loading="lazy" />
-                  : <span className="league-flag-placeholder">{getCountryCode(league.country_name)}</span>
-                }
-                <span className="league-name">{league.league_name}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* ===== COUNTRIES SECTION ===== */}
-        <div className="sidebar-section">
-          <div className="section-header">
-            🌍 COUNTRIES
-            <span className="country-count">
-              {Math.min(visibleCount, allCountryEntries.length)} / {allCountryEntries.length}
-            </span>
+        <div className="sidebar-scroll-content">
+          {/* ===== NAVIGATION SECTION ===== */}
+          <div className="sidebar-section mobile-only">
+            <div className="section-header">📌 NAVIGATION</div>
+            <div className="nav-links-list">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link-item ${router.pathname === link.href ? 'active' : ''}`}
+                  onClick={onClose}
+                >
+                  <span className="nav-icon">{link.icon}</span>
+                  <span className="nav-name">{link.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
 
-          <div className="countries-list">
-            {visibleCountryEntries.map(([countryName, countryData]) => (
-              <div key={countryName} className="country-group">
-                <div className="country-header" onClick={() => toggleCountry(countryName)}>
-                  <div className="country-info">
-                    {countryData.flag
-                      ? <img src={countryData.flag} alt={countryName} className="country-flag-img" loading="lazy" />
-                      : <span className="country-flag-placeholder">{getCountryCode(countryName)}</span>
-                    }
-                    <span className="country-name">{countryName}</span>
-                    <span className="country-league-count">{countryData.leagues.length} Leagues</span>
-                  </div>
-                  <span className="country-chevron">
-                    {openCountries[countryName] ? '▼' : '▶'}
-                  </span>
-                </div>
+          {/* ===== POPULAR LEAGUES SECTION ===== */}
+          <div className="sidebar-section">
+            <div className="section-header">🏆 POPULAR LEAGUES</div>
+            <div className="leagues-list">
+              {topPopularLeagues.map((league, i) => (
+                <a 
+                  key={i} 
+                  href={leagueHref(league)} 
+                  className="league-item" 
+                  onClick={onClose}
+                >
+                  {league.downloaded_country_flag
+                    ? <img src={league.downloaded_country_flag} alt={league.country_name} className="league-flag-img" loading="lazy" />
+                    : <span className="league-flag-placeholder">{getCountryCode(league.country_name)}</span>
+                  }
+                  <span className="league-name">{league.league_name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
 
-                {openCountries[countryName] && (
-                  <div className="country-leagues">
-                    {countryData.leagues.slice(0, 10).map((league, i) => (
-                      <a 
-                        key={i} 
-                        href={leagueHref(league)} 
-                        className="country-league-item" 
-                        onClick={onClose}
-                      >
-                        {league.league_name}
-                      </a>
-                    ))}
-                    {countryData.leagues.length > 10 && (
-                      <div className="more-leagues">+ {countryData.leagues.length - 10} more</div>
+          {/* ===== COUNTRIES SECTION ===== */}
+          <div className="sidebar-section">
+            <div className="section-header">
+              🌍 COUNTRIES
+              <span className="country-count">
+                {Math.min(visibleCount, allCountryEntries.length)} / {allCountryEntries.length}
+              </span>
+            </div>
+
+            <div className="countries-list">
+              {visibleCountryEntries.map(([countryName, countryData]) => {
+                const isExpanded = expandedCountries[countryName];
+                const leaguesToShow = isExpanded ? countryData.leagues : countryData.leagues.slice(0, 10);
+                const hasMoreLeagues = countryData.leagues.length > 10;
+                
+                return (
+                  <div key={countryName} className="country-group">
+                    <div className="country-header" onClick={() => toggleCountry(countryName)}>
+                      <div className="country-info">
+                        {countryData.flag
+                          ? <img src={countryData.flag} alt={countryName} className="country-flag-img" loading="lazy" />
+                          : <span className="country-flag-placeholder">{getCountryCode(countryName)}</span>
+                        }
+                        <span className="country-name">{countryName}</span>
+                        <span className="country-league-count">{countryData.leagues.length} Leagues</span>
+                      </div>
+                      <span className="country-chevron">
+                        {openCountries[countryName] ? '▼' : '▶'}
+                      </span>
+                    </div>
+
+                    {openCountries[countryName] && (
+                      <div className="country-leagues">
+                        {leaguesToShow.map((league, i) => (
+                          <a 
+                            key={i} 
+                            href={leagueHref(league)} 
+                            className="country-league-item" 
+                            onClick={onClose}
+                          >
+                            {league.league_name}
+                          </a>
+                        ))}
+                        {hasMoreLeagues && (
+                          <div 
+                            className="more-leagues"
+                            onClick={(e) => toggleExpandLeagues(countryName, e)}
+                          >
+                            {isExpanded ? '▲ Show Less Leagues' : `+ Show More Leagues (${countryData.leagues.length - 10})`}
+                          </div>
+                        )}
+                      </div>
                     )}
                   </div>
-                )}
-              </div>
-            ))}
+                );
+              })}
+            </div>
+
+            {hasMore && (
+              <button
+                className="load-more-btn"
+                onClick={() => setVisibleCount(c => c + COUNTRIES_PER_PAGE)}
+              >
+                Load More Countries
+              </button>
+            )}
+
+            {!hasMore && allCountryEntries.length > COUNTRIES_PER_PAGE && (
+              <button
+                className="load-more-btn load-less-btn"
+                onClick={() => {
+                  setVisibleCount(COUNTRIES_PER_PAGE);
+                  setOpenCountries({});
+                }}
+              >
+                ▲ Show Less Countries
+              </button>
+            )}
           </div>
-
-          {hasMore && (
-            <button
-              className="load-more-btn"
-              onClick={() => setVisibleCount(c => c + COUNTRIES_PER_PAGE)}
-            >
-              Load More Countries
-            </button>
-          )}
-
-          {!hasMore && allCountryEntries.length > COUNTRIES_PER_PAGE && (
-            <button
-              className="load-more-btn load-less-btn"
-              onClick={() => {
-                setVisibleCount(COUNTRIES_PER_PAGE);
-                setOpenCountries({});
-              }}
-            >
-              ▲ Show less
-            </button>
-          )}
         </div>
       </aside>
     </>

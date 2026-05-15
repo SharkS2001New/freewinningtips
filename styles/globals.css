@@ -992,8 +992,8 @@ body {
 
 .league-flag-img,
 .country-flag-img {
-  width: 24px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   object-fit: contain;
   border-radius: 3px;
 }
@@ -1889,6 +1889,23 @@ body {
   }
 }
 
+  /* More Leagues Button */
+  .more-leagues {
+    padding: 10px 12px;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    border-top: 1px dashed #e8edf2;
+    margin-top: 8px;
+    transition: all 0.2s;
+  }
+
+  .more-leagues:hover {
+    background: #e8f5e9;
+  }
+
 @media (max-width: 992px) {
   .nav-links {
     gap: 4px;
@@ -1991,23 +2008,54 @@ body {
   }
 
   /* Mobile Sidebar */
-  .sidebar {
+   .sidebar {
     position: fixed;
     top: 0;
     left: -100%;
     width: 85%;
     max-width: 320px;
-    height: 100vh;
+    height: 100vh; /* CRITICAL - must be set */
     background: #ffffff;
     z-index: 1002;
     transition: left 0.3s ease;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
   }
 
   .sidebar.open {
     left: 0;
+  }
+
+  /* Scrollable content wrapper */
+  .sidebar-scroll-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Custom scrollbar */
+  .sidebar-scroll-content::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .sidebar-scroll-content::-webkit-scrollbar-track {
+    background: #e8edf2;
+  }
+
+  .sidebar-scroll-content::-webkit-scrollbar-thumb {
+    background: #2e7d32;
+    border-radius: 4px;
+  }
+
+  .sidebar-header {
+    display: flex !important;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffffff;
+    flex-shrink: 0;
   }
 
   .sidebar-close {
@@ -2041,6 +2089,23 @@ body {
 
   .sidebar-header {
     display: flex !important;
+  }
+
+  /* More Leagues Button */
+  .more-leagues {
+    padding: 10px 12px;
+    color: #2e7d32;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    border-top: 1px dashed #e8edf2;
+    margin-top: 8px;
+    transition: all 0.2s;
+  }
+
+  .more-leagues:hover {
+    background: #e8f5e9;
   }
 
   .col-md-3.sidebar-sticky-column {
