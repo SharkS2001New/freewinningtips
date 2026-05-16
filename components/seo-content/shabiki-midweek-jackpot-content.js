@@ -72,7 +72,7 @@ const ShabikiJackpotContent = () => {
 
         <p>
           Our{" "}
-          <a href="https://freewinningtips.com/tipster-tips">tipster tips</a>{" "}
+          <a href="/tipster-tips">tipster tips</a>{" "}
           and expert analysis consider team form, injuries, statistics, and historical trends to improve accuracy.
         </p>
 

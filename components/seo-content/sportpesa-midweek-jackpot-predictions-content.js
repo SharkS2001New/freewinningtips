@@ -6,7 +6,7 @@ const SportpesaMidweekPageContent = () => {
         <h2>SportPesa Midweek Jackpot Predictions</h2>
         <p>
           FreeWinningTips provides you with{" "}
-          <a href="https://freewinningtips.com/jackpots/sportpesa-midweek-jackpot-predictions">
+          <a href="/jackpots/sportpesa-midweek-jackpot-predictions">
             SportPesa Midweek Jackpot predictions
           </a>. Our in-house team of professionals has extensive experience in jackpot predictions, including SportPesa.
         </p>
@@ -18,7 +18,7 @@ const SportpesaMidweekPageContent = () => {
         <h2>SportPesa Midweek Jackpot Prediction Today</h2>
         <p>
           Visit our site for{" "}
-          <a href="https://freewinningtips.com/jackpots/sportpesa-midweek-jackpot-predictions">
+          <a href="/jackpots/sportpesa-midweek-jackpot-predictions">
             SportPesa Midweek Jackpot prediction today
           </a>. You need to accurately predict 13 games in the SportPesa Midweek Jackpot.
         </p>
@@ -33,7 +33,7 @@ const SportpesaMidweekPageContent = () => {
 
         <p>
           We help you predict all 13 games in a 1X2 market combination. On our site, you will find the best{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">jackpot predictions</a> to help you enjoy the game with confidence.
+          <a href="/jackpot-predictions">jackpot predictions</a> to help you enjoy the game with confidence.
         </p>
 
         <h2>SportPesa Midweek Jackpot Bonus</h2>

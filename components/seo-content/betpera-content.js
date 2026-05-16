@@ -74,11 +74,11 @@ const BetperaPageContent = () => {
 
         <p>
           We offer both free and VIP{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">
+          <a href="/jackpot-predictions">
             jackpot predictions
           </a>{" "}
           for Betpera,{" "}
-          <a href="https://freewinningtips.com/predictions/betnumbers">
+          <a href="/predictions/betnumbers">
             Betnumbers
           </a>, Betika, SportPesa, and many others.
         </p>
@@ -102,7 +102,7 @@ const BetperaPageContent = () => {
 
         <p>
           Learn more about our{" "}
-          <a href="https://freewinningtips.com/vip-packages">
+          <a href="/free-vip-tips-today">
             VIP packages here
           </a>.
         </p>
@@ -124,13 +124,10 @@ const BetperaPageContent = () => {
         <h3>Do you offer predictions for tomorrow's matches?</h3>
         <p>
           Yes. We provide predictions for{" "}
-          <a href="https://freewinningtips.com/yesterdays-free-football-predictions">
+          <a href="/yesterdays-free-football-predictions">
             yesterday
-          </a>,{" "}
-          <a href="https://freewinningtips.com/">
-            today
-          </a>, and{" "}
-          <a href="https://freewinningtips.com/tomorrows-free-football-predictions">
+          </a>,today, and{" "}
+          <a href="/tomorrows-free-football-predictions">
             tomorrow's matches
           </a>.
         </p>

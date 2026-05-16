@@ -17,9 +17,9 @@ const BestFootballPredictionsPageContent = () => {
 
         <p>
           Explore our{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">jackpot predictions</a>,{" "}
+          <a href="/jackpot-predictions">jackpot predictions</a>,{" "}
           free tips, and{" "}
-          <a href="https://freewinningtips.com/vip-packages">VIP/premium predictions</a>{" "}
+          <a href="/free-vip-tips-today">VIP/premium predictions</a>{" "}
           for better betting results.
         </p>
 

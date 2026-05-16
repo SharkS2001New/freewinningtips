@@ -7,7 +7,7 @@ const FreeVipTipsTodayPageContent = () => {
         <p>
           FreeWinningTips offers football fans the best VIP football
           predictions. Our{" "}
-          <a href="https://freewinningtips.com/vip-packages">
+          <a href="/free-vip-tips-today">
             VIP package
           </a>{" "}
           is the best because the predictions are comprehensive and are based on
@@ -23,7 +23,7 @@ const FreeVipTipsTodayPageContent = () => {
         <h2>Correct Score VIP Prediction</h2>
         <p>
           Pundits can find correct score VIP prediction here at{" "}
-          <a href="https://freewinningtips.com/">
+          <a href="/">
             FreeWinningTips
           </a>.
           Our team of experts has prior experience in making correct score
@@ -78,7 +78,7 @@ const FreeVipTipsTodayPageContent = () => {
         <h2>Free VIP Tips Today</h2>
         <p>
           Our free VIP tips today are the most accurate and reliable{" "}
-          <a href="https://freewinningtips.com/tipster-tips">
+          <a href="/tipster-tips">
             tipster tips
           </a>{" "}
           in the market. This is because we have a seamless system that lets us

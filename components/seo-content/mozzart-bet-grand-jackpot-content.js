@@ -46,7 +46,7 @@ const MozzartBetGrandJackpotContent = () => {
 
         <p>
           Explore our{" "}
-          <a href="https://freewinningtips.com/vip-packages">VIP package</a>{" "}
+          <a href="/free-vip-tips-today">VIP package</a>{" "}
           for advanced predictions and deeper match analysis.
         </p>
 

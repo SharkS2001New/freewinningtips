@@ -18,7 +18,7 @@ const MozzartSuperDailyJackpotContent = () => {
 
         <p>
           We also provide{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">jackpot predictions</a>{" "}
+          <a href="/jackpot-predictions">jackpot predictions</a>{" "}
           based on statistical analysis for improved accuracy.
         </p>
 
@@ -74,7 +74,7 @@ const MozzartSuperDailyJackpotContent = () => {
         <p>
           Yes, we cover Cheerplex Mozzart jackpot predictions with detailed analysis from expert tipsters.
           You can also explore our{" "}
-          <a href="https://freewinningtips.com/tipster-tips">pro tipsters</a>{" "}
+          <a href="/tipster-tips">pro tipsters</a>{" "}
           or VIP packages for advanced insights.
         </p>
 

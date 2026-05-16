@@ -8,10 +8,10 @@ const DoubleChancePageContent = () => {
           FreeWinningTips is one of the most accurate and reliable platforms
           for football predictions and betting tips.
           We provide predictions for{" "}
-          <a href="https://freewinningtips.com/yesterdays-free-football-predictions">
+          <a href="/yesterdays-free-football-predictions">
             yesterday
           </a>, today, and{" "}
-          <a href="https://freewinningtips.com/tomorrows-free-football-predictions">
+          <a href="/tomorrows-free-football-predictions">
             tomorrow’s matches
           </a>.
         </p>
@@ -47,7 +47,7 @@ const DoubleChancePageContent = () => {
         <p>
           Our tips are data-driven and designed to improve your betting strategy.
           We also offer a{" "}
-          <a href="https://freewinningtips.com/vip-packages">
+          <a href="/free-vip-tips-today">
             VIP/Premium Package
           </a>{" "}
           that includes exclusive football predictions and advanced betting insights.
@@ -93,7 +93,7 @@ const DoubleChancePageContent = () => {
         <p>
           Our football betting tips today help users improve their chances of winning.
           Experienced{" "}
-          <a href="https://freewinningtips.com/tipster-tips">
+          <a href="/tipster-tips">
             pro tipsters
           </a>{" "}
           analyze football matches using real data and expert knowledge.

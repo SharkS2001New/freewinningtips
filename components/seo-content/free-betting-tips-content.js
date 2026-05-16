@@ -15,7 +15,7 @@ const FreeBettingTipsPageContent = () => {
         <p>
           We are the go-to platform for betting tips today. Our professional
           tipsters provide you with the winning{" "}
-          <a href="https://freewinningtips.com/tipster-tips">
+          <a href="/tipster-tips">
             tipster tips
           </a>{" "}
           that will position you to win the bet. Free Winning Tips provides you
@@ -43,7 +43,7 @@ const FreeBettingTipsPageContent = () => {
           you the tips that land you the mega cash prize. Free Winning tips
           covers football tips for local and international games. We also provide
           you with{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">
+          <a href="/jackpot-predictions">
             jackpot tips and predictions
           </a>.
         </p>
@@ -54,7 +54,7 @@ const FreeBettingTipsPageContent = () => {
           will revolutionize your football experience. When you check out our
           website you’ll find tip of the day, tipster tips, jackpot tips, free
           tips, and{" "}
-          <a href="https://freewinningtips.com/free-vip-tips-today">
+          <a href="/free-vip-tips-today">
             vip tips
           </a>.
           We keep you ahead of the game with our daily tips and insights.

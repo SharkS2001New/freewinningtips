@@ -5,11 +5,11 @@ const BothTeamsToScorePageContent = () => {
         <h2>GG/No GG Predictions</h2>
         <p>
           FreeWinningTips is the most accurate and reliable site for football predictions. We cover predictions for{" "}
-          <a href="https://freewinningtips.com/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
+          <a href="/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
             yesterday
           </a>
           , today, and{" "}
-          <a href="https://freewinningtips.com/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
+          <a href="/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
             tomorrow’s matches
           </a>
           . Our aim is to save you the time and energy it would take to analyze the fixtures. We have a team of experts who analyze the stats and other factors to deliver the surest predictions.
@@ -27,7 +27,7 @@ const BothTeamsToScorePageContent = () => {
 
         <p>
           Our tips are data-based so that you can bet with confidence. We provide our users with free winning tips for today’s matches. Additionally, we have a VIP package that will significantly transform how you bet. Once you subscribe to the{" "}
-          <a href="https://freewinningtips.com/vip-packages" target="_blank" rel="noopener noreferrer">
+          <a href="/free-vip-tips-today" target="_blank" rel="noopener noreferrer">
             VIP/premium package
           </a>
           , you’ll get exclusive tips and predictions conveniently delivered to your phone. Subscribe now to get winning tips today.
@@ -50,7 +50,7 @@ const BothTeamsToScorePageContent = () => {
         <h2>Football betting tips today</h2>
         <p>
           Pundits can rely on our football betting tips today to help them accelerate their chances of winning. Our{" "}
-          <a href="https://freewinningtips.com/tipster-tips" target="_blank" rel="noopener noreferrer">
+          <a href="/tipster-tips" target="_blank" rel="noopener noreferrer">
             pro tipsters
           </a>{" "}
           analyze the football matches to bring you tips based on reliable data and facts. We have a seamless system that helps us capture all the information we need to provide you with the most awesome football betting tips today. FreeWinningTips gets you nearer to your goal of winning than ever.

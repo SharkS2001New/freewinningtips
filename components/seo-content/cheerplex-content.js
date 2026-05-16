@@ -24,7 +24,7 @@ const CheerplexPageContent = () => {
 
         <p>
           Our{" "}
-          <a href="https://freewinningtips.com/tipster-tips">
+          <a href="/tipster-tips">
             top tipsters
           </a>{" "}
           and analysts provide valuable football insights to help improve your betting decisions.
@@ -37,16 +37,16 @@ const CheerplexPageContent = () => {
 
         <p>
           We also cover other football prediction markets including{" "}
-          <a href="https://freewinningtips.com/predictions/betnumbers">
+          <a href="/predictions/betnumbers">
             Betnumbers
           </a>,{" "}
-          <a href="https://freewinningtips.com/predictions/sunpel">
+          <a href="/predictions/sunpel">
             Sunpel
           </a>,{" "}
-          <a href="https://freewinningtips.com/predictions/mwanasoka">
+          <a href="/predictions/mwanasoka">
             Mwanasoka
           </a>,{" "}
-          <a href="https://freewinningtips.com/predictions/primatips">
+          <a href="/predictions/primatips">
             Primatips
           </a>, and many more.
         </p>
@@ -73,7 +73,7 @@ const CheerplexPageContent = () => {
         <h2>Cheerplex Midweek Jackpot Prediction Today</h2>
         <p>
           We offer free Cheerplex midweek{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">
+          <a href="/jackpot-predictions">
             jackpot predictions
           </a>{" "}
           for all users.

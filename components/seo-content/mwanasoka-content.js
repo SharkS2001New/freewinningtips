@@ -33,7 +33,7 @@ const MwanasokaPageContent = () => {
 
         <p>
           You can also explore our{" "}
-          <a href="https://freewinningtips.com/tip-of-the-day">
+          <a href="/tip-of-the-day">
             football tips
           </a>{" "}
           section for more daily betting insights.
@@ -64,7 +64,7 @@ const MwanasokaPageContent = () => {
         <h2>Mwanasoka Jackpot Prediction</h2>
         <p>
           We provide dependable{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">
+          <a href="/jackpot-predictions">
             Mwanasoka jackpot predictions
           </a>{" "}
           for popular football jackpot competitions.

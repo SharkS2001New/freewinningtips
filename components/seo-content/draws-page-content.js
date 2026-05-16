@@ -7,11 +7,11 @@ const DrawPageContent = () => {
         <p>
           FreeWinningTips is the most accurate and reliable site for football predictions.
           We cover predictions for{" "}
-          <a href="https://freewinningtips.com/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
+          <a href="/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
             yesterday
           </a>
           , today, and{" "}
-          <a href="https://freewinningtips.com/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
+          <a href="/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
             tomorrow’s matches
           </a>
           . Our aim is to save you the time and energy it would take to analyze the fixtures.
@@ -35,7 +35,7 @@ const DrawPageContent = () => {
         <p>
           Our tips are data-based so that you can bet with confidence. We provide free winning tips for today’s matches.
           Additionally, we have a{" "}
-          <a href="https://freewinningtips.com/vip-packages" target="_blank" rel="noopener noreferrer">
+          <a href="/free-vip-tips-today" target="_blank" rel="noopener noreferrer">
             VIP/premium package
           </a>{" "}
           that delivers exclusive predictions directly to your phone.
@@ -62,7 +62,7 @@ const DrawPageContent = () => {
         <p>
           Pundits rely on our football betting tips to improve their chances of winning.
           Our{" "}
-          <a href="https://freewinningtips.com/tipster-tips" target="_blank" rel="noopener noreferrer">
+          <a href="/tipster-tips" target="_blank" rel="noopener noreferrer">
             pro tipsters
           </a>{" "}
           analyze matches using reliable data and insights to provide accurate predictions.

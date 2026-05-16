@@ -70,7 +70,7 @@ const Tips180PageContent = () => {
           <li>Betpesa Mega Jackpot</li>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/liobet"
+              href="/predictions/liobet"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -79,7 +79,7 @@ const Tips180PageContent = () => {
           </li>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/primatips"
+              href="/predictions/primatips"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -88,7 +88,7 @@ const Tips180PageContent = () => {
           </li>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/betnumbers"
+              href="/predictions/betnumbers"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -172,7 +172,7 @@ const Tips180PageContent = () => {
         <p>
           We also provide a{" "}
           <a
-            href="https://freewinningtips.com/tip-of-the-day"
+            href="/tip-of-the-day"
             target="_blank"
             rel="noopener noreferrer"
           >

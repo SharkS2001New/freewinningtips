@@ -39,7 +39,7 @@ const SokafansPageContent = () => {
         <h2>Sokafans Mega Jackpot Prediction</h2>
         <p>
           We offer accurate and reliable{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">
+          <a href="/jackpot-predictions">
             Sokafans mega jackpot predictions
           </a>{" "}
           to our users. Our in-depth analysis helps improve your chances of winning big jackpots.

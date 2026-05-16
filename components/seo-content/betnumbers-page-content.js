@@ -24,37 +24,37 @@ const BetnumbersPageContent = () => {
 
         <ul>
           <li>
-            <a href="https://freewinningtips.com/predictions/zulubet">
+            <a href="/predictions/zulubet">
               Zulubet predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/jackpot-predictions">
+            <a href="/jackpot-predictions">
               Jackpot predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/mwanasoka">
+            <a href="/predictions/mwanasoka">
               Mwanasoka prediction
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/supatips">
+            <a href="/predictions/supatips">
               Supatips prediction
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/freesupertips">
+            <a href="/predictions/freesupertips">
               Freesupertips Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/predictz">
+            <a href="/predictions/predictz">
               Predictz Predictions
             </a>
           </li>
@@ -103,13 +103,13 @@ const BetnumbersPageContent = () => {
 
         <ul>
           <li>
-            <a href="https://freewinningtips.com/">
+            <a href="/">
               Today predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/tomorrows-free-football-predictions">
+            <a href="/tomorrows-free-football-predictions">
               Tomorrow predictions
             </a>
           </li>
@@ -296,7 +296,7 @@ const BetnumbersPageContent = () => {
 
         <p>
           You can check out the{" "}
-          <a href="https://freewinningtips.com/tip-of-the-day">
+          <a href="/tip-of-the-day">
             Betnumbers bet of the day
           </a>{" "}
           on our website.

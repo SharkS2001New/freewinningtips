@@ -33,7 +33,7 @@ const SunpelPageContent = () => {
         <p>
           We offer{" "}
           <a
-            href="https://freewinningtips.com/"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -56,7 +56,7 @@ const SunpelPageContent = () => {
           and football betting tips. We regularly update our website with the
           latest football insights for today and{" "}
           <a
-            href="https://freewinningtips.com/tomorrows-free-football-predictions"
+            href="/tomorrows-free-football-predictions"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -137,7 +137,7 @@ const SunpelPageContent = () => {
         <p>
           We also provide the{" "}
           <a
-            href="https://freewinningtips.com/tip-of-the-day"
+            href="/tip-of-the-day"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -170,7 +170,7 @@ const SunpelPageContent = () => {
         <ul>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/mwanasoka"
+              href="/predictions/mwanasoka"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -180,7 +180,7 @@ const SunpelPageContent = () => {
 
           <li>
             <a
-              href="https://freewinningtips.com/predictions/sokafans"
+              href="/predictions/sokafans"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -190,7 +190,7 @@ const SunpelPageContent = () => {
 
           <li>
             <a
-              href="https://freewinningtips.com/predictions/venasbet"
+              href="/predictions/venasbet"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -200,7 +200,7 @@ const SunpelPageContent = () => {
 
           <li>
             <a
-              href="https://freewinningtips.com/predictions/betnumbers"
+              href="/predictions/betnumbers"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -210,7 +210,7 @@ const SunpelPageContent = () => {
 
           <li>
             <a
-              href="https://freewinningtips.com/predictions/zulubet"
+              href="/predictions/zulubet"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -220,7 +220,7 @@ const SunpelPageContent = () => {
 
           <li>
             <a
-              href="https://freewinningtips.com/predictions/betpera"
+              href="/predictions/betpera"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -230,7 +230,7 @@ const SunpelPageContent = () => {
 
           <li>
             <a
-              href="https://freewinningtips.com/predictions/predictz"
+              href="/predictions/predictz"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -238,15 +238,6 @@ const SunpelPageContent = () => {
             </a>
           </li>
 
-          <li>
-            <a
-              href="https://freewinningtips.com/predictions/freesupertips"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Freesupertips Predictions
-            </a>
-          </li>
         </ul>
 
         <p>

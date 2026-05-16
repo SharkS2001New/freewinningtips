@@ -23,11 +23,11 @@ const LiobetPageContent = () => {
 
         <p>
           Our{" "}
-          <a href="https://freewinningtips.com/tipster-tips" target="_blank" rel="noopener noreferrer">
+          <a href="/tipster-tips" target="_blank" rel="noopener noreferrer">
             tipsters
           </a>{" "}
           provide updated insights and{" "}
-          <a href="https://freewinningtips.com" target="_blank" rel="noopener noreferrer">
+          <a href="" target="_blank" rel="noopener noreferrer">
             daily tips
           </a>{" "}
           to improve your betting strategy.
@@ -52,7 +52,7 @@ const LiobetPageContent = () => {
         <h2>Liobet Jackpot Prediction</h2>
         <p>
           Looking for{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions" target="_blank" rel="noopener noreferrer">
+          <a href="/jackpot-predictions" target="_blank" rel="noopener noreferrer">
             jackpot predictions
           </a>
           ? FreeWinningTips provides Liobet jackpot predictions for today, tomorrow, and past fixtures.

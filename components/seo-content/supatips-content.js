@@ -40,7 +40,7 @@ const SupatipsPageContent = () => {
         <p>
           We also provide accurate{" "}
           <a
-            href="https://freewinningtips.com/jackpot-predictions"
+            href="/jackpot-predictions"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -52,7 +52,7 @@ const SupatipsPageContent = () => {
         <ul>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/betnumbers-prediction"
+              href="/predictions/betnumbers-prediction"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -62,7 +62,7 @@ const SupatipsPageContent = () => {
           <li>Betika</li>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/predictz"
+              href="/predictions/predictz"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -71,7 +71,7 @@ const SupatipsPageContent = () => {
           </li>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/zulubet"
+              href="/predictions/zulubet"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -80,7 +80,7 @@ const SupatipsPageContent = () => {
           </li>
           <li>
             <a
-              href="https://freewinningtips.com/predictions/mwanasoka"
+              href="/predictions/mwanasoka"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -93,7 +93,7 @@ const SupatipsPageContent = () => {
           In addition to free predictions, we also provide premium football
           tips through our{" "}
           <a
-            href="https://freewinningtips.com/vip-packages"
+            href="/free-vip-tips-today"
             target="_blank"
             rel="noopener noreferrer"
           >

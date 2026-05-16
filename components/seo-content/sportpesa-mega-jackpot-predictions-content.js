@@ -41,31 +41,31 @@ const SportpesaMegaPageContent = () => {
 
         <ul>
           <li>
-            <a href="https://freewinningtips.com/jackpots/sportpesa-mega-jackpot-predictions">
+            <a href="/jackpots/sportpesa-mega-jackpot-predictions">
               SportPesa Mega Jackpot Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/jackpots/sportpesa-midweek-jackpot-predictions">
+            <a href="/jackpots/sportpesa-midweek-jackpot-predictions">
               SportPesa Midweek Jackpot Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/jackpots/mozzart-super-daily-jackpot-predictions">
+            <a href="/jackpots/mozzart-super-daily-jackpot-predictions">
               Mozzart Super Daily Jackpot Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/jackpots/betika-midweek-jackpot-predictions">
+            <a href="/jackpots/betika-midweek-jackpot-predictions">
               Betika Midweek Jackpot Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/jackpots/shabiki-midweek-jackpot-predictions">
+            <a href="/jackpots/shabiki-midweek-jackpot-predictions">
               Shabiki Midweek Jackpot Predictions
             </a>
           </li>

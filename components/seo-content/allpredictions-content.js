@@ -39,7 +39,7 @@ const AllPredictionsPageContent = () => {
         <p>
           Our tips are data-driven, helping you bet with confidence. We also offer a VIP package that
           provides exclusive insights delivered directly to your phone. You can subscribe here:{" "}
-          <a href="https://freewinningtips.com/vip-packages">VIP/premium package</a>.
+          <a href="/free-vip-tips-today">VIP/premium package</a>.
         </p>
 
         <h2>Saturday Football Tips and Predictions</h2>
@@ -62,7 +62,7 @@ const AllPredictionsPageContent = () => {
         <p>
           Pundits rely on our football betting tips today to improve their chances of winning.
           Our{" "}
-          <a href="https://freewinningtips.com/tipster-tips">pro tipsters</a>{" "}
+          <a href="/tipster-tips">pro tipsters</a>{" "}
           analyze matches using reliable data and real-time updates.
         </p>
 

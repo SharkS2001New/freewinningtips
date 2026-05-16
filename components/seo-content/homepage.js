@@ -11,11 +11,11 @@ const HomepageContent = () => {
         </p>
         <p>
           FreeWinningTips is the most accurate and reliable site for football predictions. We cover predictions for{' '}
-          <a href="https://freewinningtips.com/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
+          <a href="/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
             yesterday
           </a>
           , today, and{' '}
-          <a href="https://freewinningtips.com/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
+          <a href="/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
             tomorrow’s matches
           </a>
           . Our aim is to save you the time and energy it would take to analyze the fixtures. We have a team of experts who analyze the stats and other factors to deliver the surest predictions. And if you want the best odds for our predictions, you can <a href="https://mybettingsites.com/ke/betting-sites-with-best-betting-odds">find bookies with the highest odds here</a>.

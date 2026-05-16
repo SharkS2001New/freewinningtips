@@ -24,7 +24,7 @@ const Page254SureTipsContent = () => {
 
         <p>
           We offer both free and VIP predictions. Our{" "}
-          <a href="https://freewinningtips.com/vip-packages">VIP package</a>{" "}
+          <a href="/free-vip-tips-today">VIP package</a>{" "}
           provides advanced insights to improve your betting outcomes.
         </p>
 
@@ -50,7 +50,7 @@ const Page254SureTipsContent = () => {
         <p>
           We specialize in jackpot predictions and have helped many users win.
           Explore our{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">jackpot tips and predictions</a>{" "}
+          <a href="/jackpot-predictions">jackpot tips and predictions</a>{" "}
           for a better betting experience.
         </p>
 

@@ -54,11 +54,11 @@ const AdibetPageContent = () => {
 
         <p>
           We also cover other prediction platforms including{" "}
-          <a href="https://freewinningtips.com/predictions/predictz">Predictz</a>,{" "}
-          <a href="https://freewinningtips.com/predictions/zulubet">Zulubet</a>,{" "}
-          <a href="https://freewinningtips.com/predictions/supatips">Supatips</a>,{" "}
-          <a href="https://freewinningtips.com/predictions/betnumbers-prediction">Betnumbers</a>, and{" "}
-          <a href="https://freewinningtips.com/predictions/liobet">Liobet</a>.
+          <a href="/predictions/predictz">Predictz</a>,{" "}
+          <a href="/predictions/zulubet">Zulubet</a>,{" "}
+          <a href="/predictions/supatips">Supatips</a>,{" "}
+          <a href="/predictions/betnumbers-prediction">Betnumbers</a>, and{" "}
+          <a href="/predictions/liobet">Liobet</a>.
         </p>
 
         <h2>Adibet Today Picks</h2>
@@ -107,7 +107,7 @@ const AdibetPageContent = () => {
         <h3>Can I access free Adibet predictions?</h3>
         <p>
           Yes. We offer free Adibet predictions as well as a{" "}
-          <a href="https://freewinningtips.com/vip-packages">VIP package</a>{" "}
+          <a href="/free-vip-tips-today">VIP package</a>{" "}
           for advanced insights.
         </p>
 

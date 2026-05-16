@@ -71,7 +71,7 @@ const ZulubetPageContent = () => {
 
         <p>
           Explore our{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">
+          <a href="/jackpot-predictions">
             Zulubet jackpot predictions
           </a>{" "}
           for more football betting opportunities.
@@ -101,62 +101,56 @@ const ZulubetPageContent = () => {
 
         <ul>
           <li>
-            <a href="https://freewinningtips.com/predictions/sokafans">
+            <a href="/predictions/sokafans">
               Sokafans Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/mwanasoka">
+            <a href="/predictions/mwanasoka">
               Mwanasoka Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/sunpel">
+            <a href="/predictions/sunpel">
               Sunpel Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/1960tips">
+            <a href="/predictions/1960tips">
               1960Tips Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/betnumbers">
+            <a href="/predictions/betnumbers">
               Betnumbers Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/tips180">
+            <a href="/predictions/tips180">
               Tips180 Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/betpera">
+            <a href="/predictions/betpera">
               Betpera Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/liobet">
+            <a href="/predictions/liobet">
               Liobet Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/predictz">
+            <a href="/predictions/predictz">
               Predictz Predictions
-            </a>
-          </li>
-
-          <li>
-            <a href="https://freewinningtips.com/predictions/freesupertips">
-              Freesupertips Predictions
             </a>
           </li>
         </ul>

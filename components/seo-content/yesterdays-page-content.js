@@ -3,7 +3,7 @@ const YesterdaysPageContent = () => {
     <section className="seo-section">
       <div className="seo-inner">
         <h2>Yesterday Football Predictions & Results</h2>
-        <p>Get football predictions for yesterday's games at FreeWinningTips. You can check the results of yesterday's matches and find out how our predictions fared for all the matches that took place yesterday. If you are a bettor who likes being armed with the facts for <a href="https://freewinningtips.com/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">yesterday's matches</a>, our platform is your best choice. We provide you with all the insights you need, including pro tips, predictions, and results, to increase your chances of success.</p>
+        <p>Get football predictions for yesterday's games at FreeWinningTips. You can check the results of yesterday's matches and find out how our predictions fared for all the matches that took place yesterday. If you are a bettor who likes being armed with the facts for <a href="/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">yesterday's matches</a>, our platform is your best choice. We provide you with all the insights you need, including pro tips, predictions, and results, to increase your chances of success.</p>
 
         <h3>Yesterday Football Prediction</h3>
         <p>We post all the results of yesterday's football predictions. Our predictions are from experts who carefully analyze the stats combined with other factors to deliver to you the surest predictions. In addition, we have pro tipsters who keep you on the path to winning with the most accurate and reliable tips.</p>

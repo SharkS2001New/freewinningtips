@@ -14,7 +14,7 @@ const BetikaMidweekPageContent = () => {
         <p>
           Our Betika midweek predictions are accurate and reliable. We have a team of experts
           combined with{" "}
-          <a href="https://freewinningtips.com/tipster-tips">pro tipsters</a>{" "}
+          <a href="/tipster-tips">pro tipsters</a>{" "}
           who critically analyze the 15 Betika jackpot matches.
         </p>
 
@@ -42,7 +42,7 @@ const BetikaMidweekPageContent = () => {
 
         <p>
           You can also explore our{" "}
-          <a href="https://freewinningtips.com/vip-packages">VIP package</a>{" "}
+          <a href="/free-vip-tips-today">VIP package</a>{" "}
           for enhanced insights and exclusive tips.
         </p>
 

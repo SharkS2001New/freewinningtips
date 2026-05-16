@@ -36,7 +36,7 @@ const VenasbetPageContent = () => {
 
         <p>
           Learn more about{" "}
-          <a href="https://freewinningtips.com/about-us">
+          <a href="/about-us">
             Free Winning Tips
           </a>{" "}
           and how we help football fans make informed betting decisions.
@@ -111,11 +111,11 @@ const VenasbetPageContent = () => {
 
         <p>
           You can also explore our{" "}
-          <a href="https://freewinningtips.com/tipster-tips">
+          <a href="/tipster-tips">
             tipster tips
           </a>{" "}
           and{" "}
-          <a href="https://freewinningtips.com/jackpot-predictions">
+          <a href="/jackpot-predictions">
             jackpot predictions
           </a>{" "}
           sections for additional football betting insights.
@@ -129,19 +129,19 @@ const VenasbetPageContent = () => {
           <li>Betpawa Jackpot Predictions</li>
           <li>Betlion Goliath Jackpot Predictions</li>
           <li>
-            <a href="https://freewinningtips.com/predictions/mwanasoka">
+            <a href="/predictions/mwanasoka">
               Mwanasoka Jackpot Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/betnumbers">
+            <a href="/predictions/betnumbers">
               Betnumbers Jackpot Predictions
             </a>
           </li>
 
           <li>
-            <a href="https://freewinningtips.com/predictions/zulubet">
+            <a href="/predictions/zulubet">
               Zulubet Jackpot Predictions
             </a>
           </li>
@@ -207,7 +207,7 @@ const VenasbetPageContent = () => {
         <p>
           Absolutely. FreeWinningTips offers free Venasbet predictions daily.
           We also provide a{" "}
-          <a href="https://freewinningtips.com/vip-packages">
+          <a href="/free-vip-tips-today">
             VIP package
           </a>{" "}
           with premium football tips and exclusive betting insights.

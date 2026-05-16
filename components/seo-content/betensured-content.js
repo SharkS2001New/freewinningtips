@@ -25,11 +25,11 @@ const BetensuredPageContent = () => {
 
         <p>
           We also provide predictions for{" "}
-          <a href="https://freewinningtips.com/yesterdays-free-football-predictions">
+          <a href="/yesterdays-free-football-predictions">
             yesterday’s matches
           </a>{" "}
           and{" "}
-          <a href="https://freewinningtips.com/tomorrows-free-football-predictions">
+          <a href="/tomorrows-free-football-predictions">
             tomorrow’s fixtures
           </a>.
         </p>
@@ -42,9 +42,9 @@ const BetensuredPageContent = () => {
 
         <p>
           We update predictions daily across all leagues and also offer a{" "}
-          <a href="https://freewinningtips.com/tipster-tips">pro tipsters section</a>{" "}
+          <a href="/tipster-tips">pro tipsters section</a>{" "}
           and{" "}
-          <a href="https://freewinningtips.com/vip-packages">VIP package</a>{" "}
+          <a href="/free-vip-tips-today">VIP package</a>{" "}
           for advanced insights.
         </p>
 
@@ -58,10 +58,10 @@ const BetensuredPageContent = () => {
           Other jackpot prediction pages include:
         </p>
         <ul>
-          <li><a href="https://freewinningtips.com/jackpot-predictions">Mwanasoka Mega Jackpot Predictions</a></li>
-          <li><a href="https://freewinningtips.com/predictions/predictz">Predictz Jackpot Prediction</a></li>
+          <li><a href="/jackpot-predictions">Mwanasoka Mega Jackpot Predictions</a></li>
+          <li><a href="/predictions/predictz">Predictz Jackpot Prediction</a></li>
           <li>Shabiki Jackpot Prediction</li>
-          <li><a href="https://freewinningtips.com/predictions/cheerplex">Cheerplex Mega Jackpot</a></li>
+          <li><a href="/predictions/cheerplex">Cheerplex Mega Jackpot</a></li>
         </ul>
 
         <h2>Betensured GG Predictions</h2>
