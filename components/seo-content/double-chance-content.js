@@ -89,16 +89,6 @@ const DoubleChancePageContent = () => {
           to provide accurate football betting tips.
         </p>
 
-        <h2>Football Betting Tips Today</h2>
-        <p>
-          Our football betting tips today help users improve their chances of winning.
-          Experienced{" "}
-          <a href="/tipster-tips">
-            pro tipsters
-          </a>{" "}
-          analyze football matches using real data and expert knowledge.
-        </p>
-
         <p>
           We use advanced systems to gather match statistics,
           analyze trends, and deliver reliable betting predictions daily.

@@ -47,15 +47,6 @@ const BothTeamsToScorePageContent = () => {
           You can check out our website for the best football prediction today. We are the best because we depend on stats to bring you the winning tips and predictions. We also have an experienced team of experts who pay attention to every factor and detail so you can bet confidently.
         </p>
 
-        <h2>Football betting tips today</h2>
-        <p>
-          Pundits can rely on our football betting tips today to help them accelerate their chances of winning. Our{" "}
-          <a href="/tipster-tips" target="_blank" rel="noopener noreferrer">
-            pro tipsters
-          </a>{" "}
-          analyze the football matches to bring you tips based on reliable data and facts. We have a seamless system that helps us capture all the information we need to provide you with the most awesome football betting tips today. FreeWinningTips gets you nearer to your goal of winning than ever.
-        </p>
-
         <h2>Best football tips for today</h2>
         <p>
           You can eliminate the high betting risks by looking at our football tips today. Our site is renowned for offering the best football tips for today. We stay abreast of all the changes that occur, including last-minute changes, to bring you the winning football tips today.

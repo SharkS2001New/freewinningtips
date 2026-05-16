@@ -58,14 +58,6 @@ const AllPredictionsPageContent = () => {
           We focus on accuracy and consistency to help you make better betting decisions.
         </p>
 
-        <h2>Football Betting Tips Today</h2>
-        <p>
-          Pundits rely on our football betting tips today to improve their chances of winning.
-          Our{" "}
-          <a href="/tipster-tips">pro tipsters</a>{" "}
-          analyze matches using reliable data and real-time updates.
-        </p>
-
         <p>
           We ensure you receive timely and accurate betting tips so you can stay ahead of the game.
         </p>

@@ -13,9 +13,7 @@ const BetikaMidweekPageContent = () => {
         <h2>Betika Midweek Predictions</h2>
         <p>
           Our Betika midweek predictions are accurate and reliable. We have a team of experts
-          combined with{" "}
-          <a href="/tipster-tips">pro tipsters</a>{" "}
-          who critically analyze the 15 Betika jackpot matches.
+          combined with pro tipsters who critically analyze the 15 Betika jackpot matches.
         </p>
 
         <p>

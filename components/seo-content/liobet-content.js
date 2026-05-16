@@ -21,18 +21,6 @@ const LiobetPageContent = () => {
           to deliver accurate predictions that help you make informed betting decisions.
         </p>
 
-        <p>
-          Our{" "}
-          <a href="/tipster-tips" target="_blank" rel="noopener noreferrer">
-            tipsters
-          </a>{" "}
-          provide updated insights and{" "}
-          <a href="" target="_blank" rel="noopener noreferrer">
-            daily tips
-          </a>{" "}
-          to improve your betting strategy.
-        </p>
-
         <h2>Liobet Tips</h2>
         <p>
           You can find Liobet tips on our site, prepared by experienced analysts with over five years of expertise.

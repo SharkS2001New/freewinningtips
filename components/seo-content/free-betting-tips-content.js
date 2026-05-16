@@ -11,18 +11,6 @@ const FreeBettingTipsPageContent = () => {
           predictions.
         </p>
 
-        <h2>Betting Tips Today</h2>
-        <p>
-          We are the go-to platform for betting tips today. Our professional
-          tipsters provide you with the winning{" "}
-          <a href="/tipster-tips">
-            tipster tips
-          </a>{" "}
-          that will position you to win the bet. Free Winning Tips provides you
-          with a range of tips that include: Betting tips 1x2, Over/under
-          predictions, correct score, gg tips, btts, and more.
-        </p>
-
         <h2>Betting Tips Free</h2>
         <p>
           Save time and increase your chances of winning with our betting tips

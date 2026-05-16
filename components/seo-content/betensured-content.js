@@ -41,9 +41,7 @@ const BetensuredPageContent = () => {
         </p>
 
         <p>
-          We update predictions daily across all leagues and also offer a{" "}
-          <a href="/tipster-tips">pro tipsters section</a>{" "}
-          and{" "}
+          We update predictions daily across all leagues and{" "}
           <a href="/free-vip-tips-today">VIP package</a>{" "}
           for advanced insights.
         </p>

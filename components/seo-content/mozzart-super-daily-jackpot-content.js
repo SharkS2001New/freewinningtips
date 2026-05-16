@@ -69,15 +69,7 @@ const MozzartSuperDailyJackpotContent = () => {
           Yes, the Mozzart daily jackpot includes bonus rewards. Correct predictions of multiple fixtures
           increase your chances of earning these bonuses.
         </p>
-
-        <h3>Do you cover Cheerplex Mozzart Jackpot predictions?</h3>
-        <p>
-          Yes, we cover Cheerplex Mozzart jackpot predictions with detailed analysis from expert tipsters.
-          You can also explore our{" "}
-          <a href="/tipster-tips">pro tipsters</a>{" "}
-          or VIP packages for advanced insights.
-        </p>
-
+        
         <h3>What are the Mozzart daily jackpot rules?</h3>
         <p>
           Each stake costs KES 20 per combination. Players can place multiple combinations,

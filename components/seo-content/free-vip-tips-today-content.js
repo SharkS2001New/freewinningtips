@@ -75,16 +75,6 @@ const FreeVipTipsTodayPageContent = () => {
           competitors.
         </p>
 
-        <h2>Free VIP Tips Today</h2>
-        <p>
-          Our free VIP tips today are the most accurate and reliable{" "}
-          <a href="/tipster-tips">
-            tipster tips
-          </a>{" "}
-          in the market. This is because we have a seamless system that lets us
-          access the latest stats.
-        </p>
-
         <p>
           Our in-house team has extensive experience in match analysis. Although
           no site can give you 100% VIP predictions, our predictions are more

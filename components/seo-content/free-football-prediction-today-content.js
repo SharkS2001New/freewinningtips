@@ -7,11 +7,7 @@ const FreeFootballPredictionsTodayPageContent = () => {
         <p>
           Freewinningtips is the best free football prediction site online. We
           offer both free and premium predictions to give you the best
-          predictions. We also have{" "}
-          <a href="/tipster-tips">
-            pro tipsters
-          </a>{" "}
-          who will help you craft a winning betting strategy with their pro tips
+          predictions. We also have pro tipsters who will help you craft a winning betting strategy with their pro tips
           that we offer for free.
         </p>
 

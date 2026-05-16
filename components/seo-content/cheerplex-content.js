@@ -23,14 +23,6 @@ const CheerplexPageContent = () => {
         </p>
 
         <p>
-          Our{" "}
-          <a href="/tipster-tips">
-            top tipsters
-          </a>{" "}
-          and analysts provide valuable football insights to help improve your betting decisions.
-        </p>
-
-        <p>
           We analyze factors such as team form, previous performance,
           injuries, tactics, and historical data to deliver accurate predictions.
         </p>

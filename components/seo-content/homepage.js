@@ -61,15 +61,6 @@ const HomepageContent = () => {
           You can check out our website for <b>everyday Winning tips.</b> We are the best because we depend on stats to bring you the winning tips and predictions. We also have an experienced team of experts who pay attention to every factor and detail so you can bet confidently <b>Daily 98 Winning Tips</b>.
         </p>
 
-        <h2>Football betting tips today</h2>
-        <p>
-          Pundits can rely on our football betting tips today to help them accelerate their chances of winning. Our{' '}
-          <a href="https://www.betsassured.com" target="_blank" rel="noopener noreferrer">
-            pro tipsters
-          </a>{' '}
-          analyze the football matches to bring you tips based on reliable data and facts. We have a seamless system that helps us capture all the information we need to provide you with the most awesome football betting tips today. FreeWinningTips gets you nearer to your goal of winning than ever.
-        </p>
-
         <h2>New Features on Freewinningtips.com</h2>
         <p><b>Daily Sure Wins</b></p>
         <p>Our <strong>daily sure wins</strong> section features handpicked games with the highest probability of success. These are perfect for bettors who want to win consistently without taking too much risk.</p>

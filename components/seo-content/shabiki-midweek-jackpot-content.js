@@ -70,12 +70,6 @@ const ShabikiJackpotContent = () => {
           Bonuses are awarded for correct predictions depending on the jackpot structure, including high-performance score ranges.
         </p>
 
-        <p>
-          Our{" "}
-          <a href="/tipster-tips">tipster tips</a>{" "}
-          and expert analysis consider team form, injuries, statistics, and historical trends to improve accuracy.
-        </p>
-
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ const Over35PageContent = () => {
 
             <h2>Football betting tips today</h2>
             <p>
-                Pundits can rely on our football betting tips today to help them accelerate their chances of winning. Our <a href="/tipster-tips" target="_blank" rel="noopener noreferrer">pro tipsters</a> analyze the football matches to bring you tips based on reliable data and facts. We have a seamless system that helps us capture all the information we need to provide you with the most awesome football betting tips today. FreeWinningTips gets you nearer to your goal of winning than ever.
+                Pundits can rely on our football betting tips today to help them accelerate their chances of winning. Our pro tipsters analyze the football matches to bring you tips based on reliable data and facts. We have a seamless system that helps us capture all the information we need to provide you with the most awesome football betting tips today. FreeWinningTips gets you nearer to your goal of winning than ever.
             </p>
 
             <h2>Best football tips for today</h2>

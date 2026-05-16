@@ -58,16 +58,6 @@ const DrawPageContent = () => {
           and expert evaluation to deliver accurate betting tips.
         </p>
 
-        <h2>Football Betting Tips Today</h2>
-        <p>
-          Pundits rely on our football betting tips to improve their chances of winning.
-          Our{" "}
-          <a href="/tipster-tips" target="_blank" rel="noopener noreferrer">
-            pro tipsters
-          </a>{" "}
-          analyze matches using reliable data and insights to provide accurate predictions.
-        </p>
-
         <p>
           FreeWinningTips helps you get closer to winning with structured, data-driven football betting tips.
         </p>
