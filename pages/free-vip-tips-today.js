@@ -1,24 +1,26 @@
+// pages/free-vip-tips-today.js (or wherever this page lives)
+import fs   from 'fs';
+import path from 'path';
+
 import FreeVipTipsTodayPageContent from '@/components/seo-content/free-vip-tips-today-content';
-import FixturesRow from '@/components/shared/FixturesRow';
+import FixturesRow                 from '@/components/shared/FixturesRow';
+
+// Shared cache config — must match pages/index.js exactly
+const CACHE_DIR    = path.join(process.cwd(), 'public', 'cache', 'pages-data');
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 function getFormattedCurrentDate() {
   const now = new Date();
-  const yyyy = now.getFullYear();
-  const mm = String(now.getMonth() + 1).padStart(2, '0');
-  const dd = String(now.getDate()).padStart(2, '0');
-  return `${yyyy}-${mm}-${dd}`;
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 }
 
 export default function VIPPackages({ fixtures, fetchDate }) {
   return (
     <>
       <div className="page-root">
-        {/* MAIN CONTENT - FIXTURES ROW (Reusable Component) */}
         <div className="container-main">
           <FixturesRow fixtures={fixtures} predictionType="all" />
         </div>
-
-        {/* SEO CONTENT */}
         <FreeVipTipsTodayPageContent />
       </div>
     </>
@@ -27,17 +29,64 @@ export default function VIPPackages({ fixtures, fetchDate }) {
 
 export async function getServerSideProps() {
   const fetchDate = getFormattedCurrentDate();
-  const url = `https://api.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`;
+  const cachePath = path.join(CACHE_DIR, `homepage_${fetchDate}.json`);
 
   let fixtures = [];
+
   try {
-    const res = await fetch(url);
+    // Ensure cache directory exists (homepage may not have run yet)
+    if (!fs.existsSync(CACHE_DIR)) {
+      fs.mkdirSync(CACHE_DIR, { recursive: true });
+    }
+
+    // --- Try shared cache first ---
+    if (fs.existsSync(cachePath)) {
+      const cache = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+      const age   = Date.now() - new Date(cache.generatedAt).getTime();
+
+      if (age <= CACHE_TTL_MS) {
+        return {
+          props: { fixtures: cache.data, fetchDate },
+        };
+      }
+
+      fs.unlinkSync(cachePath);
+    }
+
+    // --- Cache miss: fetch and populate for all pages ---
+    const res = await fetch(
+      `https://api.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`,
+      { headers: { Authorization: 'R9TxV3PbOEu7qZnJKgydC5LmX2' } }
+    );
+
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
     const data = await res.json();
+
     if (data.status === true && Array.isArray(data.data)) {
       fixtures = data.data;
+
+      const payload = JSON.stringify({
+        generatedAt: new Date().toISOString(),
+        fixtureDate: fetchDate,
+        data:        fixtures,
+        count:       fixtures.length,
+      }, null, 2);
+
+      const tmp = `${cachePath}.tmp.${Date.now()}`;
+      fs.writeFileSync(tmp, payload);
+      fs.renameSync(tmp, cachePath);
     }
+
   } catch (err) {
-    console.error('Failed to fetch predictions:', err);
+    console.error('[free-vip-tips] getServerSideProps error:', err.message);
+
+    // Fallback to expired cache rather than empty page
+    if (fs.existsSync(cachePath)) {
+      try {
+        fixtures = JSON.parse(fs.readFileSync(cachePath, 'utf8')).data || [];
+      } catch { /* corrupt cache — fixtures stays [] */ }
+    }
   }
 
   return {

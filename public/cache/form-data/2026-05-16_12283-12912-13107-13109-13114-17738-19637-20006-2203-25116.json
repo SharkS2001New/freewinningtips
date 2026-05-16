@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-05-16T19:39:43.431Z",
+  "fixtureDate": "2026-05-16",
+  "teamIds": "12283,12912,13107,13109,13114,17738,19637,20006,2203,25116",
+  "data": {
+    "2203": {
+      "form_string": "W L",
+      "form_array": [
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "12283": {
+      "form_string": "L D L L W W",
+      "form_array": [
+        "L",
+        "D",
+        "L",
+        "L",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "12912": {
+      "form_string": "W L L D",
+      "form_array": [
+        "W",
+        "L",
+        "L",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 4
+    },
+    "13107": {
+      "form_string": "W L",
+      "form_array": [
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "13109": {
+      "form_string": "D W D L W L",
+      "form_array": [
+        "D",
+        "W",
+        "D",
+        "L",
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "13114": {
+      "form_string": "L D",
+      "form_array": [
+        "L",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "17738": {
+      "form_string": "L D",
+      "form_array": [
+        "L",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "19637": {
+      "form_string": "D L D D L",
+      "form_array": [
+        "D",
+        "L",
+        "D",
+        "D",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 5
+    },
+    "20006": {
+      "form_string": "L L",
+      "form_array": [
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "25116": {
+      "form_string": "W W W L",
+      "form_array": [
+        "W",
+        "W",
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 4
+    }
+  }
+}

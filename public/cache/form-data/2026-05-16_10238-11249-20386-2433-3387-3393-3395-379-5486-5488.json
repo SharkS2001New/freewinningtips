@@ -1,0 +1,137 @@
+{
+  "generatedAt": "2026-05-16T19:39:32.526Z",
+  "fixtureDate": "2026-05-16",
+  "teamIds": "10238,11249,20386,2433,3387,3393,3395,379,5486,5488",
+  "data": {
+    "379": {
+      "form_string": "D W W W W W",
+      "form_array": [
+        "D",
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "2433": {
+      "form_string": "L W W D W D",
+      "form_array": [
+        "L",
+        "W",
+        "W",
+        "D",
+        "W",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "3387": {
+      "form_string": "W W W D L W",
+      "form_array": [
+        "W",
+        "W",
+        "W",
+        "D",
+        "L",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "3393": {
+      "form_string": "D L D L D L",
+      "form_array": [
+        "D",
+        "L",
+        "D",
+        "L",
+        "D",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "3395": {
+      "form_string": "L D L D L L",
+      "form_array": [
+        "L",
+        "D",
+        "L",
+        "D",
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "5486": {
+      "form_string": "L W W W D L",
+      "form_array": [
+        "L",
+        "W",
+        "W",
+        "W",
+        "D",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "5488": {
+      "form_string": "W W W W W W",
+      "form_array": [
+        "W",
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "10238": {
+      "form_string": "W L W L L W",
+      "form_array": [
+        "W",
+        "L",
+        "W",
+        "L",
+        "L",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "11249": {
+      "form_string": "L L L L W L",
+      "form_array": [
+        "L",
+        "L",
+        "L",
+        "L",
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "20386": {
+      "form_string": "W W L L W W",
+      "form_array": [
+        "W",
+        "W",
+        "L",
+        "L",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    }
+  }
+}
