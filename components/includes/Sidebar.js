@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import popularLeaguesData from '../../public/jsonfiles/popular-leagues.json';
 import otherLeaguesData from '../../public/jsonfiles/other-leagues.json';
+import { buildLeaguePath } from '@/components/functions/leagueUrl';
 
 const COUNTRIES_PER_PAGE = 10;
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
@@ -163,8 +164,8 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
     return map[name] || name.substring(0, 2).toUpperCase();
   };
 
-  const leagueHref = l =>
-    `/league/${l.league_name?.replace(/\s+/g, '-').toLowerCase()}-${l.league_id}`;
+  const leagueHref = (league) =>
+    buildLeaguePath(league.country_name, league.league_name, league.league_id);
 
   // Get top 8 popular leagues for display
   const topPopularLeagues = popularLeaguesList.slice(0, 8);

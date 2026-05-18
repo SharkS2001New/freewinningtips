@@ -58,6 +58,7 @@ function SitemapsPage() {
         <li><a href="/predictions/sokafans" className="no-underline">Sokafans Prediction</a></li>
         <li><a href="/predictions/mwanasoka" className="no-underline">Mwanasoka Prediction</a></li>
         <li><a href="/predictions/betpera" className="no-underline">Betpera Prediction</a></li>
+        <li><a href="/predictions/direct-win-predictions" className="no-underline">Direct Win Predictions</a></li>
         <li><a href="/predictions/venasbet" className="no-underline">Venasbet Prediction</a></li>
         <li><a href="/predictions/betnumbers-prediction" className="no-underline">BetNumbers Prediction</a></li>
         <li><a href="/predictions/zulubet" className="no-underline">Zulubet Prediction</a></li>

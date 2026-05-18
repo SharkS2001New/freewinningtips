@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { parseCountrySegment, parseLeagueSlug } from '@/components/functions/leagueUrl';
 
 function MetaContent() {
     let title = "";
@@ -323,6 +324,15 @@ function MetaContent() {
 
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
 
+    } else if(router.asPath.substring(1) == "predictions/direct-win-predictions"){
+
+        title ="Direct Win Predictions and Tips Today";
+        meta_desc_content = "Direct win predictions and banker tips are available daily on FreeWinningTips. Get high-confidence football picks from more than 200 leagues and start winning today.";
+        meta_keywords = "direct win predictions, direct win tips, direct win prediction today, direct win tips today, direct win football prediction, banker tips today, direct win weekend prediction, direct win correct score";
+        page_title = "Direct Win Predictions Today";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
     } else if(router.asPath.substring(1) == "predictions/venasbet"){
 
         title ="Venasbet Prediction tips and Jackpot Predictions";
@@ -484,6 +494,25 @@ function MetaContent() {
         page_title = "Direct Win Prediction";
 
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+    } else if (router.asPath.includes('/league/')) {
+        const asPath = router.asPath.split('?')[0];
+        const segments = asPath.split('/').filter(Boolean);
+        const leagueSlug = segments[segments.length - 1] || '';
+        const countrySegment = segments[1] || '';
+
+        const leagueParsed = parseLeagueSlug(leagueSlug);
+        const countryParsed = parseCountrySegment(countrySegment);
+
+        const leagueTitle = leagueParsed?.displayLeagueName || 'League';
+        const countryTitle = countryParsed?.displayCountryName || '';
+
+        title = `${leagueTitle} Predictions Today | 1X2 Football Tips`;
+        meta_desc_content = `Free ${leagueTitle} predictions and 1X2 tips${countryTitle ? ` for ${countryTitle}` : ''}. Today's matches and upcoming fixtures with expert analysis on FreeWinningTips.`;
+        meta_keywords = `${leagueTitle.toLowerCase()} predictions, ${leagueTitle.toLowerCase()} tips today, ${leagueTitle.toLowerCase()} 1x2, ${countryTitle.toLowerCase()} football predictions, ${leagueTitle.toLowerCase()} fixtures`;
+        page_title = `${leagueTitle} Predictions & Tips`;
+
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
+
     } else if(current_url ==="") {
         //Homepage url descriptions (route "/")
         title ="Best and Accurate Prediction Site for Football Betting Tips	";

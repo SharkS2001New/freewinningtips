@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import FetchSearchResults from "../functions/search";
 import Link from "next/link";
 import DateTimeToUsersTimezone from "../functions/DatetimeToUsersTimezone";
+import { buildLeaguePath } from '@/components/functions/leagueUrl';
+
+const leagueSearchHref = (result) =>
+  buildLeaguePath(result.search_country, result.search_res_name, result.search_res_id);
 
 // Regular function component - no forwardRef needed
 const SearchModal = ({ isOpen, onClose }) => {
@@ -218,7 +222,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                         {groupedResults.leagues.map((result, index) => (
                                             <a
                                                 key={index}
-                                                href={"/league/football-predictions-for-" + result.search_country.toLowerCase() + "/" + encodeURIComponent(result.search_res_name.toLowerCase().replace(/\s+/g, '-')) + '-' + result.search_res_id + "/fixtures"}
+                                                href={leagueSearchHref(result)}
                                                 className="result-item"
                                                 onClick={handleSearchItemClick}
                                             >
@@ -307,7 +311,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                     groupedResults.leagues.map((result, index) => (
                                         <a
                                             key={index}
-                                            href={"/league/football-predictions-for-" + result.search_country.toLowerCase() + "/" + encodeURIComponent(result.search_res_name.toLowerCase().replace(/\s+/g, '-')) + '-' + result.search_res_id + "/fixtures"}
+                                            href={leagueSearchHref(result)}
                                             className="result-item"
                                             onClick={handleSearchItemClick}
                                         >

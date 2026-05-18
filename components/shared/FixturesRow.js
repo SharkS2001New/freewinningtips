@@ -272,6 +272,11 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
       tipProb = fixture.both_team_to_score_prob || '55';
       break;
 
+    case '1x2':
+      tipText = winningtip[0] || '-';
+      tipProb = winningtip[2] || '60';
+      break;
+
     default: {
       const avg = parseFloat(fixturesAverage);
       if ((fixturesAverage < 2.0 || fixturesAverage > 3.0) && fixturesAverage !== '-') {

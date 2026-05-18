@@ -3146,6 +3146,94 @@ body {
   margin-bottom: 5px !important;
 }
 
+/* League prediction page header */
+.league-page-header {
+  background: var(--card-bg, #1a2332);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.league-page-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.league-page-flag,
+.league-page-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.league-page-flag-placeholder {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.league-page-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary, #fff);
+}
+
+.league-page-short {
+  font-weight: 500;
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+.league-page-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.league-section {
+  margin-bottom: 1.25rem;
+}
+
+.league-section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.league-section-intro {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.league-empty-note {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.league-empty-note a {
+  text-decoration: underline;
+}
+
+.seo-updated-note {
+  margin-top: 1.5rem;
+  opacity: 0.7;
+}
+
 /* Hide some elements if needed on extremely small screens */
 @media (max-width: 320px) {
   .stats-bar {
