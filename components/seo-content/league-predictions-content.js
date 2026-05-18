@@ -59,13 +59,14 @@ const LeaguePredictionsContent = ({
           you can afford to lose.
         </p>
 
-        <h2>{league} fixtures, predictions, and results on one page</h2>
+        <h2>{league} fixtures, results, and standings on one page</h2>
         <p>
-          When {league} matches are scheduled for {fetchDate || 'today'}, they appear in the
-          fixtures section above with 1X2 picks. Upcoming rounds are listed when the API has
-          future games in the calendar. If no future fixtures are available, we show recent{' '}
-          {league} <strong>results</strong> so you can still review outcomes, scores, and how
-          previous tips performed.
+          Use the <strong>Summary</strong>, <strong>Fixtures</strong>, <strong>Results</strong>,
+          and <strong>Standings</strong> tabs above to navigate this {league} hub. When matches
+          are scheduled for {fetchDate || 'today'}, you will see 1X2 picks in the Fixtures tab.
+          The Results tab lists finished games; Standings shows the live table with recent form
+          (W/D/L). Summary combines today&apos;s games, the next fixtures, latest results, and
+          a compact standings view.
         </p>
 
         <h2>Other markets we cover on FreeWinningTips</h2>

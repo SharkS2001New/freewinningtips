@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-18T19:52:42.630Z",
+  "data": [
+    {
+      "league_id": 140,
+      "league_name": "La Liga",
+      "league_short_name": "LAL",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/140.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/La Liga.jpg",
+      "country_name": "Spain",
+      "country_flag": "https://media.api-sports.io/flags/es.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/Spain.svg"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-05-18T18:33:28.587Z",
+  "fixtureDate": "2026-05-18",
+  "teamIds": "42,44",
+  "data": {
+    "42": {
+      "form_string": "W W W D W L",
+      "form_array": [
+        "W",
+        "W",
+        "W",
+        "D",
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "44": {
+      "form_string": "D L L L L L",
+      "form_array": [
+        "D",
+        "L",
+        "L",
+        "L",
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    }
+  }
+}

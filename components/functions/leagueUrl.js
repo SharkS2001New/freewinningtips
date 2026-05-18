@@ -54,8 +54,19 @@ export function parseCountrySegment(countrySegment) {
   return null;
 }
 
-export function buildLeaguePath(countryName, leagueName, leagueId) {
+export function buildLeaguePath(countryName, leagueName, leagueId, tab) {
   const countrySlug = slugify(countryName);
   const leagueSlug = `${slugify(leagueName)}-${leagueId}`;
-  return `/league/${LEAGUE_COUNTRY_PREFIX}${countrySlug}/${leagueSlug}`;
+  const base = `/league/${LEAGUE_COUNTRY_PREFIX}${countrySlug}/${leagueSlug}`;
+  if (!tab || tab === 'summary') return base;
+  return `${base}?tab=${tab}`;
+}
+
+/** Build league page URL from a fixture row when league_id is present */
+export function buildLeaguePathFromFixture(fixture, tab) {
+  const leagueId = fixture?.league_id;
+  const leagueName = fixture?.league_name || fixture?.league;
+  const countryName = fixture?.country_name || fixture?.country;
+  if (!leagueId || !leagueName || !countryName) return null;
+  return buildLeaguePath(countryName, leagueName, leagueId, tab);
 }

@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-18T19:16:55.340Z",
+  "data": [
+    {
+      "league_id": 39,
+      "league_name": "Premier League",
+      "league_short_name": "EPL",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/39.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/Premier League.jpg",
+      "country_name": "England",
+      "country_flag": "https://media.api-sports.io/flags/gb-eng.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/England.svg"
+    }
+  ]
+}

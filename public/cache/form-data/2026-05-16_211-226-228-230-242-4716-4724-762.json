@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-05-18T19:21:24.868Z",
+  "fixtureDate": "2026-05-16",
+  "teamIds": "211,226,228,230,242,4716,4724,762",
+  "data": {
+    "211": {
+      "form_string": "D D W W W D",
+      "form_array": [
+        "D",
+        "D",
+        "W",
+        "W",
+        "W",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "226": {
+      "form_string": "L D L D W L",
+      "form_array": [
+        "L",
+        "D",
+        "L",
+        "D",
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "228": {
+      "form_string": "W W D D D L",
+      "form_array": [
+        "W",
+        "W",
+        "D",
+        "D",
+        "D",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "230": {
+      "form_string": "D D L L L L",
+      "form_array": [
+        "D",
+        "D",
+        "L",
+        "L",
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "242": {
+      "form_string": "D D W D D D",
+      "form_array": [
+        "D",
+        "D",
+        "W",
+        "D",
+        "D",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "762": {
+      "form_string": "L D W L D W",
+      "form_array": [
+        "L",
+        "D",
+        "W",
+        "L",
+        "D",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "4716": {
+      "form_string": "W L L L D L",
+      "form_array": [
+        "W",
+        "L",
+        "L",
+        "L",
+        "D",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "4724": {
+      "form_string": "D L W L W W",
+      "form_array": [
+        "D",
+        "L",
+        "W",
+        "L",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    }
+  }
+}

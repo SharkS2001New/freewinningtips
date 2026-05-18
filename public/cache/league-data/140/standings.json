@@ -1,0 +1,905 @@
+{
+  "generatedAt": "2026-05-18T19:52:42.824Z",
+  "data": [
+    {
+      "all": {
+        "win": 31,
+        "draw": 1,
+        "lose": 5,
+        "goals": {
+          "for": 94,
+          "against": 33
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 12,
+        "draw": 1,
+        "lose": 5,
+        "goals": {
+          "for": 37,
+          "against": 23
+        },
+        "played": 18
+      },
+      "form": "WLWWW",
+      "home": {
+        "win": 19,
+        "draw": 0,
+        "lose": 0,
+        "goals": {
+          "for": 57,
+          "against": 10
+        },
+        "played": 19
+      },
+      "rank": 1,
+      "team": {
+        "id": 529,
+        "logo": "https://media.api-sports.io/football/teams/529.png",
+        "name": "Barcelona"
+      },
+      "group": "Primera División",
+      "points": 94,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": 61,
+      "description": "Promotion - Champions League (League phase)"
+    },
+    {
+      "all": {
+        "win": 26,
+        "draw": 5,
+        "lose": 6,
+        "goals": {
+          "for": 73,
+          "against": 33
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 11,
+        "draw": 4,
+        "lose": 4,
+        "goals": {
+          "for": 32,
+          "against": 19
+        },
+        "played": 19
+      },
+      "form": "WWLWD",
+      "home": {
+        "win": 15,
+        "draw": 1,
+        "lose": 2,
+        "goals": {
+          "for": 41,
+          "against": 14
+        },
+        "played": 18
+      },
+      "rank": 2,
+      "team": {
+        "id": 541,
+        "logo": "https://media.api-sports.io/football/teams/541.png",
+        "name": "Real Madrid"
+      },
+      "group": "Primera División",
+      "points": 83,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": 40,
+      "description": "Promotion - Champions League (League phase)"
+    },
+    {
+      "all": {
+        "win": 21,
+        "draw": 6,
+        "lose": 10,
+        "goals": {
+          "for": 67,
+          "against": 45
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 7,
+        "draw": 5,
+        "lose": 7,
+        "goals": {
+          "for": 24,
+          "against": 27
+        },
+        "played": 19
+      },
+      "form": "LLDWW",
+      "home": {
+        "win": 14,
+        "draw": 1,
+        "lose": 3,
+        "goals": {
+          "for": 43,
+          "against": 18
+        },
+        "played": 18
+      },
+      "rank": 3,
+      "team": {
+        "id": 533,
+        "logo": "https://media.api-sports.io/football/teams/533.png",
+        "name": "Villarreal"
+      },
+      "group": "Primera División",
+      "points": 69,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": 22,
+      "description": "Promotion - Champions League (League phase)"
+    },
+    {
+      "all": {
+        "win": 21,
+        "draw": 6,
+        "lose": 10,
+        "goals": {
+          "for": 61,
+          "against": 39
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 6,
+        "draw": 5,
+        "lose": 7,
+        "goals": {
+          "for": 22,
+          "against": 22
+        },
+        "played": 18
+      },
+      "form": "WWLWW",
+      "home": {
+        "win": 15,
+        "draw": 1,
+        "lose": 3,
+        "goals": {
+          "for": 39,
+          "against": 17
+        },
+        "played": 19
+      },
+      "rank": 4,
+      "team": {
+        "id": 530,
+        "logo": "https://media.api-sports.io/football/teams/530.png",
+        "name": "Atletico Madrid"
+      },
+      "group": "Primera División",
+      "points": 69,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": 22,
+      "description": "Promotion - Champions League (League phase)"
+    },
+    {
+      "all": {
+        "win": 14,
+        "draw": 15,
+        "lose": 8,
+        "goals": {
+          "for": 57,
+          "against": 47
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 5,
+        "draw": 9,
+        "lose": 5,
+        "goals": {
+          "for": 25,
+          "against": 29
+        },
+        "played": 19
+      },
+      "form": "LWDWD",
+      "home": {
+        "win": 9,
+        "draw": 6,
+        "lose": 3,
+        "goals": {
+          "for": 32,
+          "against": 18
+        },
+        "played": 18
+      },
+      "rank": 5,
+      "team": {
+        "id": 543,
+        "logo": "https://media.api-sports.io/football/teams/543.png",
+        "name": "Real Betis"
+      },
+      "group": "Primera División",
+      "points": 57,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": 10,
+      "description": "Promotion - Champions League (League phase)"
+    },
+    {
+      "all": {
+        "win": 13,
+        "draw": 12,
+        "lose": 12,
+        "goals": {
+          "for": 52,
+          "against": 48
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 8,
+        "draw": 7,
+        "lose": 4,
+        "goals": {
+          "for": 24,
+          "against": 20
+        },
+        "played": 19
+      },
+      "form": "DLWWL",
+      "home": {
+        "win": 5,
+        "draw": 5,
+        "lose": 8,
+        "goals": {
+          "for": 28,
+          "against": 28
+        },
+        "played": 18
+      },
+      "rank": 6,
+      "team": {
+        "id": 538,
+        "logo": "https://media.api-sports.io/football/teams/538.png",
+        "name": "Celta Vigo"
+      },
+      "group": "Primera División",
+      "points": 51,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": 4,
+      "description": "Promotion - Europa League (League phase)"
+    },
+    {
+      "all": {
+        "win": 14,
+        "draw": 6,
+        "lose": 17,
+        "goals": {
+          "for": 31,
+          "against": 38
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 7,
+        "draw": 3,
+        "lose": 9,
+        "goals": {
+          "for": 14,
+          "against": 22
+        },
+        "played": 19
+      },
+      "form": "LWDLL",
+      "home": {
+        "win": 7,
+        "draw": 3,
+        "lose": 8,
+        "goals": {
+          "for": 17,
+          "against": 16
+        },
+        "played": 18
+      },
+      "rank": 7,
+      "team": {
+        "id": 546,
+        "logo": "https://media.api-sports.io/football/teams/546.png",
+        "name": "Getafe"
+      },
+      "group": "Primera División",
+      "points": 48,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -7,
+      "description": "Promotion - Conference League (Qualification)"
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 14,
+        "lose": 12,
+        "goals": {
+          "for": 39,
+          "against": 43
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 4,
+        "draw": 4,
+        "lose": 10,
+        "goals": {
+          "for": 15,
+          "against": 28
+        },
+        "played": 18
+      },
+      "form": "WDDWD",
+      "home": {
+        "win": 7,
+        "draw": 10,
+        "lose": 2,
+        "goals": {
+          "for": 24,
+          "against": 15
+        },
+        "played": 19
+      },
+      "rank": 8,
+      "team": {
+        "id": 728,
+        "logo": "https://media.api-sports.io/football/teams/728.png",
+        "name": "Rayo Vallecano"
+      },
+      "group": "Primera División",
+      "points": 47,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -4,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 10,
+        "lose": 15,
+        "goals": {
+          "for": 43,
+          "against": 54
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 5,
+        "draw": 4,
+        "lose": 10,
+        "goals": {
+          "for": 19,
+          "against": 32
+        },
+        "played": 19
+      },
+      "form": "WDWLW",
+      "home": {
+        "win": 7,
+        "draw": 6,
+        "lose": 5,
+        "goals": {
+          "for": 24,
+          "against": 22
+        },
+        "played": 18
+      },
+      "rank": 9,
+      "team": {
+        "id": 532,
+        "logo": "https://media.api-sports.io/football/teams/532.png",
+        "name": "Valencia"
+      },
+      "group": "Primera División",
+      "points": 46,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -11,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 12,
+        "lose": 14,
+        "goals": {
+          "for": 58,
+          "against": 60
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 3,
+        "draw": 7,
+        "lose": 8,
+        "goals": {
+          "for": 21,
+          "against": 29
+        },
+        "played": 18
+      },
+      "form": "LDDLD",
+      "home": {
+        "win": 8,
+        "draw": 5,
+        "lose": 6,
+        "goals": {
+          "for": 37,
+          "against": 31
+        },
+        "played": 19
+      },
+      "rank": 10,
+      "team": {
+        "id": 548,
+        "logo": "https://media.api-sports.io/football/teams/548.png",
+        "name": "Real Sociedad"
+      },
+      "group": "Primera División",
+      "points": 45,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -2,
+      "description": "Promotion - Europa League (League phase)"
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 9,
+        "lose": 16,
+        "goals": {
+          "for": 42,
+          "against": 54
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 5,
+        "draw": 5,
+        "lose": 9,
+        "goals": {
+          "for": 22,
+          "against": 31
+        },
+        "played": 19
+      },
+      "form": "WWLLD",
+      "home": {
+        "win": 7,
+        "draw": 4,
+        "lose": 7,
+        "goals": {
+          "for": 20,
+          "against": 23
+        },
+        "played": 18
+      },
+      "rank": 11,
+      "team": {
+        "id": 540,
+        "logo": "https://media.api-sports.io/football/teams/540.png",
+        "name": "Espanyol"
+      },
+      "group": "Primera División",
+      "points": 45,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -12,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 13,
+        "draw": 6,
+        "lose": 18,
+        "goals": {
+          "for": 41,
+          "against": 54
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 4,
+        "draw": 3,
+        "lose": 11,
+        "goals": {
+          "for": 19,
+          "against": 33
+        },
+        "played": 18
+      },
+      "form": "DLLWL",
+      "home": {
+        "win": 9,
+        "draw": 3,
+        "lose": 7,
+        "goals": {
+          "for": 22,
+          "against": 21
+        },
+        "played": 19
+      },
+      "rank": 12,
+      "team": {
+        "id": 531,
+        "logo": "https://media.api-sports.io/football/teams/531.png",
+        "name": "Athletic Club"
+      },
+      "group": "Primera División",
+      "points": 45,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -13,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 7,
+        "lose": 18,
+        "goals": {
+          "for": 46,
+          "against": 59
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 5,
+        "draw": 3,
+        "lose": 10,
+        "goals": {
+          "for": 22,
+          "against": 34
+        },
+        "played": 18
+      },
+      "form": "LWWWL",
+      "home": {
+        "win": 7,
+        "draw": 4,
+        "lose": 8,
+        "goals": {
+          "for": 24,
+          "against": 25
+        },
+        "played": 19
+      },
+      "rank": 13,
+      "team": {
+        "id": 536,
+        "logo": "https://media.api-sports.io/football/teams/536.png",
+        "name": "Sevilla"
+      },
+      "group": "Primera División",
+      "points": 43,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -13,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 10,
+        "lose": 16,
+        "goals": {
+          "for": 43,
+          "against": 54
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 4,
+        "draw": 4,
+        "lose": 11,
+        "goals": {
+          "for": 19,
+          "against": 31
+        },
+        "played": 19
+      },
+      "form": "WWDLW",
+      "home": {
+        "win": 7,
+        "draw": 6,
+        "lose": 5,
+        "goals": {
+          "for": 24,
+          "against": 23
+        },
+        "played": 18
+      },
+      "rank": 14,
+      "team": {
+        "id": 542,
+        "logo": "https://media.api-sports.io/football/teams/542.png",
+        "name": "Alaves"
+      },
+      "group": "Primera División",
+      "points": 43,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -11,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 9,
+        "lose": 17,
+        "goals": {
+          "for": 46,
+          "against": 59
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 4,
+        "draw": 4,
+        "lose": 10,
+        "goals": {
+          "for": 20,
+          "against": 31
+        },
+        "played": 18
+      },
+      "form": "WWWLD",
+      "home": {
+        "win": 7,
+        "draw": 5,
+        "lose": 7,
+        "goals": {
+          "for": 26,
+          "against": 28
+        },
+        "played": 19
+      },
+      "rank": 15,
+      "team": {
+        "id": 539,
+        "logo": "https://media.api-sports.io/football/teams/539.png",
+        "name": "Levante"
+      },
+      "group": "Primera División",
+      "points": 42,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -13,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 9,
+        "lose": 17,
+        "goals": {
+          "for": 44,
+          "against": 49
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 2,
+        "draw": 4,
+        "lose": 12,
+        "goals": {
+          "for": 13,
+          "against": 25
+        },
+        "played": 18
+      },
+      "form": "LLLLW",
+      "home": {
+        "win": 9,
+        "draw": 5,
+        "lose": 5,
+        "goals": {
+          "for": 31,
+          "against": 24
+        },
+        "played": 19
+      },
+      "rank": 16,
+      "team": {
+        "id": 727,
+        "logo": "https://media.api-sports.io/football/teams/727.png",
+        "name": "Osasuna"
+      },
+      "group": "Primera División",
+      "points": 42,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -5,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 10,
+        "draw": 12,
+        "lose": 15,
+        "goals": {
+          "for": 48,
+          "against": 56
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 1,
+        "draw": 4,
+        "lose": 13,
+        "goals": {
+          "for": 18,
+          "against": 37
+        },
+        "played": 18
+      },
+      "form": "WLDLW",
+      "home": {
+        "win": 9,
+        "draw": 8,
+        "lose": 2,
+        "goals": {
+          "for": 30,
+          "against": 19
+        },
+        "played": 19
+      },
+      "rank": 17,
+      "team": {
+        "id": 797,
+        "logo": "https://media.api-sports.io/football/teams/797.png",
+        "name": "Elche"
+      },
+      "group": "Primera División",
+      "points": 42,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -8,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 9,
+        "draw": 13,
+        "lose": 15,
+        "goals": {
+          "for": 38,
+          "against": 54
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 3,
+        "draw": 8,
+        "lose": 8,
+        "goals": {
+          "for": 18,
+          "against": 28
+        },
+        "played": 19
+      },
+      "form": "LDDLL",
+      "home": {
+        "win": 6,
+        "draw": 5,
+        "lose": 7,
+        "goals": {
+          "for": 20,
+          "against": 26
+        },
+        "played": 18
+      },
+      "rank": 18,
+      "team": {
+        "id": 547,
+        "logo": "https://media.api-sports.io/football/teams/547.png",
+        "name": "Girona"
+      },
+      "group": "Primera División",
+      "points": 40,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -16,
+      "description": "Relegation - LaLiga2"
+    },
+    {
+      "all": {
+        "win": 10,
+        "draw": 9,
+        "lose": 18,
+        "goals": {
+          "for": 44,
+          "against": 57
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 2,
+        "draw": 3,
+        "lose": 14,
+        "goals": {
+          "for": 16,
+          "against": 36
+        },
+        "played": 19
+      },
+      "form": "LLDWL",
+      "home": {
+        "win": 8,
+        "draw": 6,
+        "lose": 4,
+        "goals": {
+          "for": 28,
+          "against": 21
+        },
+        "played": 18
+      },
+      "rank": 19,
+      "team": {
+        "id": 798,
+        "logo": "https://media.api-sports.io/football/teams/798.png",
+        "name": "Mallorca"
+      },
+      "group": "Primera División",
+      "points": 39,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -13,
+      "description": "Relegation - LaLiga2"
+    },
+    {
+      "all": {
+        "win": 6,
+        "draw": 11,
+        "lose": 20,
+        "goals": {
+          "for": 26,
+          "against": 57
+        },
+        "played": 37
+      },
+      "away": {
+        "win": 2,
+        "draw": 4,
+        "lose": 12,
+        "goals": {
+          "for": 17,
+          "against": 39
+        },
+        "played": 18
+      },
+      "form": "LLDLL",
+      "home": {
+        "win": 4,
+        "draw": 7,
+        "lose": 8,
+        "goals": {
+          "for": 9,
+          "against": 18
+        },
+        "played": 19
+      },
+      "rank": 20,
+      "team": {
+        "id": 718,
+        "logo": "https://media.api-sports.io/football/teams/718.png",
+        "name": "Oviedo"
+      },
+      "group": "Primera División",
+      "points": 29,
+      "status": "same",
+      "update": "2026-05-17T00:00:00+00:00",
+      "goalsDiff": -31,
+      "description": "Relegation - LaLiga2"
+    }
+  ]
+}

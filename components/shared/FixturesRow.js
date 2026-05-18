@@ -1,5 +1,7 @@
 // components/FixturesRow.js
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { buildLeaguePathFromFixture } from '@/components/functions/leagueUrl';
 
 import DoubleChanceWinningTeam    from "../functions/double_chance_winning_team_and_odd";
 import WinningTeamPred1x2         from "../functions/determine_winning_team_and_odd";
@@ -368,7 +370,15 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
 // League card
 // ---------------------------------------------------------------------------
 
-const LeagueCard = ({ league, fixtures, predictionType, teamForms, formsLoading, defaultOpen = true }) => {
+const LeagueCard = ({
+  league,
+  fixtures,
+  predictionType,
+  teamForms,
+  formsLoading,
+  defaultOpen = true,
+  hideLeagueHeader = false,
+}) => {
   const [open, setOpen] = useState(defaultOpen);
 
   const getFlag = (country) => ({
@@ -378,16 +388,39 @@ const LeagueCard = ({ league, fixtures, predictionType, teamForms, formsLoading,
     Scotland: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
   }[country] || '🏆');
 
+  const leagueHref = league.leagueId
+    ? buildLeaguePathFromFixture({
+        league_id: league.leagueId,
+        league_name: league.name,
+        country_name: league.country,
+      })
+    : null;
+
+  const leagueLabel = (
+    <>
+      <span className="league-flag">{getFlag(league.country)}</span>
+      {league.country}: {league.name}
+    </>
+  );
+
+  const showMatches = hideLeagueHeader || open || Boolean(leagueHref);
+
   return (
     <div className="league-card">
-      <button className="league-header" onClick={() => setOpen(!open)}>
-        <span className="league-name">
-          <span className="league-flag">{getFlag(league.country)}</span>
-          {league.country}: {league.name}
-        </span>
-        <span className="league-chev">{open ? '▲' : '▼'}</span>
-      </button>
-      {open && (
+      {!hideLeagueHeader && (
+        leagueHref ? (
+          <Link href={leagueHref} className="league-header league-header-link">
+            <span className="league-name">{leagueLabel}</span>
+            <span className="league-chev">↗</span>
+          </Link>
+        ) : (
+          <button type="button" className="league-header" onClick={() => setOpen(!open)}>
+            <span className="league-name">{leagueLabel}</span>
+            <span className="league-chev">{open ? '▲' : '▼'}</span>
+          </button>
+        )
+      )}
+      {showMatches && (
         <div className="match-list">
           {fixtures.map((fixture, idx) => (
             <MatchRow
@@ -412,12 +445,15 @@ const FixturesRow = ({
   fixtures,
   emptyMessage = "No predictions available for today. Check back soon!",
   predictionType = 'all',
+  hideLeagueHeader = false,
+  skipTeamForms = false,
 }) => {
   const [teamForms,    setTeamForms]    = useState({});
-  const [formsLoading, setFormsLoading] = useState(true);
+  const [formsLoading, setFormsLoading] = useState(false);
 
   useEffect(() => {
-    if (!fixtures?.length) {
+    if (!fixtures?.length || skipTeamForms) {
+      setTeamForms({});
       setFormsLoading(false);
       return;
     }
@@ -442,7 +478,7 @@ const FixturesRow = ({
       .catch(err  => console.error('[FixturesRow] Error loading forms:', err))
       .finally(()  => setFormsLoading(false));
 
-  }, [fixtures]);
+  }, [fixtures, skipTeamForms]);
 
   const groupByLeague = (list) => {
     const map = new Map();
@@ -450,9 +486,16 @@ const FixturesRow = ({
       const key = f.league_name || f.league || 'Other';
       if (!map.has(key)) {
         map.set(key, {
-          league: { name: key, country: f.country_name || f.country || 'International' },
+          league: {
+            name: key,
+            country: f.country_name || f.country || 'International',
+            leagueId: f.league_id || null,
+          },
           fixtures: [],
         });
+      }
+      if (!map.get(key).league.leagueId && f.league_id) {
+        map.get(key).league.leagueId = f.league_id;
       }
       map.get(key).fixtures.push(f);
     });
@@ -480,6 +523,7 @@ const FixturesRow = ({
           predictionType={predictionType}
           teamForms={teamForms}
           formsLoading={formsLoading}
+          hideLeagueHeader={hideLeagueHeader}
         />
       ))}
     </div>
