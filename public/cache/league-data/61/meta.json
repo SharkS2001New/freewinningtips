@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-18T20:00:04.076Z",
+  "data": [
+    {
+      "league_id": 61,
+      "league_name": "Ligue 1",
+      "league_short_name": "L1",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/61.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/Ligue 1.jpg",
+      "country_name": "France",
+      "country_flag": "https://media.api-sports.io/flags/fr.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/France.svg"
+    }
+  ]
+}

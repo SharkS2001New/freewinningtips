@@ -333,6 +333,92 @@ function MetaContent() {
 
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
 
+    } else if(router.asPath.substring(1) == "predictions/todays-predictions"){
+
+        title ="Today's Football Predictions & Free Betting Tips";
+        meta_desc_content = "Browse today's football predictions with 1X2, over/under, and double chance tips. FreeWinningTips covers major leagues worldwide with daily free picks and analysis.";
+        meta_keywords = "today football predictions, todays predictions, football tips today, soccer predictions today, free betting tips today, 1x2 predictions today, today match predictions";
+        page_title = "Today's Football Predictions";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(router.asPath.substring(1) == "predictions/all-predictions"){
+
+        title ="All Football Predictions Today | Every Market";
+        meta_desc_content = "View all football predictions for today in one place — 1X2, BTTS, over/under, double chance, and more. Free daily tips from FreeWinningTips across 200+ leagues.";
+        meta_keywords = "all predictions today, all football predictions, football predictions all markets, free predictions today, soccer tips today, betting predictions today";
+        page_title = "All Predictions for Today";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(router.asPath.substring(1) == "predictions/double-chance"){
+
+        title ="Double Chance Predictions Today | Free 1X, X2, 12 Tips";
+        meta_desc_content = "Free double chance football predictions for today. Get 1X, X2, and 12 picks with analysis on form, odds, and match stats from FreeWinningTips.";
+        meta_keywords = "double chance predictions, double chance tips today, 1x double chance, x2 tips, 12 predictions, dc football tips, double chance betting tips";
+        page_title = "Double Chance Predictions Today";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(router.asPath.substring(1) == "predictions/gg-no-gg"){
+
+        title ="BTTS Predictions Today | GG & NG Football Tips";
+        meta_desc_content = "Both teams to score (GG) and no-GG predictions for today's matches. Free BTTS tips with probabilities and expert analysis on FreeWinningTips.";
+        meta_keywords = "btts predictions, gg tips today, both teams to score, gg ng predictions, btts tips today, goals both teams, soccer btts tips";
+        page_title = "GG / NG Predictions Today";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(router.asPath.substring(1) == "predictions/draw"){
+
+        title ="Draw Football Predictions Today | Free Draw Tips";
+        meta_desc_content = "Draw predictions for today's football matches. Find X tips and high-probability draw picks with stats-backed analysis from FreeWinningTips.";
+        meta_keywords = "draw predictions, draw tips today, football draw tips, x predictions, draw betting tips, soccer draw predictions";
+        page_title = "Draw Predictions Today";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(router.asPath.substring(1) == "predictions/accumulator-tips"){
+
+        title ="Accumulator Tips Today | Free Acca Predictions";
+        meta_desc_content = "Free accumulator tips and acca predictions for today and the weekend. Build multi-bet slips with analyzed picks from leagues around the world on FreeWinningTips.";
+        meta_keywords = "accumulator tips, acca tips today, accumulator predictions, football acca tips, multibet tips, acca predictions today, betting accumulator";
+        page_title = "Accumulator Tips Today";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(router.asPath.substring(1) == "predictions/best-free-football-prediction-website"){
+
+        title ="Best Free Football Prediction Website | FreeWinningTips";
+        meta_desc_content = "FreeWinningTips is a top free football prediction website with daily tips, jackpots, VIP picks, and coverage of 200+ leagues. Compare why bettors use us for free winning tips.";
+        meta_keywords = "best free football prediction website, best prediction site free, free football tips site, accurate prediction website, free soccer prediction site";
+        page_title = "Best Free Football Prediction Website";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(current_url == "blog"){
+
+        title ="Football Betting Blog | Tips, Guides & News";
+        meta_desc_content = "Read the FreeWinningTips blog for football betting guides, prediction strategies, jackpot insights, and weekly analysis to improve your betting decisions.";
+        meta_keywords = "football betting blog, soccer tips blog, betting guides, prediction tips blog, freewinningtips blog";
+        page_title = "Football Betting Blog";
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
+    } else if(/^\/blog\/[^/]+/.test(router.asPath.split('?')[0])){
+
+        const slug = router.asPath.split('?')[0].replace(/^\/blog\//, '');
+        const articleTitle = slug
+            .replace(/-/g, ' ')
+            .replace(/\b\w/g, (c) => c.toUpperCase());
+
+        title = `${articleTitle} | FreeWinningTips Blog`;
+        meta_desc_content = `Read ${articleTitle} on the FreeWinningTips blog — football betting insights, tips, and guides updated for readers worldwide.`;
+        meta_keywords = `${slug.replace(/-/g, ', ')}, football blog, betting tips, freewinningtips`;
+        page_title = articleTitle;
+
+        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+
     } else if(router.asPath.substring(1) == "predictions/venasbet"){
 
         title ="Venasbet Prediction tips and Jackpot Predictions";
@@ -459,15 +545,6 @@ function MetaContent() {
 
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
         
-    } else if(router.asPath.substring(1) == "predictions/best-football-prediction-website-free"){
-
-        title ="Best Free Football Prediction Site";
-        meta_desc_content = "Get free football predictions today from a trusted partner. FreeWinningTips covers the best games and it is known for winning multi-bets and jackpot bonuses";
-        meta_keywords = "free football prediction site ,free prediction for football, free football prediction today, best free football prediction site";
-        page_title = "Free Football Prediction Today";
-
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
-
     } else if(router.asPath.substring(1) == "predictions/free-betting-tips-today"){
 
         title ="Free Football Betting Tips Today";
@@ -510,6 +587,19 @@ function MetaContent() {
         meta_desc_content = `Free ${leagueTitle} predictions and 1X2 tips${countryTitle ? ` for ${countryTitle}` : ''}. Today's matches and upcoming fixtures with expert analysis on FreeWinningTips.`;
         meta_keywords = `${leagueTitle.toLowerCase()} predictions, ${leagueTitle.toLowerCase()} tips today, ${leagueTitle.toLowerCase()} 1x2, ${countryTitle.toLowerCase()} football predictions, ${leagueTitle.toLowerCase()} fixtures`;
         page_title = `${leagueTitle} Predictions & Tips`;
+
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
+
+    } else if (
+        current_url &&
+        !current_url.startsWith('auth/') &&
+        !current_url.startsWith('api/') &&
+        current_url !== 'blog/[slug]'
+    ) {
+        title = "FreeWinningTips | Free Football Predictions & Betting Tips";
+        meta_desc_content = "Free daily football predictions, jackpot tips, and betting analysis on FreeWinningTips. Covering 200+ leagues with 1X2, BTTS, over/under, and VIP packages.";
+        meta_keywords = "free winning tips, football predictions, free betting tips, soccer predictions, jackpot predictions";
+        page_title = "Free Football Predictions";
 
         meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 

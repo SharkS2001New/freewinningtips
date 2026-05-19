@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-
 import getFormattedCurrentDate from '@/components/functions/GetTodaysDate';
 import {
   parseCountrySegment,
@@ -13,7 +12,7 @@ import LeaguePageContent from '@/components/leagues/LeaguePageContent';
 import LeaguePredictionsContent from '@/components/seo-content/league-predictions-content';
 
 function buildLeagueJsonLd({ leagueName, countryName, fetchDate, canonicalPath }) {
-  const pageUrl = `https://freewinningtips.com${canonicalPath}`;
+  const pageUrl = `https://www.freewinningtips.com${canonicalPath}`;
 
   return [
     {
@@ -26,7 +25,7 @@ function buildLeagueJsonLd({ leagueName, countryName, fetchDate, canonicalPath }
       isPartOf: {
         '@type': 'WebSite',
         name: 'FreeWinningTips',
-        url: 'https://freewinningtips.com',
+        url: 'https://www.freewinningtips.com',
       },
       dateModified: fetchDate,
     },
@@ -56,7 +55,7 @@ function buildLeagueJsonLd({ leagueName, countryName, fetchDate, canonicalPath }
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freewinningtips.com/' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.freewinningtips.com/' },
         { '@type': 'ListItem', position: 2, name: countryName, item: pageUrl },
         { '@type': 'ListItem', position: 3, name: leagueName, item: pageUrl },
       ],
