@@ -1,0 +1,815 @@
+{
+  "generatedAt": "2026-05-30T23:42:48.591Z",
+  "data": [
+    {
+      "all": {
+        "win": 16,
+        "draw": 12,
+        "lose": 6,
+        "goals": {
+          "for": 45,
+          "against": 28
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 3,
+        "draw": 9,
+        "lose": 5,
+        "goals": {
+          "for": 17,
+          "against": 17
+        },
+        "played": 17
+      },
+      "form": "LWDWW",
+      "home": {
+        "win": 13,
+        "draw": 3,
+        "lose": 1,
+        "goals": {
+          "for": 28,
+          "against": 11
+        },
+        "played": 17
+      },
+      "rank": 1,
+      "team": {
+        "id": 1929,
+        "logo": "https://media.api-sports.io/football/teams/1929.png",
+        "name": "Deportivo Madryn"
+      },
+      "group": "Group 1",
+      "points": 60,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 17,
+      "description": "Promotion - Primera Nacional (Super final)"
+    },
+    {
+      "all": {
+        "win": 14,
+        "draw": 13,
+        "lose": 7,
+        "goals": {
+          "for": 31,
+          "against": 28
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 2,
+        "draw": 10,
+        "lose": 5,
+        "goals": {
+          "for": 8,
+          "against": 18
+        },
+        "played": 17
+      },
+      "form": "LDWLW",
+      "home": {
+        "win": 12,
+        "draw": 3,
+        "lose": 2,
+        "goals": {
+          "for": 23,
+          "against": 10
+        },
+        "played": 17
+      },
+      "rank": 2,
+      "team": {
+        "id": 1948,
+        "logo": "https://media.api-sports.io/football/teams/1948.png",
+        "name": "Atlanta"
+      },
+      "group": "Group 1",
+      "points": 55,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 3,
+      "description": "Promotion - Primera Nacional (Promotion - Play Offs)"
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 16,
+        "lose": 6,
+        "goals": {
+          "for": 33,
+          "against": 23
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 4,
+        "draw": 7,
+        "lose": 6,
+        "goals": {
+          "for": 9,
+          "against": 12
+        },
+        "played": 17
+      },
+      "form": "WWLDD",
+      "home": {
+        "win": 8,
+        "draw": 9,
+        "lose": 0,
+        "goals": {
+          "for": 24,
+          "against": 11
+        },
+        "played": 17
+      },
+      "rank": 3,
+      "team": {
+        "id": 1965,
+        "logo": "https://media.api-sports.io/football/teams/1965.png",
+        "name": "Tristan Suarez"
+      },
+      "group": "Group 1",
+      "points": 52,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 10,
+      "description": "Promotion - Primera Nacional (Promotion - Play Offs)"
+    },
+    {
+      "all": {
+        "win": 13,
+        "draw": 12,
+        "lose": 9,
+        "goals": {
+          "for": 34,
+          "against": 23
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 2,
+        "draw": 7,
+        "lose": 8,
+        "goals": {
+          "for": 7,
+          "against": 15
+        },
+        "played": 17
+      },
+      "form": "WDLWD",
+      "home": {
+        "win": 11,
+        "draw": 5,
+        "lose": 1,
+        "goals": {
+          "for": 27,
+          "against": 8
+        },
+        "played": 17
+      },
+      "rank": 4,
+      "team": {
+        "id": 1928,
+        "logo": "https://media.api-sports.io/football/teams/1928.png",
+        "name": "Gimnasia Y Tiro"
+      },
+      "group": "Group 1",
+      "points": 51,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 11,
+      "description": "Promotion - Primera Nacional (Promotion - Play Offs)"
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 14,
+        "lose": 8,
+        "goals": {
+          "for": 32,
+          "against": 28
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 3,
+        "draw": 6,
+        "lose": 8,
+        "goals": {
+          "for": 10,
+          "against": 18
+        },
+        "played": 17
+      },
+      "form": "DLDWD",
+      "home": {
+        "win": 9,
+        "draw": 8,
+        "lose": 0,
+        "goals": {
+          "for": 22,
+          "against": 10
+        },
+        "played": 17
+      },
+      "rank": 5,
+      "team": {
+        "id": 8379,
+        "logo": "https://media.api-sports.io/football/teams/8379.png",
+        "name": "San Miguel"
+      },
+      "group": "Group 1",
+      "points": 50,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 4,
+      "description": "Promotion - Primera Nacional (Promotion - Play Offs)"
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 13,
+        "lose": 9,
+        "goals": {
+          "for": 32,
+          "against": 29
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 6,
+        "draw": 5,
+        "lose": 6,
+        "goals": {
+          "for": 15,
+          "against": 17
+        },
+        "played": 17
+      },
+      "form": "DDLWL",
+      "home": {
+        "win": 6,
+        "draw": 8,
+        "lose": 3,
+        "goals": {
+          "for": 17,
+          "against": 12
+        },
+        "played": 17
+      },
+      "rank": 6,
+      "team": {
+        "id": 485,
+        "logo": "https://media.api-sports.io/football/teams/485.png",
+        "name": "San Martin Tucuman"
+      },
+      "group": "Group 1",
+      "points": 49,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 3,
+      "description": "Promotion - Primera Nacional (Promotion - Play Offs)"
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 12,
+        "lose": 10,
+        "goals": {
+          "for": 34,
+          "against": 30
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 5,
+        "draw": 6,
+        "lose": 6,
+        "goals": {
+          "for": 14,
+          "against": 17
+        },
+        "played": 17
+      },
+      "form": "WLWDD",
+      "home": {
+        "win": 7,
+        "draw": 6,
+        "lose": 4,
+        "goals": {
+          "for": 20,
+          "against": 13
+        },
+        "played": 17
+      },
+      "rank": 7,
+      "team": {
+        "id": 1954,
+        "logo": "https://media.api-sports.io/football/teams/1954.png",
+        "name": "Deportivo Maipu"
+      },
+      "group": "Group 1",
+      "points": 48,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 4,
+      "description": "Promotion - Primera Nacional (Promotion - Play Offs)"
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 12,
+        "lose": 10,
+        "goals": {
+          "for": 31,
+          "against": 28
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 3,
+        "draw": 6,
+        "lose": 8,
+        "goals": {
+          "for": 13,
+          "against": 21
+        },
+        "played": 17
+      },
+      "form": "LDDWL",
+      "home": {
+        "win": 9,
+        "draw": 6,
+        "lose": 2,
+        "goals": {
+          "for": 18,
+          "against": 7
+        },
+        "played": 17
+      },
+      "rank": 8,
+      "team": {
+        "id": 444,
+        "logo": "https://media.api-sports.io/football/teams/444.png",
+        "name": "Patronato"
+      },
+      "group": "Group 1",
+      "points": 48,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 3,
+      "description": "Promotion - Primera Nacional (Promotion - Play Offs)"
+    },
+    {
+      "all": {
+        "win": 13,
+        "draw": 8,
+        "lose": 13,
+        "goals": {
+          "for": 26,
+          "against": 26
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 3,
+        "draw": 4,
+        "lose": 10,
+        "goals": {
+          "for": 10,
+          "against": 21
+        },
+        "played": 17
+      },
+      "form": "WWWDW",
+      "home": {
+        "win": 10,
+        "draw": 4,
+        "lose": 3,
+        "goals": {
+          "for": 16,
+          "against": 5
+        },
+        "played": 17
+      },
+      "rank": 9,
+      "team": {
+        "id": 8377,
+        "logo": "https://media.api-sports.io/football/teams/8377.png",
+        "name": "Colegiales"
+      },
+      "group": "Group 1",
+      "points": 47,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 0,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 8,
+        "draw": 17,
+        "lose": 9,
+        "goals": {
+          "for": 26,
+          "against": 25
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 1,
+        "draw": 9,
+        "lose": 7,
+        "goals": {
+          "for": 8,
+          "against": 17
+        },
+        "played": 17
+      },
+      "form": "WDDDD",
+      "home": {
+        "win": 7,
+        "draw": 8,
+        "lose": 2,
+        "goals": {
+          "for": 18,
+          "against": 8
+        },
+        "played": 17
+      },
+      "rank": 10,
+      "team": {
+        "id": 464,
+        "logo": "https://media.api-sports.io/football/teams/464.png",
+        "name": "All Boys"
+      },
+      "group": "Group 1",
+      "points": 41,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": 1,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 10,
+        "draw": 11,
+        "lose": 13,
+        "goals": {
+          "for": 38,
+          "against": 45
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 3,
+        "draw": 4,
+        "lose": 10,
+        "goals": {
+          "for": 13,
+          "against": 30
+        },
+        "played": 17
+      },
+      "form": "LLWLW",
+      "home": {
+        "win": 7,
+        "draw": 7,
+        "lose": 3,
+        "goals": {
+          "for": 25,
+          "against": 15
+        },
+        "played": 17
+      },
+      "rank": 11,
+      "team": {
+        "id": 1957,
+        "logo": "https://media.api-sports.io/football/teams/1957.png",
+        "name": "Racing Cordoba"
+      },
+      "group": "Group 1",
+      "points": 41,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -7,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 10,
+        "draw": 11,
+        "lose": 13,
+        "goals": {
+          "for": 24,
+          "against": 33
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 4,
+        "draw": 3,
+        "lose": 10,
+        "goals": {
+          "for": 9,
+          "against": 24
+        },
+        "played": 17
+      },
+      "form": "WWWLD",
+      "home": {
+        "win": 6,
+        "draw": 8,
+        "lose": 3,
+        "goals": {
+          "for": 15,
+          "against": 9
+        },
+        "played": 17
+      },
+      "rank": 12,
+      "team": {
+        "id": 470,
+        "logo": "https://media.api-sports.io/football/teams/470.png",
+        "name": "Ferro Carril Oeste"
+      },
+      "group": "Group 1",
+      "points": 41,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -9,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 10,
+        "draw": 10,
+        "lose": 14,
+        "goals": {
+          "for": 28,
+          "against": 31
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 1,
+        "draw": 5,
+        "lose": 11,
+        "goals": {
+          "for": 7,
+          "against": 21
+        },
+        "played": 17
+      },
+      "form": "LLLWL",
+      "home": {
+        "win": 9,
+        "draw": 5,
+        "lose": 3,
+        "goals": {
+          "for": 21,
+          "against": 10
+        },
+        "played": 17
+      },
+      "rank": 13,
+      "team": {
+        "id": 483,
+        "logo": "https://media.api-sports.io/football/teams/483.png",
+        "name": "Los Andes"
+      },
+      "group": "Group 1",
+      "points": 40,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -3,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 8,
+        "draw": 16,
+        "lose": 10,
+        "goals": {
+          "for": 28,
+          "against": 32
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 1,
+        "draw": 9,
+        "lose": 7,
+        "goals": {
+          "for": 10,
+          "against": 18
+        },
+        "played": 17
+      },
+      "form": "WWDWL",
+      "home": {
+        "win": 7,
+        "draw": 7,
+        "lose": 3,
+        "goals": {
+          "for": 18,
+          "against": 14
+        },
+        "played": 17
+      },
+      "rank": 14,
+      "team": {
+        "id": 3969,
+        "logo": "https://media.api-sports.io/football/teams/3969.png",
+        "name": "Club Atlético Güemes"
+      },
+      "group": "Group 1",
+      "points": 40,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -4,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 8,
+        "draw": 14,
+        "lose": 12,
+        "goals": {
+          "for": 30,
+          "against": 32
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 1,
+        "draw": 7,
+        "lose": 9,
+        "goals": {
+          "for": 8,
+          "against": 20
+        },
+        "played": 17
+      },
+      "form": "LDDLD",
+      "home": {
+        "win": 7,
+        "draw": 7,
+        "lose": 3,
+        "goals": {
+          "for": 22,
+          "against": 12
+        },
+        "played": 17
+      },
+      "rank": 15,
+      "team": {
+        "id": 480,
+        "logo": "https://media.api-sports.io/football/teams/480.png",
+        "name": "Quilmes"
+      },
+      "group": "Group 1",
+      "points": 38,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -2,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 7,
+        "draw": 14,
+        "lose": 13,
+        "goals": {
+          "for": 24,
+          "against": 31
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 1,
+        "draw": 8,
+        "lose": 8,
+        "goals": {
+          "for": 12,
+          "against": 21
+        },
+        "played": 17
+      },
+      "form": "LDLLD",
+      "home": {
+        "win": 6,
+        "draw": 6,
+        "lose": 5,
+        "goals": {
+          "for": 12,
+          "against": 10
+        },
+        "played": 17
+      },
+      "rank": 16,
+      "team": {
+        "id": 482,
+        "logo": "https://media.api-sports.io/football/teams/482.png",
+        "name": "Almagro"
+      },
+      "group": "Group 1",
+      "points": 35,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -7,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 8,
+        "draw": 10,
+        "lose": 16,
+        "goals": {
+          "for": 38,
+          "against": 47
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 3,
+        "draw": 3,
+        "lose": 11,
+        "goals": {
+          "for": 16,
+          "against": 31
+        },
+        "played": 17
+      },
+      "form": "WLLLD",
+      "home": {
+        "win": 5,
+        "draw": 7,
+        "lose": 5,
+        "goals": {
+          "for": 22,
+          "against": 16
+        },
+        "played": 17
+      },
+      "rank": 17,
+      "team": {
+        "id": 459,
+        "logo": "https://media.api-sports.io/football/teams/459.png",
+        "name": "Arsenal Sarandi"
+      },
+      "group": "Group 1",
+      "points": 34,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -9,
+      "description": "Relegation"
+    },
+    {
+      "all": {
+        "win": 6,
+        "draw": 15,
+        "lose": 13,
+        "goals": {
+          "for": 18,
+          "against": 33
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 1,
+        "draw": 7,
+        "lose": 9,
+        "goals": {
+          "for": 6,
+          "against": 22
+        },
+        "played": 17
+      },
+      "form": "LDWLD",
+      "home": {
+        "win": 5,
+        "draw": 8,
+        "lose": 4,
+        "goals": {
+          "for": 12,
+          "against": 11
+        },
+        "played": 17
+      },
+      "rank": 18,
+      "team": {
+        "id": 1962,
+        "logo": "https://media.api-sports.io/football/teams/1962.png",
+        "name": "Alvarado"
+      },
+      "group": "Group 1",
+      "points": 33,
+      "status": "same",
+      "update": "2025-12-03T00:00:00+00:00",
+      "goalsDiff": -15,
+      "description": "Relegation"
+    }
+  ]
+}

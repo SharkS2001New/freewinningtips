@@ -1,0 +1,292 @@
+{
+  "generatedAt": "2026-05-30T23:35:49.758Z",
+  "fixtureDate": "2026-05-30",
+  "data": [
+    {
+      "fixture_id": 1546395,
+      "home_team": {
+        "id": 293,
+        "name": "Gamba Osaka",
+        "logo": "https://media.api-sports.io/football/teams/293.png"
+      },
+      "away_team": {
+        "id": 306,
+        "name": "Tokyo Verdy",
+        "logo": "https://media.api-sports.io/football/teams/306.png"
+      },
+      "match": {
+        "datetime": "2026-05-30T07:00:00+00:00",
+        "unformatted_date": "2026-05-30",
+        "venue": null,
+        "status": "FT",
+        "status_long": "Match Finished",
+        "elapsed": 90
+      },
+      "score": {
+        "home": 1,
+        "away": 1,
+        "half_time": {
+          "home": 1,
+          "away": 0
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Draw after combining the prediction probabilities (40% home, 60% draw, 0% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 31 goals scored and 25 conceded across 18 matches, while the away side has produced 22 goals and conceded 26 across 18 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of N/A% and average goals of 2.89.",
+        "avg_goals": 2.89,
+        "1x2": {
+          "home": 40,
+          "draw": 60,
+          "away": 0
+        },
+        "double_chance": {
+          "type": "1X",
+          "probability": 100
+        },
+        "half_time": {
+          "home": 59,
+          "draw": 17,
+          "away": 24
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": null
+        },
+        "over_under_2_5": {
+          "prediction": "Ov2.5",
+          "probability": 57
+        }
+      },
+      "odds": {
+        "home": null,
+        "draw": null,
+        "away": null,
+        "double_chance": {
+          "home_draw": null,
+          "home_away": null,
+          "draw_away": null
+        },
+        "ht_ft": {
+          "ht_home": null,
+          "ht_draw": null,
+          "ht_away": null
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 98,
+        "name": "J1 League",
+        "short_name": "J1",
+        "round": null,
+        "logo": "https://www.pitchpredictions.com/images/leagues/J1 League.jpg",
+        "country": "Japan",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/Japan.svg"
+      }
+    },
+    {
+      "fixture_id": 1546392,
+      "home_team": {
+        "id": 288,
+        "name": "Nagoya Grampus",
+        "logo": "https://media.api-sports.io/football/teams/288.png"
+      },
+      "away_team": {
+        "id": 303,
+        "name": "Machida Zelvia",
+        "logo": "https://media.api-sports.io/football/teams/303.png"
+      },
+      "match": {
+        "datetime": "2026-05-30T05:00:00+00:00",
+        "unformatted_date": "2026-05-30",
+        "venue": null,
+        "status": "FT",
+        "status_long": "Match Finished",
+        "elapsed": 90
+      },
+      "score": {
+        "home": 2,
+        "away": 2,
+        "half_time": {
+          "home": 1,
+          "away": 1
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Draw after combining the prediction probabilities (12% home, 59% draw, 30% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 33 goals scored and 31 conceded across 18 matches, while the away side has produced 28 goals and conceded 22 across 18 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of N/A% and average goals of 3.17.",
+        "avg_goals": 3.17,
+        "1x2": {
+          "home": 12,
+          "draw": 59,
+          "away": 30
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 89
+        },
+        "half_time": {
+          "home": 58,
+          "draw": 21,
+          "away": 21
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": null
+        },
+        "over_under_2_5": {
+          "prediction": "Ov2.5",
+          "probability": 62
+        }
+      },
+      "odds": {
+        "home": null,
+        "draw": null,
+        "away": null,
+        "double_chance": {
+          "home_draw": null,
+          "home_away": null,
+          "draw_away": null
+        },
+        "ht_ft": {
+          "ht_home": null,
+          "ht_draw": null,
+          "ht_away": null
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 98,
+        "name": "J1 League",
+        "short_name": "J1",
+        "round": null,
+        "logo": "https://www.pitchpredictions.com/images/leagues/J1 League.jpg",
+        "country": "Japan",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/Japan.svg"
+      }
+    },
+    {
+      "fixture_id": 1546314,
+      "home_team": {
+        "id": 316,
+        "name": "Avispa Fukuoka",
+        "logo": "https://media.api-sports.io/football/teams/316.png"
+      },
+      "away_team": {
+        "id": 301,
+        "name": "JEF United Chiba",
+        "logo": "https://media.api-sports.io/football/teams/301.png"
+      },
+      "match": {
+        "datetime": "2026-05-30T07:00:00+00:00",
+        "unformatted_date": "2026-05-30",
+        "venue": null,
+        "status": "FT",
+        "status_long": "Match Finished",
+        "elapsed": 90
+      },
+      "score": {
+        "home": 2,
+        "away": 2,
+        "half_time": {
+          "home": 0,
+          "away": 1
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Draw after combining the prediction probabilities (12% home, 72% draw, 18% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 21 goals scored and 31 conceded across 18 matches, while the away side has produced 18 goals and conceded 34 across 18 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of N/A% and average goals of 2.89.",
+        "avg_goals": 2.89,
+        "1x2": {
+          "home": 12,
+          "draw": 72,
+          "away": 18
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 90
+        },
+        "half_time": {
+          "home": 13,
+          "draw": 30,
+          "away": 57
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": null
+        },
+        "over_under_2_5": {
+          "prediction": "Ov2.5",
+          "probability": 57
+        }
+      },
+      "odds": {
+        "home": null,
+        "draw": null,
+        "away": null,
+        "double_chance": {
+          "home_draw": null,
+          "home_away": null,
+          "draw_away": null
+        },
+        "ht_ft": {
+          "ht_home": null,
+          "ht_draw": null,
+          "ht_away": null
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 98,
+        "name": "J1 League",
+        "short_name": "J1",
+        "round": null,
+        "logo": "https://www.pitchpredictions.com/images/leagues/J1 League.jpg",
+        "country": "Japan",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/Japan.svg"
+      }
+    }
+  ],
+  "count": 3
+}

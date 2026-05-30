@@ -151,7 +151,7 @@ export async function getServerSideProps() {
   const cachePath = path.join(CACHE_DIR, `todays_predictions_${fetchDate}.json`);
   
   // API base URL
-  const baseUrl = `https://api.pitchpredictions.com/api/fetch_all_matches_fixtures_no_limit?fixture_date=${fetchDate}`;
+  const baseUrl = `https://develop.pitchpredictions.com/api/fetch_all_matches_fixtures_no_limit?fixture_date=${fetchDate}`;
   
   let initialData = [];
   let endpointStatus = "success";

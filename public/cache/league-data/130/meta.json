@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-30T23:39:44.500Z",
+  "data": [
+    {
+      "league_id": 130,
+      "league_name": "Copa Argentina",
+      "league_short_name": "COP",
+      "league_type": "Cup",
+      "logo": "https://media.api-sports.io/football/leagues/130.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/Copa Argentina.jpg",
+      "country_name": "Argentina",
+      "country_flag": "https://media.api-sports.io/flags/ar.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/Argentina.svg"
+    }
+  ]
+}

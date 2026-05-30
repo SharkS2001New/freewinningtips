@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-05-18T20:00:06.155Z",
+  "generatedAt": "2026-05-30T23:39:12.860Z",
   "data": [
     {
       "all": {
-        "win": 25,
+        "win": 24,
         "draw": 4,
-        "lose": 5,
+        "lose": 6,
         "goals": {
           "for": 74,
-          "against": 27
+          "against": 29
         },
         "played": 34
       },
       "away": {
-        "win": 12,
+        "win": 11,
         "draw": 2,
-        "lose": 3,
+        "lose": 4,
         "goals": {
           "for": 33,
-          "against": 15
+          "against": 17
         },
         "played": 17
       },
-      "form": "WWDWW",
+      "form": "LWWDW",
       "home": {
         "win": 13,
         "draw": 2,
@@ -40,10 +40,10 @@
         "name": "Paris Saint Germain"
       },
       "group": "Ligue 1 ",
-      "points": 79,
+      "points": 76,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": 47,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": 45,
       "description": "Champions League"
     },
     {
@@ -67,7 +67,7 @@
         },
         "played": 17
       },
-      "form": "LWDDW",
+      "form": "WLWDD",
       "home": {
         "win": 14,
         "draw": 0,
@@ -87,7 +87,7 @@
       "group": "Ligue 1 ",
       "points": 70,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
+      "update": "2026-05-26T00:00:00+00:00",
       "goalsDiff": 31,
       "description": "Champions League"
     },
@@ -98,7 +98,7 @@
         "lose": 9,
         "goals": {
           "for": 52,
-          "against": 36
+          "against": 37
         },
         "played": 34
       },
@@ -112,14 +112,14 @@
         },
         "played": 17
       },
-      "form": "WDWDW",
+      "form": "LWDWD",
       "home": {
         "win": 8,
         "draw": 5,
         "lose": 4,
         "goals": {
           "for": 24,
-          "against": 16
+          "against": 17
         },
         "played": 17
       },
@@ -132,8 +132,8 @@
       "group": "Ligue 1 ",
       "points": 61,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": 16,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": 15,
       "description": "Champions League"
     },
     {
@@ -157,7 +157,7 @@
         },
         "played": 17
       },
-      "form": "LWWWW",
+      "form": "LLWWW",
       "home": {
         "win": 12,
         "draw": 1,
@@ -177,7 +177,7 @@
       "group": "Ligue 1 ",
       "points": 60,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
+      "update": "2026-05-26T00:00:00+00:00",
       "goalsDiff": 13,
       "description": "Champions League Qualification"
     },
@@ -188,7 +188,7 @@
         "lose": 11,
         "goals": {
           "for": 63,
-          "against": 44
+          "against": 45
         },
         "played": 34
       },
@@ -202,14 +202,14 @@
         },
         "played": 17
       },
-      "form": "WLDLW",
+      "form": "WWLDL",
       "home": {
         "win": 11,
         "draw": 4,
         "lose": 2,
         "goals": {
           "for": 41,
-          "against": 19
+          "against": 20
         },
         "played": 17
       },
@@ -222,8 +222,8 @@
       "group": "Ligue 1 ",
       "points": 59,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": 19,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": 18,
       "description": "UEFA Europa League"
     },
     {
@@ -232,7 +232,7 @@
         "draw": 8,
         "lose": 9,
         "goals": {
-          "for": 58,
+          "for": 59,
           "against": 50
         },
         "played": 34
@@ -242,12 +242,12 @@
         "draw": 4,
         "lose": 6,
         "goals": {
-          "for": 28,
+          "for": 29,
           "against": 33
         },
         "played": 17
       },
-      "form": "WLWWW",
+      "form": "LWLWW",
       "home": {
         "win": 10,
         "draw": 4,
@@ -267,32 +267,32 @@
       "group": "Ligue 1 ",
       "points": 59,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": 8,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": 9,
       "description": "Conference League Qualification"
     },
     {
       "all": {
-        "win": 17,
+        "win": 16,
         "draw": 6,
-        "lose": 11,
+        "lose": 12,
         "goals": {
-          "for": 59,
-          "against": 50
+          "for": 60,
+          "against": 54
         },
         "played": 34
       },
       "away": {
-        "win": 7,
+        "win": 6,
         "draw": 4,
-        "lose": 6,
+        "lose": 7,
         "goals": {
-          "for": 26,
-          "against": 27
+          "for": 27,
+          "against": 31
         },
         "played": 17
       },
-      "form": "LWDDL",
+      "form": "LLWDD",
       "home": {
         "win": 10,
         "draw": 2,
@@ -310,20 +310,20 @@
         "name": "Monaco"
       },
       "group": "Ligue 1 ",
-      "points": 57,
+      "points": 54,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": 9,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": 6,
       "description": null
     },
     {
       "all": {
-        "win": 14,
+        "win": 15,
         "draw": 8,
-        "lose": 12,
+        "lose": 11,
         "goals": {
-          "for": 54,
-          "against": 46
+          "for": 58,
+          "against": 47
         },
         "played": 34
       },
@@ -337,14 +337,14 @@
         },
         "played": 17
       },
-      "form": "WDLWL",
+      "form": "WWDLW",
       "home": {
-        "win": 8,
+        "win": 9,
         "draw": 3,
-        "lose": 6,
+        "lose": 5,
         "goals": {
-          "for": 26,
-          "against": 18
+          "for": 30,
+          "against": 19
         },
         "played": 17
       },
@@ -355,10 +355,10 @@
         "name": "Strasbourg"
       },
       "group": "Ligue 1 ",
-      "points": 50,
+      "points": 53,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": 8,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": 11,
       "description": null
     },
     {
@@ -368,7 +368,7 @@
         "lose": 11,
         "goals": {
           "for": 48,
-          "against": 50
+          "against": 51
         },
         "played": 34
       },
@@ -382,14 +382,14 @@
         },
         "played": 17
       },
-      "form": "WDLWL",
+      "form": "LWDLW",
       "home": {
         "win": 8,
         "draw": 6,
         "lose": 3,
         "goals": {
           "for": 31,
-          "against": 24
+          "against": 25
         },
         "played": 17
       },
@@ -402,8 +402,8 @@
       "group": "Ligue 1 ",
       "points": 45,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": -2,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": -3,
       "description": null
     },
     {
@@ -447,17 +447,17 @@
       "group": "Ligue 1 ",
       "points": 44,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
+      "update": "2026-05-26T00:00:00+00:00",
       "goalsDiff": 1,
       "description": null
     },
     {
       "all": {
-        "win": 10,
+        "win": 11,
         "draw": 11,
-        "lose": 13,
+        "lose": 12,
         "goals": {
-          "for": 45,
+          "for": 47,
           "against": 50
         },
         "played": 34
@@ -472,13 +472,13 @@
         },
         "played": 17
       },
-      "form": "LWLWW",
+      "form": "WLWLW",
       "home": {
-        "win": 6,
+        "win": 7,
         "draw": 4,
-        "lose": 7,
+        "lose": 6,
         "goals": {
-          "for": 26,
+          "for": 28,
           "against": 27
         },
         "played": 17
@@ -490,20 +490,20 @@
         "name": "Paris FC"
       },
       "group": "Ligue 1 ",
-      "points": 41,
+      "points": 44,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": -5,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": -3,
       "description": null
     },
     {
       "all": {
-        "win": 11,
-        "draw": 8,
+        "win": 10,
+        "draw": 9,
         "lose": 15,
         "goals": {
           "for": 43,
-          "against": 54
+          "against": 55
         },
         "played": 34
       },
@@ -517,14 +517,14 @@
         },
         "played": 17
       },
-      "form": "LLLDD",
+      "form": "DLLLD",
       "home": {
-        "win": 8,
-        "draw": 4,
+        "win": 7,
+        "draw": 5,
         "lose": 5,
         "goals": {
           "for": 28,
-          "against": 22
+          "against": 23
         },
         "played": 17
       },
@@ -535,79 +535,34 @@
         "name": "Stade Brestois 29"
       },
       "group": "Ligue 1 ",
-      "points": 41,
+      "points": 39,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": -11,
-      "description": null
-    },
-    {
-      "all": {
-        "win": 7,
-        "draw": 14,
-        "lose": 13,
-        "goals": {
-          "for": 31,
-          "against": 44
-        },
-        "played": 34
-      },
-      "away": {
-        "win": 2,
-        "draw": 6,
-        "lose": 9,
-        "goals": {
-          "for": 11,
-          "against": 26
-        },
-        "played": 17
-      },
-      "form": "LDDDD",
-      "home": {
-        "win": 5,
-        "draw": 8,
-        "lose": 4,
-        "goals": {
-          "for": 20,
-          "against": 18
-        },
-        "played": 17
-      },
-      "rank": 13,
-      "team": {
-        "id": 111,
-        "logo": "https://media.api-sports.io/football/teams/111.png",
-        "name": "Le Havre"
-      },
-      "group": "Ligue 1 ",
-      "points": 35,
-      "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": -13,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": -12,
       "description": null
     },
     {
       "all": {
         "win": 9,
-        "draw": 8,
-        "lose": 17,
+        "draw": 9,
+        "lose": 16,
         "goals": {
-          "for": 28,
+          "for": 29,
           "against": 48
         },
         "played": 34
       },
       "away": {
         "win": 3,
-        "draw": 3,
-        "lose": 11,
+        "draw": 4,
+        "lose": 10,
         "goals": {
-          "for": 10,
+          "for": 11,
           "against": 28
         },
         "played": 17
       },
-      "form": "DLLDL",
+      "form": "DDLLD",
       "home": {
         "win": 6,
         "draw": 5,
@@ -618,26 +573,26 @@
         },
         "played": 17
       },
-      "rank": 14,
+      "rank": 13,
       "team": {
         "id": 77,
         "logo": "https://media.api-sports.io/football/teams/77.png",
         "name": "Angers"
       },
       "group": "Ligue 1 ",
-      "points": 35,
+      "points": 36,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": -20,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": -19,
       "description": null
     },
     {
       "all": {
-        "win": 8,
-        "draw": 10,
-        "lose": 16,
+        "win": 7,
+        "draw": 14,
+        "lose": 13,
         "goals": {
-          "for": 33,
+          "for": 32,
           "against": 44
         },
         "played": 34
@@ -647,12 +602,57 @@
         "draw": 6,
         "lose": 9,
         "goals": {
-          "for": 15,
+          "for": 12,
+          "against": 26
+        },
+        "played": 17
+      },
+      "form": "WLDDD",
+      "home": {
+        "win": 5,
+        "draw": 8,
+        "lose": 4,
+        "goals": {
+          "for": 20,
+          "against": 18
+        },
+        "played": 17
+      },
+      "rank": 14,
+      "team": {
+        "id": 111,
+        "logo": "https://media.api-sports.io/football/teams/111.png",
+        "name": "Le Havre"
+      },
+      "group": "Ligue 1 ",
+      "points": 35,
+      "status": "same",
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": -12,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 8,
+        "draw": 10,
+        "lose": 16,
+        "goals": {
+          "for": 34,
+          "against": 44
+        },
+        "played": 34
+      },
+      "away": {
+        "win": 2,
+        "draw": 6,
+        "lose": 9,
+        "goals": {
+          "for": 16,
           "against": 27
         },
         "played": 17
       },
-      "form": "WWLDD",
+      "form": "WWWLD",
       "home": {
         "win": 6,
         "draw": 4,
@@ -672,8 +672,8 @@
       "group": "Ligue 1 ",
       "points": 34,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
-      "goalsDiff": -11,
+      "update": "2026-05-26T00:00:00+00:00",
+      "goalsDiff": -10,
       "description": null
     },
     {
@@ -697,7 +697,7 @@
         },
         "played": 17
       },
-      "form": "LDDDD",
+      "form": "DLDDD",
       "home": {
         "win": 4,
         "draw": 8,
@@ -717,7 +717,7 @@
       "group": "Ligue 1 ",
       "points": 32,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
+      "update": "2026-05-26T00:00:00+00:00",
       "goalsDiff": -23,
       "description": "Relegation Playoffs"
     },
@@ -762,7 +762,7 @@
       "group": "Ligue 1 ",
       "points": 23,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
+      "update": "2026-05-26T00:00:00+00:00",
       "goalsDiff": -23,
       "description": "Relegation"
     },
@@ -787,7 +787,7 @@
         },
         "played": 17
       },
-      "form": "LLDLL",
+      "form": "DLLDL",
       "home": {
         "win": 2,
         "draw": 4,
@@ -807,7 +807,7 @@
       "group": "Ligue 1 ",
       "points": 17,
       "status": "same",
-      "update": "2026-05-17T00:00:00+00:00",
+      "update": "2026-05-26T00:00:00+00:00",
       "goalsDiff": -44,
       "description": "Relegation"
     }

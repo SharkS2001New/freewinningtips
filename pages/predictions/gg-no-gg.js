@@ -25,7 +25,7 @@ export default function BothTeamsToScoreGames({ fixtures, fetchDate }) {
 }
 
 export async function getServerSideProps() {
-  const fetchDate = getFormattedCurrentDate();
+  const fetchDate = "2026-05-30"; // getFormattedCurrentDate() --- IGNORE ---
   // Use a different cache file for this API endpoint
   const cachePath = path.join(CACHE_DIR, `btts_${fetchDate}.json`);
 
@@ -53,7 +53,7 @@ export async function getServerSideProps() {
     }
 
     // --- Cache miss: fetch from API ---
-    const url = `https://api.pitchpredictions.com/api/fetch_btts_free_winning_tips?fixture_date=${fetchDate}`;
+    const url = `https://develop.pitchpredictions.com/api/fetch_btts_free_winning_tips?fixture_date=${fetchDate}`;
     
     const res = await fetch(url, {
       headers: { 

@@ -1,39 +1,28 @@
-// components/FixturesRow.js
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { buildLeaguePathFromFixture } from '@/components/functions/leagueUrl';
 
-import DoubleChanceWinningTeam    from "../functions/double_chance_winning_team_and_odd";
-import WinningTeamPred1x2         from "../functions/determine_winning_team_and_odd";
-import ComputeFixtureAverage      from "../functions/ComputefixtureAverage";
-import UnderOverWinningTeamAndOdd from "../functions/under_over_winning_team_and_odd";
-import DetermineWinningOrLost     from "../functions/determine_won_or_lost";
-
 // ---------------------------------------------------------------------------
 // Team Forms Cache
-// Calls /api/team-forms which handles disk caching server-side.
-// In-memory cache prevents duplicate requests within the same page session.
 // ---------------------------------------------------------------------------
 class TeamFormsCache {
   constructor() {
-    this.memCache        = new Map(); // string id -> form data (session memory)
-    this.pendingRequests = new Map(); // batchKey -> Promise (dedup in-flight)
+    this.memCache = new Map();
+    this.pendingRequests = new Map();
   }
 
   async fetchTeamForms(teamIds, fixtureDate) {
     if (!teamIds?.length) return {};
 
-    const strIds     = [...new Set(teamIds.map(String))];
+    const strIds = [...new Set(teamIds.map(String))];
     const uncachedIds = strIds.filter(id => !this.memCache.has(`${fixtureDate}_${id}`));
 
-    // All in memory — return immediately
     if (uncachedIds.length === 0) {
       return Object.fromEntries(
         strIds.map(id => [id, this.memCache.get(`${fixtureDate}_${id}`)]).filter(([, v]) => v)
       );
     }
 
-    // Batch uncached into groups of 10
     const batches = [];
     for (let i = 0; i < uncachedIds.length; i += 10) {
       batches.push(uncachedIds.slice(i, i + 10));
@@ -43,13 +32,11 @@ class TeamFormsCache {
       batches.map(batch => this.fetchBatch(batch, fixtureDate))
     );
 
-    // Populate memory cache
     const allFetched = Object.assign({}, ...batchResults);
     Object.entries(allFetched).forEach(([id, data]) => {
       this.memCache.set(`${fixtureDate}_${String(id)}`, data);
     });
 
-    // Return all requested IDs
     const result = {};
     strIds.forEach(id => {
       const data = this.memCache.get(`${fixtureDate}_${id}`);
@@ -59,17 +46,15 @@ class TeamFormsCache {
   }
 
   async fetchBatch(teamIds, fixtureDate) {
-    const sorted   = [...teamIds].sort();
+    const sorted = [...teamIds].sort();
     const batchKey = `${fixtureDate}_${sorted.join(',')}`;
 
-    // Deduplicate in-flight requests
     if (this.pendingRequests.has(batchKey)) {
       return this.pendingRequests.get(batchKey);
     }
 
     const promise = (async () => {
       try {
-        // Call our own API route — it handles disk caching
         const res = await fetch(
           `/api/team-forms?team_ids=${sorted.join(',')}&fixture_date=${fixtureDate}`
         );
@@ -93,27 +78,22 @@ const teamFormsCache = new TeamFormsCache();
 
 // ---------------------------------------------------------------------------
 // Tip -> bet market mapping
-// API stores "Over 2.5" (with space); tipText is "Over2.5" (no space)
 // ---------------------------------------------------------------------------
 const TIP_TO_BET = {
+  '1': ['Match Winner', 'Home'],
+  'X': ['Match Winner', 'Draw'],
+  '2': ['Match Winner', 'Away'],
   '1X': ['Double Chance', 'Home/Draw'],
   'X2': ['Double Chance', 'Draw/Away'],
   '12': ['Double Chance', 'Home/Away'],
-
-  'Over1.5':  ['Goals Over/Under', 'Over 1.5'],
-  'Under1.5': ['Goals Over/Under', 'Under 1.5'],
-  'Over2.5':  ['Goals Over/Under', 'Over 2.5'],
+  'Over2.5': ['Goals Over/Under', 'Over 2.5'],
   'Under2.5': ['Goals Over/Under', 'Under 2.5'],
-  'Over3.5':  ['Goals Over/Under', 'Over 3.5'],
-  'Under3.5': ['Goals Over/Under', 'Under 3.5'],
-
-  'GG':  ['Both Teams Score', 'Yes'],
-  'Yes': ['Both Teams Score', 'Yes'],
-  'No':  ['Both Teams Score', 'No'],
+  'YES': ['Both Teams Score', 'Yes'],
+  'NO': ['Both Teams Score', 'No'],
 };
 
 // ---------------------------------------------------------------------------
-// Helpers
+// Helper Functions
 // ---------------------------------------------------------------------------
 
 const safeOdds = (val) => {
@@ -121,29 +101,40 @@ const safeOdds = (val) => {
   return String(val);
 };
 
-function getOddsFromDetails(betDetails, betType, value) {
-  try {
-    if (!betDetails) return null;
-    const bets     = typeof betDetails === 'string' ? JSON.parse(betDetails) : betDetails;
-    const category = bets.find(b => b.name === betType);
-    if (!category?.values) return null;
-    const entry = category.values.find(v => String(v.value) === String(value));
-    return entry?.odd ?? null;
-  } catch {
-    return null;
+function getOddForTip(tipText, fixture) {
+  const odds = fixture.odds || {};
+  
+  switch (tipText) {
+    case '1': return safeOdds(odds.home);
+    case 'X': return safeOdds(odds.draw);
+    case '2': return safeOdds(odds.away);
+    case '1X': return safeOdds(odds.double_chance?.home_draw);
+    case 'X2': return safeOdds(odds.double_chance?.draw_away);
+    case '12': return safeOdds(odds.double_chance?.home_away);
+    case 'Over2.5': return safeOdds(odds.over_under?.over_2_5);
+    case 'Under2.5': return safeOdds(odds.over_under?.under_2_5);
+    case 'YES': return safeOdds(odds.btts?.yes);
+    case 'NO': return safeOdds(odds.btts?.no);
+    default: return '-';
   }
 }
 
-function getOddForTip(tipText, fixture) {
-  if (tipText === '1') return safeOdds(fixture.bets_home);
-  if (tipText === 'X') return safeOdds(fixture.bets_draw);
-  if (tipText === '2') return safeOdds(fixture.bets_away);
-
-  const mapping = TIP_TO_BET[tipText];
-  if (!mapping) return '-';
-
-  const odd = getOddsFromDetails(fixture.bet_goals_in_details, mapping[0], mapping[1]);
-  return safeOdds(odd);
+function determineTipResult(tipText, homeScore, awayScore) {
+  if (homeScore === null || awayScore === null) return null;
+  
+  switch (tipText) {
+    case '1': return homeScore > awayScore ? 'W' : (homeScore === awayScore ? 'L' : 'L');
+    case 'X': return homeScore === awayScore ? 'W' : 'L';
+    case '2': return awayScore > homeScore ? 'W' : (homeScore === awayScore ? 'L' : 'L');
+    case '1X': return homeScore >= awayScore ? 'W' : 'L';
+    case 'X2': return awayScore >= homeScore ? 'W' : 'L';
+    case '12': return homeScore !== awayScore ? 'W' : 'L';
+    case 'Over2.5': return (homeScore + awayScore) > 2.5 ? 'W' : 'L';
+    case 'Under2.5': return (homeScore + awayScore) < 2.5 ? 'W' : 'L';
+    case 'YES': return homeScore > 0 && awayScore > 0 ? 'W' : 'L';
+    case 'NO': return homeScore === 0 || awayScore === 0 ? 'W' : 'L';
+    default: return null;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -155,7 +146,6 @@ const FormDot = ({ result }) => {
   return <span className={`form-dot ${map[result] ?? 'dot-d'}`}>{result}</span>;
 };
 
-// Animated skeleton circles shown while form data is loading
 const FormDotsSkeleton = () => (
   <div className="form-dots">
     {[...Array(6)].map((_, i) => (
@@ -180,7 +170,6 @@ const FormDotsSkeleton = () => (
   </div>
 );
 
-// Empty circles shown when no form data exists at all
 const FormDotsEmpty = () => (
   <div className="form-dots">
     {[...Array(6)].map((_, i) => (
@@ -205,132 +194,167 @@ const FormDotsEmpty = () => (
 // ---------------------------------------------------------------------------
 
 const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoading = false }) => {
-  const homeTeamId = String(fixture.home_team_id);
-  const awayTeamId = String(fixture.away_team_id);
+  // Extract data from new API structure
+  const homeTeam = fixture.home_team || {};
+  const awayTeam = fixture.away_team || {};
+  const match = fixture.match || {};
+  const score = fixture.score || {};
+  const predictions = fixture.predictions || {};
+  const odds = fixture.odds || {};
+
+  const homeTeamId = String(homeTeam.id);
+  const awayTeamId = String(awayTeam.id);
 
   const homeFormData = teamForms[homeTeamId];
   const awayFormData = teamForms[awayTeamId];
 
-  // Show skeleton while loading and no data yet for this team
   const showHomeSkeleton = formsLoading && !homeFormData;
   const showAwaySkeleton = formsLoading && !awayFormData;
 
-  // Resolve form string: API data > fixture fallback fields
-  const homeFormStr = homeFormData?.form_string || fixture.home_form || fixture.teams_perfomance_home || '';
-  const awayFormStr = awayFormData?.form_string || fixture.away_form || fixture.teams_perfomance_away || '';
+  // Get form strings from API or fallback
+  const homeFormStr = homeFormData?.form_string || '';
+  const awayFormStr = awayFormData?.form_string || '';
 
-  const homeForm = homeFormStr ? homeFormStr.split(' ').slice(0, 6) : [];
-  const awayForm = awayFormStr ? awayFormStr.split(' ').slice(0, 6) : [];
+  const homeForm = homeFormStr ? homeFormStr.split('').slice(0, 6) : [];
+  const awayForm = awayFormStr ? awayFormStr.split('').slice(0, 6) : [];
 
   // Scores
-  const homeScore   = fixture.goals_home !== null ? fixture.goals_home : '';
-  const awayScore   = fixture.goals_away !== null ? fixture.goals_away : '';
-  const hasScore    = homeScore !== '' && awayScore !== '';
-  const matchStatus = fixture.status_short || (hasScore ? 'FT' : 'NS');
+  const homeScore = score.home !== null ? score.home : '';
+  const awayScore = score.away !== null ? score.away : '';
+  const hasScore = homeScore !== '' && awayScore !== '';
+  const matchStatus = match.status || (hasScore ? 'FT' : 'NS');
 
-  // Predictions
-  const winningtip = WinningTeamPred1x2(
-    fixture.percent_pred_home, fixture.percent_pred_draw, fixture.percent_pred_away,
-    fixture.goals_home, fixture.goals_away
-  );
-  const doubleChancewinningTip = DoubleChanceWinningTeam(
-    fixture.percent_pred_home, fixture.percent_pred_draw, fixture.percent_pred_away,
-    fixture.goals_home, fixture.goals_away
-  );
-  const fixturesAverage = ComputeFixtureAverage(
-    fixture.teams_perfomance_home_for,  fixture.teams_perfomance_home_aganist,
-    fixture.teams_perfomance_away_for,  fixture.teams_perfomance_away_aganist,
-    fixture.teams_games_played_home,    fixture.teams_games_played_away
-  );
-  const winning_team_probs = UnderOverWinningTeamAndOdd(fixturesAverage, false);
+  // Get prediction values from API (already provided)
+  const prediction1x2 = predictions["1x2"] || {};
+  const doubleChance = predictions.double_chance || {};
+  const overUnder = predictions.over_under_2_5 || {};
+  const btts = predictions.both_teams_to_score || {};
+  const avgGoals = predictions.avg_goals || '-';
 
-  // Resolve tip + probability
+  // Helper to get highest probability team from API
+  const getHighestProbTeam = () => {
+    const home = prediction1x2.home || 0;
+    const draw = prediction1x2.draw || 0;
+    const away = prediction1x2.away || 0;
+    if (home > draw && home > away) return '1';
+    if (draw > home && draw > away) return 'X';
+    if (away > home && away > draw) return '2';
+    return '-';
+  };
+
+  // Determine tip based on prediction type
   let tipText = '';
-  let tipProb  = '74';
+  let tipProb = '';
 
   switch (predictionType) {
     case 'double-chance':
-      tipText = doubleChancewinningTip[0];
-      tipProb = doubleChancewinningTip[2] || '65';
+      // Use API's double chance prediction
+      tipText = doubleChance.type || '-';
+      tipProb = doubleChance.probability !== null && doubleChance.probability !== undefined 
+        ? `${doubleChance.probability}%` 
+        : '-';
       break;
-
+      
     case '1-5-goals':
-      tipText = winning_team_probs !== '-' ? `${winning_team_probs}1.5` : '-';
-      tipProb = winning_team_probs === 'Over' ? '68' : '72';
-      break;
-
     case '2-5-goals':
-      tipText = winning_team_probs !== '-' ? `${winning_team_probs}2.5` : '-';
-      tipProb = winning_team_probs === 'Over' ? '65' : '70';
-      break;
-
     case '3-5-goals':
-      tipText = winning_team_probs !== '-' ? `${winning_team_probs}3.5` : '-';
-      tipProb = winning_team_probs === 'Over' ? '60' : '68';
+      // Use API's over/under prediction
+      tipText = overUnder.prediction || '-';
+      tipProb = overUnder.probability !== null && overUnder.probability !== undefined 
+        ? `${overUnder.probability}%` 
+        : '-';
       break;
-
+      
     case 'gg-no-gg':
-      tipText = fixture.both_team_to_score || 'GG';
-      tipProb = fixture.both_team_to_score_prob || '55';
+      // Use API's BTTS prediction
+      tipText = btts.prediction ? btts.prediction.toUpperCase() : '-';
+      tipProb = btts.probability !== null && btts.probability !== undefined 
+        ? `${btts.probability}%` 
+        : '-';
       break;
-
+      
     case '1x2':
-      tipText = winningtip[0] || '-';
-      tipProb = winningtip[2] || '60';
+      // Use API's 1x2 prediction
+      tipText = getHighestProbTeam();
+      const probValue = tipText === '1' ? prediction1x2.home :
+                       tipText === 'X' ? prediction1x2.draw :
+                       tipText === '2' ? prediction1x2.away : 0;
+      tipProb = probValue ? `${probValue}%` : '-';
       break;
-
-    default: {
-      const avg = parseFloat(fixturesAverage);
-      if ((fixturesAverage < 2.0 || fixturesAverage > 3.0) && fixturesAverage !== '-') {
-        tipText = avg > 2.5 ? 'Over2.5' : 'Under2.5';
-        tipProb = avg > 2.5 ? '68' : '72';
+      
+    default: // 'all' - accumulator / smart selection using API predictions
+      const avgGoalsNum = avgGoals !== '-' ? parseFloat(avgGoals) : null;
+      const isAvgExtreme = avgGoalsNum !== null && (avgGoalsNum < 2.0 || avgGoalsNum > 3.0);
+      
+      // Get API's 1x2 prediction
+      const winningTeam = getHighestProbTeam();
+      const winningProb = winningTeam === '1' ? (prediction1x2.home || 0) :
+                          winningTeam === 'X' ? (prediction1x2.draw || 0) :
+                          winningTeam === '2' ? (prediction1x2.away || 0) : 0;
+      
+      // Check if winning probability is low (less than 50%)
+      const isWinningProbLow = winningProb < 50 && winningTeam !== '-';
+      
+      // Check BTTS Yes odds for accumulator (if available from API)
+      const bttsYesOdds = odds.btts?.yes ? parseFloat(odds.btts.yes) : null;
+      const isBTTSFavorable = bttsYesOdds !== null && bttsYesOdds < 1.40 && btts?.prediction === 'yes';
+      
+      // Decision tree for accumulator tips - using API's predictions
+      if (isBTTSFavorable && btts?.prediction) {
+        // Use API's BTTS prediction when odds are very favorable
+        tipText = btts.prediction.toUpperCase();
+        tipProb = btts.probability !== null && btts.probability !== undefined 
+          ? `${btts.probability}%` 
+          : '-';
+      } else if (isAvgExtreme && overUnder?.prediction) {
+        // Use API's Over/Under 2.5 prediction when avg goals is extreme
+        tipText = overUnder.prediction;
+        tipProb = overUnder.probability !== null && overUnder.probability !== undefined 
+          ? `${overUnder.probability}%` 
+          : '-';
+      } else if (isWinningProbLow && doubleChance?.type) {
+        // Use API's Double Chance prediction when winning probability is low
+        tipText = doubleChance.type;
+        tipProb = doubleChance.probability !== null && doubleChance.probability !== undefined 
+          ? `${doubleChance.probability}%` 
+          : '-';
       } else {
-        const lowConf =
-          (winningtip[0] === '1' && parseFloat(fixture.percent_pred_home) < 49) ||
-          (winningtip[0] === 'X' && parseFloat(fixture.percent_pred_draw)  < 49) ||
-          (winningtip[0] === '2' && parseFloat(fixture.percent_pred_away)  < 49);
-
-        tipText = lowConf ? doubleChancewinningTip[0] : winningtip[0];
-        tipProb = lowConf
-          ? (doubleChancewinningTip[2] || '65')
-          : (winningtip[2] || '60');
+        // Use API's 1X2 prediction as default
+        tipText = winningTeam;
+        tipProb = winningProb ? `${winningProb}%` : '-';
       }
       break;
-    }
   }
 
-  const tipOdds   = tipText && tipText !== '-' ? getOddForTip(tipText, fixture) : '-';
-  const tipResult = tipText && tipText !== '-'
-    ? DetermineWinningOrLost(tipText, fixture.goals_home, fixture.goals_away)
+  const tipOdds = tipText && tipText !== '-' ? getOddForTip(tipText, fixture) : '-';
+  const tipResult = tipText && tipText !== '-' && hasScore
+    ? determineTipResult(tipText, homeScore, awayScore)
     : null;
 
-  const matchTime = fixture.date
-    ? fixture.date.split(' ')[1]
-    : (fixture.kickoff_time || '19:00');
+  const matchTime = match.datetime 
+    ? new Date(match.datetime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    : '19:00';
 
-  // Render the right form dots component
   const renderFormDots = (showSkeleton, form) => {
-    if (showSkeleton)    return <FormDotsSkeleton />;
+    if (showSkeleton) return <FormDotsSkeleton />;
     if (form.length > 0) return <div className="form-dots">{form.map((r, i) => <FormDot key={i} result={r} />)}</div>;
     return <FormDotsEmpty />;
   };
 
   return (
     <div className="match-row">
-      {/* HOME TEAM */}
       <div className="team team-home">
-        <span className="team-name">{fixture.home_team_name || fixture.home_team || '—'}</span>
+        <span className="team-name">{homeTeam.name || '—'}</span>
         {renderFormDots(showHomeSkeleton, homeForm)}
       </div>
 
-      {/* CENTER */}
       <div className="match-center">
         {hasScore ? (
           <>
             <span className="match-status">{matchStatus}</span>
             <div className="match-score-wrapper">
               <span className="match-score">{homeScore} - {awayScore}</span>
-              {tipResult}
+              {tipResult && <span className={`tip-result ${tipResult === 'W' ? 'tip-win' : 'tip-lose'}`}>{tipResult}</span>}
             </div>
           </>
         ) : (
@@ -341,13 +365,11 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
         )}
       </div>
 
-      {/* AWAY TEAM */}
       <div className="team team-away">
-        <span className="team-name">{fixture.away_team_name || fixture.away_team || '—'}</span>
+        <span className="team-name">{awayTeam.name || '—'}</span>
         {renderFormDots(showAwaySkeleton, awayForm)}
       </div>
 
-      {/* BADGES */}
       <div className="match-badges">
         <div className="badge-pill">
           <span className="badge-label">TIP</span>
@@ -382,10 +404,11 @@ const LeagueCard = ({
   const [open, setOpen] = useState(defaultOpen);
 
   const getFlag = (country) => ({
-    England: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', Spain: '🇪🇸',    Italy: '🇮🇹',
-    Germany: '🇩🇪',       France: '🇫🇷',   Portugal: '🇵🇹',
-    Norway:  '🇳🇴',       Belgium: '🇧🇪',  Netherlands: '🇳🇱',
-    Scotland: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    England: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', Spain: '🇪🇸', Italy: '🇮🇹',
+    Germany: '🇩🇪', France: '🇫🇷', Portugal: '🇵🇹',
+    Norway: '🇳🇴', Belgium: '🇧🇪', Netherlands: '🇳🇱',
+    Scotland: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', Brazil: '🇧🇷', Australia: '🇦🇺',
+    Austria: '🇦🇹', Argentina: '🇦🇷',
   }[country] || '🏆');
 
   const leagueHref = league.leagueId
@@ -448,7 +471,7 @@ const FixturesRow = ({
   hideLeagueHeader = false,
   skipTeamForms = false,
 }) => {
-  const [teamForms,    setTeamForms]    = useState({});
+  const [teamForms, setTeamForms] = useState({});
   const [formsLoading, setFormsLoading] = useState(false);
 
   useEffect(() => {
@@ -459,7 +482,7 @@ const FixturesRow = ({
     }
 
     const teamIds = [...new Set(
-      fixtures.flatMap(f => [f.home_team_id, f.away_team_id]).filter(Boolean)
+      fixtures.flatMap(f => [f.home_team?.id, f.away_team?.id]).filter(Boolean)
     )];
 
     if (!teamIds.length) {
@@ -467,35 +490,35 @@ const FixturesRow = ({
       return;
     }
 
-    const today       = new Date();
-    const todayStr    = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
-    const fixtureDate = fixtures[0]?.unformatedDate || todayStr;
+    const today = new Date();
+    const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const fixtureDate = fixtures[0]?.match?.unformatted_date || todayStr;
 
     setFormsLoading(true);
 
     teamFormsCache.fetchTeamForms(teamIds, fixtureDate)
       .then(forms => setTeamForms(forms))
-      .catch(err  => console.error('[FixturesRow] Error loading forms:', err))
-      .finally(()  => setFormsLoading(false));
-
+      .catch(err => console.error('[FixturesRow] Error loading forms:', err))
+      .finally(() => setFormsLoading(false));
   }, [fixtures, skipTeamForms]);
 
   const groupByLeague = (list) => {
     const map = new Map();
     list.forEach(f => {
-      const key = f.league_name || f.league || 'Other';
+      const league = f.league || {};
+      const key = league.name || 'Other';
       if (!map.has(key)) {
         map.set(key, {
           league: {
             name: key,
-            country: f.country_name || f.country || 'International',
-            leagueId: f.league_id || null,
+            country: league.country || 'International',
+            leagueId: league.id || null,
           },
           fixtures: [],
         });
       }
-      if (!map.get(key).league.leagueId && f.league_id) {
-        map.get(key).league.leagueId = f.league_id;
+      if (!map.get(key).league.leagueId && league.id) {
+        map.get(key).league.leagueId = league.id;
       }
       map.get(key).fixtures.push(f);
     });

@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-30T23:38:55.195Z",
+  "data": [
+    {
+      "league_id": 45,
+      "league_name": "FA Cup",
+      "league_short_name": "FA",
+      "league_type": "Cup",
+      "logo": "https://media.api-sports.io/football/leagues/45.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/FA Cup.jpg",
+      "country_name": "England",
+      "country_flag": "https://media.api-sports.io/flags/gb-eng.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/England.svg"
+    }
+  ]
+}

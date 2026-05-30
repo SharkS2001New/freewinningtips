@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-30T23:40:30.049Z",
+  "data": [
+    {
+      "league_id": 132,
+      "league_name": "Primera C",
+      "league_short_name": "PC",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/132.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/Primera C.jpg",
+      "country_name": "Argentina",
+      "country_flag": "https://media.api-sports.io/flags/ar.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/Argentina.svg"
+    }
+  ]
+}

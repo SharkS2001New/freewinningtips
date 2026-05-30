@@ -25,7 +25,7 @@ export default function Over25Games({ fixtures, fetchDate }) {
 }
 
 export async function getServerSideProps() {
-  const fetchDate = getFormattedCurrentDate();
+  const fetchDate = "2026-05-30"; // getFormattedCurrentDate() --- IGNORE ---
   // Use a different cache file for this API endpoint
   const cachePath = path.join(CACHE_DIR, `over25_${fetchDate}.json`);
 
@@ -53,7 +53,7 @@ export async function getServerSideProps() {
     }
 
     // --- Cache miss: fetch from API ---
-    const url = `https://api.pitchpredictions.com/api/fetch_under_over25_free_winning_tips?fixture_date=${fetchDate}`;
+    const url = `https://develop.pitchpredictions.com/api/fetch_under_over25_free_winning_tips?fixture_date=${fetchDate}`;
     
     const res = await fetch(url, {
       headers: { 

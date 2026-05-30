@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-30T23:42:19.998Z",
+  "data": [
+    {
+      "league_id": 133,
+      "league_name": "Primera D",
+      "league_short_name": "PD",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/133.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/Primera D.jpg",
+      "country_name": "Argentina",
+      "country_flag": "https://media.api-sports.io/flags/ar.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/Argentina.svg"
+    }
+  ]
+}

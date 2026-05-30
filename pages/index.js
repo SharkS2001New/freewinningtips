@@ -41,7 +41,7 @@ export default function Home({ fixtures, fetchDate }) {
 }
 
 export async function getServerSideProps() {
-  const fetchDate = getFormattedCurrentDate();
+  const fetchDate = "2026-05-30";
   const cachePath = path.join(CACHE_DIR, `homepage_${fetchDate}.json`);
 
   let fixtures = [];
@@ -73,7 +73,7 @@ export async function getServerSideProps() {
 
     // --- Cache miss: fetch from API ---
     const res  = await fetch(
-      `https://api.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`,
+      `https://develop.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`,
       { headers: { Authorization: 'R9TxV3PbOEu7qZnJKgydC5LmX2' } }
     );
 
