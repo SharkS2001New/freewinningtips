@@ -51,7 +51,7 @@ export async function getServerSideProps() {
     }
 
     // --- Cache miss: fetch from API ---
-    const url = `https://develop.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`;
+    const url = `https://api.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`;
     
     const res = await fetch(url, {
       headers: { 

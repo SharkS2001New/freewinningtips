@@ -55,7 +55,7 @@ export async function getServerSideProps() {
 
     // --- Cache miss: fetch and populate for all pages ---
     const res = await fetch(
-      `https://develop.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`,
+      `https://api.pitchpredictions.com/api/fetch_todays_free_winning_tips?fixture_date=${fetchDate}`,
       { headers: { Authorization: 'R9TxV3PbOEu7qZnJKgydC5LmX2' } }
     );
 
