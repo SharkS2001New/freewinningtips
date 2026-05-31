@@ -25,7 +25,7 @@ export default function Over15Games({ fixtures, fetchDate }) {
 }
 
 export async function getServerSideProps() {
-  const fetchDate = "2026-05-30"; // getFormattedCurrentDate() --- IGNORE ---
+  const fetchDate = getFormattedCurrentDate();
   // Use a different cache file for this API endpoint
   const cachePath = path.join(CACHE_DIR, `over15_${fetchDate}.json`);
 

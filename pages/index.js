@@ -41,7 +41,7 @@ export default function Home({ fixtures, fetchDate }) {
 }
 
 export async function getServerSideProps() {
-  const fetchDate = "2026-05-30";
+  const fetchDate = getFormattedCurrentDate();
   const cachePath = path.join(CACHE_DIR, `homepage_${fetchDate}.json`);
 
   let fixtures = [];
