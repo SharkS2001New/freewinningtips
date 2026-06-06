@@ -32,6 +32,8 @@ function Footer() {
       {/* ── TOP NAV: About | Contact | Blog ── */}
       <div className="footer-top-nav">
         <a href="/about-us" className="footer-top-a">About</a>
+        <a href="/how-we-predict" className="footer-top-a">How We Predict</a>
+        <a href="/results" className="footer-top-a">Results</a>
         <a href="/contact-us" className="footer-top-a">Contact</a>
         <a href="/blog" className="footer-top-a">Blog</a>
       </div>

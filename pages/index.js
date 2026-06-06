@@ -1,7 +1,9 @@
 // pages/index.js
-import HomepageContent   from '@/components/seo-content/homepage';
-import BlogPostsSection  from '@/components/shared/short-blog-posts';
-import FixturesRow       from '@/components/shared/FixturesRow';
+import Head from 'next/head';
+import HomepageContent from '@/components/seo-content/homepage';
+import HomepageSchema from '@/components/seo-content/homepage-schema';
+import BlogPostsSection from '@/components/shared/short-blog-posts';
+import FixturesRow from '@/components/shared/FixturesRow';
 import { fetchCachedFixtures, CACHE_TTL } from '@/components/functions/pagesDataCache';
 
 
@@ -13,6 +15,9 @@ function getFormattedCurrentDate() {
 export default function Home({ fixtures, fetchDate }) {
   return (
     <>
+      <Head>
+        <HomepageSchema />
+      </Head>
       <div className="page-root">
         <div className="container-main">
           <FixturesRow fixtures={fixtures} predictionType="all" />
@@ -30,7 +35,7 @@ export default function Home({ fixtures, fetchDate }) {
         </div>
 
         <BlogPostsSection />
-        <HomepageContent />
+        <HomepageContent fixtures={fixtures} />
       </div>
     </>
   );

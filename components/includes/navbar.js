@@ -127,7 +127,7 @@ function Navbar({ toggleSidebar }) {
                         {/* Logo */}
                         <div className="logo-container">
                             <a href="/" className="logo-link">
-                                <img src="/freewinningtipslogo.png" alt="Free Winning Tips - Football Betting Tips and Match Predictions" />
+                                <img src="/freewinningtipslogo.png" alt="FreeWinningTips home" width="200" height="60" />
                             </a>
                         </div>
 

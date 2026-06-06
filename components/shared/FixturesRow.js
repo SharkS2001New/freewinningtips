@@ -1,6 +1,7 @@
 import { useState, useEffect, Fragment } from 'react';
 import Link from 'next/link';
 import { buildLeaguePath } from '@/components/functions/leagueUrl';
+import { resolveLeagueIdFromFixture } from '@/components/functions/resolveLeagueId';
 import { getInlineAdVariant, InlineAdsense } from '@/components/shared/inline-adsense';
 
 // ---------------------------------------------------------------------------
@@ -537,23 +538,26 @@ const FixturesRow = ({
 
   const groupByLeague = (list) => {
     const map = new Map();
-    list.forEach(f => {
+    list.forEach((f) => {
       const league = f.league || {};
-      const key = league.name || 'Other';
-      const leagueId = league.id || f.league_id || null;
+      const key = `${league.country || 'International'}::${league.name || 'Other'}`;
+      const leagueId = resolveLeagueIdFromFixture(f);
+
       if (!map.has(key)) {
         map.set(key, {
           league: {
-            name: key,
+            name: league.name || 'Other',
             country: league.country || 'International',
             leagueId: leagueId || null,
           },
           fixtures: [],
         });
       }
-      if (!map.get(key).league.leagueId && (league.id || f.league_id)) {
-        map.get(key).league.leagueId = league.id || f.league_id;
+
+      if (!map.get(key).league.leagueId && leagueId) {
+        map.get(key).league.leagueId = leagueId;
       }
+
       map.get(key).fixtures.push(f);
     });
     return Array.from(map.values());

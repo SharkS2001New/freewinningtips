@@ -11,6 +11,8 @@ function SitemapsPage() {
     </div>
     <div className="d-flex align-items-center sitemapsFontSize">
       <ul>
+        <li><a href="/results" className="no-underline">Prediction Results &amp; Accuracy</a></li>
+        <li><a href="/how-we-predict" className="no-underline">How We Predict</a></li>
         <li><a href="/yesterdays-free-football-predictions" className="no-underline">Football Predictions Yesterday</a></li>
         <li><a href="/tomorrows-free-football-predictions" className="no-underline">Football Predictions Tomorrows</a></li>
         <li><a href="/tip-of-the-day" className="no-underline">Tip of the Day</a></li>

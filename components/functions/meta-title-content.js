@@ -317,12 +317,12 @@ function MetaContent() {
 
     } else if(router.asPath.substring(1) == "predictions/direct-win-predictions"){
 
-        title ="Direct Win Predictions and Tips Today";
-        meta_desc_content = "Direct win predictions and banker tips are available daily on FreeWinningTips. Get high-confidence football picks from more than 200 leagues and start winning today.";
-        meta_keywords = "direct win predictions, direct win tips, direct win prediction today, direct win tips today, direct win football prediction, banker tips today, direct win weekend prediction, direct win correct score";
-        page_title = "Direct Win Predictions Today";
+        title = "Direct Win Predictions Today — Free High-Confidence Football Picks | FreeWinningTips";
+        meta_desc_content = "Free direct win football predictions updated daily. Our analysts pick high-confidence 1X2 winners from 200+ leagues using form, H2H data, and probability scoring. Only tips with 70%+ probability published.";
+        meta_keywords = "";
+        page_title = "Direct Win Predictions Today — Free High-Confidence Football Picks";
 
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 
     } else if(router.asPath.substring(1) == "predictions/todays-predictions"){
 
@@ -594,15 +594,32 @@ function MetaContent() {
 
         meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 
+    } else if(current_url === "results") {
+
+        title = "Football Prediction Results & Accuracy | FreeWinningTips";
+        meta_desc_content = "Track FreeWinningTips prediction results with monthly win rates, outcomes, and verified accuracy stats across 1X2, BTTS, Over/Under, and more.";
+        meta_keywords = "";
+        page_title = "Prediction Results & Accuracy Archive";
+
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
+
+    } else if(current_url === "how-we-predict") {
+
+        title = "How We Predict Football Matches | FreeWinningTips Methodology";
+        meta_desc_content = "Learn how FreeWinningTips analysts build daily football predictions using statistical models, market analysis, and expert review across 50+ leagues.";
+        meta_keywords = "";
+        page_title = "How We Predict Football Matches";
+
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
+
     } else if(current_url ==="") {
         //Homepage url descriptions (route "/")
-        title ="Best and Accurate Prediction Site for Football Betting Tips	";
-        
-        meta_desc_content = "FreeWinningTips offers the best and accurate predictions. Explore free tips, strategies, and insights to improve your betting game and win more often!.";
-        meta_keywords = "best prediction site, direct win prediction, accurate prediction site,  football prediction today, best football tips for today, football tips today,today football prediction tips, free prediction today, best football prediction today, winning tips today, everyday winnig tips, free winning tips";
-        page_title = "Direct Win Prediction - Everyday Winning Tips";
+        title = "Free Football Predictions Today | Betting Tips & Winning Picks – FreeWinningTips";
+        meta_desc_content = "Get free football predictions and betting tips for today's matches. Expert analysis on 1X2, BTTS, Over/Under, Accumulator & Jackpot markets across 50+ leagues. Updated daily by FreeWinningTips analysts.";
+        meta_keywords = "";
+        page_title = "Free Football Predictions Today — Expert Betting Tips & Winning Picks";
 
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
     }
     
     return meta_content_array;

@@ -26,7 +26,8 @@ function AboutUs() {
             and premium tips with an astonishing 99% winning probability. With a collective experience 
             spanning over a decade in the industry, our team of dedicated experts is committed to offering 
             comprehensive and well-researched insights that guide your betting decisions and elevate your 
-            chances of achieving consistent success.
+            chances of achieving consistent success. Learn more about{' '}
+            <Link href="/how-we-predict">how we predict football matches</Link>.
           </p>
         </div>
 

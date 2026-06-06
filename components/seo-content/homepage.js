@@ -1,83 +1,139 @@
-// components/HomepageContent.js
 import Link from 'next/link';
+import {
+  getFeaturedPicks,
+  formatTipLabel,
+} from '@/components/functions/predictionTip';
 
-const HomepageContent = () => {
+const FAQ_ITEMS = [
+  {
+    question: 'Are FreeWinningTips predictions free?',
+    answer:
+      'Yes. We publish free daily football predictions covering 1X2, BTTS, Over/Under, Accumulator, and Double Chance markets. A VIP tier with additional high-confidence picks is also available — see our VIP Tips page for details.',
+  },
+  {
+    question: 'How accurate are your football predictions?',
+    answer:
+      'Our analysts maintain a verified average success rate of over 70% across all free markets, tracked and published monthly. We include wins, losses, and voids in our stats — nothing is hidden. Visit our Results Archive to check historical performance before following any tip.',
+  },
+  {
+    question: 'Which football leagues do you cover?',
+    answer:
+      'We cover 50+ competitions including the English Premier League, La Liga, Serie A, Bundesliga, Ligue 1, UEFA Champions League, MLS, and African leagues including the Kenyan Premier League, Egyptian Premier League, and South African PSL.',
+  },
+  {
+    question: 'How often are predictions updated?',
+    answer:
+      'Free predictions are published daily by 9:00 AM East Africa Time (EAT). VIP picks are sent directly to subscribers via Telegram or WhatsApp, usually by 8:00 AM on match days.',
+  },
+  {
+    question: 'How are your predictions made?',
+    answer:
+      'Our team uses a statistical model that scores each match on team form, head-to-head history, player availability, venue advantage, and market odds movement. A senior analyst reviews every pick before publication and checks for late team news.',
+  },
+  {
+    question: 'What is the Jackpot Predictions section?',
+    answer:
+      'Our Jackpot Predictions cover major weekly jackpots like Sportpesa Mega Jackpot. We provide full predicted scorelines and match tips for all jackpot games, with an in-depth analysis of each fixture. Visit our Jackpot Predictions page for this week\'s picks.',
+  },
+];
+
+const FEATURE_ROWS = [
+  { feature: 'Free daily tips', detail: '1X2, BTTS, Over/Under, Accumulator, Double Chance, Draw No Bet — no subscription needed' },
+  { feature: '50+ leagues', detail: 'EPL, La Liga, Serie A, Bundesliga, Ligue 1, MLS, CAF leagues, Kenyan Premier League and more' },
+  { feature: 'Transparent accuracy', detail: 'Monthly win-rate stats published openly — we don\'t hide our misses' },
+  { feature: 'Same-day tips', detail: 'Predictions updated by 9:00 AM EAT every day, including weekends' },
+  { feature: 'VIP picks', detail: 'Subscribe to Must Win Teams Today for exclusive high-confidence tips via WhatsApp/Telegram' },
+];
+
+const HomepageContent = ({ fixtures = [] }) => {
+  const featuredPicks = getFeaturedPicks(fixtures, 5);
+
   return (
     <section className="seo-section">
       <div className="seo-inner">
-        <h2>Accurate Soccer Predictions</h2>
         <p>
-          We don't just predict winners, we provide accurate soccer predictions. This level of precision helps bettors make decisions on a variety of markets, from match results to over/under bets.
-        </p>
-        <p>
-          FreeWinningTips is the most accurate and reliable site for football predictions. We cover predictions for{' '}
-          <a href="/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
-            yesterday
-          </a>
-          , today, and{' '}
-          <a href="/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
-            tomorrow’s matches
-          </a>
-          . Our aim is to save you the time and energy it would take to analyze the fixtures. We have a team of experts who analyze the stats and other factors to deliver the surest predictions. And if you want the best odds for our predictions, you can <a href="https://mybettingsites.com/ke/betting-sites-with-best-betting-odds">find bookies with the highest odds here</a>.
+          FreeWinningTips publishes free football predictions every day, covering 50+ leagues from the English Premier League to the Kenyan Premier League. Our analysis team processes team form, head-to-head records, player availability, and betting market movement to calculate a probability score for each match. Every tip you see — 1X2, BTTS, Over/Under, Accumulator, or Jackpot — is backed by data, not guesswork. Check our{' '}
+          <Link href="/results">monthly results archive</Link> to see our verified accuracy rates before you follow any prediction.
         </p>
 
-        <h2>Free football prediction</h2>
-        <p>
-          At Freewinningtips.com, we believe that quality football predictions should be accessible to everyone. We offer free tips daily, including insights on the most popular football leagues and international tournaments. Whether you're looking for predictions on the English Premier League or smaller local leagues, we’ve got you covered.
-        </p>
-        
-        <h2>Direct Win Prediction Today</h2>
-        <p>
-          <b>Direct Win Prediction</b> is a statistical method designed to forecast the outcomes of matches. FreeWinningTips utilizes data from previous matches, encompassing team performance and player statistics, to pinpoint patterns and trends that can inform predictions of future match results.
-          Direct Win Prediction extends beyond the realm of football. It finds application in basketball, tennis, and various other sports as well.
-        </p>
-
-        <h2>Free Big Win Prediction</h2>
-        <p>
-          Our Free Big Win Prediction section is dedicated to providing you with the best tips to maximize your betting success.
-          Ready to take your betting to the next level? Visit our Free Big Win Prediction section and start making smarter bets today. For even more exclusive tips and predictions, check out our VIP packages designed to enhance your betting strategy.
-        </p>
-        <p>
-          Our tips are data-based so that you can bet with confidence. We provide our users with free winning tips for today’s matches. Additionally, we have a VIP package that will significantly transform how you bet. Once you subscribe to the{' '}
-          <Link href="/predictions/must-win-teams-today">
-            Must Win Teams Today
-          </Link>
-          , you’ll get exclusive tips and predictions conveniently delivered to your phone. Subscribe now to get winning tips today.
+        <p className="seo-nav-links">
+          Browse{' '}
+          <Link href="/predictions/todays-predictions">today&apos;s football predictions</Link>,{' '}
+          <Link href="/predictions/free-betting-tips-today">free football betting picks today</Link>,{' '}
+          <Link href="/predictions/must-win-teams-today">must-win football teams today</Link>,{' '}
+          <Link href="/predictions/gg-no-gg">both teams to score predictions</Link>,{' '}
+          <Link href="/yesterdays-free-football-predictions">yesterday&apos;s free football predictions</Link>, and{' '}
+          <Link href="/tomorrows-free-football-predictions">tomorrow&apos;s free football betting tips</Link>.
         </p>
 
-        <h2>Why Freewinningtips.com Is the Best Prediction Site</h2>
+        <h2>How Our Football Predictions Work</h2>
         <p>
-          We take pride in being recognized as one of the <strong>best football prediction sites.</strong> Our team is dedicated to offering unmatched accuracy and reliability. Plus, our user-friendly interface and mobile accessibility make it easy for bettors to access predictions on the go. 
+          Every prediction on FreeWinningTips goes through a three-step analysis process before it is published:
         </p>
         <p>
-          Not all prediction sites are created equal. Some are leaps and bounds ahead of others. So, what makes a site the "best"? It boils down to a few key factors: accuracy, reliability, and user experience. You want a site that doesn’t just throw random guesses but provides well-thought-out predictions based on solid data.
+          <strong>Statistical modelling</strong> — We calculate expected goals, form index, and home/away advantage using data from the last 10 matches for each team.
         </p>
         <p>
-          Our in-house team of experts analyzes all of Saturday’s games, domestic or international, to bring you the surest match tips and predictions. We publish Saturday football tips and predictions before the weekend so you can have ample time to strategize before the games begin.
+          <strong>Market analysis</strong> — We cross-reference our model output against bookmaker odds across 10+ bookmakers to identify value and spot line movement.
+        </p>
+        <p>
+          <strong>Expert review</strong> — A senior analyst does a final check for breaking news: injuries, suspensions, weather, or team selection changes published in the 24 hours before kick-off.{' '}
+          <Link href="/how-we-predict">Read our full methodology</Link>.
         </p>
 
-        <h2>Everyday Winning Tips - Winning Prediction Site</h2>
-        <p>
-          You can check out our website for <b>everyday Winning tips.</b> We are the best because we depend on stats to bring you the winning tips and predictions. We also have an experienced team of experts who pay attention to every factor and detail so you can bet confidently <b>Daily 98 Winning Tips</b>.
-        </p>
+        <h2>Why Bettors Choose FreeWinningTips</h2>
+        <p>There are hundreds of football prediction sites. Here is what makes FreeWinningTips different:</p>
+        <table className="seo-feature-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Detail</th>
+            </tr>
+          </thead>
+          <tbody>
+            {FEATURE_ROWS.map((row) => (
+              <tr key={row.feature}>
+                <td>{row.feature}</td>
+                <td>{row.detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-        <h2>New Features on Freewinningtips.com</h2>
-        <p><b>Daily Sure Wins</b></p>
-        <p>Our <strong>daily sure wins</strong> section features handpicked games with the highest probability of success. These are perfect for bettors who want to win consistently without taking too much risk.</p>
-        
-        <p><b>Accumulator Bets</b></p>
-        <p>Maximize your winnings with our accumulator bet predictions. We carefully select multiple matches that, when combined, offer huge potential returns. Accumulator betting is ideal for risk-takers who want to multiply their profits.</p>
-        
-        <p><b>Sure Bets Tips</b></p>
-        <p>For those who prefer minimal risk, we provide <strong>sure bets tips</strong> with the highest probability of winning. These predictions are designed to offer the safest betting opportunities, ideal for bettors looking for steady gains.</p>
-        
-        <h2>Jackpot Predictions</h2>
-        <p>
-          Feeling lucky? Jackpot predictions are for those who are looking to make it big. These tips cover multiple games and require you to predict the outcome of all of them to win a significant payout. It’s like playing a lottery with a strategic twist.
-        </p>
+        <h2>Today&apos;s Free Betting Tips</h2>
+        {featuredPicks.length > 0 ? (
+          <ul className="featured-picks-list">
+            {featuredPicks.map((pick) => (
+              <li key={pick.fixture.fixture_id || `${pick.matchLabel}-${pick.tip}`}>
+                <strong>{pick.matchLabel}</strong>
+                {' | '}
+                {formatTipLabel(pick.tip, pick.market)}
+                {pick.probability ? ` | Probability: ${pick.probability}%` : ''}
+                {pick.analystNote && (
+                  <p className="featured-pick-note">
+                    <em>Analyst note:</em> {pick.analystNote}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Featured picks for today will appear here once fixtures are loaded. Check back shortly after 9:00 AM EAT.</p>
+        )}
+
+        <h2>Frequently Asked Questions</h2>
+        <div className="homepage-faq">
+          {FAQ_ITEMS.map((item) => (
+            <div key={item.question} className="homepage-faq-item">
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
 export default HomepageContent;
+export { FAQ_ITEMS };

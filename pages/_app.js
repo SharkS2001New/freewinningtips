@@ -24,6 +24,20 @@ function App({ Component, pageProps }) {
   useScrollRestoration(router);
   
   const path = router.pathname;
+  const isHomepage = router.pathname === '/';
+  const isDirectWinPage = router.pathname === '/predictions/direct-win-predictions';
+  const pageTitle = meta_content_data[0] || '';
+  const pageDescription = meta_content_data[1] || '';
+  const ogTitle = isHomepage
+    ? 'Free Football Predictions Today | FreeWinningTips'
+    : isDirectWinPage
+      ? 'Direct Win Predictions Today | FreeWinningTips'
+      : pageTitle;
+  const ogDescription = isHomepage
+    ? 'Expert football betting tips for today — 1X2, BTTS, Over/Under, Accumulator & Jackpots. Free daily picks across 50+ leagues.'
+    : isDirectWinPage
+      ? 'Free daily direct win football picks — 1X2 tips with 70%+ probability across 200+ leagues. Updated every morning.'
+      : pageDescription;
   
   // Check if the current page includes 'auth' in its route
   const isAuthPage = router.pathname.includes("auth");
@@ -52,7 +66,7 @@ function App({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
-        <title>{meta_content_data[0]}</title>
+        <title>{pageTitle}</title>
         <link rel="dns-prefetch" href={SITE_ORIGIN} crossOrigin />
         <link rel="preconnect" href={SITE_ORIGIN} crossOrigin />
         <link rel="dns-prefetch" href="https://api.pitchpredictions.com" crossOrigin />
@@ -64,21 +78,20 @@ function App({ Component, pageProps }) {
         <meta name="copyright" content="© 2025 Freewinningtips All rights reserved." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#202c3c" />
-        <meta name="description" content={meta_content_data[1]} />
-        <meta name="keywords" content={meta_content_data[2]} />
+        <meta name="description" content={pageDescription} />
         <meta name="google-adsense-account" content="ca-pub-5665711413000284"/>
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@freewinningtips" />
-        <meta name="twitter:title" content={meta_content_data[0]} />
-        <meta name="twitter:description" content={meta_content_data[1]} />
+        <meta name="twitter:title" content={ogTitle} />
+        <meta name="twitter:description" content={ogDescription} />
         <meta name="twitter:image" content={`${SITE_ORIGIN}/freewinningtips.png`} />
         <meta name="twitter:url" content={`${SITE_ORIGIN}${router.pathname}`} />
 
-        <meta property="og:title" content={meta_content_data[0]} />
+        <meta property="og:title" content={ogTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${SITE_ORIGIN}/freewinningtips.png`} />
-        <meta property="og:description" content={meta_content_data[1]} />
+        <meta property="og:description" content={ogDescription} />
         <meta property="og:url" content={`${SITE_ORIGIN}${router.pathname}`} />
       </Head>
 
