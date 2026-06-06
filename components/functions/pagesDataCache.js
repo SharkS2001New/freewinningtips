@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { API_BASE, API_AUTH, CACHE_TTL } from '@/components/functions/apiConfig';
+import { enrichFixturesWithLeagueIds } from '@/components/functions/resolveLeagueId';
 
 export { API_BASE, API_AUTH, CACHE_TTL, PREDICTION_ENDPOINTS } from '@/components/functions/apiConfig';
 
@@ -72,7 +73,10 @@ export async function fetchCachedFixtures({
   try {
     const cached = readFreshCache(filePath, ttlMs);
     if (cached) {
-      return { fixtures: cached.data || [], ...pickExtra(cached) };
+      return {
+        fixtures: enrichFixturesWithLeagueIds(cached.data || []),
+        ...pickExtra(cached),
+      };
     }
 
     const params = new URLSearchParams({ fixture_date: fetchDate, ...queryParams });
@@ -80,7 +84,7 @@ export async function fetchCachedFixtures({
     const data = await fetchFromApi(url);
 
     if (data.status === true && Array.isArray(data.data)) {
-      fixtures = data.data;
+      fixtures = enrichFixturesWithLeagueIds(data.data);
       writeCache(filePath, {
         generatedAt: new Date().toISOString(),
         fixtureDate: fetchDate,
@@ -93,7 +97,7 @@ export async function fetchCachedFixtures({
     console.error(`[${logLabel}] fetchCachedFixtures error:`, err.message);
     const stale = readStaleCache(filePath);
     if (stale?.data) {
-      fixtures = stale.data;
+      fixtures = enrichFixturesWithLeagueIds(stale.data);
     }
   }
 
@@ -123,7 +127,7 @@ export async function fetchCachedPaginatedFixtures({
     const cached = readFreshCache(filePath, ttlMs);
     if (cached) {
       return {
-        initialData: cached.data || [],
+        initialData: enrichFixturesWithLeagueIds(cached.data || []),
         totalCount: cached.totalCount || 0,
         endpointStatus: 'success',
         error: null,
@@ -135,7 +139,7 @@ export async function fetchCachedPaginatedFixtures({
     const data = await fetchFromApi(url);
 
     if (data.status === true && Array.isArray(data.data)) {
-      initialData = data.data;
+      initialData = enrichFixturesWithLeagueIds(data.data);
       totalCount = data.total || initialData.length;
 
       writeCache(filePath, {
@@ -156,7 +160,7 @@ export async function fetchCachedPaginatedFixtures({
 
     const stale = readStaleCache(filePath);
     if (stale?.data) {
-      initialData = stale.data;
+      initialData = enrichFixturesWithLeagueIds(stale.data);
       totalCount = stale.totalCount || 0;
       endpointStatus = 'success';
       error = null;

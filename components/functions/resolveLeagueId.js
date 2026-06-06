@@ -28,8 +28,27 @@ const LEAGUE_LOOKUP = buildLeagueLookup();
 export function resolveLeagueIdFromFixture(fixture) {
   const league = fixture?.league || {};
   const fromApi = league.id || fixture?.league_id;
-  if (fromApi) return Number(fromApi);
+  if (fromApi && Number(fromApi) > 0) return Number(fromApi);
 
   const key = `${normalizeKey(league.country)}::${normalizeKey(league.name)}`;
   return LEAGUE_LOOKUP.get(key) || null;
+}
+
+/** Ensure league.id and league_id are set on each fixture (SSR + cache). */
+export function enrichFixturesWithLeagueIds(fixtures) {
+  if (!Array.isArray(fixtures)) return [];
+
+  return fixtures.map((fixture) => {
+    const leagueId = resolveLeagueIdFromFixture(fixture);
+    if (!leagueId) return fixture;
+
+    return {
+      ...fixture,
+      league_id: leagueId,
+      league: {
+        ...(fixture.league || {}),
+        id: leagueId,
+      },
+    };
+  });
 }
