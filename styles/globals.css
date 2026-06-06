@@ -3339,7 +3339,17 @@ ins.adsbygoogle[data-ad-status=unfilled] {
 }
 
 .league-header-link:hover {
-  opacity: 0.9;
+  color: var(--green-deep);
+}
+
+.league-header-static {
+  cursor: default;
+}
+
+.league-header-link .league-chev {
+  color: var(--green-mid, #2e7d32);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* Standings — card layout (matches FixturesRow league-card) */

@@ -1,6 +1,6 @@
 import { useState, useEffect, Fragment } from 'react';
 import Link from 'next/link';
-import { buildLeaguePathFromFixture } from '@/components/functions/leagueUrl';
+import { buildLeaguePath } from '@/components/functions/leagueUrl';
 import { getInlineAdVariant, InlineAdsense } from '@/components/shared/inline-adsense';
 
 // ---------------------------------------------------------------------------
@@ -434,13 +434,10 @@ const LeagueCard = ({
   predictionType,
   teamForms,
   formsLoading,
-  defaultOpen = true,
   hideLeagueHeader = false,
   matchIndexStart = 0,
   totalMatches = 0,
 }) => {
-  const [open, setOpen] = useState(defaultOpen);
-
   const getFlag = (country) => ({
     England: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', Spain: '🇪🇸', Italy: '🇮🇹',
     Germany: '🇩🇪', France: '🇫🇷', Portugal: '🇵🇹',
@@ -450,11 +447,7 @@ const LeagueCard = ({
   }[country] || '🏆');
 
   const leagueHref = league.leagueId
-    ? buildLeaguePathFromFixture({
-        league_id: league.leagueId,
-        league_name: league.name,
-        country_name: league.country,
-      })
+    ? buildLeaguePath(league.country, league.name, league.leagueId)
     : null;
 
   const leagueLabel = (
@@ -464,25 +457,21 @@ const LeagueCard = ({
     </>
   );
 
-  const showMatches = hideLeagueHeader || open || Boolean(leagueHref);
-
   return (
     <div className="league-card">
       {!hideLeagueHeader && (
         leagueHref ? (
           <Link href={leagueHref} className="league-header league-header-link">
             <span className="league-name">{leagueLabel}</span>
-            <span className="league-chev">↗</span>
+            <span className="league-chev" aria-hidden="true">→</span>
           </Link>
         ) : (
-          <button type="button" className="league-header" onClick={() => setOpen(!open)}>
+          <div className="league-header league-header-static">
             <span className="league-name">{leagueLabel}</span>
-            <span className="league-chev">{open ? '▲' : '▼'}</span>
-          </button>
+          </div>
         )
       )}
-      {showMatches && (
-        <div className="match-list">
+      <div className="match-list">
           {fixtures.map((fixture, idx) => {
             const matchIndex = matchIndexStart + idx;
             const adVariant = getInlineAdVariant(matchIndex, totalMatches);
@@ -499,8 +488,7 @@ const LeagueCard = ({
               </Fragment>
             );
           })}
-        </div>
-      )}
+      </div>
     </div>
   );
 };
@@ -552,18 +540,19 @@ const FixturesRow = ({
     list.forEach(f => {
       const league = f.league || {};
       const key = league.name || 'Other';
+      const leagueId = league.id || f.league_id || null;
       if (!map.has(key)) {
         map.set(key, {
           league: {
             name: key,
             country: league.country || 'International',
-            leagueId: league.id || null,
+            leagueId: leagueId || null,
           },
           fixtures: [],
         });
       }
-      if (!map.get(key).league.leagueId && league.id) {
-        map.get(key).league.leagueId = league.id;
+      if (!map.get(key).league.leagueId && (league.id || f.league_id)) {
+        map.get(key).league.leagueId = league.id || f.league_id;
       }
       map.get(key).fixtures.push(f);
     });
