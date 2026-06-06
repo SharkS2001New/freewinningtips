@@ -4,7 +4,7 @@ function PrivacyPolicy() {
     return (
     <div className="row container mb-2 pt-2" style={{color: "black"}}>
         {/* <h1>Privacy Policy for FreeWinningTips</h1> */}
-        <p>At FreeWinningTips, accessible from <a href="https://freewinningtips.com">https://freewinningtips.com</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by FreeWinningTips and how we use it.</p>
+        <p>At FreeWinningTips, accessible from <a href="https://www.freewinningtips.com">https://www.freewinningtips.com</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by FreeWinningTips and how we use it.</p>
 
         <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 

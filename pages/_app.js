@@ -12,6 +12,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import MetaContent from '@/components/functions/meta-title-content';
+import { SITE_ORIGIN } from '@/components/functions/apiConfig';
 import useScrollRestoration from '@/components/functions/useScrollRestoration';
 import Subnavbar from '@/components/includes/subnavbar';
 
@@ -52,11 +53,11 @@ function App({ Component, pageProps }) {
     <React.Fragment>
       <Head>
         <title>{meta_content_data[0]}</title>
-        <link rel="dns-prefetch" href="https://freewinningtips.com" crossOrigin />
-        <link rel="preconnect" href="https://freewinningtips.com" crossOrigin />
+        <link rel="dns-prefetch" href={SITE_ORIGIN} crossOrigin />
+        <link rel="preconnect" href={SITE_ORIGIN} crossOrigin />
         <link rel="dns-prefetch" href="https://api.pitchpredictions.com" crossOrigin />
         <link rel="preconnect" href="https://api.pitchpredictions.com" crossOrigin />
-        <link rel="canonical" href={`https://freewinningtips.com${router.pathname}`} key="canonical" />
+        <link rel="canonical" href={`${SITE_ORIGIN}${router.pathname}`} key="canonical" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="en" />
         <meta name="revisit-after" content="7 days" />
@@ -71,14 +72,14 @@ function App({ Component, pageProps }) {
         <meta name="twitter:site" content="@freewinningtips" />
         <meta name="twitter:title" content={meta_content_data[0]} />
         <meta name="twitter:description" content={meta_content_data[1]} />
-        <meta name="twitter:image" content="https://freewinningtips.com/freewinningtips.png" />
-        <meta name="twitter:url" content={`https://freewinningtips.com${router.pathname}`} />
+        <meta name="twitter:image" content={`${SITE_ORIGIN}/freewinningtips.png`} />
+        <meta name="twitter:url" content={`${SITE_ORIGIN}${router.pathname}`} />
 
         <meta property="og:title" content={meta_content_data[0]} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://freewinningtips.com/freewinningtips.png" />
+        <meta property="og:image" content={`${SITE_ORIGIN}/freewinningtips.png`} />
         <meta property="og:description" content={meta_content_data[1]} />
-        <meta property="og:url" content={`https://freewinningtips.com${router.pathname}`} />
+        <meta property="og:url" content={`${SITE_ORIGIN}${router.pathname}`} />
       </Head>
 
       {/* Google Analytics */}

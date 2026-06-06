@@ -1,11 +1,13 @@
-# User-agent: *
+# *
+User-agent: *
+Disallow: /404
 
-# Allow all other crawlers to access everything
+# *
 User-agent: *
 Allow: /
 
 # Host
-Host: freewinningtips.com
+Host: https://www.freewinningtips.com
 
 # Sitemaps
-Sitemap: https://freewinningtips.com/sitemap.xml
+Sitemap: https://www.freewinningtips.com/sitemap.xml

@@ -5,6 +5,16 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'freewinningtips.com' }],
+        destination: 'https://www.freewinningtips.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     domains: [
       "www.freewinningtips.com",
@@ -12,6 +22,7 @@ const nextConfig = {
       "www.pitchpredictions.com",
       "pitchpredictions.com",
       "api.pitchpredictions.com",
+      "media.api-sports.io",
     ],
   },
 };

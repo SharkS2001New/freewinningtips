@@ -7,6 +7,23 @@ const JackpotFixturesTable = ({
   jackpotData = { startDate: "", endDate: "" },
   showDateColumn = true 
 }) => {
+  const TeamLogo = ({ name, logo, className, size = 18 }) => {
+    if (logo) {
+      return (
+        <img
+          src={logo}
+          alt={name || ''}
+          className={className}
+          width={size}
+          height={size}
+          loading="lazy"
+          style={{ objectFit: 'contain', flexShrink: 0 }}
+        />
+      );
+    }
+    return <div className={className} aria-hidden="true" />;
+  };
+
   const getPrediction1x2 = (homePct, drawPct, awayPct) => {
     if (homePct > drawPct && homePct > awayPct) return "1";
     if (awayPct > homePct && awayPct > drawPct) return "2";
@@ -196,12 +213,16 @@ const JackpotFixturesTable = ({
           padding: 2px 0;
         }
 
-        .team-logo-placeholder {
+        .team-logo-placeholder,
+        .team-logo-img {
           width: 18px;
           height: 18px;
-          background: #e8e8e8;
           border-radius: 50%;
           flex-shrink: 0;
+        }
+
+        .team-logo-placeholder {
+          background: #e8e8e8;
         }
 
         .team-name-txt {
@@ -341,12 +362,16 @@ const JackpotFixturesTable = ({
             padding: 1px 0;
           }
 
-          .mc-logo-placeholder {
+          .mc-logo-placeholder,
+          .mc-logo-img {
             width: 16px;
             height: 16px;
-            background: #e8e8e8;
             border-radius: 50%;
             flex-shrink: 0;
+          }
+
+          .mc-logo-placeholder {
+            background: #e8e8e8;
           }
 
           .mc-team-name {
@@ -492,11 +517,19 @@ const JackpotFixturesTable = ({
                       )}
                       <td className="td-teams">
                         <div className="team-row">
-                          <div className="team-logo-placeholder" />
+                          <TeamLogo
+                            name={fixture.home_team_name}
+                            logo={fixture.home_team_logo}
+                            className={fixture.home_team_logo ? 'team-logo-img' : 'team-logo-placeholder'}
+                          />
                           <span className="team-name-txt">{fixture.home_team_name}</span>
                         </div>
                         <div className="team-row">
-                          <div className="team-logo-placeholder" />
+                          <TeamLogo
+                            name={fixture.away_team_name}
+                            logo={fixture.away_team_logo}
+                            className={fixture.away_team_logo ? 'team-logo-img' : 'team-logo-placeholder'}
+                          />
                           <span className="team-name-txt">{fixture.away_team_name}</span>
                         </div>
                       </td>
@@ -571,11 +604,21 @@ const JackpotFixturesTable = ({
 
                       <div className="mc-teams">
                         <div className="mc-team-row">
-                          <div className="mc-logo-placeholder" />
+                          <TeamLogo
+                            name={fixture.home_team_name}
+                            logo={fixture.home_team_logo}
+                            className={fixture.home_team_logo ? 'mc-logo-img' : 'mc-logo-placeholder'}
+                            size={16}
+                          />
                           <span className="mc-team-name">{fixture.home_team_name}</span>
                         </div>
                         <div className="mc-team-row">
-                          <div className="mc-logo-placeholder" />
+                          <TeamLogo
+                            name={fixture.away_team_name}
+                            logo={fixture.away_team_logo}
+                            className={fixture.away_team_logo ? 'mc-logo-img' : 'mc-logo-placeholder'}
+                            size={16}
+                          />
                           <span className="mc-team-name">{fixture.away_team_name}</span>
                         </div>
                       </div>

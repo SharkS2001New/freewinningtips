@@ -24,14 +24,14 @@ function OurPartners() {
                     To submit your site to FreeWinningTips:
                     <br />
                     <br />
-                    IMPORTANT - Partners are required to place a link back to freewinningtips.com on their partners page or their homepage.
+                    IMPORTANT - Partners are required to place a link back to www.freewinningtips.com on their partners page or their homepage.
                     <br />
                     Once you have created the backlink, kindly send us an email at <a href="mailto:support@freewinningtips.com">contact@freewinningtips.com</a>. FreeWinningTips team will diligently review your link exchange request.
                     <br />
                     <br />
                     Link Title: <b style={{color:"blue",fontWeight:"bold"}}>Free Winning Tips</b>
                     <br />
-                    URL: <b style={{color:"blue",fontWeight:"bold"}}>https://freewinningtips.com</b>
+                    URL: <b style={{color:"blue",fontWeight:"bold"}}>https://www.freewinningtips.com</b>
                     <br />
                     Description: <b style={{color:"blue",fontWeight:"bold"}}>Free Winning Tips</b>
                 </p>

@@ -8,14 +8,14 @@ const AllPredictionsPageContent = () => {
           FreeWinningTips is the most accurate and reliable site for football predictions.
           We cover predictions for{" "}
           <a
-            href="https://freewinningtips.com/yesterdays-free-football-predictions"
+            href="https://www.freewinningtips.com/yesterdays-free-football-predictions"
             target="_blank"
             rel="noopener noreferrer"
           >
             yesterday
           </a>, today, and{" "}
           <a
-            href="https://freewinningtips.com/tomorrows-free-football-predictions"
+            href="https://www.freewinningtips.com/tomorrows-free-football-predictions"
             target="_blank"
             rel="noopener noreferrer"
           >

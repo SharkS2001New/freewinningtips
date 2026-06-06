@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://freewinningtips.com',
+    siteUrl: 'https://www.freewinningtips.com',
     generateRobotsTxt: true, // (optional)
     // ...other options
     exclude: ['/404'],

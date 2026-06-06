@@ -7,7 +7,7 @@ function TermsAndConditions() {
 
             <p>Welcome to FreeWinningTips!</p>
 
-            <p>These terms and conditions outline the rules and regulations for the use of Free Winning Tips's Website, located at https://freewinningtips.com.</p>
+            <p>These terms and conditions outline the rules and regulations for the use of Free Winning Tips's Website, located at https://www.freewinningtips.com.</p>
 
             <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use FreeWinningTips if you do not agree to take all of the terms and conditions stated on this page.</p>
 

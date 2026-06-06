@@ -119,20 +119,23 @@ function getOddForTip(tipText, fixture) {
   }
 }
 
+const TIP_WON = '✅';
+const TIP_LOST = '❌';
+
 function determineTipResult(tipText, homeScore, awayScore) {
   if (homeScore === null || awayScore === null) return null;
-  
+
   switch (tipText) {
-    case '1': return homeScore > awayScore ? 'W' : (homeScore === awayScore ? 'L' : 'L');
-    case 'X': return homeScore === awayScore ? 'W' : 'L';
-    case '2': return awayScore > homeScore ? 'W' : (homeScore === awayScore ? 'L' : 'L');
-    case '1X': return homeScore >= awayScore ? 'W' : 'L';
-    case 'X2': return awayScore >= homeScore ? 'W' : 'L';
-    case '12': return homeScore !== awayScore ? 'W' : 'L';
-    case 'Over2.5': return (homeScore + awayScore) > 2.5 ? 'W' : 'L';
-    case 'Under2.5': return (homeScore + awayScore) < 2.5 ? 'W' : 'L';
-    case 'YES': return homeScore > 0 && awayScore > 0 ? 'W' : 'L';
-    case 'NO': return homeScore === 0 || awayScore === 0 ? 'W' : 'L';
+    case '1': return homeScore > awayScore ? TIP_WON : TIP_LOST;
+    case 'X': return homeScore === awayScore ? TIP_WON : TIP_LOST;
+    case '2': return awayScore > homeScore ? TIP_WON : TIP_LOST;
+    case '1X': return homeScore >= awayScore ? TIP_WON : TIP_LOST;
+    case 'X2': return awayScore >= homeScore ? TIP_WON : TIP_LOST;
+    case '12': return homeScore !== awayScore ? TIP_WON : TIP_LOST;
+    case 'Over2.5': return (homeScore + awayScore) > 2.5 ? TIP_WON : TIP_LOST;
+    case 'Under2.5': return (homeScore + awayScore) < 2.5 ? TIP_WON : TIP_LOST;
+    case 'YES': return homeScore > 0 && awayScore > 0 ? TIP_WON : TIP_LOST;
+    case 'NO': return homeScore === 0 || awayScore === 0 ? TIP_WON : TIP_LOST;
     default: return null;
   }
 }
@@ -354,7 +357,7 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
             <span className="match-status">{matchStatus}</span>
             <div className="match-score-wrapper">
               <span className="match-score">{homeScore} - {awayScore}</span>
-              {tipResult && <span className={`tip-result ${tipResult === 'W' ? 'tip-win' : 'tip-lose'}`}>{tipResult}</span>}
+              {tipResult && <span className={`tip-result ${tipResult === TIP_WON ? 'tip-win' : 'tip-lose'}`}>{tipResult}</span>}
             </div>
           </>
         ) : (
