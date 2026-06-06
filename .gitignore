@@ -31,3 +31,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# blog disk cache (generated at runtime)
+/public/blogscache/*
+!/public/blogscache/.gitkeep
+/pages/blogscache/*
+!/pages/blogscache/.gitkeep

@@ -1,79 +1,211 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/router";
 import PreLoader from "../components/includes/loader";
 
-export default function Blogs({ initialBlogs, initialPageInfo, error: initialError }) {
+function getPageCacheKey(page, category) {
+  return `${category}:${page}`;
+}
+
+function toPageInfo(data) {
+  return {
+    currentPage: data.current_page || 1,
+    lastPage: data.last_page || 1,
+    total: data.total || 0,
+  };
+}
+
+export default function Blogs({
+  initialBlogs,
+  initialPageInfo,
+  initialPage,
+  initialCategory,
+  error: initialError,
+}) {
   const router = useRouter();
   const [blogs, setBlogs] = useState(initialBlogs || []);
-  const [pageInfo, setPageInfo] = useState(initialPageInfo || { currentPage: 1, lastPage: 1, total: 0 });
+  const [pageInfo, setPageInfo] = useState(
+    initialPageInfo || { currentPage: 1, lastPage: 1, total: 0 }
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(initialError);
+  const loadedQueryRef = useRef({
+    page: initialPage || 1,
+    category: initialCategory || "ALL",
+  });
+  const pageCacheRef = useRef(new Map());
+  const prefetchingRef = useRef(new Set());
 
-  // Fetch data when page changes in URL (client-side)
+  useEffect(() => {
+    const key = getPageCacheKey(initialPage || 1, initialCategory || "ALL");
+    pageCacheRef.current.set(key, {
+      blogs: initialBlogs || [],
+      pageInfo:
+        initialPageInfo || { currentPage: 1, lastPage: 1, total: 0 },
+    });
+  }, [initialBlogs, initialPageInfo, initialPage, initialCategory]);
+
+  const fetchBlogPage = useCallback(async (page, category) => {
+    const response = await fetch(
+      `/api/blog-list?page=${page}&category=${encodeURIComponent(category)}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch blogs");
+    }
+
+    return response.json();
+  }, []);
+
+  const storePageInCache = useCallback((page, category, data) => {
+    const key = getPageCacheKey(page, category);
+    const nextPageInfo = toPageInfo(data);
+
+    pageCacheRef.current.set(key, {
+      blogs: data.data || [],
+      pageInfo: nextPageInfo,
+    });
+
+    return nextPageInfo;
+  }, []);
+
+  const prefetchBlogPage = useCallback(
+    (page, category, lastPage) => {
+      if (page < 1 || page > lastPage) return;
+
+      const key = getPageCacheKey(page, category);
+      if (pageCacheRef.current.has(key) || prefetchingRef.current.has(key)) {
+        return;
+      }
+
+      prefetchingRef.current.add(key);
+
+      fetchBlogPage(page, category)
+        .then((data) => {
+          storePageInCache(page, category, data);
+        })
+        .catch(() => {})
+        .finally(() => {
+          prefetchingRef.current.delete(key);
+        });
+    },
+    [fetchBlogPage, storePageInCache]
+  );
+
+  const prefetchAdjacentPages = useCallback(
+    (page, category, lastPage) => {
+      prefetchBlogPage(page - 1, category, lastPage);
+      prefetchBlogPage(page + 1, category, lastPage);
+    },
+    [prefetchBlogPage]
+  );
+
   useEffect(() => {
     if (!router.isReady) return;
-    
-    const page = parseInt(router.query.page) || 1;
-    const category = router.query.category || 'ALL';
-    
-    // Skip if this is the initial load (data already from server)
-    if (page === pageInfo.currentPage && blogs.length > 0 && !loading) {
+
+    const page = parseInt(router.query.page, 10) || 1;
+    const category = router.query.category || "ALL";
+
+    if (
+      page === loadedQueryRef.current.page &&
+      category === loadedQueryRef.current.category
+    ) {
       return;
     }
-    
+
+    const cacheKey = getPageCacheKey(page, category);
+    const cachedPage = pageCacheRef.current.get(cacheKey);
+
+    if (cachedPage) {
+      setBlogs(cachedPage.blogs);
+      setPageInfo(cachedPage.pageInfo);
+      setError(null);
+      loadedQueryRef.current = { page, category };
+      prefetchAdjacentPages(
+        page,
+        category,
+        cachedPage.pageInfo.lastPage
+      );
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    let cancelled = false;
+
     const fetchPageData = async () => {
       setLoading(true);
       setError(null);
-      
+
       try {
-        const headers = {
-          "Content-type": "application/json; charset=UTF-8",
-          "Authorization": "R9TxV3PbOEu7qZnJKgydC5LmX2"
-        };
-        
-        const response = await fetch(
-          `https://api.pitchpredictions.com/api/blog?page=${page}&category=${category}`,
-          { headers }
-        );
-        
-        if (!response.ok) throw new Error('Failed to fetch blogs');
-        
-        const data = await response.json();
-        
+        const data = await fetchBlogPage(page, category);
+        if (cancelled) return;
+
         setBlogs(data.data || []);
-        setPageInfo({
-          currentPage: data.current_page || 1,
-          lastPage: data.last_page || 1,
-          total: data.total || 0
-        });
+        const nextPageInfo = storePageInCache(page, category, data);
+        setPageInfo(nextPageInfo);
+        loadedQueryRef.current = { page, category };
+        prefetchAdjacentPages(page, category, nextPageInfo.lastPage);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (err) {
+        if (cancelled) return;
         console.error("Error fetching page:", err);
         setError(err.message);
       } finally {
-        setLoading(false);
+        if (!cancelled) {
+          setLoading(false);
+        }
       }
     };
-    
+
     fetchPageData();
-  }, [router.query.page, router.query.category, router.isReady]);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    router.query.page,
+    router.query.category,
+    router.isReady,
+    fetchBlogPage,
+    storePageInCache,
+    prefetchAdjacentPages,
+  ]);
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    prefetchAdjacentPages(
+      pageInfo.currentPage,
+      router.query.category || "ALL",
+      pageInfo.lastPage
+    );
+  }, [
+    router.isReady,
+    router.query.category,
+    pageInfo.currentPage,
+    pageInfo.lastPage,
+    prefetchAdjacentPages,
+  ]);
 
   const handlePageChange = (newPage) => {
     if (newPage === pageInfo.currentPage || loading) return;
-    
-    router.push({
-      pathname: '/blog',
-      query: { ...router.query, page: newPage }
-    }, undefined, { shallow: true });
+
+    router.push(
+      {
+        pathname: "/blog",
+        query: { ...router.query, page: newPage },
+      },
+      undefined,
+      { shallow: true }
+    );
   };
 
-  if (error) {
+  if (error && blogs.length === 0) {
     return (
       <div className="blogs-page">
         <div className="container">
           <div className="no-blogs">
             <p>Error loading blogs. Please try again later.</p>
-            <button 
-              onClick={() => window.location.reload()} 
+            <button
+              onClick={() => window.location.reload()}
               className="btn btn-primary mt-3"
             >
               Retry
@@ -84,7 +216,6 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
     );
   }
 
-  // Show loader only on initial load (first visit)
   if (loading && blogs.length === 0) {
     return (
       <div className="blogs-page">
@@ -98,53 +229,27 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
   return (
     <div className="blogs-page">
       <div className="container">
-        {/* Show mini loader indicator when navigating between pages */}
-        {loading && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          // background: 'rgba(255, 255, 255, 0.9)',
-          backdropFilter: 'blur(4px)',
-          zIndex: 9999,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          <div style={{
-            background: 'white',
-            padding: '20px 30px',
-            borderRadius: '12px',
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            fontSize: '16px',
-            fontWeight: 500
-          }}>
-            <div className="spinner-border spinner-border-sm text-primary" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-            <span>Loading page {pageInfo.currentPage}...</span>
-          </div>
-        </div>
-      )}
         {!blogs || blogs.length === 0 ? (
           <div className="no-blogs">
             <p>No blogs available.</p>
           </div>
         ) : (
           <>
-            <div className="row g-4">
+            <div
+              className="row g-4 blog-list-grid"
+              style={{
+                opacity: loading ? 0.55 : 1,
+                transition: "opacity 0.15s ease",
+              }}
+              aria-busy={loading}
+            >
               {blogs.map((blog) => (
                 <div key={blog.id} className="col-12 col-lg-6">
                   <div className="blog-card">
                     <div className="blog-content">
                       <small className="blog-category mb-3">
                         {blog.category?.name
-                          ? blog.category.name.charAt(0).toUpperCase() + 
+                          ? blog.category.name.charAt(0).toUpperCase() +
                             blog.category.name.slice(1).toLowerCase()
                           : "Articles"}
                       </small>
@@ -155,19 +260,16 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
 
                       <div className="blog-meta mt-3">
                         {blog.user?.name || "Admin"} &nbsp;/&nbsp;
-                        {new Date(blog.published_at || blog.created_at).toLocaleDateString("en-US", {
+                        {new Date(
+                          blog.published_at || blog.created_at
+                        ).toLocaleDateString("en-US", {
                           month: "short",
                           day: "numeric",
                           year: "numeric",
                         })}
                       </div>
 
-                      <p className="blog-excerpt">
-                        {blog.excerpt ||
-                          (blog.content
-                            ?.replace(/<[^>]*>/g, "")
-                            .substring(0, 120) + "...")}
-                      </p>
+                      <p className="blog-excerpt">{blog.excerpt}</p>
                     </div>
 
                     <div className="blog-footer">
@@ -186,7 +288,8 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
 
                       <div className="blog-social">
                         <span>
-                          <i className="bi bi-clock"></i> {blog.read_time || 5} Minutes
+                          <i className="bi bi-clock"></i>{" "}
+                          {blog.read_time || 5} Minutes
                         </span>
                       </div>
                     </div>
@@ -195,9 +298,19 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
               ))}
             </div>
 
-            {/* Pagination */}
             {pageInfo.lastPage > 1 && (
               <div className="pagination-container">
+                {loading && (
+                  <span className="pagination-loading-indicator">
+                    <span
+                      className="spinner-border spinner-border-sm text-primary"
+                      role="status"
+                      aria-hidden="true"
+                    />
+                    Loading...
+                  </span>
+                )}
+
                 <button
                   className="page-btn"
                   onClick={() => handlePageChange(pageInfo.currentPage - 1)}
@@ -205,8 +318,7 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
                 >
                   ← Previous
                 </button>
-                
-                {/* Show first page */}
+
                 {pageInfo.currentPage > 3 && (
                   <>
                     <button
@@ -216,41 +328,76 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
                     >
                       1
                     </button>
-                    {pageInfo.currentPage > 4 && <span className="page-dots">...</span>}
+                    {pageInfo.currentPage > 4 && (
+                      <span className="page-dots">...</span>
+                    )}
                   </>
                 )}
-                
-                {/* Show pages around current */}
-                {Array.from({ length: Math.min(5, pageInfo.lastPage) }, (_, i) => {
-                  let pageNum;
-                  if (pageInfo.lastPage <= 5) {
-                    pageNum = i + 1;
-                  } else if (pageInfo.currentPage <= 3) {
-                    pageNum = i + 1;
-                  } else if (pageInfo.currentPage >= pageInfo.lastPage - 2) {
-                    pageNum = pageInfo.lastPage - 4 + i;
-                  } else {
-                    pageNum = pageInfo.currentPage - 2 + i;
+
+                {Array.from(
+                  { length: Math.min(5, pageInfo.lastPage) },
+                  (_, i) => {
+                    let pageNum;
+                    if (pageInfo.lastPage <= 5) {
+                      pageNum = i + 1;
+                    } else if (pageInfo.currentPage <= 3) {
+                      pageNum = i + 1;
+                    } else if (pageInfo.currentPage >= pageInfo.lastPage - 2) {
+                      pageNum = pageInfo.lastPage - 4 + i;
+                    } else {
+                      pageNum = pageInfo.currentPage - 2 + i;
+                    }
+
+                    return (
+                      <button
+                        key={pageNum}
+                        className={`page-btn ${
+                          pageInfo.currentPage === pageNum ? "active" : ""
+                        }`}
+                        onMouseEnter={() =>
+                          prefetchBlogPage(
+                            pageNum,
+                            router.query.category || "ALL",
+                            pageInfo.lastPage
+                          )
+                        }
+                        onFocus={() =>
+                          prefetchBlogPage(
+                            pageNum,
+                            router.query.category || "ALL",
+                            pageInfo.lastPage
+                          )
+                        }
+                        onClick={() => handlePageChange(pageNum)}
+                        disabled={loading}
+                      >
+                        {pageNum}
+                      </button>
+                    );
                   }
-                  
-                  return (
-                    <button
-                      key={pageNum}
-                      className={`page-btn ${pageInfo.currentPage === pageNum ? "active" : ""}`}
-                      onClick={() => handlePageChange(pageNum)}
-                      disabled={loading}
-                    >
-                      {pageNum}
-                    </button>
-                  );
-                })}
-                
-                {/* Show last page */}
+                )}
+
                 {pageInfo.currentPage < pageInfo.lastPage - 2 && (
                   <>
-                    {pageInfo.currentPage < pageInfo.lastPage - 3 && <span className="page-dots">...</span>}
+                    {pageInfo.currentPage < pageInfo.lastPage - 3 && (
+                      <span className="page-dots">...</span>
+                    )}
                     <button
                       className="page-btn"
+                      onMouseEnter={() =>
+                        prefetchBlogPage(
+                          pageInfo.lastPage,
+                          router.query.category || "ALL",
+                          pageInfo.lastPage
+                        )
+                      }
+                      onFocus={() =>
+                        prefetchBlogPage(
+                          pageInfo.lastPage,
+                          router.query.category || "ALL",
+                          pageInfo.lastPage
+                        )
+                      }
                       onClick={() => handlePageChange(pageInfo.lastPage)}
                       disabled={loading}
                     >
@@ -258,11 +405,13 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
                     </button>
                   </>
                 )}
-                
+
                 <button
                   className="page-btn"
                   onClick={() => handlePageChange(pageInfo.currentPage + 1)}
-                  disabled={pageInfo.currentPage === pageInfo.lastPage || loading}
+                  disabled={
+                    pageInfo.currentPage === pageInfo.lastPage || loading
+                  }
                 >
                   Next →
                 </button>
@@ -270,25 +419,20 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
             )}
           </>
         )}
+        <br />
       </div>
-      
+
       <style jsx>{`
-        .page-transition-loader {
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          background: white;
-          padding: 8px 16px;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          z-index: 1000;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 14px;
-        }
         .page-dots {
           padding: 8px 4px;
+          color: #666;
+        }
+        .pagination-loading-indicator {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin-right: 12px;
+          font-size: 14px;
           color: #666;
         }
       `}</style>
@@ -297,50 +441,80 @@ export default function Blogs({ initialBlogs, initialPageInfo, error: initialErr
 }
 
 export async function getServerSideProps({ query }) {
-  const headers = {
-    "Content-type": "application/json; charset=UTF-8",
-    "Authorization": "R9TxV3PbOEu7qZnJKgydC5LmX2"
-  };
+  const { fetchBlogList, getCachePath, readTrimmedBlogListCache, writeCache } =
+    await import("../components/functions/blog_list_cache");
 
-  const page = query.page || 1;
-  const category = query.category || 'ALL';
+  const page = parseInt(query.page, 10) || 1;
+  const category = query.category || "ALL";
+  const { cacheDir, cachePath, legacyCachePath } = getCachePath(page, category);
 
   try {
-    const response = await fetch(
-      `https://api.pitchpredictions.com/api/blog?page=${page}&category=${category}`,
-      { headers }
-    );
+    const cached = readTrimmedBlogListCache(cachePath, legacyCachePath);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    if (cached?.isFresh) {
+      return {
+        props: {
+          initialBlogs: cached.payload.data || [],
+          initialPageInfo: {
+            currentPage: cached.payload.current_page || 1,
+            lastPage: cached.payload.last_page || 1,
+            total: cached.payload.total || 0,
+          },
+          initialPage: page,
+          initialCategory: category,
+          error: null,
+        },
+      };
     }
 
-    const data = await response.json();
-    
+    const payload = await fetchBlogList(page, category);
+    writeCache(cacheDir, cachePath, payload);
+
     return {
       props: {
-        initialBlogs: data.data || [],
+        initialBlogs: payload.data || [],
         initialPageInfo: {
-          currentPage: data.current_page || 1,
-          lastPage: data.last_page || 1,
-          total: data.total || 0
+          currentPage: payload.current_page || 1,
+          lastPage: payload.last_page || 1,
+          total: payload.total || 0,
         },
-        error: null
-      }
+        initialPage: page,
+        initialCategory: category,
+        error: null,
+      },
     };
   } catch (error) {
     console.error("Error fetching blogs:", error);
-    
+
+    const cached = readTrimmedBlogListCache(cachePath, legacyCachePath);
+    if (cached?.payload) {
+      return {
+        props: {
+          initialBlogs: cached.payload.data || [],
+          initialPageInfo: {
+            currentPage: cached.payload.current_page || 1,
+            lastPage: cached.payload.last_page || 1,
+            total: cached.payload.total || 0,
+          },
+          initialPage: page,
+          initialCategory: category,
+          error: null,
+        },
+      };
+    }
+
     return {
       props: {
         initialBlogs: [],
         initialPageInfo: {
           currentPage: 1,
           lastPage: 1,
-          total: 0
+          total: 0,
         },
-        error: error.message || "Failed to load blogs"
-      }
+        initialPage: page,
+        initialCategory: category,
+        error: error.message || "Failed to load blogs",
+      },
     };
   }
 }

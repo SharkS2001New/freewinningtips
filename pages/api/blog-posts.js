@@ -1,107 +1,99 @@
-// pages/api/blog-posts.js
-import fs from 'fs';
-import path from 'path';
+// pages/api/blog-posts.js — homepage latest-news widget (fetch_blog_posts endpoint)
+import fs from "fs";
+import path from "path";
+import { BLOG_API_HEADERS, BLOG_SITE_KEY } from "@/components/functions/apiConfig";
+import {
+  hasCacheableData,
+  removeCacheFileAtPath,
+  writeCacheFileAtPath,
+} from "@/components/functions/file_cache";
+
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+const CACHE_PATH = path.join(
+  process.cwd(),
+  "pages",
+  "blogscache",
+  `homepage-blog-posts-${BLOG_SITE_KEY}.json`
+);
+
+function readFreshCache() {
+  try {
+    if (!fs.existsSync(CACHE_PATH)) return null;
+
+    const cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
+    const age = Date.now() - new Date(cache.generatedAt).getTime();
+
+    if (age <= CACHE_TTL_MS) {
+      return cache;
+    }
+
+    removeCacheFileAtPath(CACHE_PATH);
+  } catch {
+    // corrupt cache
+  }
+  return null;
+}
 
 export default async function handler(req, res) {
-  // Only allow GET requests
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });
+  if (req.method !== "GET") {
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const cacheDir = path.join(process.cwd(), 'public', 'cache');
-  const cacheFilename = 'blog-posts.json';
-  const cachePath = path.join(cacheDir, cacheFilename);
-
   try {
-    // Create cache directory if it doesn't exist
-    if (!fs.existsSync(cacheDir)) {
-      fs.mkdirSync(cacheDir, { recursive: true });
+    const cached = readFreshCache();
+    if (cached) {
+      return res.status(200).json({
+        fromCache: true,
+        generatedAt: cached.generatedAt,
+        data: cached.data,
+      });
     }
 
-    // Check if we have a valid cache file (1 hour = 3600000 ms)
-    if (fs.existsSync(cachePath)) {
-      const cacheContent = fs.readFileSync(cachePath, 'utf8');
-      const cache = JSON.parse(cacheContent);
-      
-      const cacheTime = new Date(cache.generatedAt).getTime();
-      const now = new Date().getTime();
-      const ageInHours = (now - cacheTime) / (1000 * 60 * 60);
-      
-      if (ageInHours <= 1) {
-        // Return cached data
-        return res.status(200).json({
-          fromCache: true,
-          generatedAt: cache.generatedAt,
-          data: cache.data
-        });
+    const response = await fetch(
+      `https://api.pitchpredictions.com/api/fetch_blog_posts?site=${BLOG_SITE_KEY}`,
+      {
+        headers: BLOG_API_HEADERS,
+        cache: "no-store",
       }
-    }
-
-    // No valid cache, fetch from external API
-    const apiUrl = 'https://api.pitchpredictions.com/api/fetch_blog_posts';
-    
-    const response = await fetch(apiUrl, {
-      headers: {
-        Authorization: "R9TxV3PbOEu7qZnJKgydC5LmX2",
-      },
-    });
+    );
 
     if (!response.ok) {
-      throw new Error('Failed to fetch blog posts');
+      throw new Error("Failed to fetch blog posts");
     }
 
     const data = await response.json();
+    const posts = data.data || [];
 
-    // Prepare cache data
-    const cacheData = {
-      generatedAt: new Date().toISOString(),
-      data: data.data || [],
-      count: data.data?.length || 0
-    };
+    if (hasCacheableData(posts)) {
+      writeCacheFileAtPath(CACHE_PATH, {
+        generatedAt: new Date().toISOString(),
+        data: posts,
+        count: posts.length,
+      });
+    }
 
-    // Save to cache (atomic write for K3s)
-    const tempPath = `${cachePath}.tmp.${Date.now()}`;
-    fs.writeFileSync(tempPath, JSON.stringify(cacheData, null, 2));
-    fs.renameSync(tempPath, cachePath);
-
-    // Clean up old blog cache files (older than 1 hour)
-    cleanupOldCacheFiles(cacheDir);
-
-    // Return fresh data
     return res.status(200).json({
       fromCache: false,
-      generatedAt: cacheData.generatedAt,
-      data: cacheData.data
+      generatedAt: new Date().toISOString(),
+      data: posts,
     });
-
   } catch (error) {
-    console.error('Error in blog posts API:', error);
-    return res.status(500).json({ error: error.message });
-  }
-}
+    console.error("Error in blog-posts API:", error);
 
-// Helper function to clean up old cache files
-function cleanupOldCacheFiles(cacheDir) {
-  try {
-    if (!fs.existsSync(cacheDir)) return;
-    
-    const files = fs.readdirSync(cacheDir);
-    const now = new Date().getTime();
-    const maxAge = 60 * 60 * 1000; // 1 hour
-    
-    for (const file of files) {
-      if (file === 'blog-posts.json') {
-        const filePath = path.join(cacheDir, file);
-        const stats = fs.statSync(filePath);
-        const fileAge = now - stats.mtimeMs;
-        
-        // This will be handled by the main logic, but keep for cleanup
-        if (fileAge > maxAge) {
-          fs.unlinkSync(filePath);
-        }
+    try {
+      if (fs.existsSync(CACHE_PATH)) {
+        const stale = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
+        return res.status(200).json({
+          fromCache: true,
+          isFallback: true,
+          generatedAt: stale.generatedAt,
+          data: stale.data || [],
+        });
       }
+    } catch {
+      // ignore
     }
-  } catch (error) {
-    console.error('Error cleaning up cache:', error);
+
+    return res.status(500).json({ error: error.message });
   }
 }

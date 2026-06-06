@@ -4,9 +4,9 @@ import path from 'path';
 const LEAGUE_CACHE_ROOT = path.join(process.cwd(), 'public', 'cache', 'league-data');
 
 export const LEAGUE_CACHE_TTL = {
-  today: 10 * 60 * 1000,       // 10 minutes
-  upcoming: 10 * 60 * 1000,    // 10 minutes
-  results: 24 * 60 * 60 * 1000, // 24 hours
+  today: 5 * 60 * 1000,         // 5 minutes — today's fixtures
+  upcoming: 5 * 60 * 1000,      // 5 minutes — upcoming fixtures
+  results: 24 * 60 * 60 * 1000, // 24 hours — results don't change often
   standings: 3 * 60 * 60 * 1000, // 3 hours
   meta: 3 * 60 * 60 * 1000,
 };

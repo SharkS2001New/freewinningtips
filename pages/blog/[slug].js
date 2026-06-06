@@ -1,102 +1,63 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
-import Link from "next/link";
-import PreLoader from "../../components/includes/loader";
+import BlogArticleJsonLd from "@/components/blog/blog-article-json-ld";
+import BlogLargeContent from "@/components/blog/blog-large-content";
+import BlogPostHeader from "@/components/blog/blog-post-header";
+import { LARGE_BLOG_CONTENT_BYTES } from "@/lib/blog/blog-content-config";
+import {
+  getBlogAuthor,
+  getBlogCategoryLabel,
+  getBlogMetaDescription,
+  getFeaturedImage,
+  SITE_NAME,
+  SITE_ORIGIN,
+} from "@/lib/blog/blog-utils";
 
-export default function BlogPage() {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  const [blog, setBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    if (!slug) return;
-
-    const fetchBlog = async () => {
-      try {
-        const res = await fetch(`https://api.pitchpredictions.com/api/blog/${slug}`, {
-          headers: { Authorization: "R9TxV3PbOEu7qZnJKgydC5LmX2" },
-        });
-
-        if (!res.ok) throw new Error("Failed to fetch blog");
-        const data = await res.json();
-        setBlog(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlog();
-  }, [slug]);
-
-  // 🔄 Show loader
-  if (loading) return <PreLoader />;
-
-  // ❌ Show error
-  if (error)
-    return (
-      <p style={{ textAlign: "center", color: "red", marginTop: "2rem" }}>
-        Error: {error}
-      </p>
-    );
-
-  // 🚫 Blog not found
-  if (!blog)
-    return (
-      <p style={{ textAlign: "center", marginTop: "2rem" }}>
-        Blog not found
-      </p>
-    );
-
-  // 🏷️ Format category
-  const category =
-    blog.category?.blogs_category_title
-      ? blog.category.blogs_category_title.charAt(0).toUpperCase() +
-        blog.category.blogs_category_title.slice(1).toLowerCase()
-      : "Articles";
-
-  // 🖼️ Optimize images: add lazy loading + async decoding
-  const optimizedContent = blog.content.replace(
-    /<img /g,
-    '<img loading="lazy" decoding="async" style="max-width:100%;height:auto;" '
-  );
-
-  // 🧠 Meta title & description
-  const metaTitle = `${blog.title} | Pitch Predictions`;
-  const metaDescription =
-    blog.meta_description ||
-    (blog.content
-      ? blog.content.replace(/<[^>]+>/g, "").slice(0, 160) + "..."
-      : "Read the latest football analysis and predictions from Pitch Predictions.");
+export default function BlogPostPage({
+  meta,
+  slug,
+  isLargeArticle,
+  contentUrl,
+  inlineContent,
+}) {
+  const title = `${meta.title} | ${SITE_NAME}`;
+  const description = getBlogMetaDescription(meta);
+  const featuredImage = getFeaturedImage(meta);
+  const canonicalUrl = `${SITE_ORIGIN}/blog/${slug}`;
 
   return (
     <>
       <Head>
-        {/* 🔹 Basic SEO Meta Tags */}
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
 
-        {/* 🔹 Open Graph / Facebook */}
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content={metaDescription} />
-        {blog.image && (
-          <meta property="og:image" content={blog.image} />
-        )}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.pitchpredictions.com/blog/${slug}`} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content={SITE_NAME} />
+        {featuredImage && <meta property="og:image" content={featuredImage} />}
+        {meta.published_at && (
+          <meta property="article:published_time" content={meta.published_at} />
+        )}
+        {meta.updated_at && (
+          <meta property="article:modified_time" content={meta.updated_at} />
+        )}
+        <meta
+          property="article:author"
+          content={getBlogAuthor(meta)}
+        />
+        <meta
+          property="article:section"
+          content={getBlogCategoryLabel(meta)}
+        />
 
-        {/* 🔹 Twitter Meta */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content={metaDescription} />
-        {blog.image && (
-          <meta name="twitter:image" content={blog.image} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        {featuredImage && (
+          <meta name="twitter:image" content={featuredImage} />
         )}
       </Head>
 
@@ -109,90 +70,84 @@ export default function BlogPage() {
           margin: "0 auto",
         }}
       >
-        <br />
+        <BlogArticleJsonLd meta={meta} slug={slug} />
+        <BlogPostHeader meta={meta} />
 
-        <Link
-          className="btn btn-outline-primary btn-sm"
-          href="/blog"
-          style={{
-            display: "inline-block",
-            marginBottom: "1rem",
-            textDecoration: "none",
-          }}
-        >
-          ← Back to Blogs
-        </Link>
-
-        <h1
-          style={{
-            fontSize: "2rem",
-            marginBottom: "0.5rem",
-            lineHeight: "1.3",
-          }}
-        >
-          {blog.title}
-        </h1>
-
-        {/* Author, Date & Read Time */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            color: "#666",
-            fontSize: "0.9rem",
-            marginBottom: "2rem",
-            flexWrap: "wrap",
-          }}
-        >
-          <div>
-            {blog.author || "Admin"} /{" "}
-            {new Date(blog.created_at).toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            })}
-          </div>
-          <div>
-            <span
-              style={{
-                color: "#bb2200",
-                fontWeight: "bold",
-                fontSize: "0.8rem",
-              }}
-            >
-              Read Time:&nbsp; <i className="bi bi-clock"></i>&nbsp;
-              {blog.read_time} Minutes
-            </span>
-          </div>
-        </div>
-
-        {/* Category */}
-        <small
-          className="blog-category"
-          style={{
-            display: "block",
-            marginBottom: "1rem",
-            fontSize: "0.9rem",
-            textTransform: "capitalize",
-            color: "#666",
-          }}
-        >
-          {category}
-        </small>
-
-        {/* Content */}
-        <div
-          style={{
-            lineHeight: "1.8",
-            fontSize: "1rem",
-            color: "#1a1a1a",
-          }}
-          dangerouslySetInnerHTML={{ __html: optimizedContent }}
-        ></div>
+        {isLargeArticle ? (
+          <>
+            {meta.excerpt ? (
+              <p
+                className="blog-excerpt"
+                style={{
+                  lineHeight: "1.8",
+                  fontSize: "1rem",
+                  color: "#444",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                {meta.excerpt}
+              </p>
+            ) : null}
+            <BlogLargeContent slug={slug} contentUrl={contentUrl} />
+          </>
+        ) : (
+          <div
+            className="blog-html-content"
+            style={{
+              lineHeight: "1.8",
+              fontSize: "1rem",
+              color: "#1a1a1a",
+            }}
+            suppressHydrationWarning
+            dangerouslySetInnerHTML={{ __html: inlineContent || "" }}
+          />
+        )}
 
         <br />
       </div>
     </>
   );
+}
+
+export async function getServerSideProps({ params }) {
+  const slug = params?.slug;
+
+  if (!slug) {
+    return { notFound: true };
+  }
+
+  const {
+    ensureBlogPostContentCached,
+    fetchBlogPostContent,
+    fetchBlogPostMeta,
+  } = await import("@/lib/blog/fetch-blog-post");
+
+  try {
+    const meta = await fetchBlogPostMeta(slug);
+
+    if (!meta) {
+      return { notFound: true };
+    }
+
+    const contentInfo = await ensureBlogPostContentCached(slug);
+    const isLargeArticle = contentInfo.size > LARGE_BLOG_CONTENT_BYTES;
+
+    let inlineContent = null;
+    if (!isLargeArticle) {
+      inlineContent = await fetchBlogPostContent(slug);
+    }
+
+    return {
+      props: {
+        meta,
+        slug,
+        isLargeArticle,
+        contentUrl: contentInfo.publicUrl,
+        inlineContent,
+      },
+    };
+  } catch (error) {
+    console.error(`[blog/${slug}] getServerSideProps error:`, error.message);
+    return { notFound: true };
+  }
 }

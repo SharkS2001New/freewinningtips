@@ -3,8 +3,7 @@ import {
   withLeagueCache,
   LEAGUE_CACHE_TTL,
 } from '@/components/functions/leagueDataCache';
-
-const API_AUTH = 'R9TxV3PbOEu7qZnJKgydC5LmX2';
+import { API_BASE, API_AUTH } from '@/components/functions/apiConfig';
 
 async function fetchJson(url, options = {}) {
   const res = await fetch(url, {
@@ -64,7 +63,7 @@ export async function fetchLeaguePageData({
     withLeagueCache(paths.meta, LEAGUE_CACHE_TTL.meta, async () => {
       try {
         const topData = await fetchJson(
-          `https://develop.pitchpredictions.com/api/fetch_leagues_top_data?league_id=${leagueId}`
+          `${API_BASE}/fetch_leagues_top_data?league_id=${leagueId}`
         );
         return topData.status === true ? topData.data || [] : [];
       } catch (err) {
@@ -76,7 +75,7 @@ export async function fetchLeaguePageData({
     withLeagueCache(paths.today, LEAGUE_CACHE_TTL.today, async () => {
       try {
         const todaysData = await fetchJson(
-          `https://develop.pitchpredictions.com/api/fetch_todays_fixtures_by_league_id?league_id=${leagueId}&fixture_date=${fetchDate}`
+          `${API_BASE}/fetch_todays_fixtures_by_league_id?league_id=${leagueId}&fixture_date=${fetchDate}`
         );
         return todaysData.status === true ? todaysData.data || [] : [];
       } catch (err) {
@@ -88,7 +87,7 @@ export async function fetchLeaguePageData({
     withLeagueCache(paths.upcoming, LEAGUE_CACHE_TTL.upcoming, async () => {
       try {
         const fixturesData = await fetchJson(
-          `https://develop.pitchpredictions.com/api/fetch_league_fixtures?league_name=${encodeURIComponent(leagueNameForApi)}&country_name=${encodeURIComponent(countryNameForApi)}`
+          `${API_BASE}/fetch_league_fixtures?league_name=${encodeURIComponent(leagueNameForApi)}&country_name=${encodeURIComponent(countryNameForApi)}`
         );
         return fixturesData.status === true ? fixturesData.data || [] : [];
       } catch (err) {
@@ -100,7 +99,7 @@ export async function fetchLeaguePageData({
     withLeagueCache(paths.results, LEAGUE_CACHE_TTL.results, async () => {
       try {
         const resultsData = await fetchJson(
-          `https://develop.pitchpredictions.com/api/fetch_league_results?league_name=${encodeURIComponent(leagueNameForApi)}&country_name=${encodeURIComponent(countryNameForApi)}`
+          `${API_BASE}/fetch_league_results?league_name=${encodeURIComponent(leagueNameForApi)}&country_name=${encodeURIComponent(countryNameForApi)}`
         );
         return resultsData.status === true ? resultsData.data || [] : [];
       } catch (err) {
@@ -112,7 +111,7 @@ export async function fetchLeaguePageData({
     withLeagueCache(paths.standings, LEAGUE_CACHE_TTL.standings, async () => {
       try {
         const standingsData = await fetchPostJson(
-          'https://develop.pitchpredictions.com/api/fetch_team_standings',
+          `${API_BASE}/fetch_team_standings`,
           { league_id: leagueId }
         );
         const raw = standingsData.status === true ? standingsData.data || [] : [];

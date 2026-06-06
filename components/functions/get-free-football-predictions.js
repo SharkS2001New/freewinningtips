@@ -1,20 +1,14 @@
-async function getFreePredictionsData(fetch_url) {    
-    const headers = { "Authorization": "R9TxV3PbOEu7qZnJKgydC5LmX2" }; // This is the authorization header from the api.pitchpredictions.com
+import { API_AUTH } from '@/components/functions/apiConfig';
 
-    try {
-        // Fetch fixtures 
-        const response = await fetch(fetch_url,{
-            headers: headers
-        });
-
-        const data = await response.json();
-    
-        return data;          
-
-    } catch (error) {
-        console.error(error);
-        // Handle error here, e.g. show a message to the user
-    }
+async function getFreePredictionsData(fetchUrl) {
+  try {
+    const response = await fetch(fetchUrl, {
+      headers: { Authorization: API_AUTH },
+    });
+    return response.json();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export default getFreePredictionsData;

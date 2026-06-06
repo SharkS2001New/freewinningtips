@@ -2,11 +2,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
-    // Warning: This allows production builds to successfully complete even if 
-    // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
   reactStrictMode: true,
-}
+  images: {
+    domains: [
+      "www.freewinningtips.com",
+      "freewinningtips.com",
+      "www.pitchpredictions.com",
+      "pitchpredictions.com",
+      "api.pitchpredictions.com",
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
