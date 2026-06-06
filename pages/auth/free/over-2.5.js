@@ -39,12 +39,11 @@ function Over25() {
   // Helper function to check if prediction is won or lost
   const checkPredictionResult = (match) => {
     if (match.goals_home !== null && match.goals_away !== null) {
-      const totalGoals = parseInt(match.goals_home) + parseInt(match.goals_away);
+      const totalGoals = parseInt(match.goals_home, 10) + parseInt(match.goals_away, 10);
       if (match.average_goals > 2.5) {
         return totalGoals >= 3 ? 'Won' : 'Lost';
-      } else {
-        return totalGoals <= 3 ? 'Won' : 'Lost';
       }
+      return totalGoals <= 2 ? 'Won' : 'Lost';
     }
     return null;
   };

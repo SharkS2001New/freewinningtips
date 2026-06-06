@@ -16,9 +16,6 @@ RUN apk add --no-cache nodejs npm && \
     apk del nodejs && \
     rm -rf /root/.npm
 
-# Set an environment variable to specify the desired port
-ENV PORT 3000
-
 # expose port and start app
 EXPOSE 3000
 CMD ["npm", "start"]

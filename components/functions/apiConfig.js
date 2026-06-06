@@ -26,6 +26,5 @@ export const PREDICTION_ENDPOINTS = {
   draws: 'fetch_draws_matches_fixtures',
   over15: 'fetch_under_over15_free_winning_tips',
   over25: 'fetch_under_over25_free_winning_tips',
-  over35: 'fetch_under_over35_free_winning_tips',
   todays_predictions: 'fetch_all_matches_fixtures_no_limit',
 };

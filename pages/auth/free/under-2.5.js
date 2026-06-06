@@ -37,6 +37,15 @@ function Under25() {
       .finally(() => setLoading(false)); // Hide loader after all fetches are complete
   }, []);
 
+  const checkPredictionResult = (match) => {
+    if (match.goals_home == null || match.goals_away == null) return null;
+
+    const totalGoals = parseInt(match.goals_home, 10) + parseInt(match.goals_away, 10);
+    const isUnderTip = match.average_goals < 2.5;
+    const won = isUnderTip ? totalGoals <= 2 : totalGoals >= 3;
+    return won ? 'Won' : 'Lost';
+  };
+
   return (
     <div className="container mt-4">
         <nav aria-label="breadcrumb" className="mb-3 border-bottom">
@@ -86,10 +95,10 @@ function Under25() {
                                 <td>{(match.average_goals < 2.5 ? "Under2.5" : "Over2.5")}</td>
                                 <td>{match.goals_home} - {match.goals_away}</td>
                                 <td>
-                                {match.goals_home != null && match.goals_away != null
-                                    ? match.average_goals < 2.5 && (parseInt(match.goals_home) + parseInt(match.goals_away)) < 3
+                                {checkPredictionResult(match) === 'Won'
                                     ? <span className="number-circle rounded-square" style={{ backgroundColor: "green" }}>Won</span>
-                                    : <span className="number-circle rounded-square" style={{ backgroundColor: "white", border: "1px solid", borderColor: "red", color: "red" }}>Lost</span>
+                                    : checkPredictionResult(match) === 'Lost'
+                                    ? <span className="number-circle rounded-square" style={{ backgroundColor: "white", border: "1px solid", borderColor: "red", color: "red" }}>Lost</span>
                                     : null}
                                 </td>
                             </tr>
@@ -121,10 +130,10 @@ function Under25() {
                                 <td>{(match.average_goals < 2.5 ? "Under2.5" : "Over2.5")}</td>
                                 <td>{match.goals_home} - {match.goals_away}</td>
                                 <td>
-                                {match.goals_home != null && match.goals_away != null
-                                    ? match.average_goals < 2.5 && (parseInt(match.goals_home) + parseInt(match.goals_away)) < 3
+                                {checkPredictionResult(match) === 'Won'
                                     ? <span className="number-circle rounded-square" style={{ backgroundColor: "green" }}>Won</span>
-                                    : <span className="number-circle rounded-square" style={{ backgroundColor: "white", border: "1px solid", borderColor: "red", color: "red" }}>Lost</span>
+                                    : checkPredictionResult(match) === 'Lost'
+                                    ? <span className="number-circle rounded-square" style={{ backgroundColor: "white", border: "1px solid", borderColor: "red", color: "red" }}>Lost</span>
                                     : null}
                                 </td>
                             </tr>

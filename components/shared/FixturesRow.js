@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import Link from 'next/link';
 import { buildLeaguePathFromFixture } from '@/components/functions/leagueUrl';
+import { getInlineAdVariant, InlineAdsense } from '@/components/shared/inline-adsense';
 
 // ---------------------------------------------------------------------------
 // Team Forms Cache
@@ -101,10 +102,32 @@ const safeOdds = (val) => {
   return String(val);
 };
 
+function parseGoalScore(value) {
+  if (value === null || value === undefined || value === '') return null;
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+/** Map API over/under labels (e.g. Ov2.5) to keys used for odds and result checks. */
+function normalizeTipForResult(tipText) {
+  if (!tipText || tipText === '-') return null;
+
+  const compact = String(tipText).trim().toUpperCase().replace(/\s+/g, '');
+
+  if (['OVER2.5', 'OV2.5', 'OV25'].includes(compact)) return 'Over2.5';
+  if (['UNDER2.5', 'UN2.5', 'UN25'].includes(compact)) return 'Under2.5';
+  if (['OVER1.5', 'OV1.5', 'OV15'].includes(compact)) return 'Over1.5';
+  if (['UNDER1.5', 'UN1.5', 'UN15'].includes(compact)) return 'Under1.5';
+
+  return String(tipText).trim();
+}
+
 function getOddForTip(tipText, fixture) {
   const odds = fixture.odds || {};
+  const tip = normalizeTipForResult(tipText);
+  if (!tip) return '-';
   
-  switch (tipText) {
+  switch (tip) {
     case '1': return safeOdds(odds.home);
     case 'X': return safeOdds(odds.draw);
     case '2': return safeOdds(odds.away);
@@ -123,19 +146,30 @@ const TIP_WON = '✅';
 const TIP_LOST = '❌';
 
 function determineTipResult(tipText, homeScore, awayScore) {
-  if (homeScore === null || awayScore === null) return null;
+  const home = parseGoalScore(homeScore);
+  const away = parseGoalScore(awayScore);
+  if (home === null || away === null) return null;
 
-  switch (tipText) {
-    case '1': return homeScore > awayScore ? TIP_WON : TIP_LOST;
-    case 'X': return homeScore === awayScore ? TIP_WON : TIP_LOST;
-    case '2': return awayScore > homeScore ? TIP_WON : TIP_LOST;
-    case '1X': return homeScore >= awayScore ? TIP_WON : TIP_LOST;
-    case 'X2': return awayScore >= homeScore ? TIP_WON : TIP_LOST;
-    case '12': return homeScore !== awayScore ? TIP_WON : TIP_LOST;
-    case 'Over2.5': return (homeScore + awayScore) > 2.5 ? TIP_WON : TIP_LOST;
-    case 'Under2.5': return (homeScore + awayScore) < 2.5 ? TIP_WON : TIP_LOST;
-    case 'YES': return homeScore > 0 && awayScore > 0 ? TIP_WON : TIP_LOST;
-    case 'NO': return homeScore === 0 || awayScore === 0 ? TIP_WON : TIP_LOST;
+  const totalGoals = home + away;
+  const tip = normalizeTipForResult(tipText);
+  if (!tip) return null;
+
+  switch (tip) {
+    case '1': return home > away ? TIP_WON : TIP_LOST;
+    case 'X': return home === away ? TIP_WON : TIP_LOST;
+    case '2': return away > home ? TIP_WON : TIP_LOST;
+    case '1X': return home >= away ? TIP_WON : TIP_LOST;
+    case 'X2': return away >= home ? TIP_WON : TIP_LOST;
+    case '12': return home !== away ? TIP_WON : TIP_LOST;
+    case 'Over1.5': return totalGoals >= 2 ? TIP_WON : TIP_LOST;
+    case 'Under1.5': return totalGoals <= 1 ? TIP_WON : TIP_LOST;
+    case 'Over2.5': return totalGoals >= 3 ? TIP_WON : TIP_LOST;
+    case 'Under2.5': return totalGoals <= 2 ? TIP_WON : TIP_LOST;
+    case 'YES':
+    case 'GG':
+      return home > 0 && away > 0 ? TIP_WON : TIP_LOST;
+    case 'NO':
+      return home === 0 || away === 0 ? TIP_WON : TIP_LOST;
     default: return null;
   }
 }
@@ -260,7 +294,6 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
       
     case '1-5-goals':
     case '2-5-goals':
-    case '3-5-goals':
       // Use API's over/under prediction
       tipText = overUnder.prediction || '-';
       tipProb = overUnder.probability !== null && overUnder.probability !== undefined 
@@ -403,6 +436,8 @@ const LeagueCard = ({
   formsLoading,
   defaultOpen = true,
   hideLeagueHeader = false,
+  matchIndexStart = 0,
+  totalMatches = 0,
 }) => {
   const [open, setOpen] = useState(defaultOpen);
 
@@ -448,15 +483,22 @@ const LeagueCard = ({
       )}
       {showMatches && (
         <div className="match-list">
-          {fixtures.map((fixture, idx) => (
-            <MatchRow
-              key={fixture.fixture_id || idx}
-              fixture={fixture}
-              predictionType={predictionType}
-              teamForms={teamForms}
-              formsLoading={formsLoading}
-            />
-          ))}
+          {fixtures.map((fixture, idx) => {
+            const matchIndex = matchIndexStart + idx;
+            const adVariant = getInlineAdVariant(matchIndex, totalMatches);
+
+            return (
+              <Fragment key={fixture.fixture_id || `${matchIndex}-${idx}`}>
+                <MatchRow
+                  fixture={fixture}
+                  predictionType={predictionType}
+                  teamForms={teamForms}
+                  formsLoading={formsLoading}
+                />
+                {adVariant && <InlineAdsense variant={adVariant} />}
+              </Fragment>
+            );
+          })}
         </div>
       )}
     </div>
@@ -529,6 +571,9 @@ const FixturesRow = ({
   };
 
   const groups = groupByLeague(fixtures);
+  const totalMatches = fixtures?.length || 0;
+
+  let matchIndexOffset = 0;
 
   if (!groups.length) {
     return (
@@ -541,17 +586,24 @@ const FixturesRow = ({
 
   return (
     <div className="predictions-col">
-      {groups.map((group, idx) => (
-        <LeagueCard
-          key={idx}
-          league={group.league}
-          fixtures={group.fixtures}
-          predictionType={predictionType}
-          teamForms={teamForms}
-          formsLoading={formsLoading}
-          hideLeagueHeader={hideLeagueHeader}
-        />
-      ))}
+      {groups.map((group, idx) => {
+        const matchIndexStart = matchIndexOffset;
+        matchIndexOffset += group.fixtures.length;
+
+        return (
+          <LeagueCard
+            key={idx}
+            league={group.league}
+            fixtures={group.fixtures}
+            predictionType={predictionType}
+            teamForms={teamForms}
+            formsLoading={formsLoading}
+            hideLeagueHeader={hideLeagueHeader}
+            matchIndexStart={matchIndexStart}
+            totalMatches={totalMatches}
+          />
+        );
+      })}
     </div>
   );
 };

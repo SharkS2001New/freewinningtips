@@ -142,15 +142,6 @@ function MetaContent() {
 
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
  
-    } else if(router.asPath.substring(1) == "predictions/3-5-goals"){
-
-        title ="Over 3.5 & Under 3.5 Goals Predictions";
-        meta_desc_content = "Get the best Over 3.5 & Under 3.5 goals predictions. Our expert tips help you choose wisely on matches with high or low-scoring potentials.";
-        meta_keywords = "over 3.5, over 3.5 goals, goals over 3.5 predictions, under 3.5, under 3";
-        page_title = "Over 3.5 & Under 3.5 Goals Tips";
-
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
-        
     } else if(router.pathname.substring(1) == "jackpots/sportpesa-midweek-jackpot-predictions"){
         title ="Sportpesa Midweek Jackpot Prediction This week";
         meta_desc_content = "Get Sportpesa Midweek Jackpot Prediction at no cost and stand a chance to win a prize of 11 Million. We offer reliable tips accessible to all customers for free";

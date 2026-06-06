@@ -9,7 +9,6 @@ const Subnavbar = () => {
     { name: 'Free Picks',    href: '/predictions/free-betting-tips-today' },
     { name: '1.5 Goals',     href: '/predictions/1-5-goals' },
     { name: '2.5 Goals',     href: '/predictions/2-5-goals' },
-    { name: 'Over 3.5 Goals',href: '/predictions/3-5-goals' },
     { name: 'Acca Tips',     href: '/predictions/accumulator-tips' },
     { name: 'BTTS',          href: '/predictions/gg-no-gg' },
     { name: 'Draw No Bet',   href: '/predictions/draw' },

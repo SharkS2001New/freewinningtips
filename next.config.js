@@ -1,9 +1,6 @@
 /* eslint-disable */
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   reactStrictMode: true,
   async redirects() {
     return [
@@ -16,13 +13,13 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: [
-      "www.freewinningtips.com",
-      "freewinningtips.com",
-      "www.pitchpredictions.com",
-      "pitchpredictions.com",
-      "api.pitchpredictions.com",
-      "media.api-sports.io",
+    remotePatterns: [
+      { protocol: 'https', hostname: 'www.freewinningtips.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'freewinningtips.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'www.pitchpredictions.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'pitchpredictions.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'api.pitchpredictions.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'media.api-sports.io', pathname: '/**' },
     ],
   },
 };

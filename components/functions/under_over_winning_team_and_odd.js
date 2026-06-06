@@ -16,8 +16,6 @@ function UnderOverWinningTeamAndOdd(averageGoals){
         winning_team = averageGoals < 1.5 ? "Under" : "Over";
       } else if (path === "predictions/2-5-goals") {
         winning_team = averageGoals < 2.5 ? "Under" : "Over";
-      } else if (path === "predictions/3-5-goals") {
-        winning_team = averageGoals < 3.5 ? "Under" : "Over";
       } else {
         winning_team = "-"; // fallback for other paths if necessary
       }

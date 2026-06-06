@@ -99,7 +99,7 @@ body {
 }
 
 /* Ensure ads don't break layout */
-.main-content :global(ins.adsbygoogle) {
+.main-content ins.adsbygoogle {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -107,7 +107,7 @@ body {
 }
 
 /* Fix for any ad containers */
-.main-content :global(.adsbygoogle) {
+.main-content .adsbygoogle {
   max-width: 100%;
 }
 
@@ -1853,6 +1853,22 @@ body {
   max-width: 1320px;
   padding-left: 0;
   padding-right: 0;
+}
+
+.inline-ad-wrap {
+  padding: 8px 0;
+  width: 100%;
+}
+
+.jp-ad-row .jp-ad-cell {
+  padding: 8px 12px !important;
+  background: transparent;
+  border-top: none;
+  border-bottom: 1px solid #eee;
+}
+
+ins.adsbygoogle[data-ad-status=unfilled] {
+  display: none !important;
 }
 
 #wrapper {

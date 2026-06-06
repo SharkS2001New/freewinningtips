@@ -3,7 +3,7 @@ import React from 'react';
 import getFormattedCurrentDate from '@/components/functions/GetTodaysDate';
 import { fetchCachedFixtures, CACHE_TTL } from '@/components/functions/pagesDataCache';
 import FixturesRow from '@/components/shared/FixturesRow';
-import Over35PageContent from '@/components/seo-content/over35-page-content';
+import Over25PageContent from '@/components/seo-content/over25-page-content';
 
 
 export default function Over25Games({ fixtures, fetchDate }) {
@@ -15,7 +15,7 @@ export default function Over25Games({ fixtures, fetchDate }) {
         </div>
 
         {/* SEO CONTENT */}
-        <Over35PageContent/>
+        <Over25PageContent/>
       </div>
   )
 }

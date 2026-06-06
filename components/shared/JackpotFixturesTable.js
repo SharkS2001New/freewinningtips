@@ -1,5 +1,7 @@
 // components/JackpotFixturesTable.js
+import { Fragment } from 'react';
 import DateTimeToUsersTimezone from '@/components/functions/DatetimeToUsersTimezone';
+import { getInlineAdVariant, InlineAdsense } from '@/components/shared/inline-adsense';
 
 const JackpotFixturesTable = ({ 
   fixtures, 
@@ -502,11 +504,13 @@ const JackpotFixturesTable = ({
                   const drawOdd = fixture.bets_draw || null;
                   const awayOdd = fixture.bets_away || null;
 
-                  // Win/lost icon — only when real scores are available
                   const resultIcon = getResultIcon(pred1x2, predDC, scores.home, scores.away);
+                  const adVariant = getInlineAdVariant(index, fixtures.length);
+                  const colSpan = showDateColumn ? 7 : 6;
 
                   return (
-                    <tr key={fixture.fixture_id || index} className="fixture-row">
+                    <Fragment key={fixture.fixture_id || index}>
+                      <tr className="fixture-row">
                       <td className="td-num">{fixture.jackpot_position || index + 1}</td>
                       {showDateColumn && (
                         <td className="td-date">
@@ -570,6 +574,14 @@ const JackpotFixturesTable = ({
                         </div>
                       </td>
                     </tr>
+                      {adVariant && (
+                        <tr className="jp-ad-row">
+                          <td colSpan={colSpan} className="jp-ad-cell">
+                            <InlineAdsense variant={adVariant} />
+                          </td>
+                        </tr>
+                      )}
+                    </Fragment>
                   );
                 })}
               </tbody>
@@ -594,11 +606,12 @@ const JackpotFixturesTable = ({
                 const drawOdd = fixture.bets_draw || null;
                 const awayOdd = fixture.bets_away || null;
 
-                // Win/lost icon — only when real scores are available
                 const resultIcon = getResultIcon(pred1x2, predDC, scores.home, scores.away);
+                const adVariant = getInlineAdVariant(index, fixtures.length);
 
                 return (
-                  <div key={fixture.fixture_id || index} className="jp-card">
+                  <Fragment key={fixture.fixture_id || index}>
+                  <div className="jp-card">
                     <div className="jp-card-grid">
                       <div className="mc-num">{fixture.jackpot_position || index + 1}</div>
 
@@ -660,6 +673,8 @@ const JackpotFixturesTable = ({
 
                     {showDateColumn && <div className="jp-card-date">{formattedDate}</div>}
                   </div>
+                  {adVariant && <InlineAdsense variant={adVariant} />}
+                  </Fragment>
                 );
               })}
             </div>

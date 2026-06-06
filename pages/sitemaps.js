@@ -72,7 +72,6 @@ function SitemapsPage() {
         <li><a href="/predictions/adibet" className="no-underline">Adibet Prediction</a></li> 
         <li><a href="/predictions/1-5-goals" className="no-underline">1-5 Goals</a></li>
         <li><a href="/predictions/2-5-goals" className="no-underline">2-5 Goals</a></li>
-        <li><a href="/predictions/3-5-goals" className="no-underline">3-5 Goals</a></li>
         <li><a href="/predictions/all-predictions" className="no-underline">All Predictions</a></li>
         <li><a href="/predictions/double-chance" className="no-underline">Double Chance</a></li>
         <li><a href="/predictions/draw" className="no-underline">Draw</a></li>
