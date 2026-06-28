@@ -170,7 +170,7 @@ function Footer() {
         betting services. FreeWinningTips does not guarantee any prediction outcomes.
       </div>
 
-      <SponsorLinks />
+      <SponsorLinks /> {/* TODO: Add sponsor links */}
 
       {/* ── BACK TO TOP — fixed floating bottom-right (appears after scrolling) ── */}
       {showBackToTop && (
