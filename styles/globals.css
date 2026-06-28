@@ -1816,6 +1816,41 @@ body {
   color: #ffe066;
 }
 
+.footer-sponsor-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 24px auto 0;
+  padding: 20px 24px 8px;
+  max-width: 1020px;
+  text-align: center;
+}
+
+.footer-sponsor-title {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.footer-sponsor-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 16px;
+}
+
+.footer-sponsor-link {
+  color: #6eb5ff;
+  font-size: 14px;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer-sponsor-link:hover {
+  color: #fff;
+}
+
 .footer-bottom-row {
   display: flex;
   align-items: center;

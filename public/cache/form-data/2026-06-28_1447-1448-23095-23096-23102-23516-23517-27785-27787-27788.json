@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-06-28T09:10:18.086Z",
+  "fixtureDate": "2026-06-28",
+  "teamIds": "1447,1448,23095,23096,23102,23516,23517,27785,27787,27788",
+  "data": {
+    "1447": {
+      "form_string": "W L W L W L",
+      "form_array": [
+        "W",
+        "L",
+        "W",
+        "L",
+        "W",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "1448": {
+      "form_string": "D W W W W W",
+      "form_array": [
+        "D",
+        "W",
+        "W",
+        "W",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "23095": {
+      "form_string": "W L W W",
+      "form_array": [
+        "W",
+        "L",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 4
+    },
+    "23096": {
+      "form_string": "L W",
+      "form_array": [
+        "L",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "23102": {
+      "form_string": "D W",
+      "form_array": [
+        "D",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "23516": {
+      "form_string": "W L L L L L",
+      "form_array": [
+        "W",
+        "L",
+        "L",
+        "L",
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "23517": {
+      "form_string": "L W W L W W",
+      "form_array": [
+        "L",
+        "W",
+        "W",
+        "L",
+        "W",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "27785": {
+      "form_string": "L L D",
+      "form_array": [
+        "L",
+        "L",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 3
+    },
+    "27787": {
+      "form_string": "W",
+      "form_array": [
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 1
+    },
+    "27788": {
+      "form_string": "L L",
+      "form_array": [
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    }
+  }
+}

@@ -1,6 +1,31 @@
 // components/Footer.js
 import React, { useState, useEffect } from "react";
 
+const sponsors = [
+  { label: 'jalalive tv', url: 'https://www.xsbaltimore.com/' },
+];
+
+function SponsorLinks() {
+  return (
+    <div className="footer-sponsor-section">
+      <p className="footer-sponsor-title">Our Partners &amp; Sponsors</p>
+      <div className="footer-sponsor-links">
+        {sponsors.map((sponsor, index) => (
+          <a
+            key={`${sponsor.url}-${index}`}
+            href={sponsor.url}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="footer-sponsor-link"
+          >
+            {sponsor.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Footer() {
   const year = new Date().getFullYear();
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -144,6 +169,8 @@ function Footer() {
         or contact your national gambling helpline. You must be 18 years or older to use
         betting services. FreeWinningTips does not guarantee any prediction outcomes.
       </div>
+
+      <SponsorLinks />
 
       {/* ── BACK TO TOP — fixed floating bottom-right (appears after scrolling) ── */}
       {showBackToTop && (
