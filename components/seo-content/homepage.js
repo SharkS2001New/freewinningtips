@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   {
     question: 'Which football leagues do you cover?',
     answer:
-      'We cover 50+ competitions including the English Premier League, La Liga, Serie A, Bundesliga, Ligue 1, UEFA Champions League, MLS, and African leagues including the Kenyan Premier League, Egyptian Premier League, and South African PSL.',
+      'We cover 50+ competitions including the English Premier League, La Liga, Serie A, Bundesliga, Ligue 1, UEFA Champions League, MLS, and African leagues including the Kenyan Premier League, Egyptian Premier League, and South African PSL. Therefore, it helps enable more effective sports betting on <a href="https://rizetoto.com">토토사이트<a/>',
   },
   {
     question: 'How often are predictions updated?',
