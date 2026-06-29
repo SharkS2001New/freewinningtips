@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   {
     question: 'Which football leagues do you cover?',
     answer:
-      'We cover 50+ competitions including the English Premier League, La Liga, Serie A, Bundesliga, Ligue 1, UEFA Champions League, MLS, and African leagues including the Kenyan Premier League, Egyptian Premier League, and South African PSL. Therefore, it helps enable more effective sports betting on <a href="https://rizetoto.com">토토사이트<a/>',
+      'We cover 50+ competitions including the English Premier League, La Liga, Serie A, Bundesliga, Ligue 1, UEFA Champions League, MLS, and African leagues including the Kenyan Premier League, Egyptian Premier League, and South African PSL.',
   },
   {
     question: 'How often are predictions updated?',
@@ -126,7 +126,21 @@ const HomepageContent = ({ fixtures = [] }) => {
           {FAQ_ITEMS.map((item) => (
             <div key={item.question} className="homepage-faq-item">
               <h3>{item.question}</h3>
-              <p>{item.answer}</p>
+              {item.question === 'Which football leagues do you cover?' ? (
+                <p>
+                  {item.answer} Therefore, it helps enable more effective sports betting on{' '}
+                  <a
+                    href="https://rizetoto.com"
+                    target="_blank"
+                    rel="sponsored noopener noreferrer"
+                  >
+                    토토사이트
+                  </a>
+                  .
+                </p>
+              ) : (
+                <p>{item.answer}</p>
+              )}
             </div>
           ))}
         </div>
