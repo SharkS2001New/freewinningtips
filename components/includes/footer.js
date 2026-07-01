@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const sponsors = [
   { label: 'jalalive tv', url: 'https://www.xsbaltimore.com/' },
+  { label: 'bgibola', url: 'https://bgibola88.io/' },
 ];
 
 function SponsorLinks() {
@@ -15,7 +16,7 @@ function SponsorLinks() {
             key={`${sponsor.url}-${index}`}
             href={sponsor.url}
             target="_blank"
-            rel="sponsored noopener noreferrer"
+            // rel="sponsored noopener noreferrer"
             className="footer-sponsor-link"
           >
             {sponsor.label}
