@@ -16,7 +16,6 @@ function SponsorLinks() {
             key={`${sponsor.url}-${index}`}
             href={sponsor.url}
             target="_blank"
-            // rel="sponsored noopener noreferrer"
             className="footer-sponsor-link"
           >
             {sponsor.label}
