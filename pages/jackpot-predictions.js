@@ -1,4 +1,4 @@
-dcca// pages/jackpot-predictions.js  (or wherever this page lives)
+// pages/jackpot-predictions.js  (or wherever this page lives)
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
