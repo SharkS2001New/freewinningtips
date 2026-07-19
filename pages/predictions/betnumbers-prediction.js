@@ -1,8 +1,9 @@
+import Head from 'next/head';
 
 import BetnumbersPageContent from '@/components/seo-content/betnumbers-page-content';
+import BetnumbersPredictionsSchema from '@/components/seo-content/betnumbers-predictions-schema';
 import FixturesRow from '@/components/shared/FixturesRow';
 import { fetchCachedFixtures, CACHE_TTL } from '@/components/functions/pagesDataCache';
-
 
 function getFormattedCurrentDate() {
   const now = new Date();
@@ -12,16 +13,17 @@ function getFormattedCurrentDate() {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-export default function BetnumbersPackages({ fixtures, fetchDate }) {
+export default function BetnumbersPackages({ fixtures }) {
   return (
     <>
+      <Head>
+        <BetnumbersPredictionsSchema />
+      </Head>
       <div className="page-root">
-        {/* MAIN CONTENT - FIXTURES ROW (Reusable Component) */}
         <div className="container-main">
           <FixturesRow fixtures={fixtures} predictionType="all" />
         </div>
 
-        {/* SEO CONTENT */}
         <BetnumbersPageContent />
       </div>
     </>

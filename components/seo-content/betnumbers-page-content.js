@@ -1,315 +1,186 @@
+import Link from 'next/link';
+import AnalystByline from '@/components/shared/AnalystByline';
+
+const BETNUMBERS_FAQ_ITEMS = [
+  {
+    question: "Where can I find today's bet numbers predictions?",
+    answer:
+      "This page is updated daily with fresh bet numbers covering the biggest fixtures in Europe and Africa's leading domestic leagues. Every selection includes written analysis and a confidence rating, and the full list is free to view.",
+  },
+  {
+    question: "How accurate are FreeWinningTips' bet numbers?",
+    answer:
+      'Every bet numbers selection is generated from statistical modelling — recent form, head-to-head data, and market movement — then reviewed manually before publication. We publish results openly, including losses, so you can judge accuracy for yourself rather than take a marketing claim at face value.',
+  },
+  {
+    question: 'Are bet numbers predictions completely free?',
+    answer:
+      'Yes. Every prediction on this page is free, with no subscription, no paywall, and no registration required.',
+  },
+  {
+    question: 'Which bookmakers and leagues do you cover?',
+    answer:
+      'Our bet numbers cross-reference market movement from Sportpesa, Betika, Mozzart, and Bet9ja, and cover leagues including the Premier League, La Liga, Serie A, Bundesliga, Ligue 1, and top domestic competitions across Kenya, Nigeria, and Uganda.',
+  },
+  {
+    question: 'Can bet numbers be 100% sure?',
+    answer:
+      'No. Football is unpredictable and no prediction can be guaranteed. FreeWinningTips provides data-driven analysis to give you a genuine statistical edge, but every selection carries risk. Always bet responsibly.',
+  },
+];
+
 const BetnumbersPageContent = () => {
   return (
     <section className="seo-section">
       <div className="seo-inner">
-
-        <h2>Betnumbers Predictions</h2>
         <p>
-          Get free Betnumbers predictions for all football matches worldwide
-          from Freewinningtips. We analyze the stats and have our in-house
-          experts critically evaluate the figures to give you a competitor’s
-          edge.
+          Free, expert-reviewed bet numbers for today&apos;s fixtures — built from real statistical
+          analysis, checked by a human analyst before publication, and tracked openly so you can see
+          exactly how they perform.
         </p>
 
+        <h2>What Are Bet Numbers?</h2>
         <p>
-          Our Betnumbers predictions cover major and minor leagues. We cover all
-          tournaments and international matches to deliver you the latest stats
-          from the comfort of your home.
+          Bet numbers are structured football predictions covering match outcomes, goal markets, and
+          both-teams-to-score selections, presented match by match with the reasoning behind each
+          pick. On FreeWinningTips, every bet number selection carries a written analysis and a
+          confidence rating, so you understand why a pick was made rather than being handed a bare
+          tip and told to trust it.
+        </p>
+        <p>
+          This page is updated daily with fresh selections across the biggest leagues in Europe and
+          the domestic leagues that matter most to bettors across Kenya, Nigeria, and Uganda. Every
+          selection is free — there is no paywall, no VIP tier, and no registration required to see
+          today&apos;s full list.
         </p>
 
+        <h2>How We Generate Our Bet Numbers Predictions</h2>
         <p>
-          Aside from Betnumbers predictions, you can find other football
-          predictions on our website. We provide our users with:
+          Our process starts with the underlying match data: recent form across the last five and ten
+          fixtures, home and away performance splits, goals scored and conceded averages,
+          head-to-head history, and confirmed team news. We then check that data against live market
+          movement across the major bookmakers used across East and West Africa, including Sportpesa,
+          Betika, Mozzart, and Bet9ja, to identify where our model&apos;s view and the market&apos;s
+          view diverge — that gap is usually where the real value sits.
+        </p>
+        <p>
+          Once the model shortlists a selection, it is reviewed manually before publication. If a
+          squad has not been confirmed and the missing information could reasonably change the
+          outcome, we hold the pick rather than publish a guess. That discipline occasionally means
+          fewer bet numbers on a given day, but it is what keeps our published track record honest.
+        </p>
+        <p>
+          Every prediction on this page carries a confidence rating. A selection rated at 80% or
+          above has cleared a considerably higher internal bar than one rated at 60% — use that
+          distinction when deciding how much weight to give any individual tip. Read more in{' '}
+          <Link href="/how-we-predict">how we predict</Link>, or browse{' '}
+          <Link href="/predictions/todays-predictions">today&apos;s football predictions</Link>,{' '}
+          <Link href="/predictions/gg-no-gg">BTTS tips</Link>,{' '}
+          <Link href="/predictions/direct-win-predictions">direct win predictions</Link>, and{' '}
+          <Link href="/predictions/correct-score">correct score tips</Link>.
         </p>
 
-        <ul>
-          <li>
-            <a href="/predictions/zulubet">
-              Zulubet predictions
-            </a>
-          </li>
+        <h2>Are Bet Numbers 100% Guaranteed?</h2>
+        <p>
+          No. No football prediction — bet numbers included — can ever be guaranteed. Football
+          involves human decision-making, refereeing calls, injuries, and weather, and no statistical
+          model accounts for all of it. If a site is promising you guaranteed wins or a
+          &quot;cannot lose&quot; bet numbers list, treat that claim with real caution — it is not an
+          honest description of how football betting works.
+        </p>
+        <p>
+          What we offer instead is a data-backed, high-probability selection with the reasoning shown
+          alongside it. A pick rated 85% confidence is not a guarantee, but across a large enough
+          sample of similarly rated selections, the underlying probabilities work in your favour over
+          time. That is the correct way to think about bet numbers, and it&apos;s the standard this
+          page is built around.
+        </p>
 
+        <h2>Markets Covered in Today&apos;s Bet Numbers</h2>
+        <ul className="seo-bullet-list">
           <li>
-            <a href="/jackpot-predictions">
-              Jackpot predictions
-            </a>
+            <strong>Match result (1X2)</strong> — home win, away win, and draw selections
           </li>
-
           <li>
-            <a href="/predictions/mwanasoka">
-              Mwanasoka prediction
-            </a>
+            <strong>Both Teams To Score (BTTS)</strong> — yes/no picks with a supporting probability
           </li>
-
           <li>
-            <a href="/predictions/supatips">
-              Supatips prediction
-            </a>
+            <strong>Over/Under goals</strong> — covering the 1.5, 2.5, and 3.5 goal lines
           </li>
-
           <li>
-            <a href="/predictions/freesupertips">
-              Freesupertips Predictions
-            </a>
+            <strong>Double chance</strong> selections for lower-risk coverage
           </li>
-
           <li>
-            <a href="/predictions/predictz">
-              Predictz Predictions
-            </a>
+            <strong>Correct score</strong> predictions for higher-odds selections
           </li>
         </ul>
-
-        <h2>Betnumbers Prediction Today</h2>
-
         <p>
-          Here at Free Winning Tips our goal is to help you win. We want you to
-          not only enjoy the game but also make decisions based on the right
-          stats.
+          Coverage spans the English Premier League, UEFA Champions League, La Liga, Serie A,
+          Bundesliga, and Ligue 1, alongside domestic leagues across Kenya, Nigeria, Uganda, and
+          other African football markets that larger prediction sites often skip.
         </p>
 
+        <h2>100% Free — No Registration, No Paywall</h2>
         <p>
-          Our Betnumbers predictions are accurate and reliable to help you make
-          informed decisions. We have our team of experts, statistical analysis,
-          and in-depth research that helps us deliver the best possible
-          Betnumbers predictions today.
+          Every bet number prediction published on FreeWinningTips is free to read, every day. There
+          is no subscription tier that unlocks &quot;better&quot; tips and no email or phone number
+          required to view today&apos;s full list. We believe accurate football analysis should be
+          available to everyone, not sold at a premium to the bettors who can least afford to lose
+          money chasing paid tipsters.
+        </p>
+        <p>
+          Where we do track performance, we publish it openly — including the picks that didn&apos;t
+          land. A prediction site that only shows you its wins is not giving you an honest picture of
+          its track record, and that transparency is central to how this page is run. See our{' '}
+          <Link href="/results">results archive</Link> for the published track record.
         </p>
 
+        <h2>Meet the Analyst</h2>
         <p>
-          We carefully scrutinize all the factors that can affect a match
-          outcome, from team form, playing styles, motivation, and many others.
-          We are diligent in our analysis and update our site regularly to make
-          it easy for you to beat the odds.
+          <strong>Stephen Karuku</strong> — Lead Predictions Analyst, FreeWinningTips
+        </p>
+        <p>
+          Stephen has spent years analysing football statistics and betting markets across
+          Europe&apos;s top five leagues and East Africa&apos;s domestic competitions. He reviews every
+          bet numbers selection before it is published on FreeWinningTips, checking team news, market
+          movement, and model output against each other to make sure the published confidence rating
+          reflects the actual strength of the data — not marketing language designed to sound more
+          certain than it is.
+        </p>
+        <AnalystByline />
+
+        <h2>Bet Responsibly</h2>
+        <p>
+          Bet numbers predictions are provided for informational and entertainment purposes only. No
+          outcome is guaranteed, and past performance does not guarantee future results. Only bet
+          what you can afford to lose. If gambling is affecting you or someone you know, contact your
+          national responsible gambling helpline for confidential support. 18+ only.
         </p>
 
-        <h2>Free Betnumbers Predictions</h2>
-
-        <p>
-          Our users enjoy free Betnumbers predictions that enhance their
-          football experience. We offer free Betnumbers predictions for all the
-          matches happening globally.
-        </p>
-
-        <p>
-          Our football experts consider every factor that may affect a match
-          outcome so that our users can get the most reliable free Betnumbers
-          prediction.
-        </p>
-
-        <p>
-          You deserve to enjoy the game you love, and that’s why our Betnumbers
-          predictions are free. We cover:
-        </p>
-
-        <ul>
-          <li>
-            <a href="/">
-              Today predictions
-            </a>
-          </li>
-
-          <li>
-            <a href="/tomorrows-free-football-predictions">
-              Tomorrow predictions
-            </a>
-          </li>
-
-          <li>Betnumbers Tips</li>
-        </ul>
-
-        <h2>Betnumbers Winning Tips and VIP</h2>
-
-        <p>
-          We provide our users with Betnumbers predictions and Betnumbers
-          winning tips. We want you to have an edge over the competition.
-        </p>
-
-        <p>
-          We provide Betnumbers tips for games from around the globe. Our
-          in-house team of experts analyzes various factors, such as the team’s
-          formation and past performance, to deliver the surest tips.
-        </p>
-
-        <p>
-          Our Betnumbers tips and predictions help you increase your chances of
-          winning. We also have a Betnumbers VIP package for users who want VIP
-          tips.
-        </p>
-
-        <h2>Betnumbers GR Correct Score</h2>
-
-        <p>
-          Free Winning Tips provides users with Betnumbers GR correct score
-          predictions. We analyze the teams, their form, and previous
-          performance to provide the most accurate and reliable Betnumbers GR
-          predictions.
-        </p>
-
-        <p>
-          Our Betnumbers GR predictions will help you make better decisions.
-        </p>
-
-        <h2>Betnumbers Sure Win Prediction</h2>
-
-        <p>
-          We also provide users with Betnumbers sure win predictions. Our
-          experts carefully analyze the stats to give you the best possible
-          prediction.
-        </p>
-
-        <p>
-          You’ll undoubtedly keep enjoying the game as we help you make better
-          decisions on match outcomes.
-        </p>
-
-        <h2>Betnumbers GG Predictions Today</h2>
-
-        <p>
-          Our site provides users with Betnumbers GG predictions today for
-          matches likely to have a goal-goal result.
-        </p>
-
-        <p>
-          We analyze every vital detail about the teams to provide you with the
-          most accurate and reliable predictions today.
-        </p>
-
-        <h2>Betnumbers Jackpot Predictions</h2>
-
-        <p>
-          Any football enthusiast dreams of winning the jackpot. Our platform
-          aims to make this dream a reality by providing you with the most
-          accurate and reliable jackpot predictions.
-        </p>
-
-        <p>
-          We provide you with Betnumbers jackpot predictions for both major and
-          minor jackpots. Our analyzed Betnumbers jackpot predictions help you
-          increase your likelihood of winning.
-        </p>
-
-        <p>
-          We cover daily, midweek, and mega jackpots.
-        </p>
-
-        <p>Other jackpot predictions that we cover include:</p>
-
-        <ul>
-          <li>SportPesa Mega Jackpot prediction</li>
-          <li>SportyBet prediction</li>
-          <li>Betika Midweek Jackpot</li>
-          <li>Mozzart Bet Grand Jackpot</li>
-          <li>Merrybet Jackpot</li>
-          <li>Shabiki Jackpot predictions</li>
-          <li>Betika Mega Jackpot prediction</li>
-        </ul>
-
-        <h2>BetNumbers Predictions FAQs</h2>
-
-        <h3>What Makes Betnumbers Prediction Tips Reliable?</h3>
-
-        <p>
-          Our team of experts analyzes the stats to give you the best possible
-          outcome. We cover all aspects of a football match to provide you with
-          the most reliable Betnumbers predictions.
-        </p>
-
-        <p>
-          We also regularly update our Betnumbers predictions and provide you
-          with statistically analyzed data instead of guesswork.
-        </p>
-
-        <h3>How Often Are the Betnumbers Predictions Updated?</h3>
-
-        <p>
-          We update our Betnumbers predictions regularly to give our users the
-          latest information and developments.
-        </p>
-
-        <p>
-          We provide the most accurate, reliable, and up-to-date Betnumbers
-          predictions.
-        </p>
-
-        <h3>Are the Betnumbers Correct Score Predictions for Tomorrow Accurate?</h3>
-
-        <p>
-          You can rely on our Betnumbers correct score predictions for tomorrow’s
-          matches. We strive to give our users highly reliable predictions.
-        </p>
-
-        <p>
-          Our team of experts analyzes the data and covers areas such as team
-          dynamics and player performance.
-        </p>
-
-        <h3>Where Can I Get Betnumbers Predictions for Today?</h3>
-
-        <p>
-          You can get Betnumbers predictions for today on our website. We strive
-          to keep our users updated by providing the most reliable and accurate
-          predictions.
-        </p>
-
-        <h3>Are There Betnumbers GG Predictions for Today or Tomorrow?</h3>
-
-        <p>
-          Yes. Free Winning Tips provides you with Betnumbers GG predictions for
-          today and tomorrow.
-        </p>
-
-        <h3>What Are Betnumbers GR Predictions?</h3>
-
-        <p>
-          Betnumbers predictions offered by Betnumbers GR are referred to as
-          Betnumbers GR predictions.
-        </p>
-
-        <p>
-          Free Winning Tips offers users Betnumbers GR predictions, including
-          correct score predictions, 1x2 tips, double chance tips, and more.
-        </p>
-
-        <h3>What Types of Betnumbers Football Tips Does Free Winning Tips Offer?</h3>
-
-        <p>
-          We offer a variety of Betnumbers football tips. Our platform covers
-          all major betting markets, including:
-        </p>
-
-        <ul>
-          <li>1x2</li>
-          <li>Double Chance</li>
-          <li>Over/Under 2.5</li>
-          <li>BTTS / GG</li>
-        </ul>
-
-        <h3>Can I Find Betnumbers Predictions for Specific Markets?</h3>
-
-        <p>
-          Yes, you can. Free Winning Tips offers Betnumbers predictions for
-          various betting markets, including over/under goals, correct score,
-          full-time/half-time, and more.
-        </p>
-
-        <h3>What is the Betnumbers Bet of the Day?</h3>
-
-        <p>
-          You can check out the{" "}
-          <a href="/tip-of-the-day">
-            Betnumbers bet of the day
-          </a>{" "}
-          on our website.
-        </p>
-
-        <p>
-          We regularly update our platform so that users always receive the
-          latest and most accurate betting information.
-        </p>
-
+        <h2>Frequently Asked Questions</h2>
+        <div className="homepage-faq">
+          {BETNUMBERS_FAQ_ITEMS.map((item) => (
+            <div key={item.question} className="homepage-faq-item">
+              <h3>{item.question}</h3>
+              <p>
+                {item.question === "How accurate are FreeWinningTips' bet numbers?" ? (
+                  <>
+                    Every bet numbers selection is generated from statistical modelling — recent
+                    form, head-to-head data, and market movement — then reviewed manually before
+                    publication. We publish results openly, including losses, so you can judge
+                    accuracy for yourself rather than take a marketing claim at face value. Check
+                    our <Link href="/results">Results page</Link>.
+                  </>
+                ) : (
+                  item.answer
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default BetnumbersPageContent;

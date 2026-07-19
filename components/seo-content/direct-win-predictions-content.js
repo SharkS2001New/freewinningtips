@@ -1,44 +1,32 @@
 import Link from 'next/link';
+import AnalystByline from '@/components/shared/AnalystByline';
 
 const DIRECT_WIN_FAQ_ITEMS = [
   {
-    question: 'What are direct win predictions?',
+    question: 'What does a direct win bet mean?',
     answer:
-      'Direct win predictions are high-confidence 1X2 picks where our analysts identify a clear match winner based on form, head-to-head data, team news, and statistical modelling. We only publish a direct win tip when our model returns a probability score of 70% or higher. These are single-outcome bets — home win or away win — chosen for their clarity and consistency.',
+      'A direct win bet names one team to win a match outright, with no draw option. If the game ends level, the bet loses regardless of which side was backed.',
   },
   {
-    question: 'How accurate are FreeWinningTips direct win predictions?',
+    question: 'Is direct win riskier than a normal win bet?',
     answer:
-      'Our direct win tips maintain an average accuracy rate above 70%, tracked and published monthly on our Results page. We include every win, loss, and void in our stats — nothing is hidden or cherry-picked. Check the accuracy table on this page or visit our full results archive.',
+      "Yes, in the sense that a standard win bet on a 1X2 market only concerns that one outcome among three available options, while a direct win bet removes the draw from the market entirely — so the odds are usually shorter, and there's no separate draw outcome cushioning the line.",
   },
   {
-    question: 'Are direct win predictions free?',
+    question: 'Why are there fewer direct win tips than other markets on this site?',
     answer:
-      'Yes. All direct win picks displayed on this page are free to access every day, with no registration required. A VIP subscription unlocks additional banker tips, deeper analysis, and priority delivery via Telegram and WhatsApp.',
+      "Because most matches aren't lopsided enough to justify it. We only publish a direct win pick when the data shows a clear, consistent gap between two teams — everything else stays on our 1X2 or double chance pages instead.",
   },
   {
-    question: 'Which leagues do direct win predictions cover?',
+    question: 'Do I need to register to see these predictions?',
     answer:
-      'We cover 200+ competitions including the EPL, La Liga, Serie A, Bundesliga, Ligue 1, UEFA Champions League, MLS, and African leagues including the Kenyan Premier League, South African PSL, and Egyptian Premier League. Every major league and dozens of lower-division competitions are included.',
+      'No. Every direct win prediction on this page is free to view, with no account or subscription required.',
   },
   {
-    question: 'What is the difference between a direct win and an accumulator?',
+    question: 'Can a direct win prediction ever be guaranteed?',
     answer:
-      'A direct win is a single-match prediction — you bet on one game and win or lose on that outcome alone. An accumulator combines multiple picks into one bet, offering higher potential returns but requiring every selection to win. Direct win bets are lower risk and better suited to consistent, steady gains.',
+      'No. A draw is always mathematically possible, however strong the favourite looks on paper. Treat every direct win pick as a high-conviction, data-backed selection — not a certainty.',
   },
-  {
-    question: 'Do you offer direct win predictions for tomorrow?',
-    answer:
-      "Yes. Tomorrow's direct win tips are published by 6:00 PM EAT the day before, giving you time to compare odds across bookmakers. Visit our tomorrow's free football predictions page for early picks.",
-  },
-];
-
-const MARKET_ROWS = [
-  { market: '1 (Home Win)', meaning: 'Home team wins the match', bestFor: 'Strong home form, weak away visitors' },
-  { market: '2 (Away Win)', meaning: 'Away team wins the match', bestFor: 'Top-of-table sides playing weaker opposition' },
-  { market: '1X (Home or Draw)', meaning: 'Home team wins or the match ends level', bestFor: 'Home favourites where a draw is possible' },
-  { market: 'X2 (Draw or Away)', meaning: 'Draw or away team wins', bestFor: 'Away favourites in tight fixtures' },
-  { market: '12 (Home or Away)', meaning: 'No draw — either team wins', bestFor: 'Attack-heavy, high-tempo fixtures' },
 ];
 
 function AccuracyTable({ accuracyStats }) {
@@ -81,145 +69,137 @@ const DirectWinPredictionsPageContent = ({ accuracyStats, accuracySummary = '—
   return (
     <section className="seo-section">
       <div className="seo-inner">
-        <h2>What Are Direct Win Predictions?</h2>
         <p>
-          A direct win prediction is a high-confidence single-outcome bet — our analysts identify matches where one team
-          has a statistically clear advantage and the probability of them winning exceeds 70%. Unlike accumulator tips
-          that chain multiple games together, a direct win is a standalone pick: one match, one outcome, maximum clarity.
-        </p>
-        <p>
-          FreeWinningTips publishes free direct win predictions every day, covering over 200 football leagues from the
-          English Premier League to the Kenyan Premier League. Every pick is generated by our statistical model and
-          reviewed by a human analyst before publication. Browse{' '}
-          <Link href="/yesterdays-free-football-predictions">yesterday&apos;s free football predictions</Link>,{' '}
-          <Link href="/tomorrows-free-football-predictions">tomorrow&apos;s free football betting tips</Link>,{' '}
-          <Link href="/predictions/free-betting-tips-today">free football betting picks today</Link>,{' '}
-          <Link href="/predictions/gg-no-gg">both teams to score predictions</Link>, and{' '}
-          <Link href="/predictions/draw">draw no bet football tips</Link> for more markets.
+          Picking a direct win means picking a side and removing your own safety net. There&apos;s no
+          draw to fall back on — the team you name either wins the match or the bet is gone. That&apos;s
+          why this page is short by design: we&apos;d rather publish five fixtures we&apos;re genuinely
+          confident about than twenty where half are guesses dressed up as tips.
         </p>
 
-        <h2>How We Select Direct Win Tips</h2>
-        <p>Not every match qualifies as a direct win. Our model only publishes a pick when all three conditions are met:</p>
+        <h2>What Counts as a Direct Win</h2>
         <p>
-          <strong>Probability score ≥ 70%</strong> — our expected-goals model returns a home or away win probability of
-          at least 70% based on the last 10 matches for each side.
+          A direct win market strips football down to two outcomes instead of three. You&apos;re not
+          betting on a draw not happening as a side effect of backing a team, the way you would with a
+          standard match-result bet — you&apos;re betting on the draw not happening as the entire
+          premise. Get that wrong, even by one stoppage-time equaliser, and the bet is settled as a
+          loss.
         </p>
         <p>
-          <strong>Head-to-head confirmation</strong> — the historical H2H record supports the model output. We flag and
-          downgrade any pick where recent H2H results contradict the form data.
-        </p>
-        <p>
-          <strong>No major disruptions</strong> — an analyst checks for late team news — key player absences, venue
-          changes, weather — in the 24 hours before kick-off. Any pick with a material disruption is held or replaced.
+          That structure makes direct win a poor fit for evenly matched games and a strong fit for
+          fixtures where one side is clearly, measurably better than the other on current form.
         </p>
 
-        <h2>Markets Covered in Our Direct Win Predictions</h2>
-        <table className="seo-feature-table">
-          <thead>
-            <tr>
-              <th>Market</th>
-              <th>What it means</th>
-              <th>Best for</th>
-            </tr>
-          </thead>
-          <tbody>
-            {MARKET_ROWS.map((row) => (
-              <tr key={row.market}>
-                <td>{row.market}</td>
-                <td>{row.meaning}</td>
-                <td>{row.bestFor}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <h2>The Filter We Run Before a Match Makes This List</h2>
+        <p>
+          Every fixture starts with the same dataset we use across FreeWinningTips: form over the last
+          five and ten games, home and away splits, scoring and conceding trends, head-to-head results,
+          and confirmed team news. For a direct win tip specifically, we&apos;re not interested in a
+          fixture where that data shows a mild edge — we need a wide, consistent gap across most of
+          those inputs pointing the same direction.
+        </p>
+        <p>
+          We cross-check that gap against real-time pricing from Sportpesa, Betika, Mozzart, and
+          Bet9ja. A firming market price on our favoured side backs up the data. A drifting price is
+          usually the market reacting to something we haven&apos;t confirmed yet, and when that happens,
+          the fixture gets pulled rather than published on a hunch.
+        </p>
+        <p>
+          Team news is the final gate. If a confirmed lineup isn&apos;t out and an absence could
+          plausibly close the gap between the two sides, we leave the fixture off the page. It&apos;s a
+          conservative approach, and it&apos;s meant to be — a direct win pick that&apos;s wrong
+          doesn&apos;t get partial credit. Read more in{' '}
+          <Link href="/how-we-predict">how we predict</Link>, or browse{' '}
+          <Link href="/predictions/todays-predictions">today&apos;s predictions</Link>,{' '}
+          <Link href="/predictions/betnumbers-prediction">bet numbers</Link>,{' '}
+          <Link href="/predictions/gg-no-gg">BTTS tips</Link>, and{' '}
+          <Link href="/predictions/correct-score">correct score</Link>.
+        </p>
+
+        <h2>Direct Win Compared to Other Match-Result Markets</h2>
+        <ul className="seo-bullet-list">
+          <li>
+            <strong>1X2</strong> — three separate outcomes (home, draw, away); a draw doesn&apos;t
+            affect a home-win or away-win bet&apos;s odds structure the way it eliminates a direct win
+            bet.
+          </li>
+          <li>
+            <strong>Double chance</strong> — combines two outcomes into one bet (e.g. home win or draw)
+            for a smaller but safer return.
+          </li>
+          <li>
+            <strong>Direct win</strong> — one team, no draw cover, shorter odds on the favourite than
+            the equivalent straight 1X2 selection.
+          </li>
+        </ul>
+
+        <h2>How Sure Is &apos;Sure&apos;?</h2>
+        <p>
+          Not 100%, and we&apos;re not going to tell you otherwise. Direct win predictions are built on
+          real statistical gaps between two teams, but football doesn&apos;t run on statistics alone —
+          referees, red cards, and one deflected shot can undo a form gap that looked decisive on paper.
+          A site that promises certainty on this market specifically is either exaggerating or
+          hasn&apos;t thought through what &quot;direct win&quot; actually means.
+        </p>
+        <p>
+          What we can offer is a shortlist built from a genuinely strict filter, with the supporting
+          data shown next to every pick, and a track record we&apos;re willing to publish in full —
+          wins and losses both.
+        </p>
 
         <h2>Direct Win Accuracy — Last 30 Days</h2>
         <p>
-          We track every prediction we publish. The table below shows verified results from the last 30 days for picks
-          meeting our 70%+ probability threshold{accuracySummary !== '—' ? ` (${accuracySummary} overall)` : ''}.
+          We track every prediction we publish. The table below shows verified results from the last 30
+          days{accuracySummary !== '—' ? ` (${accuracySummary} overall)` : ''}.
         </p>
         <AccuracyTable accuracyStats={accuracyStats} />
         <p>
           See the full archive on our <Link href="/results">results page</Link>.
         </p>
 
-        <h2>Direct Win Jackpot Predictions</h2>
+        <h2>Always Free</h2>
         <p>
-          Jackpot betting requires predicting multiple match outcomes correctly to win a major payout. Our direct win
-          jackpot predictions cover the biggest weekly jackpots in Kenya and East Africa:
-        </p>
-        <p>
-          <strong>Sportpesa Mega Jackpot</strong> — 17 matches, weekly. We publish a full predicted lineup with tip and
-          probability score for each game.
-        </p>
-        <p>
-          <strong>Betika Mid-week Jackpot</strong> — 15 matches on Wednesdays. Our midweek analysis is published by
-          Tuesday evening.
-        </p>
-        <p>
-          <strong>Mozzart Jackpot</strong> — Updated each weekend. See our dedicated{' '}
-          <Link href="/jackpot-predictions">Sportpesa &amp; Betika jackpot predictions</Link> page for this week&apos;s
-          full picks.
-        </p>
-        <p>
-          <strong>Odibets Jackpot</strong> — Smaller jackpot with better odds of winning. Good for lower-stake players.
+          Every direct win prediction here is published free, with no VIP list and no paywalled
+          &quot;real&quot; version hiding behind a Telegram invite. If a site sells you direct win tips
+          at a premium while giving away weaker picks for free, ask yourself why the good ones need a
+          price tag.
         </p>
 
-        <h2>Direct Win Predictions for Tomorrow</h2>
+        <h2>Behind the Picks</h2>
         <p>
-          Planning ahead? Our team publishes direct win tips for tomorrow&apos;s matches by 6:00 PM EAT the day before,
-          giving you time to check odds, compare bookmakers, and build your betting slip without rushing.
+          <strong>Stephen Karuku</strong> — Lead Predictions Analyst, FreeWinningTips
         </p>
         <p>
-          Tomorrow&apos;s predictions follow the same 70%+ probability threshold and include the same analyst notes as
-          today&apos;s picks. Visit our{' '}
-          <Link href="/tomorrows-free-football-predictions">free football predictions for tomorrow</Link> page for early
-          access.
+          Stephen manually checks every direct win selection against team news and market movement
+          before it&apos;s published, holding this market to a tighter confidence bar than standard 1X2
+          tips because of how unforgiving it is when wrong. His background spans football statistics and
+          betting-market analysis across Europe&apos;s major leagues and East Africa&apos;s domestic
+          football.
+        </p>
+        <AnalystByline />
+
+        <h2>Bet Responsibly</h2>
+        <p>
+          Direct win predictions are for informational and entertainment purposes only. Football
+          outcomes are never guaranteed, and a draw remains possible in any match regardless of the
+          statistical gap between two teams. Stake only what you can afford to lose. If gambling is
+          affecting your life or someone close to you, contact your national gambling support helpline.
+          18+ only.
         </p>
 
-        <h2>Direct Win Correct Score Predictions</h2>
-        <p>
-          Our correct score predictions go one step further than a 1X2 pick — we forecast the exact final scoreline.
-          These carry higher risk but offer significantly better returns.
-        </p>
-        <p>
-          Correct score picks are only published when our Poisson distribution model identifies a scoreline with a
-          probability of 20% or higher — roughly 4/1 implied odds. We cover correct score predictions for all major
-          leagues and also as part of our VIP package for subscribers who want higher-odds plays.
-        </p>
-
-        <h2>VIP Direct Win Tips</h2>
-        <p>Our free direct win tips are published to everyone. Our VIP package adds an additional layer:</p>
-        <ul className="seo-bullet-list">
-          <li><strong>Banker of the day</strong> — one single high-confidence pick with a probability score above 80%, delivered by 8:00 AM on match day.</li>
-          <li><strong>Extended analyst notes</strong> — 2–3 paragraphs of match context, key player data, and our reasoning for the pick.</li>
-          <li><strong>Odd alert</strong> — we flag when bookmakers are offering unusually good value on one of our selections.</li>
-          <li><strong>Delivery</strong> — all VIP tips arrive directly on your phone via Telegram or WhatsApp.</li>
-        </ul>
-        <p>
-          See our <Link href="/free-vip-tips-today">VIP direct win tips</Link> page for subscription details and
-          today&apos;s featured banker.
-        </p>
-
-        <h2>Frequently Asked Questions — Direct Win Predictions</h2>
+        <h2>Direct Win — Frequently Asked Questions</h2>
         <div className="homepage-faq">
           {DIRECT_WIN_FAQ_ITEMS.map((item) => (
             <div key={item.question} className="homepage-faq-item">
               <h3>{item.question}</h3>
               <p>
-                {item.question === 'How accurate are FreeWinningTips direct win predictions?' ? (
+                {item.question ===
+                'Why are there fewer direct win tips than other markets on this site?' ? (
                   <>
-                    Our direct win tips maintain an average accuracy rate above 70%, tracked and published monthly on
-                    our <Link href="/results">Results page</Link>. We include every win, loss, and void in our stats —
-                    nothing is hidden or cherry-picked. Check the accuracy table on this page or visit our full results
-                    archive.
-                  </>
-                ) : item.question === 'Do you offer direct win predictions for tomorrow?' ? (
-                  <>
-                    Yes. Tomorrow&apos;s direct win tips are published by 6:00 PM EAT the day before, giving you time to
-                    compare odds across bookmakers. Visit our{' '}
-                    <Link href="/tomorrows-free-football-predictions">tomorrow&apos;s free football predictions</Link>{' '}
-                    page for early picks.
+                    Because most matches aren&apos;t lopsided enough to justify it. We only publish a
+                    direct win pick when the data shows a clear, consistent gap between two teams —
+                    everything else stays on our{' '}
+                    <Link href="/predictions/todays-predictions">1X2</Link> or{' '}
+                    <Link href="/predictions/draw">double chance</Link> pages instead.
                   </>
                 ) : (
                   item.answer

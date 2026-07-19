@@ -1,42 +1,79 @@
 import { SITE_ORIGIN } from '@/components/functions/apiConfig';
 
 const PAGE_URL = `${SITE_ORIGIN}/predictions/direct-win-predictions`;
+const AUTHOR_ID = `${SITE_ORIGIN}/#/schema/person/stephen-karuku`;
 
 const FAQ_SCHEMA_ITEMS = [
   {
-    question: 'What are direct win predictions?',
+    question: 'What does a direct win bet mean?',
     answer:
-      'Direct win predictions are high-confidence 1X2 picks where our analysts identify a clear match winner based on form, head-to-head data, team news, and statistical modelling. These are single-outcome bets — home win or away win — chosen only when the probability score exceeds 70%.',
+      'A direct win bet names one team to win a match outright, with no draw option. If the game ends level, the bet loses regardless of which side was backed.',
   },
   {
-    question: 'How accurate are FreeWinningTips direct win predictions?',
+    question: 'Is direct win riskier than a normal win bet?',
     answer:
-      'Our direct win tips maintain an average accuracy rate above 70%, tracked and published monthly on our Results page. We only publish picks where our model returns a probability of 70% or higher.',
+      "Yes, in the sense that a standard win bet on a 1X2 market only concerns that one outcome among three available options, while a direct win bet removes the draw from the market entirely — so the odds are usually shorter, and there's no separate draw outcome cushioning the line.",
   },
   {
-    question: 'Are direct win predictions free?',
+    question: 'Why are there fewer direct win tips than other markets on this site?',
     answer:
-      'Yes. All direct win predictions on this page are free to access daily. A VIP subscription unlocks additional banker tips with deeper analysis delivered via Telegram and WhatsApp.',
+      "Because most matches aren't lopsided enough to justify it. We only publish a direct win pick when the data shows a clear, consistent gap between two teams — everything else stays on our 1X2 or double chance pages instead.",
   },
   {
-    question: 'Which leagues do direct win predictions cover?',
+    question: 'Do I need to register to see these predictions?',
     answer:
-      'We publish direct win picks for 200+ leagues including the EPL, La Liga, Serie A, Bundesliga, Ligue 1, Champions League, MLS, and African leagues including the Kenyan Premier League, South African PSL, and Egyptian Premier League.',
+      'No. Every direct win prediction on this page is free to view, with no account or subscription required.',
   },
   {
-    question: 'What is the difference between a direct win and an accumulator?',
+    question: 'Can a direct win prediction ever be guaranteed?',
     answer:
-      'A direct win is a single-match prediction — you bet on one outcome and win or lose on that game alone. An accumulator combines multiple picks into one bet, offering higher returns but requiring all selections to win.',
+      'No. A draw is always mathematically possible, however strong the favourite looks on paper. Treat every direct win pick as a high-conviction, data-backed selection — not a certainty.',
   },
 ];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': AUTHOR_ID,
+  name: 'Stephen Karuku',
+  jobTitle: 'Lead Predictions Analyst',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'FreeWinningTips',
+    url: SITE_ORIGIN,
+  },
+  description:
+    "Lead Predictions Analyst at FreeWinningTips. Manually checks every direct win selection against team news and market movement across Europe's major leagues and East African football.",
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Direct Win Predictions Today – No Draw, Just the Winner',
+  description:
+    "Direct win predictions for today's matches, published only when one team clearly outclasses the other. Free, analyst-checked, updated daily across Europe's top leagues and African football.",
+  url: PAGE_URL,
+  mainEntityOfPage: PAGE_URL,
+  author: {
+    '@id': AUTHOR_ID,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'FreeWinningTips',
+    url: SITE_ORIGIN,
+  },
+};
 
 const webPageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: 'Direct Win Predictions Today — High-Confidence Football Picks',
+  name: 'Direct Win Predictions Today – No Draw, Just the Winner | FreeWinningTips',
   url: PAGE_URL,
   description:
-    'Free direct win football predictions updated daily. Expert 1X2 picks with probability scores across 200+ leagues.',
+    "Direct win predictions for today's matches, published only when one team clearly outclasses the other. Free, analyst-checked, updated daily across Europe's top leagues and African football.",
+  author: {
+    '@id': AUTHOR_ID,
+  },
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -76,7 +113,7 @@ const faqSchema = {
 };
 
 export default function DirectWinPredictionsSchema() {
-  const schemas = [webPageSchema, faqSchema];
+  const schemas = [personSchema, articleSchema, webPageSchema, faqSchema];
 
   return (
     <>

@@ -317,10 +317,10 @@ function MetaContent() {
 
     } else if(router.asPath.substring(1) == "predictions/direct-win-predictions"){
 
-        title = "Direct Win Predictions Today — Free High-Confidence Football Picks | FreeWinningTips";
-        meta_desc_content = "Free direct win football predictions updated daily. Our analysts pick high-confidence 1X2 winners from 200+ leagues using form, H2H data, and probability scoring. Only tips with 70%+ probability published.";
+        title = "Direct Win Predictions Today – No Draw, Just the Winner | FreeWinningTips";
+        meta_desc_content = "Direct win predictions for today's matches, published only when one team clearly outclasses the other. Free, analyst-checked, updated daily across Europe's top leagues and African football.";
         meta_keywords = "";
-        page_title = "Direct Win Predictions Today — Free High-Confidence Football Picks";
+        page_title = "Direct Win Predictions";
 
         meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 
@@ -430,12 +430,12 @@ function MetaContent() {
 
     } else if(router.asPath.substring(1) == "predictions/betnumbers-prediction"){
 
-        title ="Betnumbers Prediction Today and Bet Numbers Free Tips";
-        meta_desc_content = "Betnumbers Prediction today, gg, and Correct score Predictions are available on FreeWinningTips. Get to win daily with matches from 200 leagues at zero cost";
-        meta_keywords = "betnumbers,betnumbers prediction,betnumbers prediction today, betnumbers today, today's betnumbers predictions, betnumbers predictions, betnumbers predictions today, betnumbers predictions today, betnumbers prediction for today, betnumbers today prediction today, betnumbers free tips";
-        page_title = "Betnumbers Free Tips for Today";
+        title = "Today's Bet Numbers Predictions – Free & Accurate | FreeWinningTips";
+        meta_desc_content = "Get today's free bet numbers predictions from FreeWinningTips — expert-reviewed football tips with a transparent track record. Covering EPL, La Liga, and African leagues, updated daily.";
+        meta_keywords = "";
+        page_title = "Today's Bet Numbers Predictions";
 
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 
     } else if(router.asPath.substring(1) == "predictions/zulubet"){
 
