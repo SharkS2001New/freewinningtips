@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { buildLeaguePath } from '@/components/functions/leagueUrl';
 import { resolveLeagueIdFromFixture } from '@/components/functions/resolveLeagueId';
 import { getInlineAdVariant, InlineAdsense } from '@/components/shared/inline-adsense';
+import MatchAnalysisBlock from '@/components/shared/MatchAnalysisBlock';
 
 // ---------------------------------------------------------------------------
 // Team Forms Cache
@@ -421,6 +422,14 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
           <span className="badge-val">{tipProb}</span>
         </div>
       </div>
+
+      <MatchAnalysisBlock
+        fixture={fixture}
+        tip={tipText}
+        probability={tipProb}
+        odds={tipOdds}
+        predictionType={predictionType}
+      />
     </div>
   );
 };

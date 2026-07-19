@@ -3,6 +3,8 @@ import {
   getFeaturedPicks,
   formatTipLabel,
 } from '@/components/functions/predictionTip';
+import MarketBrowseTips from '@/components/shared/MarketBrowseTips';
+import AnalystByline from '@/components/shared/AnalystByline';
 
 const FAQ_ITEMS = [
   {
@@ -51,6 +53,9 @@ const HomepageContent = ({ fixtures = [] }) => {
   return (
     <section className="seo-section">
       <div className="seo-inner">
+        <AnalystByline />
+        <MarketBrowseTips title="Browse FreeWinningTips Markets" />
+
         <p>
           FreeWinningTips publishes free football predictions every day, covering 50+ leagues from the English Premier League to the Kenyan Premier League. Our analysis team processes team form, head-to-head records, player availability, and betting market movement to calculate a probability score for each match. Every tip you see — 1X2, BTTS, Over/Under, Accumulator, or Jackpot — is backed by data, not guesswork. Check our{' '}
           <Link href="/results">monthly results archive</Link> to see our verified accuracy rates before you follow any prediction.

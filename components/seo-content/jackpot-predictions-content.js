@@ -1,144 +1,68 @@
+import Link from 'next/link';
+import MarketBrowseTips from '@/components/shared/MarketBrowseTips';
+import AnalystByline from '@/components/shared/AnalystByline';
+
+const FAQ_ITEMS = [
+  {
+    q: 'Are FreeWinningTips jackpot predictions free?',
+    a: 'Yes. Core jackpot lineups and match tips for Sportpesa, Betika, Mozzart, Shabiki, Odibet, Sportybet, Betking, 1xBet and more are free to browse. VIP jackpot packages add deeper notes for subscribers.',
+  },
+  {
+    q: 'Which jackpots do you cover?',
+    a: 'We cover Sportpesa Mega & Midweek, Betika Midweek & Kitonga TZ, Mozzart Grand & Daily, Shabiki, Odibet Laki Tatu, Sportybet, Betking, 1xBet Toto 15, and related East African jackpots.',
+  },
+  {
+    q: 'When are jackpot tips published?',
+    a: 'Mega and weekend jackpots usually update early in the week. Midweek jackpots (e.g. Betika, Sportpesa Midweek) are refreshed by Tuesday evening where possible.',
+  },
+];
+
 const JackpotPredictionsPageContent = () => {
   return (
     <section className="seo-section">
       <div className="seo-inner">
+        <AnalystByline />
+        <MarketBrowseTips title="Daily Tips Beyond Jackpots" />
 
-        <h2>Jackpot Predictions Today</h2>
-
+        <h2>Free Jackpot Predictions — Sportpesa, Betika &amp; More</h2>
         <p>
-          Every football fan aims to score the jackpot. You want to win crazy
-          money from the game you love. However, there’s no winning without the
-          right strategy. And, the right strategy requires you to get the
-          figures right.
+          FreeWinningTips publishes free jackpot predictions for Kenya and East Africa&apos;s biggest
+          multi-game jackpots. Each jackpot page lists full fixtures with tip, probability, odds, and
+          written analysis so you can build a lineup with context — not guesswork.
+        </p>
+        <p>
+          Start with{' '}
+          <Link href="/jackpots/sportpesa-mega-jackpot-predictions">Sportpesa Mega Jackpot predictions</Link>,{' '}
+          <Link href="/jackpots/betika-midweek-jackpot-predictions">Betika Midweek Jackpot predictions</Link>,
+          or <Link href="/jackpots/mozzart-bet-grand-jackpot-predictions">Mozzart Super Grand Jackpot</Link>.
         </p>
 
+        <h2>How We Predict Jackpot Fixtures</h2>
         <p>
-          FreeWinningTips is a website that helps football fans win from the
-          game. We have a streamlined internal process for gathering stats
-          combined with a team of experts and pro tipsters.
+          Jackpot slips require many correct outcomes. Our process scores each fixture individually
+          using form, H2H, market movement, and analyst review, then presents the full card so you can
+          swap selections where you disagree. Methodology:{' '}
+          <Link href="/how-we-predict">how we predict</Link>. Track single-tip accuracy on{' '}
+          <Link href="/results">results</Link>.
         </p>
 
+        <h2>Sportpesa Mega Jackpot &amp; Midweek Focus</h2>
         <p>
-          Our goal is to help you win. Since launching our site we have
-          fulfilled this objective for hundreds of fans.
+          Sportpesa Mega Jackpot (typically 17 games) and Sportpesa Midweek remain high-search
+          products in Kenya. FreeWinningTips publishes tip + probability for each match and updates
+          score results when fixtures finish so you can audit performance.
         </p>
 
-        <h2>Free Jackpot Predictions</h2>
-
-        <p>
-          We offer free jackpot predictions. Yes, you read that right. Our
-          predictions are at no cost to you.
-        </p>
-
-        <p>
-          The predictions come from our team of experts who analyze the stats
-          and consider all the factors that could affect a match outcome. We
-          look at team strength, team form, player injuries, coaching tactics,
-          previous performance, and many other factors.
-        </p>
-
-        <p>
-          Whether you are looking for jackpot predictions for Mwanasoka,
-          SportPesa, Liobet, Betnumbers, Sokafans, or any of the leading
-          bookmakers, you’ll find them here at Free Winning Tips.
-        </p>
-
-        <p>
-          We also cover mega jackpot predictions, grand jackpots, midweek
-          jackpot predictions, weekend jackpots, and much more.
-        </p>
-
-        <h2>Midweek Jackpot Predictions</h2>
-
-        <p>
-          Catch the latest midweek jackpot predictions from our site. We
-          regularly upload predictions in line with any changes that may affect
-          the match outcome.
-        </p>
-
-        <p>
-          All our midweek predictions are accurate and reliable because our
-          dedicated team intensely analyzes the stats to give you the best
-          possible predictions.
-        </p>
-
-        <h2>Mega Jackpot Predictions</h2>
-
-        <p>
-          Winning a mega jackpot is mind-blowing. The experience of placing a
-          small bet only to walk away with millions of shillings is beyond
-          description.
-        </p>
-
-        <p>
-          We want you to experience this thrill by providing you with some of
-          the most accurate mega jackpot predictions in the market.
-        </p>
-
-        <p>
-          We cover mega jackpot predictions for upcoming weekend matches. Most
-          mega jackpot games take place during the weekend and usually involve
-          17 matches.
-        </p>
-
-        <p>
-          Accurately predicting all the matches takes time and effort. So far,
-          we have helped many football enthusiasts win substantial cash prizes
-          when betting on mega jackpots from leading bookmakers.
-        </p>
-
-        <h2>Mega Jackpot Prediction Today</h2>
-
-        <p>
-          We cover the latest mega jackpots on our website. If you’re looking
-          for mega jackpot predictions today, you will definitely find them
-          here.
-        </p>
-
-        <p>
-          We help you place bets such as 1x2, over/under, correct score, home
-          win, and away win predictions.
-        </p>
-
-        <p>
-          Our mega jackpot predictions today come directly from our experts. We
-          promptly update our site so that you always have the predictions you
-          need before kickoff.
-        </p>
-
-        <h2>VIP Jackpot Predictions This Week</h2>
-
-        <p>
-          We provide free predictions, tipster tips, and VIP packages. The
-          difference with the VIP package is that you get more exclusive tips
-          and advanced predictions.
-        </p>
-
-        <p>
-          All our information is based on data analysis to increase your chances
-          of winning.
-        </p>
-
-        <p>
-          Once you subscribe to the VIP package, you’ll gain access to VIP
-          jackpot predictions for this week’s matches.
-        </p>
-
-        <p>
-          Jackpot predictions attract many football pundits because of the huge
-          potential rewards. Winning jackpot cash prizes or bonuses makes the
-          football experience even more exciting.
-        </p>
-
-        <p>
-          Here at FreeWinningTips, we work tirelessly to provide some of the
-          surest predictions possible so that you can maximize your chances of
-          winning the jackpot.
-        </p>
-
+        <h2>Frequently Asked Questions — Jackpot Predictions</h2>
+        {FAQ_ITEMS.map((item) => (
+          <div key={item.q} className="homepage-faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default JackpotPredictionsPageContent;

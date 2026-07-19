@@ -1,56 +1,70 @@
+import Link from 'next/link';
+import MarketBrowseTips from '@/components/shared/MarketBrowseTips';
+import AnalystByline from '@/components/shared/AnalystByline';
+
+const FAQ_ITEMS = [
+  {
+    q: 'What does BTTS / GG mean?',
+    a: 'Both Teams To Score (BTTS), also called GG, means both teams score at least one goal. NG / No GG means at least one team fails to score.',
+  },
+  {
+    q: 'Are FreeWinningTips BTTS predictions free?',
+    a: 'Yes. All GG/NG tips on this page are free daily. VIP packages add additional high-confidence BTTS bankers delivered by Telegram or WhatsApp.',
+  },
+  {
+    q: 'How are BTTS tips selected?',
+    a: 'Our model estimates both-teams-to-score probability using scoring rates, defensive concession rates, head-to-head GG frequency, and BTTS odds movement. An analyst reviews squad news before publication.',
+  },
+  {
+    q: 'Which leagues get BTTS tips?',
+    a: 'We publish BTTS tips across 200+ leagues including EPL, La Liga, Serie A, Bundesliga, Ligue 1, MLS, and African leagues including the Kenyan Premier League.',
+  },
+];
+
 const BothTeamsToScorePageContent = () => {
   return (
     <section className="seo-section">
       <div className="seo-inner">
-        <h2>GG/No GG Predictions</h2>
+        <AnalystByline />
+        <MarketBrowseTips title="Related Free Betting Markets" />
+
+        <h2>Both Teams To Score Predictions Today (BTTS / GG Tips)</h2>
         <p>
-          FreeWinningTips is the most accurate and reliable site for football predictions. We cover predictions for{" "}
-          <a href="/yesterdays-free-football-predictions" target="_blank" rel="noopener noreferrer">
-            yesterday
-          </a>
-          , today, and{" "}
-          <a href="/tomorrows-free-football-predictions" target="_blank" rel="noopener noreferrer">
-            tomorrow’s matches
-          </a>
-          . Our aim is to save you the time and energy it would take to analyze the fixtures. We have a team of experts who analyze the stats and other factors to deliver the surest predictions.
+          FreeWinningTips publishes free both teams to score predictions every day. Each BTTS tip
+          includes a probability score, odds when available, and written analysis explaining why both
+          sides are expected to find the net — or why a No-GG / NG angle is preferred.
+        </p>
+        <p>
+          Compare today&apos;s BTTS list with{' '}
+          <Link href="/predictions/todays-predictions">today&apos;s football predictions</Link>,{' '}
+          <Link href="/predictions/2-5-goals">Over/Under 2.5 tips</Link>, and{' '}
+          <Link href="/tomorrows-free-football-predictions">tomorrow&apos;s free football betting tips</Link>.
         </p>
 
-        <h2>Free football prediction today</h2>
+        <h2>How Our GG / NG Model Works</h2>
         <p>
-          Our site provides free football predictions today. Our analysts critically analyze all the football fixtures by considering the stats, team form, previous performance, and player injury, amongst others, to bring the best soccer predictions today.
+          The BTTS model scores attacking output and defensive vulnerability for each side, then
+          blends that with market odds. When BTTS Yes odds drop sharply with strong model agreement,
+          the tip is prioritised. When both attacks are blunt or one side sits deep, NG can be the
+          published call. Full methodology:{' '}
+          <Link href="/how-we-predict">how we predict</Link>.
         </p>
 
-        <h2>Today football prediction tips</h2>
+        <h2>Why Bettors Use FreeWinningTips for BTTS</h2>
         <p>
-          Every football fan wants tips that will open their eyes to how best to win. You want tips that are direct to the point, accurate, and sure. Our pro tipsters meet this need as they have experience in delivering the best football tips for today. We aim to keep you informed by uploading all our latest tips and predictions pre-match.
+          BTTS markets reward consistency more than longshot scorelines. FreeWinningTips focuses on
+          clear probability edges, publishes free tips without registration, and tracks outcomes in
+          our <Link href="/results">results archive</Link> so you can verify performance before
+          staking.
         </p>
 
-        <p>
-          Our tips are data-based so that you can bet with confidence. We provide our users with free winning tips for today’s matches. Additionally, we have a VIP package that will significantly transform how you bet. Once you subscribe to the{" "}
-          <a href="/free-vip-tips-today" target="_blank" rel="noopener noreferrer">
-            VIP/premium package
-          </a>
-          , you’ll get exclusive tips and predictions conveniently delivered to your phone. Subscribe now to get winning tips today.
-        </p>
-
-        <h2>Saturday football tips and predictions</h2>
-        <p>
-          Do you plan to win this Saturday? The best way to secure your win is by checking out our Saturday football tips and predictions. We provide you with predictions for all the major and minor leagues. You’ll find correct score predictions from our site, btts, gg, over/under, 1x2, handicapped, and many more.
-        </p>
-
-        <p>
-          Our in-house team of experts analyzes all of Saturday’s games, domestic or international, to bring you the surest match tips and predictions. We publish Saturday football tips and predictions before the weekend so you can have ample time to strategize before the games begin.
-        </p>
-
-        <h2>Best football prediction today</h2>
-        <p>
-          You can check out our website for the best football prediction today. We are the best because we depend on stats to bring you the winning tips and predictions. We also have an experienced team of experts who pay attention to every factor and detail so you can bet confidently.
-        </p>
-
-        <h2>Best football tips for today</h2>
-        <p>
-          You can eliminate the high betting risks by looking at our football tips today. Our site is renowned for offering the best football tips for today. We stay abreast of all the changes that occur, including last-minute changes, to bring you the winning football tips today.
-        </p>
+        <h2>Frequently Asked Questions — BTTS Predictions</h2>
+        {FAQ_ITEMS.map((item) => (
+          <div key={item.q} className="homepage-faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
       </div>
     </section>
   );

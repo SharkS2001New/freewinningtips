@@ -11,6 +11,7 @@ const Subnavbar = () => {
     { name: '2.5 Goals',     href: '/predictions/2-5-goals' },
     { name: 'Acca Tips',     href: '/predictions/accumulator-tips' },
     { name: 'BTTS',          href: '/predictions/gg-no-gg' },
+    { name: 'Correct Score', href: '/predictions/correct-score' },
     { name: 'Draw No Bet',   href: '/predictions/draw' },
     { name: 'Double Chance', href: '/predictions/double-chance' },
   ];

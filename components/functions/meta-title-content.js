@@ -42,12 +42,12 @@ function MetaContent() {
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
     } else if(current_url == "jackpot-predictions"){
 
-        title ="All Jackpot Predictions On FreeWinnigTips";
-        meta_desc_content = "Get the best tips and predictions for hitting the jackpot. Increase your chances of winning big with our reliable and easy-to-follow strategies.";
-        meta_keywords = "jackpot prediction, Jackpot predictions, all jackpot predictions, jackpot today, accurate  jackpot predictions, free  jackpot prediction, today's jackpot predictions ";
-        page_title = "Jackpot Prediction: Win Big Every Time";
+        title = "Free Jackpot Predictions Today | Sportpesa, Betika & More – FreeWinningTips";
+        meta_desc_content = "Free Sportpesa Mega, Betika Midweek, Mozzart and East African jackpot predictions with tip, probability and analysis on every fixture. Updated weekly by FreeWinningTips.";
+        meta_keywords = "";
+        page_title = "Free Jackpot Predictions — Sportpesa, Betika & More";
 
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
     } else if(current_url == "tipster-tips"){
 
         title ="Best Tipster Predictions Today";
@@ -326,12 +326,12 @@ function MetaContent() {
 
     } else if(router.asPath.substring(1) == "predictions/todays-predictions"){
 
-        title ="Today's Football Predictions & Free Betting Tips";
-        meta_desc_content = "Browse today's football predictions with 1X2, over/under, and double chance tips. FreeWinningTips covers major leagues worldwide with daily free picks and analysis.";
-        meta_keywords = "today football predictions, todays predictions, football tips today, soccer predictions today, free betting tips today, 1x2 predictions today, today match predictions";
-        page_title = "Today's Football Predictions";
+        title = "Football Predictions Today — Free Tips & Expert Analysis | FreeWinningTips";
+        meta_desc_content = "Free football predictions today with tip, odds, probability and written analysis across 200+ leagues. Updated daily by FreeWinningTips analysts — 1X2, BTTS, Over/Under and more.";
+        meta_keywords = "";
+        page_title = "Today's Free Football Predictions — Expert Tips & Analysis";
 
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 
     } else if(router.asPath.substring(1) == "predictions/all-predictions"){
 
@@ -353,12 +353,21 @@ function MetaContent() {
 
     } else if(router.asPath.substring(1) == "predictions/gg-no-gg"){
 
-        title ="BTTS Predictions Today | GG & NG Football Tips";
-        meta_desc_content = "Both teams to score (GG) and no-GG predictions for today's matches. Free BTTS tips with probabilities and expert analysis on FreeWinningTips.";
-        meta_keywords = "btts predictions, gg tips today, both teams to score, gg ng predictions, btts tips today, goals both teams, soccer btts tips";
-        page_title = "GG / NG Predictions Today";
+        title = "BTTS Predictions Today — Free GG & No-GG Tips | FreeWinningTips";
+        meta_desc_content = "Free both teams to score (BTTS/GG) predictions today with probability scores and written analysis. GG and No-GG tips across 200+ leagues on FreeWinningTips.";
+        meta_keywords = "";
+        page_title = "Both Teams To Score Predictions Today — GG & NG Tips";
 
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
+
+    } else if(router.asPath.substring(1) == "predictions/correct-score"){
+
+        title = "Correct Score Predictions Today — Free Exact Scoreline Tips | FreeWinningTips";
+        meta_desc_content = "Free correct score predictions today using expected goals and Poisson modelling. Exact scoreline tips with analysis across major leagues on FreeWinningTips.";
+        meta_keywords = "";
+        page_title = "Correct Score Predictions Today — Free Exact Scoreline Tips";
+
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 
     } else if(router.asPath.substring(1) == "predictions/draw"){
 

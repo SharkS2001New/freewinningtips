@@ -78,6 +78,7 @@ function SitemapsPage() {
         <li><a href="/predictions/double-chance" className="no-underline">Double Chance</a></li>
         <li><a href="/predictions/draw" className="no-underline">Draw</a></li>
         <li><a href="/predictions/gg-no-gg" className="no-underline">GG NoGG</a></li>
+        <li><a href="/predictions/correct-score" className="no-underline">Correct Score Predictions</a></li>
         <li><a href="/predictions/must-win-teams-today" className="no-underline">Must Win Teams Today</a></li>
         <li><a href="/predictions/todays-predictions" className="no-underline">Today Predictions</a></li>
         <li><a href="/predictions/254-sure-tips" className="no-underline">254 Sure Tips</a></li>

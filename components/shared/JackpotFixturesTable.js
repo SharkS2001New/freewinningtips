@@ -76,15 +76,40 @@ const JackpotFixturesTable = ({
     return <span style={lostStyle}>✗</span>;
   };
 
+  const toScore = (value) => {
+    if (value === null || value === undefined || value === '') return null;
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  };
+
   const parseScores = (fixture) => {
-    try {
-      const s = typeof fixture.scores === "string" ? JSON.parse(fixture.scores) : fixture.scores;
-      const ft = s?.fulltime;
-      if (ft?.home !== null && ft?.away !== null && ft?.home !== undefined) {
-        return { home: ft.home, away: ft.away };
+    // Primary: flat goals from jackpot API (buildStandardJsonResponse)
+    let home = toScore(fixture.goals_home);
+    let away = toScore(fixture.goals_away);
+
+    // Nested score object (FixtureResource shape)
+    if (home === null || away === null) {
+      home = toScore(fixture.score?.home);
+      away = toScore(fixture.score?.away);
+    }
+
+    // Legacy scores.fulltime JSON
+    if (home === null || away === null) {
+      try {
+        const s = typeof fixture.scores === 'string' ? JSON.parse(fixture.scores) : fixture.scores;
+        const ft = s?.fulltime || s?.fullTime;
+        home = toScore(ft?.home);
+        away = toScore(ft?.away);
+      } catch {
+        // ignore malformed scores JSON
       }
-    } catch {}
-    return { home: "-", away: "-" };
+    }
+
+    if (home === null || away === null) {
+      return { home: '-', away: '-' };
+    }
+
+    return { home, away };
   };
 
   const getGameCount = () => {
