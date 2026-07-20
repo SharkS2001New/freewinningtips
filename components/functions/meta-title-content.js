@@ -271,12 +271,12 @@ function MetaContent() {
         meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);    
 
     } else if(router.pathname.substring(1) == "predictions/must-win-teams-today"){
-        title ="Must Win Teams Today With 10 Teams To Win Today";
-        meta_desc_content = "Looking for must win teams today? Trust FreeWinningTips for the most accurate predictions, insights, and strategies for a winning betting experience.";
-        meta_keywords = "must win teams today, big win, 10 teams to win today, winning, 10 teams, win with big odd";
-         page_title = "10 Teams to win today- With Big Odds";
-    
-        meta_content_array.push(title,meta_desc_content,meta_keywords,page_title);    
+        title = "Must Win Teams Today – 10 Teams to Win Today | FreeWinningTips";
+        meta_desc_content = "Exactly 10 must win teams today — home and away wins only. Free, analyst-reviewed football tips with form, H2H and probability scores. Updated every morning.";
+        meta_keywords = "";
+        page_title = "Must Win Teams Today";
+
+        meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);    
 
     //Competitor Pages
     } else if(router.asPath.substring(1) == "predictions/sokafans"){
@@ -430,10 +430,10 @@ function MetaContent() {
 
     } else if(router.asPath.substring(1) == "predictions/betnumbers-prediction"){
 
-        title = "Today's Bet Numbers Predictions – Free & Accurate | FreeWinningTips";
-        meta_desc_content = "Get today's free bet numbers predictions from FreeWinningTips — expert-reviewed football tips with a transparent track record. Covering EPL, La Liga, and African leagues, updated daily.";
+        title = "BetNumbers Predictions Today – Free Tips & Expert Analysis | FreeWinningTips";
+        meta_desc_content = "Free BetNumbers predictions today with tip, odds, probability and written analysis across major leagues. Updated daily by FreeWinningTips analysts — 1X2, BTTS, Over/Under and more.";
         meta_keywords = "";
-        page_title = "Today's Bet Numbers Predictions";
+        page_title = "Today's Expert BetNumbers Predictions";
 
         meta_content_array.push(title, meta_desc_content, meta_keywords, page_title);
 

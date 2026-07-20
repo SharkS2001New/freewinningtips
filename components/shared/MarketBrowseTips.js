@@ -8,6 +8,7 @@ const MARKETS = [
   { label: 'Draw No Bet', href: '/predictions/draw' },
   { label: 'Accumulator', href: '/predictions/accumulator-tips' },
   { label: 'Correct Score', href: '/predictions/correct-score' },
+  { label: 'BetNumbers', href: '/predictions/betnumbers-prediction' },
   { label: 'Must Win Today', href: '/predictions/must-win-teams-today' },
   { label: 'Jackpot', href: '/jackpot-predictions' },
   { label: 'Direct Win', href: '/predictions/direct-win-predictions' },

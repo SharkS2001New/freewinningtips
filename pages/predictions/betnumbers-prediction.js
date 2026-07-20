@@ -3,6 +3,7 @@ import Head from 'next/head';
 import BetnumbersPageContent from '@/components/seo-content/betnumbers-page-content';
 import BetnumbersPredictionsSchema from '@/components/seo-content/betnumbers-predictions-schema';
 import FixturesRow from '@/components/shared/FixturesRow';
+import MarketPageStats from '@/components/shared/MarketPageStats';
 import { fetchCachedFixtures, CACHE_TTL } from '@/components/functions/pagesDataCache';
 
 function getFormattedCurrentDate() {
@@ -14,6 +15,16 @@ function getFormattedCurrentDate() {
 }
 
 export default function BetnumbersPackages({ fixtures }) {
+  const tipCount = fixtures?.length || 0;
+
+  // GoalVertex chrome: Accuracy / Tips Today / Leagues / Free
+  const stats = [
+    { value: `${tipCount}+`, label: 'Tips Today' },
+    { value: '50+', label: 'Leagues Covered' },
+    { value: 'Free', label: 'Always & Forever' },
+    { value: 'Daily', label: 'Updated' },
+  ];
+
   return (
     <>
       <Head>
@@ -21,7 +32,18 @@ export default function BetnumbersPackages({ fixtures }) {
       </Head>
       <div className="page-root">
         <div className="container-main">
-          <FixturesRow fixtures={fixtures} predictionType="all" />
+          <p className="market-page-eyebrow">Updated Daily — 100% Free</p>
+          <p className="market-page-lead">
+            Premium BetNumbers predictions and free football tips for every match today —
+            data-driven, highly accurate, across 50+ leagues worldwide.
+          </p>
+          <MarketPageStats items={stats} />
+          <h2 className="market-page-list-title">Today&apos;s BetNumbers Predictions</h2>
+          <FixturesRow
+            fixtures={fixtures}
+            predictionType="all"
+            brandKeyword="BetNumbers"
+          />
         </div>
 
         <BetnumbersPageContent />

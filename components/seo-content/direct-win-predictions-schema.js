@@ -10,24 +10,24 @@ const FAQ_SCHEMA_ITEMS = [
       'A direct win bet names one team to win a match outright, with no draw option. If the game ends level, the bet loses regardless of which side was backed.',
   },
   {
-    question: 'Is direct win riskier than a normal win bet?',
+    question: 'How are direct win predictions selected?',
     answer:
-      "Yes, in the sense that a standard win bet on a 1X2 market only concerns that one outcome among three available options, while a direct win bet removes the draw from the market entirely — so the odds are usually shorter, and there's no separate draw outcome cushioning the line.",
+      'Our statistical model scores fixtures on home or away win probability, current form, head-to-head, opposition defensive record, and live market movement. Only high-confidence home or away wins pass the filter — then a manual analyst review before publication.',
   },
   {
-    question: 'Why are there fewer direct win tips than other markets on this site?',
+    question: 'Are these predictions free?',
     answer:
-      "Because most matches aren't lopsided enough to justify it. We only publish a direct win pick when the data shows a clear, consistent gap between two teams — everything else stays on our 1X2 or double chance pages instead.",
+      'Yes, completely free. Every direct win prediction, written analysis, and probability score is free — no account, subscription, or payment.',
   },
   {
-    question: 'Do I need to register to see these predictions?',
+    question: 'What is the difference between Direct Win and Must Win Teams Today?',
     answer:
-      'No. Every direct win prediction on this page is free to view, with no account or subscription required.',
+      'Must Win Teams Today is a fixed daily card of exactly 10 teams. Direct Win lists every fixture that clears our higher win-only confidence filter that day — so the count can be higher or lower than 10.',
   },
   {
     question: 'Can a direct win prediction ever be guaranteed?',
     answer:
-      'No. A draw is always mathematically possible, however strong the favourite looks on paper. Treat every direct win pick as a high-conviction, data-backed selection — not a certainty.',
+      'No. A draw is always mathematically possible. Treat every direct win pick as a high-conviction, data-backed selection — not a certainty. Always bet responsibly.',
   },
 ];
 
@@ -42,8 +42,6 @@ const personSchema = {
     name: 'FreeWinningTips',
     url: SITE_ORIGIN,
   },
-  description:
-    "Lead Predictions Analyst at FreeWinningTips. Manually checks every direct win selection against team news and market movement across Europe's major leagues and East African football.",
 };
 
 const articleSchema = {
@@ -51,12 +49,10 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Direct Win Predictions Today – No Draw, Just the Winner',
   description:
-    "Direct win predictions for today's matches, published only when one team clearly outclasses the other. Free, analyst-checked, updated daily across Europe's top leagues and African football.",
+    "Direct win predictions for today's matches — home and away wins only. Free, analyst-checked, updated daily.",
   url: PAGE_URL,
   mainEntityOfPage: PAGE_URL,
-  author: {
-    '@id': AUTHOR_ID,
-  },
+  author: { '@id': AUTHOR_ID },
   publisher: {
     '@type': 'Organization',
     name: 'FreeWinningTips',
@@ -70,31 +66,19 @@ const webPageSchema = {
   name: 'Direct Win Predictions Today – No Draw, Just the Winner | FreeWinningTips',
   url: PAGE_URL,
   description:
-    "Direct win predictions for today's matches, published only when one team clearly outclasses the other. Free, analyst-checked, updated daily across Europe's top leagues and African football.",
-  author: {
-    '@id': AUTHOR_ID,
-  },
+    "Direct win predictions for today's matches — home and away wins only. Free, analyst-checked, updated daily.",
+  author: { '@id': AUTHOR_ID },
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: `${SITE_ORIGIN}/`,
-      },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_ORIGIN}/` },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Predictions',
         item: `${SITE_ORIGIN}/predictions/todays-predictions`,
       },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Direct Win Predictions',
-        item: PAGE_URL,
-      },
+      { '@type': 'ListItem', position: 3, name: 'Direct Win Predictions', item: PAGE_URL },
     ],
   },
 };
@@ -105,19 +89,14 @@ const faqSchema = {
   mainEntity: FAQ_SCHEMA_ITEMS.map((item) => ({
     '@type': 'Question',
     name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer,
-    },
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
   })),
 };
 
 export default function DirectWinPredictionsSchema() {
-  const schemas = [personSchema, articleSchema, webPageSchema, faqSchema];
-
   return (
     <>
-      {schemas.map((schema) => (
+      {[personSchema, articleSchema, webPageSchema, faqSchema].map((schema) => (
         <script
           key={schema['@type']}
           type="application/ld+json"

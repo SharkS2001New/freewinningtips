@@ -232,7 +232,7 @@ const FormDotsEmpty = () => (
 // Single match row
 // ---------------------------------------------------------------------------
 
-const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoading = false }) => {
+const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoading = false, brandKeyword = null }) => {
   // Extract data from new API structure
   const homeTeam = fixture.home_team || {};
   const awayTeam = fixture.away_team || {};
@@ -319,6 +319,15 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
                        tipText === '2' ? prediction1x2.away : 0;
       tipProb = probValue ? `${probValue}%` : '-';
       break;
+
+    case 'win-only': {
+      // Home or away win only (GoalVertex must-win / direct-win style)
+      const homeProb = prediction1x2.home || 0;
+      const awayProb = prediction1x2.away || 0;
+      tipText = homeProb >= awayProb ? '1' : '2';
+      tipProb = `${Math.round(homeProb >= awayProb ? homeProb : awayProb)}%`;
+      break;
+    }
       
     default: // 'all' - accumulator / smart selection using API predictions
       const avgGoalsNum = avgGoals !== '-' ? parseFloat(avgGoals) : null;
@@ -429,6 +438,7 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
         probability={tipProb}
         odds={tipOdds}
         predictionType={predictionType}
+        brandKeyword={brandKeyword}
       />
     </div>
   );
@@ -447,6 +457,7 @@ const LeagueCard = ({
   hideLeagueHeader = false,
   matchIndexStart = 0,
   totalMatches = 0,
+  brandKeyword = null,
 }) => {
   const getFlag = (country) => ({
     England: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', Spain: '🇪🇸', Italy: '🇮🇹',
@@ -493,6 +504,7 @@ const LeagueCard = ({
                   predictionType={predictionType}
                   teamForms={teamForms}
                   formsLoading={formsLoading}
+                  brandKeyword={brandKeyword}
                 />
                 {adVariant && <InlineAdsense variant={adVariant} />}
               </Fragment>
@@ -513,6 +525,8 @@ const FixturesRow = ({
   predictionType = 'all',
   hideLeagueHeader = false,
   skipTeamForms = false,
+  brandKeyword = null,
+  flatList = false,
 }) => {
   const [teamForms, setTeamForms] = useState({});
   const [formsLoading, setFormsLoading] = useState(false);
@@ -572,12 +586,18 @@ const FixturesRow = ({
     return Array.from(map.values());
   };
 
-  const groups = groupByLeague(fixtures);
+  // GoalVertex must-win pattern: flat ranked card (keep sort order), not regrouped by league
+  const groups = flatList
+    ? [{
+        league: { name: 'Today', country: '', leagueId: null },
+        fixtures: fixtures || [],
+      }]
+    : groupByLeague(fixtures);
   const totalMatches = fixtures?.length || 0;
 
   let matchIndexOffset = 0;
 
-  if (!groups.length) {
+  if (!groups.length || !fixtures?.length) {
     return (
       <div className="empty-state">
         <span>📭</span>
@@ -600,9 +620,10 @@ const FixturesRow = ({
             predictionType={predictionType}
             teamForms={teamForms}
             formsLoading={formsLoading}
-            hideLeagueHeader={hideLeagueHeader}
+            hideLeagueHeader={flatList || hideLeagueHeader}
             matchIndexStart={matchIndexStart}
             totalMatches={totalMatches}
+            brandKeyword={brandKeyword}
           />
         );
       })}

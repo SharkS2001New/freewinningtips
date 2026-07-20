@@ -1,16 +1,19 @@
 import { formatTipLabel } from '@/components/functions/predictionTip';
 
-function marketLabelFromTip(tip, predictionType) {
-  if (predictionType === 'gg-no-gg') return 'Both Teams To Score';
-  if (predictionType === 'double-chance') return 'Double Chance';
-  if (predictionType === '1-5-goals' || predictionType === '2-5-goals') return 'Over/Under Goals';
-  if (predictionType === '1x2') return 'Match Result (1X2)';
-  return formatTipLabel(tip, tip === 'YES' || tip === 'NO' || tip === 'GG' ? 'BTTS' : '1X2');
-}
-
 /**
- * Build GoalVertex-style written analysis from fixture tip data.
- * Unique enough per match for SEO density without inventing fake stats.
+ * GoalVertex analysis pattern (verbatim templates, brand-swapped):
+ *
+ * BetNumbers:
+ *   "{Tip} – The model gives this BetNumbers pick a confidence level of {X}%.
+ *    Based on recent form, head-to-head records, and current market conditions,
+ *    this selection offers strong value."
+ *
+ * Must Win / Direct Win (win-only):
+ *   "{Team} come into this fixture in strong form with a {X}% confidence rating
+ *    from our model. {Team} have shown consistency in recent matches, while
+ *    {Opponent} have struggled in similar situations. Based on recent form,
+ *    head-to-head records, and current market conditions, the win is well
+ *    supported by the data."
  */
 export function buildMatchTipAnalysis({
   fixture,
@@ -18,32 +21,67 @@ export function buildMatchTipAnalysis({
   probability,
   odds,
   predictionType = 'all',
+  brandKeyword = null,
 }) {
   if (!tip || tip === '-') return null;
 
   const home = fixture?.home_team?.name || 'Home';
   const away = fixture?.away_team?.name || 'Away';
-  const league = fixture?.league?.name || 'this competition';
-  const country = fixture?.league?.country || '';
-  const leagueLine = country ? `${league} (${country})` : league;
+  const tipStr = String(tip).toUpperCase();
+  const tipDisplay = formatTipLabel(
+    tip,
+    predictionType === 'gg-no-gg'
+      ? 'BTTS'
+      : predictionType === 'double-chance'
+        ? 'Double Chance'
+        : '1X2'
+  );
   const prob = probability != null && probability !== ''
     ? String(probability).replace('%', '')
     : null;
-  const oddsText = odds && odds !== '-' ? ` at odds of ${odds}` : '';
-  const tipDisplay = formatTipLabel(tip, predictionType === 'gg-no-gg' ? 'BTTS' : predictionType === 'double-chance' ? 'Double Chance' : '1X2');
-  const market = marketLabelFromTip(tip, predictionType);
+  const isWinOnly = predictionType === 'win-only' || tipStr === '1' || tipStr === '2';
+  const pickedTeam = tipStr === '2' ? away : tipStr === '1' ? home : null;
+  const opponent = tipStr === '2' ? home : tipStr === '1' ? away : null;
 
-  const confidence = prob
-    ? `Our model gives this selection a confidence level of ${prob}%.`
-    : 'Our model flags this as a high-value selection based on current data.';
+  // --- Must Win / Direct Win pattern (GoalVertex) ---
+  if (predictionType === 'win-only' && pickedTeam && opponent) {
+    const conf = prob || '70';
+    const body = [
+      `${pickedTeam} come into this fixture in strong form with a ${conf}% confidence rating from our model.`,
+      `${pickedTeam} have shown consistency in recent matches, while ${opponent} have struggled in similar situations.`,
+      'Based on recent form, head-to-head records, and current market conditions, the win is well supported by the data.',
+    ].join(' ');
+
+    return {
+      market: tipStr === '1' ? 'Home Win' : 'Away Win',
+      tipDisplay: tipStr === '1' ? `${pickedTeam} to win` : `${pickedTeam} to win away`,
+      summary: tipStr === '1' ? `${pickedTeam} to win` : `${pickedTeam} to win away`,
+      body,
+    };
+  }
+
+  // --- BetNumbers / multi-market pattern (GoalVertex) ---
+  const pickNoun = brandKeyword ? `${brandKeyword} pick` : 'pick';
+  const confLine = prob
+    ? `The model gives this ${pickNoun} a confidence level of ${prob}%.`
+    : `The model gives this ${pickNoun} a high confidence rating.`;
+
+  let probTail = '';
+  const p1x2 = fixture?.predictions?.['1x2'];
+  if (p1x2 && (tipStr === '1' || tipStr === '2' || tipStr === 'X')) {
+    const h = Math.round(Number(p1x2.home) || 0);
+    const d = Math.round(Number(p1x2.draw) || 0);
+    const a = Math.round(Number(p1x2.away) || 0);
+    probTail = ` Home win probability ${h}%, Away win probability ${a}%, Draw probability ${d}%.`;
+  }
+
+  const oddsText = odds && odds !== '-' ? ` at odds of ${odds}` : '';
+  const body = `${tipDisplay} – ${confLine} Based on recent form, head-to-head records, and current market conditions, this selection offers strong value${oddsText}.${probTail}`;
 
   return {
-    market,
+    market: tipDisplay,
     tipDisplay,
-    summary: `${tipDisplay} — ${confidence}`,
-    body: [
-      `${tipDisplay} in ${home} vs ${away} (${leagueLine}). ${confidence} Based on recent form, head-to-head patterns, and current market conditions, this ${market.toLowerCase()} pick is supported by FreeWinningTips statistical modelling${oddsText}.`,
-      `${home} and ${away} were assessed on attacking output, defensive solidity, and home/away splits before this tip was published. A senior analyst reviews every FreeWinningTips selection for late team news before kick-off.`,
-    ].join(' '),
+    summary: tipDisplay,
+    body,
   };
 }

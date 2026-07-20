@@ -7,6 +7,7 @@ export default function MatchAnalysisBlock({
   probability,
   odds,
   predictionType = 'all',
+  brandKeyword = null,
 }) {
   const [open, setOpen] = useState(false);
   const analysis = buildMatchTipAnalysis({
@@ -15,6 +16,7 @@ export default function MatchAnalysisBlock({
     probability: typeof probability === 'string' ? probability.replace('%', '') : probability,
     odds,
     predictionType,
+    brandKeyword,
   });
 
   if (!analysis) return null;
