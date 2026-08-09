@@ -262,7 +262,7 @@ export default function Blogs({
                         {blog.title}
                       </a>
 
-                      <div className="blog-meta mt-3 mb-0">
+                      <div className="blog-meta mt-3">
                         {blog.user?.name || "Admin"} &nbsp;/&nbsp;
                         {new Date(
                           blog.published_at || blog.created_at
@@ -272,6 +272,10 @@ export default function Blogs({
                           year: "numeric",
                         })}
                       </div>
+
+                      {blog.excerpt ? (
+                        <p className="blog-excerpt">{blog.excerpt}</p>
+                      ) : null}
                     </div>
 
                     <div className="blog-footer">

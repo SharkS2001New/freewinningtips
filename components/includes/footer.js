@@ -38,7 +38,11 @@ function SponsorLinks() {
             key={`${sponsor.id || sponsor.url}-${index}`}
             href={sponsor.url}
             target="_blank"
-            rel="noopener noreferrer"
+            rel={
+              Array.isArray(sponsor.rel) && sponsor.rel.length
+                ? sponsor.rel.join(" ")
+                : "noopener noreferrer"
+            }
             className="footer-sponsor-link"
           >
             {sponsor.label}
