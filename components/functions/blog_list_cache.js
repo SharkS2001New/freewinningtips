@@ -126,7 +126,7 @@ export function getBlogPostCachePath(slug) {
       BLOG_HTML_CACHE_DIR,
       `blog-post-${safeSlug}-${CACHE_SITE_SUFFIX}.html`
     ),
-    publicContentUrl: `/blogscache/blog-post-${safeSlug}.html`,
+    publicContentUrl: `/blogscache/blog-post-${safeSlug}-${CACHE_SITE_SUFFIX}.html`,
   };
 }
 
@@ -444,4 +444,33 @@ export async function fetchBlogList(page, category) {
   const data = await response.json();
 
   return trimBlogListPayload(data);
+}
+
+export function clearBlogListCaches() {
+  const removedFiles = [];
+  const failed = [];
+  const dirs = [BLOG_JSON_CACHE_DIR, LEGACY_BLOG_CACHE_DIR];
+
+  for (const dir of dirs) {
+    if (!fs.existsSync(dir)) continue;
+
+    for (const file of fs.readdirSync(dir)) {
+      const isListCache = file.startsWith("blog-list-page-");
+      const isHomeSnippet =
+        file === "blog-posts.json" ||
+        file.startsWith("blog-posts-") ||
+        file.startsWith("homepage-blog-posts");
+
+      if (!isListCache && !isHomeSnippet) continue;
+
+      const filePath = path.join(dir, file);
+      if (removeCacheFileAtPath(filePath)) {
+        removedFiles.push(file);
+      } else if (fs.existsSync(filePath)) {
+        failed.push(file);
+      }
+    }
+  }
+
+  return { removedFiles, failed };
 }
