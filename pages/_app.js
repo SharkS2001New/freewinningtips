@@ -67,6 +67,9 @@ function App({ Component, pageProps }) {
     <React.Fragment>
       <Head>
         <title>{pageTitle}</title>
+        <link rel="icon" href="/freewinningtips.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/freewinningtips-icon-32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/freewinningtips-apple-touch.png" />
         <link rel="dns-prefetch" href={SITE_ORIGIN} crossOrigin />
         <link rel="preconnect" href={SITE_ORIGIN} crossOrigin />
         <link rel="dns-prefetch" href="https://api.pitchpredictions.com" crossOrigin />
@@ -85,12 +88,12 @@ function App({ Component, pageProps }) {
         <meta name="twitter:site" content="@freewinningtips" />
         <meta name="twitter:title" content={ogTitle} />
         <meta name="twitter:description" content={ogDescription} />
-        <meta name="twitter:image" content={`${SITE_ORIGIN}/freewinningtips.png`} />
+        <meta name="twitter:image" content={`${SITE_ORIGIN}/freewinningtips-icon.png`} />
         <meta name="twitter:url" content={`${SITE_ORIGIN}${router.pathname}`} />
 
         <meta property="og:title" content={ogTitle} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${SITE_ORIGIN}/freewinningtips.png`} />
+        <meta property="og:image" content={`${SITE_ORIGIN}/freewinningtips-icon.png`} />
         <meta property="og:description" content={ogDescription} />
         <meta property="og:url" content={`${SITE_ORIGIN}${router.pathname}`} />
       </Head>

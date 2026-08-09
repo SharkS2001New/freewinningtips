@@ -31,6 +31,9 @@ export default function BlogPostPage({
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
+        <link rel="icon" href="/freewinningtips.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/freewinningtips-icon-32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/freewinningtips-apple-touch.png" />
 
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

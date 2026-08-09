@@ -6,7 +6,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/freewinningtips.ico" />
+        <link rel="icon" href="/freewinningtips.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/freewinningtips-icon-32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/freewinningtips-apple-touch.png" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossOrigin="anonymous"/>
 
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5665711413000284"
