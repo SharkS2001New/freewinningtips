@@ -17,7 +17,7 @@ export default function BlogPostImage({
   const normalizedSrc = normalizeImageSrc(src);
   if (!normalizedSrc) return null;
 
-  const imageWidth = parseDimension(width, 850);
+  const imageWidth = parseDimension(width, 1200);
   const imageHeight = parseDimension(height, Math.round(imageWidth * 0.5625));
 
   if (canUseNextImage(normalizedSrc)) {
@@ -29,7 +29,7 @@ export default function BlogPostImage({
         height={imageHeight}
         className={className}
         priority={priority}
-        sizes="(max-width: 850px) 100vw, 850px"
+        sizes="(max-width: 1200px) 100vw, 1200px"
       />
     );
   }

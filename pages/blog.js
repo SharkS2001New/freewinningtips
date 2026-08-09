@@ -200,16 +200,18 @@ export default function Blogs({
 
   if (error && blogs.length === 0) {
     return (
-      <div className="blogs-page">
-        <div className="container">
-          <div className="no-blogs">
-            <p>Error loading blogs. Please try again later.</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="btn btn-primary mt-3"
-            >
-              Retry
-            </button>
+      <div className="page-root blogs-page">
+        <div className="container-main">
+          <div className="league-card blog-article-card">
+            <div className="blog-article-inner no-blogs">
+              <p>Error loading blogs. Please try again later.</p>
+              <button
+                onClick={() => window.location.reload()}
+                className="btn btn-primary mt-3"
+              >
+                Retry
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -218,8 +220,8 @@ export default function Blogs({
 
   if (loading && blogs.length === 0) {
     return (
-      <div className="blogs-page">
-        <div className="container">
+      <div className="page-root blogs-page">
+        <div className="container-main">
           <PreLoader />
         </div>
       </div>
@@ -227,11 +229,13 @@ export default function Blogs({
   }
 
   return (
-    <div className="blogs-page">
-      <div className="container">
+    <div className="page-root blogs-page">
+      <div className="container-main">
         {!blogs || blogs.length === 0 ? (
-          <div className="no-blogs">
-            <p>No blogs available.</p>
+          <div className="league-card blog-article-card">
+            <div className="blog-article-inner no-blogs">
+              <p>No blogs available.</p>
+            </div>
           </div>
         ) : (
           <>
@@ -258,7 +262,7 @@ export default function Blogs({
                         {blog.title}
                       </a>
 
-                      <div className="blog-meta mt-3">
+                      <div className="blog-meta mt-3 mb-0">
                         {blog.user?.name || "Admin"} &nbsp;/&nbsp;
                         {new Date(
                           blog.published_at || blog.created_at
@@ -268,8 +272,6 @@ export default function Blogs({
                           year: "numeric",
                         })}
                       </div>
-
-                      <p className="blog-excerpt">{blog.excerpt}</p>
                     </div>
 
                     <div className="blog-footer">
@@ -419,8 +421,8 @@ export default function Blogs({
             )}
           </>
         )}
-        <br />
       </div>
+      <br />
 
       <style jsx>{`
         .page-dots {
@@ -448,23 +450,33 @@ export async function getServerSideProps({ query }) {
   const category = query.category || "ALL";
   const { cacheDir, cachePath, legacyCachePath } = getCachePath(page, category);
 
+  const listPropsFromCache = (cached) => ({
+    props: {
+      initialBlogs: cached.payload.data || [],
+      initialPageInfo: {
+        currentPage: cached.payload.current_page || 1,
+        lastPage: cached.payload.last_page || 1,
+        total: cached.payload.total || 0,
+      },
+      initialPage: page,
+      initialCategory: category,
+      error: null,
+    },
+  });
+
   try {
     const cached = readTrimmedBlogListCache(cachePath, legacyCachePath);
 
-    if (cached?.isFresh) {
-      return {
-        props: {
-          initialBlogs: cached.payload.data || [],
-          initialPageInfo: {
-            currentPage: cached.payload.current_page || 1,
-            lastPage: cached.payload.last_page || 1,
-            total: cached.payload.total || 0,
-          },
-          initialPage: page,
-          initialCategory: category,
-          error: null,
-        },
-      };
+    // Serve any disk cache immediately; refresh stale pages in the background.
+    if (cached?.payload) {
+      if (!cached.isFresh) {
+        void fetchBlogList(page, category)
+          .then((payload) => writeCache(cacheDir, cachePath, payload))
+          .catch((error) => {
+            console.error("Background blog list refresh failed:", error.message);
+          });
+      }
+      return listPropsFromCache(cached);
     }
 
     const payload = await fetchBlogList(page, category);
@@ -488,19 +500,7 @@ export async function getServerSideProps({ query }) {
 
     const cached = readTrimmedBlogListCache(cachePath, legacyCachePath);
     if (cached?.payload) {
-      return {
-        props: {
-          initialBlogs: cached.payload.data || [],
-          initialPageInfo: {
-            currentPage: cached.payload.current_page || 1,
-            lastPage: cached.payload.last_page || 1,
-            total: cached.payload.total || 0,
-          },
-          initialPage: page,
-          initialCategory: category,
-          error: null,
-        },
-      };
+      return listPropsFromCache(cached);
     }
 
     return {

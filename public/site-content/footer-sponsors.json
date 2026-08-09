@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-08-09T00:00:00.000Z",
+  "links": [
+    {
+      "id": "jalalive-tv",
+      "label": "jalalive tv",
+      "url": "https://www.xsbaltimore.com/",
+      "starts_at": null,
+      "expires_at": null,
+      "notes": "",
+      "active": true
+    },
+    {
+      "id": "bgibola",
+      "label": "bgibola",
+      "url": "https://bgibola88.io/",
+      "starts_at": null,
+      "expires_at": null,
+      "notes": "",
+      "active": true
+    }
+  ]
+}

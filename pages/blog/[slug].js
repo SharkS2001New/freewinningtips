@@ -64,49 +64,30 @@ export default function BlogPostPage({
         )}
       </Head>
 
-      <div
-        className="blogs-page"
-        style={{
-          maxWidth: "850px",
-          padding: "0 1rem",
-          fontFamily: "Arial, sans-serif",
-          margin: "0 auto",
-        }}
-      >
-        <BlogArticleJsonLd meta={meta} slug={slug} />
-        <BlogPostHeader meta={meta} />
+      <div className="page-root blog-post-page">
+        <div className="container-main">
+          <article className="league-card blog-article-card">
+            <div className="blog-article-inner">
+              <BlogArticleJsonLd meta={meta} slug={slug} />
+              <BlogPostHeader meta={meta} />
 
-        {isLargeArticle ? (
-          <>
-            {meta.excerpt ? (
-              <p
-                className="blog-excerpt"
-                style={{
-                  lineHeight: "1.8",
-                  fontSize: "1rem",
-                  color: "#444",
-                  marginBottom: "1.5rem",
-                }}
-              >
-                {meta.excerpt}
-              </p>
-            ) : null}
-            <BlogLargeContent slug={slug} contentUrl={contentUrl} />
-          </>
-        ) : (
-          <div
-            className="blog-html-content"
-            style={{
-              lineHeight: "1.8",
-              fontSize: "1rem",
-              color: "#1a1a1a",
-            }}
-            suppressHydrationWarning
-            dangerouslySetInnerHTML={{ __html: inlineContent || "" }}
-          />
-        )}
-
-        <br />
+              {isLargeArticle ? (
+                <>
+                  {meta.excerpt ? (
+                    <p className="blog-lead">{meta.excerpt}</p>
+                  ) : null}
+                  <BlogLargeContent slug={slug} contentUrl={contentUrl} />
+                </>
+              ) : (
+                <div
+                  className="blog-html-content"
+                  suppressHydrationWarning
+                  dangerouslySetInnerHTML={{ __html: inlineContent || "" }}
+                />
+              )}
+            </div>
+          </article>
+        </div>
       </div>
     </>
   );

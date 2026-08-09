@@ -1,21 +1,44 @@
 // components/Footer.js
 import React, { useState, useEffect } from "react";
 
-const sponsors = [
-  { label: 'jalalive tv', url: 'https://www.xsbaltimore.com/' },
-  { label: 'bgibola', url: 'https://bgibola88.io/' },
-];
-
 function SponsorLinks() {
+  const [sponsors, setSponsors] = useState([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      try {
+        const res = await fetch("/api/site-content/footer-sponsors", {
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) return;
+        const json = await res.json();
+        const links = Array.isArray(json?.links) ? json.links : [];
+        if (!cancelled) setSponsors(links);
+      } catch {
+        // Keep footer usable without sponsors if the file/API is unavailable.
+      }
+    };
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (!sponsors.length) {
+    return null;
+  }
+
   return (
     <div className="footer-sponsor-section">
       <p className="footer-sponsor-title">Our Partners &amp; Sponsors</p>
       <div className="footer-sponsor-links">
         {sponsors.map((sponsor, index) => (
           <a
-            key={`${sponsor.url}-${index}`}
+            key={`${sponsor.id || sponsor.url}-${index}`}
             href={sponsor.url}
             target="_blank"
+            rel="noopener noreferrer"
             className="footer-sponsor-link"
           >
             {sponsor.label}
@@ -170,7 +193,7 @@ function Footer() {
         betting services. FreeWinningTips does not guarantee any prediction outcomes.
       </div>
 
-      <SponsorLinks /> {/* TODO: Add sponsor links */}
+      <SponsorLinks />
 
       {/* ── BACK TO TOP — fixed floating bottom-right (appears after scrolling) ── */}
       {showBackToTop && (

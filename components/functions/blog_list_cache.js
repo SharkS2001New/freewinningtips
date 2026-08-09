@@ -427,13 +427,15 @@ export function writeCache(cacheDir, cachePath, payload) {
 }
 
 export async function fetchBlogList(page, category) {
+  const { fetchWithTimeout } = await import("../../lib/blog/fetch-with-timeout");
+
   const params = new URLSearchParams({
     page: String(page),
     category: String(category || "ALL"),
     site: BLOG_SITE_KEY,
   });
 
-  const response = await fetch(`${API_BASE}?${params}`, {
+  const response = await fetchWithTimeout(`${API_BASE}?${params}`, {
     headers: BLOG_API_HEADERS,
   });
 
