@@ -7,6 +7,7 @@ function SponsorLinks() {
   useEffect(() => {
     let cancelled = false;
     const CACHE_KEY = "fwt_footer_sponsors_v1";
+    const CACHE_TTL_MS = 8000;
 
     const applyLinks = (links) => {
       if (!cancelled) setSponsors(Array.isArray(links) ? links : []);
@@ -16,8 +17,16 @@ function SponsorLinks() {
       const raw = window.sessionStorage.getItem(CACHE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed?.links) && parsed.links.length) {
+        const age = Date.now() - Number(parsed?.at || 0);
+        if (
+          Array.isArray(parsed?.links) &&
+          parsed.links.length &&
+          age >= 0 &&
+          age < CACHE_TTL_MS
+        ) {
           applyLinks(parsed.links);
+        } else {
+          window.sessionStorage.removeItem(CACHE_KEY);
         }
       }
     } catch {
@@ -26,9 +35,17 @@ function SponsorLinks() {
 
     const load = async () => {
       try {
-        const res = await fetch("/api/site-content/footer-sponsors", {
-          headers: { Accept: "application/json" },
-        });
+        const res = await fetch(
+          `/api/site-content/footer-sponsors?_=${Date.now()}`,
+          {
+            cache: "no-store",
+            headers: {
+              Accept: "application/json",
+              "Cache-Control": "no-cache",
+              Pragma: "no-cache",
+            },
+          }
+        );
         if (!res.ok) return;
         const json = await res.json();
         const links = Array.isArray(json?.links) ? json.links : [];
@@ -36,7 +53,11 @@ function SponsorLinks() {
         try {
           window.sessionStorage.setItem(
             CACHE_KEY,
-            JSON.stringify({ links, at: Date.now() })
+            JSON.stringify({
+              links,
+              updated_at: json?.updated_at || null,
+              at: Date.now(),
+            })
           );
         } catch {
           // ignore
