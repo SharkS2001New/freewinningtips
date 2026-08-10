@@ -6,15 +6,13 @@ function SponsorLinks() {
 
   useEffect(() => {
     let cancelled = false;
+    let idleId = null;
+    let timeoutId = null;
+
     const load = async () => {
       try {
         const res = await fetch("/api/site-content/footer-sponsors", {
-          cache: "no-store",
-          headers: {
-            Accept: "application/json",
-            "Cache-Control": "no-cache",
-            Pragma: "no-cache",
-          },
+          headers: { Accept: "application/json" },
         });
         if (!res.ok) return;
         const json = await res.json();
@@ -24,9 +22,19 @@ function SponsorLinks() {
         // Keep footer usable without sponsors if the file/API is unavailable.
       }
     };
-    load();
+
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(() => load(), { timeout: 1500 });
+    } else {
+      timeoutId = window.setTimeout(load, 0);
+    }
+
     return () => {
       cancelled = true;
+      if (idleId != null && typeof window !== "undefined" && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+      if (timeoutId != null) window.clearTimeout(timeoutId);
     };
   }, []);
 
