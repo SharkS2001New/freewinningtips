@@ -1,23 +1,33 @@
 {
-  "updated_at": "2026-08-09T00:00:00.000Z",
-  "links": [
-    {
-      "id": "jalalive-tv",
-      "label": "jalalive tv",
-      "url": "https://www.xsbaltimore.com/",
-      "starts_at": null,
-      "expires_at": null,
-      "notes": "",
-      "active": true
-    },
-    {
-      "id": "bgibola",
-      "label": "bgibola",
-      "url": "https://bgibola88.io/",
-      "starts_at": null,
-      "expires_at": null,
-      "notes": "",
-      "active": true
-    }
-  ]
+    "updated_at": "2026-08-10T11:55:41.120Z",
+    "links": [
+        {
+            "id": "jalalive-tv",
+            "label": "jalalive tv",
+            "url": "https://www.xsbaltimore.com/",
+            "starts_at": null,
+            "expires_at": "2026-08-09",
+            "notes": "",
+            "active": true,
+            "rel": [
+                "noopener",
+                "noreferrer"
+            ],
+            "grace_days": 0
+        },
+        {
+            "id": "bgibola",
+            "label": "bgibola",
+            "url": "https://bgibola88.io/",
+            "starts_at": null,
+            "expires_at": "2026-08-09",
+            "notes": "",
+            "active": true,
+            "rel": [
+                "noopener",
+                "noreferrer"
+            ],
+            "grace_days": 0
+        }
+    ]
 }
