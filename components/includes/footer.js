@@ -9,7 +9,12 @@ function SponsorLinks() {
     const load = async () => {
       try {
         const res = await fetch("/api/site-content/footer-sponsors", {
-          headers: { Accept: "application/json" },
+          cache: "no-store",
+          headers: {
+            Accept: "application/json",
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+          },
         });
         if (!res.ok) return;
         const json = await res.json();
