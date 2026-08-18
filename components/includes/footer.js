@@ -1,77 +1,38 @@
 // components/Footer.js
 import React, { useState, useEffect } from "react";
+import footerSponsorsDocument from "../../public/site-content/footer-sponsors.json";
+import { getEmbeddedVisibleSponsors } from "../functions/footer_sponsors_core";
+
+function getInitialSponsors() {
+  return getEmbeddedVisibleSponsors(footerSponsorsDocument);
+}
 
 function SponsorLinks() {
-  const [sponsors, setSponsors] = useState([]);
+  const [sponsors, setSponsors] = useState(getInitialSponsors);
 
   useEffect(() => {
     let cancelled = false;
-    const CACHE_KEY = "fwt_footer_sponsors_v1";
-    const CACHE_TTL_MS = 8000;
 
-    const applyLinks = (links) => {
-      if (!cancelled) setSponsors(Array.isArray(links) ? links : []);
-    };
-
-    try {
-      const raw = window.sessionStorage.getItem(CACHE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        const age = Date.now() - Number(parsed?.at || 0);
-        if (
-          Array.isArray(parsed?.links) &&
-          parsed.links.length &&
-          age >= 0 &&
-          age < CACHE_TTL_MS
-        ) {
-          applyLinks(parsed.links);
-        } else {
-          window.sessionStorage.removeItem(CACHE_KEY);
-        }
-      }
-    } catch {
-      // ignore
-    }
-
-    const load = async () => {
+    const refresh = async () => {
       try {
-        const res = await fetch(
-          `/api/site-content/footer-sponsors?_=${Date.now()}`,
-          {
-            cache: "no-store",
-            headers: {
-              Accept: "application/json",
-              "Cache-Control": "no-cache",
-              Pragma: "no-cache",
-            },
-          }
-        );
-        if (!res.ok) return;
+        const res = await fetch("/api/site-content/footer-sponsors", {
+          cache: "no-store",
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok || cancelled) return;
         const json = await res.json();
-        const links = Array.isArray(json?.links) ? json.links : [];
-        applyLinks(links);
-        try {
-          window.sessionStorage.setItem(
-            CACHE_KEY,
-            JSON.stringify({
-              links,
-              updated_at: json?.updated_at || null,
-              at: Date.now(),
-            })
-          );
-        } catch {
-          // ignore
+        if (!cancelled && Array.isArray(json?.links)) {
+          setSponsors(json.links);
         }
       } catch {
-        // Keep footer usable without sponsors if the file/API is unavailable.
+        // Keep the embedded links — never hide partners while a refresh fails.
       }
     };
 
-    const timeoutId = window.setTimeout(load, 0);
+    refresh();
 
     return () => {
       cancelled = true;
-      window.clearTimeout(timeoutId);
     };
   }, []);
 
