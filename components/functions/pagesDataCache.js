@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { API_BASE, API_AUTH, CACHE_TTL } from '@/components/functions/apiConfig';
+import { API_BASE, getServerApiHeaders, CACHE_TTL } from '@/components/functions/apiConfig';
 import { enrichFixturesWithLeagueIds } from '@/components/functions/resolveLeagueId';
 
-export { API_BASE, API_AUTH, CACHE_TTL, PREDICTION_ENDPOINTS } from '@/components/functions/apiConfig';
+export { API_BASE, API_AUTH, CACHE_TTL, PREDICTION_ENDPOINTS, getServerApiHeaders } from '@/components/functions/apiConfig';
 
 const PAGES_CACHE_DIR = path.join(process.cwd(), 'public', 'cache', 'pages-data');
 
@@ -49,7 +49,7 @@ function writeCache(filePath, payload) {
 
 async function fetchFromApi(url) {
   const res = await fetch(url, {
-    headers: { Authorization: API_AUTH },
+    headers: getServerApiHeaders(),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();

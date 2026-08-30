@@ -6,7 +6,7 @@ async function fetchPitchPredictionsGames(urlLink, matchDate, category) {
               method: "GET",
               headers: {
                   "Content-Type": "application/json; charset=UTF-8",
-                  "Authorization": "wUlhuXImIV1Pi2IKwGDIKSln9c",
+                  Origin: "https://www.freewinningtips.com", Authorization: `Bearer ${process.env.ACCESS_TOKEN || "UJlhuDILIR1Lc2IEwZDIKOln9d"}`,
               },
           }
       ); 

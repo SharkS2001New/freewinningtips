@@ -1,14 +1,34 @@
 export const API_BASE = 'https://api.pitchpredictions.com/api';
-export const API_AUTH = 'R9TxV3PbOEu7qZnJKgydC5LmX2';
-
 export const SITE_ORIGIN = 'https://www.freewinningtips.com';
 export const BLOG_SITE_KEY = 'freetips';
 
+/** Backend ACCESS_TOKEN — required for Node/SSR (Origin alone is not enough). */
+export function getAccessToken() {
+  return (
+    process.env.ACCESS_TOKEN ||
+    process.env.PITCH_ACCESS_TOKEN ||
+    'UJlhuDILIR1Lc2IEwZDIKOln9d'
+  );
+}
+
+/** @deprecated use getServerApiHeaders — kept for older imports */
+export const API_AUTH = getAccessToken();
+
+/** Headers for Node SSR / pages/api / shared helpers hitting pitchpredictions API. */
+export function getServerApiHeaders(extra = {}) {
+  return {
+    'Content-Type': 'application/json; charset=UTF-8',
+    Origin: SITE_ORIGIN,
+    Authorization: `Bearer ${getAccessToken()}`,
+    ...extra,
+  };
+}
+
+export const API_SERVER_HEADERS = getServerApiHeaders();
+
 /** Headers so the API returns freewinningtips blogs, not pitchpredictions. */
 export const BLOG_API_HEADERS = {
-  'Content-type': 'application/json; charset=UTF-8',
-  Authorization: API_AUTH,
-  Origin: SITE_ORIGIN,
+  ...getServerApiHeaders(),
   'X-Site-Key': BLOG_SITE_KEY,
 };
 

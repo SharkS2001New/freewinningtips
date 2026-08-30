@@ -33,7 +33,7 @@ export default function TodaysGames({
       const chunkUrl = `${baseUrl}&start_index=${startIndex}&end_index=${endIndex}`;
       
       const response = await fetch(chunkUrl, {
-        headers: { Authorization: API_AUTH },
+        headers: { Origin: "https://www.freewinningtips.com", Authorization: `Bearer ${process.env.ACCESS_TOKEN || "UJlhuDILIR1Lc2IEwZDIKOln9d"}` },
       });
       
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);

@@ -3,14 +3,13 @@ import {
   withLeagueCache,
   LEAGUE_CACHE_TTL,
 } from '@/components/functions/leagueDataCache';
-import { API_BASE, API_AUTH } from '@/components/functions/apiConfig';
+import { API_BASE, getServerApiHeaders } from '@/components/functions/apiConfig';
 
 async function fetchJson(url, options = {}) {
   const res = await fetch(url, {
     ...options,
     headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-      Authorization: API_AUTH,
+      ...getServerApiHeaders(),
       ...options.headers,
     },
   });

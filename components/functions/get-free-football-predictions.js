@@ -1,9 +1,9 @@
-import { API_AUTH } from '@/components/functions/apiConfig';
+import { getServerApiHeaders } from '@/components/functions/apiConfig';
 
 async function getFreePredictionsData(fetchUrl) {
   try {
     const response = await fetch(fetchUrl, {
-      headers: { Authorization: API_AUTH },
+      headers: getServerApiHeaders(),
     });
     return response.json();
   } catch (error) {

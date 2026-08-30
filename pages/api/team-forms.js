@@ -59,7 +59,7 @@ export default async function handler(req, res) {
   try {
     const url      = `${API_BASE}?team_ids=${team_ids}&fixture_date=${fixture_date}`;
     const response = await fetch(url, {
-      headers: { Authorization: 'R9TxV3PbOEu7qZnJKgydC5LmX2' },
+      headers: { Origin: "https://www.freewinningtips.com", Authorization: `Bearer ${process.env.ACCESS_TOKEN || "UJlhuDILIR1Lc2IEwZDIKOln9d"}` },
     });
 
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
