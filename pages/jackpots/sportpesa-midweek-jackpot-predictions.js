@@ -3,6 +3,7 @@ import React from 'react';
 import JackpotFixturesTable from '@/components/shared/JackpotFixturesTable';
 import getMinMaxDates from '@/components/functions/jackpot_start_end_dates';
 import SportpesaMidweekPageContent from '@/components/seo-content/sportpesa-midweek-jackpot-predictions-content';
+import { getJackpotServerHeaders } from '@/components/functions/apiConfig';
 
 export default function SportpesaMidweekJackpot({ fixtures, jackpotData }) {
   return (
@@ -20,7 +21,7 @@ export default function SportpesaMidweekJackpot({ fixtures, jackpotData }) {
 }
 
 export async function getServerSideProps() {
-  const headers = { "Partner-Authorization": "q2LsJ9FmT6XvRaCbHuYdK8ZwN4" };
+  const headers = getJackpotServerHeaders();
   const url = `https://api.alljackpotpredictions.com/api/fetch_jackpot_fixtures_by_name?jackpot_name=${encodeURIComponent("Sportpesa Midweek Jackpot")}`;
 
   let fixtures = [];

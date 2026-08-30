@@ -48,3 +48,23 @@ export const PREDICTION_ENDPOINTS = {
   over25: 'fetch_under_over25_free_winning_tips',
   todays_predictions: 'fetch_all_matches_fixtures_no_limit',
 };
+
+export const JACKPOT_API_BASE = 'https://api.alljackpotpredictions.com/api';
+
+export function getJackpotApiKey() {
+  return (
+    process.env.JACKPOT_API_KEY ||
+    'jp_shared_8KxQm2NvR9pLwT4yHcF6uA1eZbD3sG7j'
+  );
+}
+
+/** Headers for commercial jackpot PHP/Node SSR (Origin + JACKPOT_API_KEY). */
+export function getJackpotServerHeaders(extra = {}) {
+  return {
+    Origin: SITE_ORIGIN,
+    'X-Jackpot-Client': 'server',
+    'X-Jackpot-Key': getJackpotApiKey(),
+    'X-Jackpot-Site': SITE_ORIGIN,
+    ...extra,
+  };
+}
