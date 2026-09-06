@@ -133,15 +133,7 @@ const HomepageContent = ({ fixtures = [] }) => {
               <h3>{item.question}</h3>
               {item.question === 'Which football leagues do you cover?' ? (
                 <p>
-                  {item.answer} Therefore, it helps enable more effective sports betting on{' '}
-                  <a
-                    href="https://rizetoto.com"
-                    target="_blank"
-                    rel="sponsored noopener noreferrer"
-                  >
-                    토토사이트
-                  </a>
-                  .
+                  {item.answer} Therefore, it helps enable more effective sports betting on{' '}.
                 </p>
               ) : (
                 <p>{item.answer}</p>
