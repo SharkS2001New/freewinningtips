@@ -29,7 +29,7 @@ const CheerplexPageContent = () => {
 
         <p>
           We also cover other football prediction markets including{" "}
-          <a href="/predictions/betnumbers">
+          <a href="/predictions/betnumbers-prediction">
             Betnumbers
           </a>,{" "}
           <a href="/predictions/sunpel">

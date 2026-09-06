@@ -5,6 +5,7 @@ import '../styles/globals.css';
 import "../styles/blog.css"; 
 import "../styles/auth-css.css";
 import "../styles/customer-pay.css";
+import "../styles/matchdetails.css";
 import Head from 'next/head';
 import Navbar from '../components/includes/navbar';
 import Footer from '../components/includes/footer';

@@ -10,6 +10,16 @@ const nextConfig = {
         destination: 'https://www.freewinningtips.com/:path*',
         permanent: true,
       },
+      {
+        source: '/predictions/betnumbers',
+        destination: '/predictions/betnumbers-prediction',
+        permanent: true,
+      },
+      {
+        source: '/predictions/betnumbers/',
+        destination: '/predictions/betnumbers-prediction',
+        permanent: true,
+      },
     ];
   },
   async headers() {

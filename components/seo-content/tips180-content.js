@@ -88,7 +88,7 @@ const Tips180PageContent = () => {
           </li>
           <li>
             <a
-              href="/predictions/betnumbers"
+              href="/predictions/betnumbers-prediction"
               target="_blank"
               rel="noopener noreferrer"
             >

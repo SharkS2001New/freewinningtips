@@ -135,7 +135,7 @@ const VenasbetPageContent = () => {
           </li>
 
           <li>
-            <a href="/predictions/betnumbers">
+            <a href="/predictions/betnumbers-prediction">
               Betnumbers Jackpot Predictions
             </a>
           </li>

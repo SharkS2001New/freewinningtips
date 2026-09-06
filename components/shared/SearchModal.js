@@ -242,7 +242,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                         {groupedResults.countries.map((result, index) => (
                                             <a
                                                 key={index}
-                                                href={encodeURI("/country/football-predictions-for-" + result.search_res_name.toLowerCase()) + "/fixtures"}
+                                                href={encodeURI("/country/football-predictions-for-" + result.search_res_name.toLowerCase().replace(/\s+/g, '-')) + "/fixtures"}
                                                 className="result-item"
                                                 onClick={handleSearchItemClick}
                                             >
@@ -336,7 +336,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                     groupedResults.countries.map((result, index) => (
                                         <a
                                             key={index}
-                                            href={encodeURI("/country/football-predictions-for-" + result.search_res_name.toLowerCase()) + "/fixtures"}
+                                            href={encodeURI("/country/football-predictions-for-" + result.search_res_name.toLowerCase().replace(/\s+/g, '-')) + "/fixtures"}
                                             className="result-item"
                                             onClick={handleSearchItemClick}
                                         >

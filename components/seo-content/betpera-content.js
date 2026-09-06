@@ -78,7 +78,7 @@ const BetperaPageContent = () => {
             jackpot predictions
           </a>{" "}
           for Betpera,{" "}
-          <a href="/predictions/betnumbers">
+          <a href="/predictions/betnumbers-prediction">
             Betnumbers
           </a>, Betika, SportPesa, and many others.
         </p>

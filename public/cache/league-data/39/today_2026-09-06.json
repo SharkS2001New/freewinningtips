@@ -1,0 +1,197 @@
+{
+  "generatedAt": "2026-09-06T10:15:07.731Z",
+  "data": [
+    {
+      "fixture_id": 1557390,
+      "league_id": 39,
+      "home_team": {
+        "id": 45,
+        "name": "Everton",
+        "logo": "https://media.api-sports.io/football/teams/45.png"
+      },
+      "away_team": {
+        "id": 33,
+        "name": "Manchester United",
+        "logo": "https://media.api-sports.io/football/teams/33.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (25% home, 28% draw, 47% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 3 goals scored and 1 conceded across 2 matches, while the away side has produced 5 goals and conceded 4 across 2 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 59% and average goals of 3.25.",
+        "avg_goals": 3.25,
+        "1x2": {
+          "home": 25,
+          "draw": 28,
+          "away": 47
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 75
+        },
+        "half_time": {
+          "home": 39,
+          "draw": 25,
+          "away": 51
+        },
+        "both_teams_to_score": {
+          "prediction": "Yes",
+          "probability": 59
+        },
+        "over_under_2_5": {
+          "prediction": "Ov2.5",
+          "probability": 63
+        }
+      },
+      "odds": {
+        "home": 3.25,
+        "draw": 3.4,
+        "away": 2.15,
+        "double_chance": {
+          "home_draw": "1.67",
+          "home_away": "1.30",
+          "draw_away": "1.33"
+        },
+        "ht_ft": {
+          "ht_home": "3.30",
+          "ht_draw": "2.25",
+          "ht_away": "2.75"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.57,
+          "no": 2.3
+        }
+      },
+      "league": {
+        "id": 39,
+        "name": "Premier League",
+        "short_name": "EPL",
+        "round": "Regular Season - 3",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Premier League.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1557387,
+      "league_id": 39,
+      "home_team": {
+        "id": 42,
+        "name": "Arsenal",
+        "logo": "https://media.api-sports.io/football/teams/42.png"
+      },
+      "away_team": {
+        "id": 49,
+        "name": "Chelsea",
+        "logo": "https://media.api-sports.io/football/teams/49.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T15:30:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Home win after combining the prediction probabilities (76% home, 14% draw, 10% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 4 goals scored and 0 conceded across 2 matches, while the away side has produced 7 goals and conceded 5 across 2 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 56% and average goals of 4.",
+        "avg_goals": 4,
+        "1x2": {
+          "home": 76,
+          "draw": 14,
+          "away": 10
+        },
+        "double_chance": {
+          "type": "1X",
+          "probability": 90
+        },
+        "half_time": {
+          "home": 38,
+          "draw": 25,
+          "away": 52
+        },
+        "both_teams_to_score": {
+          "prediction": "Yes",
+          "probability": 56
+        },
+        "over_under_2_5": {
+          "prediction": "Ov2.5",
+          "probability": 77
+        }
+      },
+      "odds": {
+        "home": 1.73,
+        "draw": 3.75,
+        "away": 4.6,
+        "double_chance": {
+          "home_draw": "1.18",
+          "home_away": "1.29",
+          "draw_away": "2.05"
+        },
+        "ht_ft": {
+          "ht_home": "2.15",
+          "ht_draw": "2.40",
+          "ht_away": "4.50"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.67,
+          "no": 2.15
+        }
+      },
+      "league": {
+        "id": 39,
+        "name": "Premier League",
+        "short_name": "EPL",
+        "round": "Regular Season - 3",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Premier League.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    }
+  ]
+}

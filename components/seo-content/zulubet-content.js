@@ -125,7 +125,7 @@ const ZulubetPageContent = () => {
           </li>
 
           <li>
-            <a href="/predictions/betnumbers">
+            <a href="/predictions/betnumbers-prediction">
               Betnumbers Predictions
             </a>
           </li>
