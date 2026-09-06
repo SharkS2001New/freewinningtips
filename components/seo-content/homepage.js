@@ -133,7 +133,7 @@ const HomepageContent = ({ fixtures = [] }) => {
               <h3>{item.question}</h3>
               {item.question === 'Which football leagues do you cover?' ? (
                 <p>
-                  {item.answer} Therefore, it helps enable more effective sports betting on{' '}.
+                  {item.answer}.
                 </p>
               ) : (
                 <p>{item.answer}</p>
