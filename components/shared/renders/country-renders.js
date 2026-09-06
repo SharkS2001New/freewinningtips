@@ -74,53 +74,45 @@ function CountryLeagueGroup({
         <div className="responsive-cell hide-on-mobile"></div>
       </div>
 
-      <div
-        className="responsive-row hide-on-mobile"
-        style={{ fontSize: "12px", border: "none", backgroundColor: "whitesmoke" }}
-      >
-        <div className="responsive-cell"></div>
-        <div className="responsive-cell team-link"></div>
-        <div className="responsive-cell team-link-y">
+      <div className="responsive-row fixtures-header-row hide-on-mobile">
+        <div className="responsive-cell star-cell" aria-hidden="true"></div>
+        <div className="responsive-cell team-link" aria-hidden="true"></div>
+        <div className="responsive-cell team-link-y fixtures-odds-header">
           {urlName && urlName.includes("double-chance-predictions") ? (
             <>
-              <span className="m-4">1X</span>
-              <span className="m-4">X2</span>
-              <span className="m-4">12</span>
+              <span>1X</span>
+              <span>X2</span>
+              <span>12</span>
             </>
           ) : urlName && urlName.includes("predictions-halftime-fulltime") ? (
             <>
-              <span className="m-3">HT1</span>
-              <span className="m-3">HTX</span>
-              <span className="m-3">HT2</span>
+              <span>HT1</span>
+              <span>HTX</span>
+              <span>HT2</span>
             </>
           ) : urlName && urlName.includes("predictions-under-over") ? (
             <>
-              <span className="m-3">O 2.5</span>
-              <span className="m-3">U 2.5</span>
+              <span>O 2.5</span>
+              <span>U 2.5</span>
             </>
           ) : urlName && urlName.includes("predictions-both-to-score") ? (
             <>
-              <span className="m-3">YES</span>
-              <span className="m-3">NO</span>
+              <span>YES</span>
+              <span>NO</span>
             </>
           ) : (
             <>
-              <span className="m-4">1</span>
-              <span className="m-4">X</span>
-              <span className="m-4">2</span>
+              <span>1</span>
+              <span>X</span>
+              <span>2</span>
             </>
           )}
         </div>
         <div className="responsive-cell team-link-average">Avg</div>
-        <div className="responsive-cell">
-          Prediction{" "}
-          {urlName && urlName.includes("predictions-halftime-fulltime")
-            ? "(HT / FT)"
-            : ""}{" "}
-        </div>
-        <div className="responsive-cell team-link-standings"></div>
-        <div className="responsive-cell team-link-l"></div>
-        <div className="responsive-cell team-link-scores"></div>
+        <div className="responsive-cell">Tip</div>
+        <div className="responsive-cell">%</div>
+        <div className="responsive-cell team-link-standings">Time</div>
+        <div className="responsive-cell team-link-scores">Score</div>
       </div>
 
       {group.slice(0, rowsToShow)}

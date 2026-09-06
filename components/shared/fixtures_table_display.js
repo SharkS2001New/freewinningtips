@@ -462,7 +462,6 @@ function FixturesTableDisplay({ props: fixtureProps, marketRoute }) {
             
             {/* Desktop odds */}
             <div className="responsive-cell team-link-y hide-on-mobile" title="Odds">
-                <br/>
                 {isDoubleChance || (isAccumulator && finalWinningOdd && ["1X", "X2", "12"].includes(finalWinningOdd)) ? (
                     // Double Chance odds
                     <>
@@ -628,7 +627,6 @@ function FixturesTableDisplay({ props: fixtureProps, marketRoute }) {
             
             {/* Desktop prediction */}
             <div className="responsive-cell hide-on-mobile" title="Prediction">
-                <br/>
                 {isHalftimeFulltime && halfTime ?
                     <><span className="number-circle rounded-square" style={htBadgeStyle}>
                         {htPrediction}
