@@ -49,7 +49,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'BetNumbers Predictions Today – Free Tips & Expert Analysis',
   description:
-    'Free BetNumbers predictions today with tip, odds, probability and written analysis across major leagues. Updated daily by FreeWinningTips analysts.',
+    'Free BetNumbers predictions today with tip, odds and probability across major leagues. Updated daily by FreeWinningTips analysts.',
   url: PAGE_URL,
   mainEntityOfPage: PAGE_URL,
   author: { '@id': AUTHOR_ID },
@@ -66,7 +66,7 @@ const webPageSchema = {
   name: 'BetNumbers Predictions Today – Free Tips & Expert Analysis | FreeWinningTips',
   url: PAGE_URL,
   description:
-    'Free BetNumbers predictions today with tip, odds, probability and written analysis across major leagues. Updated daily by FreeWinningTips analysts.',
+    'Free BetNumbers predictions today with tip, odds and probability across major leagues. Updated daily by FreeWinningTips analysts.',
   author: { '@id': AUTHOR_ID },
   breadcrumb: {
     '@type': 'BreadcrumbList',

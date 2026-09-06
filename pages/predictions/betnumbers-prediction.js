@@ -42,7 +42,6 @@ export default function BetnumbersPackages({ fixtures }) {
           <FixturesRow
             fixtures={fixtures}
             predictionType="all"
-            brandKeyword="BetNumbers"
           />
         </div>
 

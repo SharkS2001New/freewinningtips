@@ -15,12 +15,12 @@ const MUST_WIN_FAQ_ITEMS = [
   {
     question: 'Why is the page limited to exactly 10 teams?',
     answer:
-      'Because quality is more valuable than quantity. Publishing 50 win picks a day sounds impressive but it forces the inclusion of low-confidence selections that dilute the usefulness of the page. Ten carefully chosen teams — each individually reviewed — gives you a focused, high-quality daily card. Every team on this list has a clear data case behind it, explained in the written analysis above each selection.',
+      'Because quality is more valuable than quantity. Publishing 50 win picks a day sounds impressive but it forces the inclusion of low-confidence selections that dilute the usefulness of the page. Ten carefully chosen teams — each individually reviewed — gives you a focused, high-quality daily card. Every team on this list has a clear data case behind it.',
   },
   {
     question: 'Are these predictions free?',
     answer:
-      'Yes, completely free. All 10 win predictions, the written analysis behind each one, and the win probability scores are freely accessible to everyone with no account, subscription, or payment of any kind. FreeWinningTips will never charge for predictions.',
+      'Yes, completely free. All 10 win predictions and the win probability scores are freely accessible to everyone with no account, subscription, or payment of any kind. FreeWinningTips will never charge for predictions.',
   },
   {
     question: "Can I build an accumulator using today's teams?",

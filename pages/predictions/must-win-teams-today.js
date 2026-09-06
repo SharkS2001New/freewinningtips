@@ -36,8 +36,8 @@ export default function MustWinTeamsPage({ fixtures, fetchDate, cardSummary }) {
           <p className="market-page-eyebrow">Exactly 10 Teams — Updated Every Morning</p>
           <p className="market-page-lead">
             Today&apos;s 10 teams to win — home and away wins only, hand-picked by our analysts each
-            morning. Every selection backed by form data, head-to-head records, and full written
-            analysis.
+            morning. Every selection backed by form data, head-to-head records, and probability
+            scores.
           </p>
           <MarketPageStats items={stats} />
           <h2 className="market-page-list-title">10 Teams to Win Today</h2>

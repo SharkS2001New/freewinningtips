@@ -53,7 +53,7 @@ export default function DirectWinPredictionsPage({
           <p className="market-page-lead">
             Direct win predictions for today&apos;s matches — home and away wins only, published when
             one team clearly outclasses the other. Every selection backed by form data,
-            head-to-head records, and full written analysis.
+            head-to-head records, and probability scores.
           </p>
           <MarketPageStats items={stats} />
           <h2 className="market-page-list-title">Today&apos;s Direct Win Predictions</h2>

@@ -327,7 +327,7 @@ function MetaContent() {
     } else if(router.asPath.substring(1) == "predictions/todays-predictions"){
 
         title = "Football Predictions Today — Free Tips & Expert Analysis | FreeWinningTips";
-        meta_desc_content = "Free football predictions today with tip, odds, probability and written analysis across 200+ leagues. Updated daily by FreeWinningTips analysts — 1X2, BTTS, Over/Under and more.";
+        meta_desc_content = "Free football predictions today with tip, odds and probability across 200+ leagues. Updated daily by FreeWinningTips analysts — 1X2, BTTS, Over/Under and more.";
         meta_keywords = "";
         page_title = "Today's Free Football Predictions — Expert Tips & Analysis";
 
@@ -354,7 +354,7 @@ function MetaContent() {
     } else if(router.asPath.substring(1) == "predictions/gg-no-gg"){
 
         title = "BTTS Predictions Today — Free GG & No-GG Tips | FreeWinningTips";
-        meta_desc_content = "Free both teams to score (BTTS/GG) predictions today with probability scores and written analysis. GG and No-GG tips across 200+ leagues on FreeWinningTips.";
+        meta_desc_content = "Free both teams to score (BTTS/GG) predictions today with probability scores. GG and No-GG tips across 200+ leagues on FreeWinningTips.";
         meta_keywords = "";
         page_title = "Both Teams To Score Predictions Today — GG & NG Tips";
 
@@ -431,7 +431,7 @@ function MetaContent() {
     } else if(router.asPath.substring(1) == "predictions/betnumbers-prediction"){
 
         title = "BetNumbers Predictions Today – Free Tips & Expert Analysis | FreeWinningTips";
-        meta_desc_content = "Free BetNumbers predictions today with tip, odds, probability and written analysis across major leagues. Updated daily by FreeWinningTips analysts — 1X2, BTTS, Over/Under and more.";
+        meta_desc_content = "Free BetNumbers predictions today with tip, odds and probability across major leagues. Updated daily by FreeWinningTips analysts — 1X2, BTTS, Over/Under and more.";
         meta_keywords = "";
         page_title = "Today's Expert BetNumbers Predictions";
 

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { buildLeaguePath } from '@/components/functions/leagueUrl';
 import { resolveLeagueIdFromFixture } from '@/components/functions/resolveLeagueId';
 import { getInlineAdVariant, InlineAdsense } from '@/components/shared/inline-adsense';
-import MatchAnalysisBlock from '@/components/shared/MatchAnalysisBlock';
 
 // ---------------------------------------------------------------------------
 // Team Forms Cache
@@ -232,7 +231,7 @@ const FormDotsEmpty = () => (
 // Single match row
 // ---------------------------------------------------------------------------
 
-const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoading = false, brandKeyword = null }) => {
+const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoading = false }) => {
   // Extract data from new API structure
   const homeTeam = fixture.home_team || {};
   const awayTeam = fixture.away_team || {};
@@ -431,15 +430,6 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
           <span className="badge-val">{tipProb}</span>
         </div>
       </div>
-
-      <MatchAnalysisBlock
-        fixture={fixture}
-        tip={tipText}
-        probability={tipProb}
-        odds={tipOdds}
-        predictionType={predictionType}
-        brandKeyword={brandKeyword}
-      />
     </div>
   );
 };
@@ -457,7 +447,6 @@ const LeagueCard = ({
   hideLeagueHeader = false,
   matchIndexStart = 0,
   totalMatches = 0,
-  brandKeyword = null,
 }) => {
   const getFlag = (country) => ({
     England: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', Spain: '🇪🇸', Italy: '🇮🇹',
@@ -504,7 +493,6 @@ const LeagueCard = ({
                   predictionType={predictionType}
                   teamForms={teamForms}
                   formsLoading={formsLoading}
-                  brandKeyword={brandKeyword}
                 />
                 {adVariant && <InlineAdsense variant={adVariant} />}
               </Fragment>
@@ -525,7 +513,6 @@ const FixturesRow = ({
   predictionType = 'all',
   hideLeagueHeader = false,
   skipTeamForms = false,
-  brandKeyword = null,
   flatList = false,
 }) => {
   const [teamForms, setTeamForms] = useState({});
@@ -623,7 +610,6 @@ const FixturesRow = ({
             hideLeagueHeader={flatList || hideLeagueHeader}
             matchIndexStart={matchIndexStart}
             totalMatches={totalMatches}
-            brandKeyword={brandKeyword}
           />
         );
       })}

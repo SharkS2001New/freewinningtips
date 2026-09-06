@@ -74,8 +74,8 @@ const BetnumbersPageContent = () => {
         <p>
           Whether you&apos;re looking for today&apos;s Over/Under goals tips, BTTS predictions, or
           standard 1X2 match results, the FreeWinningTips BetNumbers model has you covered. Every
-          selection you see on this page comes backed with a full written match analysis, showing
-          you exactly why our algorithm and analysts flagged it as a top-value pick.
+          selection you see on this page includes tip, odds, and a confidence rating so you can
+          judge the strength of the pick.
         </p>
 
         <h2>How We Generate Our BetNumbers Tips</h2>

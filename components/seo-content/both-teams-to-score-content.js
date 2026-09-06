@@ -31,8 +31,8 @@ const BothTeamsToScorePageContent = () => {
         <h2>Both Teams To Score Predictions Today (BTTS / GG Tips)</h2>
         <p>
           FreeWinningTips publishes free both teams to score predictions every day. Each BTTS tip
-          includes a probability score, odds when available, and written analysis explaining why both
-          sides are expected to find the net — or why a No-GG / NG angle is preferred.
+          includes a probability score and odds when available, so you can see why both sides are
+          expected to find the net — or why a No-GG / NG angle is preferred.
         </p>
         <p>
           Compare today&apos;s BTTS list with{' '}

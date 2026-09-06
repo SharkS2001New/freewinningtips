@@ -52,8 +52,7 @@ const TodayspageContent = () => {
         <p>
           We do not hide losses. Graded tips appear in our{' '}
           <Link href="/results">Results Archive</Link> with wins, losses, and voids. Use the
-          probability badge on each tip card to prioritise higher-confidence selections, and open
-          <strong> Read Analysis</strong> for the written reasoning behind every pick.
+          probability badge on each tip card to prioritise higher-confidence selections.
         </p>
 
         <h2>Free Betting Tips Today Across Popular Markets</h2>

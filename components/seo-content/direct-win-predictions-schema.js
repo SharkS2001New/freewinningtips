@@ -17,7 +17,7 @@ const FAQ_SCHEMA_ITEMS = [
   {
     question: 'Are these predictions free?',
     answer:
-      'Yes, completely free. Every direct win prediction, written analysis, and probability score is free — no account, subscription, or payment.',
+      'Yes, completely free. Every direct win prediction and probability score is free — no account, subscription, or payment.',
   },
   {
     question: 'What is the difference between Direct Win and Must Win Teams Today?',
