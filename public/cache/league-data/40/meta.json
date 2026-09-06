@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-09-06T12:06:37.463Z",
+  "data": [
+    {
+      "league_id": 40,
+      "league_name": "Championship",
+      "league_short_name": "CH",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/40.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/Championship.jpg",
+      "country_name": "England",
+      "country_flag": "https://media.api-sports.io/flags/gb-eng.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/England.svg"
+    }
+  ]
+}

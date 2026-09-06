@@ -1,0 +1,485 @@
+{
+  "generatedAt": "2026-09-06T12:07:41.135Z",
+  "data": [
+    {
+      "fixture_id": 1609372,
+      "league_id": 699,
+      "home_team": {
+        "id": 15403,
+        "name": "Durham W",
+        "logo": "https://media.api-sports.io/football/teams/15403.png"
+      },
+      "away_team": {
+        "id": 15454,
+        "name": "Southampton W",
+        "logo": "https://media.api-sports.io/football/teams/15454.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T11:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "2H",
+        "status_long": "Second Half",
+        "elapsed": 50
+      },
+      "score": {
+        "home": 0,
+        "away": 1,
+        "half_time": {
+          "home": 0,
+          "away": 0
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (15% home, 14% draw, 71% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 45% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 15,
+          "draw": 14,
+          "away": 71
+        },
+        "double_chance": {
+          "type": "12",
+          "probability": 86
+        },
+        "half_time": {
+          "home": 40,
+          "draw": 35,
+          "away": 25
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": 45
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 3.1,
+        "draw": 3.6,
+        "away": 1.95,
+        "double_chance": {
+          "home_draw": "1.70",
+          "home_away": "1.22",
+          "draw_away": "1.28"
+        },
+        "ht_ft": {
+          "ht_home": "3.75",
+          "ht_draw": "2.25",
+          "ht_away": "2.50"
+        },
+        "over_under": {
+          "over_2_5": 1.8,
+          "under_2_5": 2
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 699,
+        "name": "Women's Championship",
+        "short_name": "CHA",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Women's Championship.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1609373,
+      "league_id": 699,
+      "home_team": {
+        "id": 15422,
+        "name": "Ipswich Town W",
+        "logo": "https://media.api-sports.io/football/teams/15422.png"
+      },
+      "away_team": {
+        "id": 15450,
+        "name": "Nottingham Forest W",
+        "logo": "https://media.api-sports.io/football/teams/15450.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Home win after combining the prediction probabilities (38% home, 32% draw, 30% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 45% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 38,
+          "draw": 32,
+          "away": 30
+        },
+        "double_chance": {
+          "type": "1X",
+          "probability": 70
+        },
+        "half_time": {
+          "home": 40,
+          "draw": 35,
+          "away": 25
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": 45
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 3,
+        "draw": 3.5,
+        "away": 2,
+        "double_chance": {
+          "home_draw": "1.67",
+          "home_away": "1.22",
+          "draw_away": "1.30"
+        },
+        "ht_ft": {
+          "ht_home": "3.60",
+          "ht_draw": "2.25",
+          "ht_away": "2.62"
+        },
+        "over_under": {
+          "over_2_5": 1.85,
+          "under_2_5": 1.95
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 699,
+        "name": "Women's Championship",
+        "short_name": "CHA",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Women's Championship.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1609374,
+      "league_id": 699,
+      "home_team": {
+        "id": 15515,
+        "name": "Newcastle United W",
+        "logo": "https://media.api-sports.io/football/teams/15515.png"
+      },
+      "away_team": {
+        "id": 15433,
+        "name": "Wolverhampton W",
+        "logo": "https://media.api-sports.io/football/teams/15433.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Home win after combining the prediction probabilities (38% home, 32% draw, 30% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 45% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 38,
+          "draw": 32,
+          "away": 30
+        },
+        "double_chance": {
+          "type": "1X",
+          "probability": 70
+        },
+        "half_time": {
+          "home": 40,
+          "draw": 35,
+          "away": 25
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": 45
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": null,
+        "draw": null,
+        "away": null,
+        "double_chance": {
+          "home_draw": null,
+          "home_away": null,
+          "draw_away": null
+        },
+        "ht_ft": {
+          "ht_home": null,
+          "ht_draw": null,
+          "ht_away": null
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 699,
+        "name": "Women's Championship",
+        "short_name": "CHA",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Women's Championship.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1609375,
+      "league_id": 699,
+      "home_team": {
+        "id": 15407,
+        "name": "Sheffield United W",
+        "logo": "https://media.api-sports.io/football/teams/15407.png"
+      },
+      "away_team": {
+        "id": 15404,
+        "name": "Leicester City FC W",
+        "logo": "https://media.api-sports.io/football/teams/15404.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (11% home, 11% draw, 78% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 45% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 11,
+          "draw": 11,
+          "away": 78
+        },
+        "double_chance": {
+          "type": "12",
+          "probability": 89
+        },
+        "half_time": {
+          "home": 40,
+          "draw": 35,
+          "away": 25
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": 45
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 3.3,
+        "draw": 4,
+        "away": 1.8,
+        "double_chance": {
+          "home_draw": "1.83",
+          "home_away": "1.17",
+          "draw_away": "1.25"
+        },
+        "ht_ft": {
+          "ht_home": "4.00",
+          "ht_draw": "2.38",
+          "ht_away": "2.30"
+        },
+        "over_under": {
+          "over_2_5": 1.65,
+          "under_2_5": 2.2
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 699,
+        "name": "Women's Championship",
+        "short_name": "CHA",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Women's Championship.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1609376,
+      "league_id": 699,
+      "home_team": {
+        "id": 1848,
+        "name": "Sunderland W",
+        "logo": "https://media.api-sports.io/football/teams/1848.png"
+      },
+      "away_team": {
+        "id": 1846,
+        "name": "Bristol City W",
+        "logo": "https://media.api-sports.io/football/teams/1846.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (11% home, 14% draw, 75% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 45% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 11,
+          "draw": 14,
+          "away": 75
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 89
+        },
+        "half_time": {
+          "home": 40,
+          "draw": 35,
+          "away": 25
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": 45
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 4.1,
+        "draw": 3.8,
+        "away": 1.65,
+        "double_chance": {
+          "home_draw": "2.10",
+          "home_away": "1.18",
+          "draw_away": "1.17"
+        },
+        "ht_ft": {
+          "ht_home": "4.50",
+          "ht_draw": "2.30",
+          "ht_away": "2.20"
+        },
+        "over_under": {
+          "over_2_5": 1.73,
+          "under_2_5": 2.08
+        },
+        "btts": {
+          "yes": null,
+          "no": null
+        }
+      },
+      "league": {
+        "id": 699,
+        "name": "Women's Championship",
+        "short_name": "CHA",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Women's Championship.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    }
+  ]
+}

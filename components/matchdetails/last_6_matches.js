@@ -5,6 +5,7 @@ import ComputedWinDrawings from "../functions/computed_win_lose_draw_drawing";
 import DateTimeToUsersTimezone from "../functions/DatetimeToUsersTimezone";
 import { Adsense } from "@/components/shared/client-adsense";
 import InPagePreLoader from "../includes/inpagepreloader";
+import { buildMatchPathFromFixture } from "@/components/functions/detailsUrls";
 
 function Last6Matches({ 
     home_team,
@@ -210,11 +211,7 @@ function Last6Matches({
     const home_team_matches_array = [];
     if (home_team_matches.length > 0) {
         home_team_matches.slice(0, homeTeamNum).forEach((match, index) => {
-            const url_name = encodeURIComponent(
-                (match.home_team_name || '').replace(/\s+/g, '-').toLowerCase() + '-vs-' +
-                (match.away_team_name || '').replace(/\s+/g, '-').toLowerCase() + '-' +
-                match.fixture_id
-            );
+            const matchHref = buildMatchPathFromFixture(match);
 
             const homeTeamStyle = {};
             const awayTeamStyle = {};
@@ -231,7 +228,7 @@ function Last6Matches({
 
             home_team_matches_array.push(
                 <React.Fragment key={match.fixture_id || index}>
-                    <a href={'/match/football-predictions-' + url_name + "/matches"} title="Click to View Match details">
+                    <a href={matchHref} title="Click to View Match details">
                         <div className="responsive-row fixturesTextSize matchDetailsLink">
                             <div className="responsive-cell team-link-probability">
                                 {match.date ? DateTimeToUsersTimezone(match.date).split(' ')[0] : '-'}
@@ -277,11 +274,7 @@ function Last6Matches({
     const away_team_matches_array = [];
     if (away_team_matches.length > 0) {
         away_team_matches.slice(0, awayTeamNum).forEach((match, index) => {
-            const url_name = encodeURIComponent(
-                (match.home_team_name || '').replace(/\s+/g, '-').toLowerCase() + '-vs-' +
-                (match.away_team_name || '').replace(/\s+/g, '-').toLowerCase() + '-' +
-                match.fixture_id
-            );
+            const matchHref = buildMatchPathFromFixture(match);
 
             const homeTeamStyle = {};
             const awayTeamStyle = {};
@@ -298,7 +291,7 @@ function Last6Matches({
 
             away_team_matches_array.push(
                 <React.Fragment key={match.fixture_id || index}>
-                    <a href={'/match/football-predictions-' + url_name + "/matches"} title="Click to View Match details">
+                    <a href={matchHref} title="Click to View Match details">
                         <div className="responsive-row fixturesTextSize matchDetailsLink">
                             <div className="responsive-cell team-link-probability">
                                 {match.date ? DateTimeToUsersTimezone(match.date).split(' ')[0] : '-'}

@@ -10,7 +10,9 @@ export function slugify(text) {
   return String(text || '')
     .trim()
     .toLowerCase()
-    .replace(/\s+/g, '-');
+    .replace(/['']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }
 
 export function titleCaseFromSlug(slug) {

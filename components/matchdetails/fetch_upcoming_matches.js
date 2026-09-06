@@ -4,6 +4,7 @@ import DateTimeToUsersTimezone from "../functions/DatetimeToUsersTimezone";
 import DataNotFoundPage from "../includes/datanotfound";
 import { Adsense } from "@/components/shared/client-adsense";
 import InPagePreLoader from "../includes/inpagepreloader";
+import { buildMatchPathFromFixture } from "@/components/functions/detailsUrls";
 
 function FetchUpcomingMatches({ 
     home_team,
@@ -139,11 +140,7 @@ function FetchUpcomingMatches({
         upcoming_home_matches.slice(0, homeTeamNum).forEach((match, index) => {
             const homeName = upcomingMatchHomeName(match);
             const awayName = upcomingMatchAwayName(match);
-            const url_name = encodeURIComponent(
-                homeName.replace(/\s+/g, '-').toLowerCase() + '-vs-' +
-                awayName.replace(/\s+/g, '-').toLowerCase() + '-' +
-                match.fixture_id
-            );
+            const matchHref = buildMatchPathFromFixture(match);
 
             const homeTeamStyle = {};
             const awayTeamStyle = {};
@@ -158,7 +155,7 @@ function FetchUpcomingMatches({
             }
 
             upcoming_home_matchesarray.push(
-                <a key={match.fixture_id || index} href={'/match/football-predictions-' + url_name + "/matches"} title="Click to View Match details">
+                <a key={match.fixture_id || index} href={matchHref} title="Click to View Match details">
                     <div className="responsive-row fixturesTextSize matchDetailsLink">
                         <div className="responsive-cell team-link-probability">
                             {formatDate(upcomingMatchDate(match))}
@@ -183,11 +180,7 @@ function FetchUpcomingMatches({
         upcoming_away_matches.slice(0, awayTeamNum).forEach((match, index) => {
             const homeName = upcomingMatchHomeName(match);
             const awayName = upcomingMatchAwayName(match);
-            const url_name = encodeURIComponent(
-                homeName.replace(/\s+/g, '-').toLowerCase() + '-vs-' +
-                awayName.replace(/\s+/g, '-').toLowerCase() + '-' +
-                match.fixture_id
-            );
+            const matchHref = buildMatchPathFromFixture(match);
 
             const homeTeamStyle = {};
             const awayTeamStyle = {};
@@ -202,7 +195,7 @@ function FetchUpcomingMatches({
             }
 
             upcoming_away_matchesarray.push(
-                <a key={match.fixture_id || index} href={'/match/football-predictions-' + url_name + "/matches"} title="Click to View Match details">
+                <a key={match.fixture_id || index} href={matchHref} title="Click to View Match details">
                     <div className="responsive-row fixturesTextSize matchDetailsLink">
                         <div className="responsive-cell team-link-probability">
                             {formatDate(upcomingMatchDate(match))}

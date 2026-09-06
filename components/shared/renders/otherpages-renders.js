@@ -2,6 +2,7 @@
 import { Adsense } from "@/components/shared/client-adsense";
 import React, { useState } from "react";
 import PreLoader from "../../includes/loader";
+import { buildLeaguePath } from "@/components/functions/detailsUrls";
 
 function OtherPagesRenders(props) {
   const [rowsToShow, setRowsToShow] = useState(10);
@@ -161,9 +162,11 @@ function OtherPagesRenders(props) {
                     ? countryName.charAt(0).toUpperCase() + countryName.slice(1).toLowerCase()
                     : countryName.charAt(0).toUpperCase() + countryName.slice(1).toLowerCase()} :  
                   &nbsp;
-                  {originalleagueName.replace(/\s+/g, "-").toLowerCase() !== "jackpots" ? (
+                  {originalleagueName.replace(/\s+/g, "-").toLowerCase() !== "jackpots" &&
+                  countryName &&
+                  leagueId ? (
                     <a
-                      href={encodeURI(`/league/football-predictions-for-${countryName.toLowerCase()}/${originalleagueName.replace(/\s+/g, "-").toLowerCase()}-${leagueId}/fixtures`)}
+                      href={buildLeaguePath(countryName, originalleagueName, leagueId)}
                       className="ml-2 linkTxt">
                       {originalleagueName}
                     </a>
@@ -180,7 +183,7 @@ function OtherPagesRenders(props) {
               {leagueType === "League" && leagueId && originalleagueName && countryName ? (
                 <div style={{ display: "flex", justifyContent: "flex-end" }}>
                   <a
-                    href={`/league/football-predictions-for-${countryName.toLowerCase()}/${encodeURIComponent(originalleagueName.toLowerCase().replace(/\s+/g, "-"))}-${leagueId}/standings`}
+                    href={buildLeaguePath(countryName, originalleagueName, leagueId, "standings")}
                     className="ml-2 linkTxt">
                     <span>Standings</span>
                   </a>

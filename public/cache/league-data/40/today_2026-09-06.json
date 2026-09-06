@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-09-06T12:06:38.034Z",
+  "data": [
+    {
+      "fixture_id": 1563131,
+      "league_id": 40,
+      "home_team": {
+        "id": 54,
+        "name": "Birmingham",
+        "logo": "https://media.api-sports.io/football/teams/54.png"
+      },
+      "away_team": {
+        "id": 39,
+        "name": "Wolves",
+        "logo": "https://media.api-sports.io/football/teams/39.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T11:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "HT",
+        "status_long": "Halftime",
+        "elapsed": 45
+      },
+      "score": {
+        "home": 2,
+        "away": 2,
+        "half_time": {
+          "home": 2,
+          "away": 2
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (25% home, 28% draw, 47% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 5 goals scored and 4 conceded across 4 matches, while the away side has produced 11 goals and conceded 8 across 4 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 51% and average goals of 3.5.",
+        "avg_goals": 3.5,
+        "1x2": {
+          "home": 25,
+          "draw": 28,
+          "away": 47
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 75
+        },
+        "half_time": {
+          "home": 36,
+          "draw": 25,
+          "away": 54
+        },
+        "both_teams_to_score": {
+          "prediction": "Yes",
+          "probability": 51
+        },
+        "over_under_2_5": {
+          "prediction": "Ov2.5",
+          "probability": 68
+        }
+      },
+      "odds": {
+        "home": 2.8,
+        "draw": 3.1,
+        "away": 2.45,
+        "double_chance": {
+          "home_draw": "1.50",
+          "home_away": "1.35",
+          "draw_away": "1.40"
+        },
+        "ht_ft": {
+          "ht_home": "3.30",
+          "ht_draw": "2.10",
+          "ht_away": "3.00"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.8,
+          "no": 1.91
+        }
+      },
+      "league": {
+        "id": 40,
+        "name": "Championship",
+        "short_name": "CH",
+        "round": "Regular Season - 5",
+        "logo": "https://www.pitchpredictions.com/images/leagues/Championship.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    }
+  ]
+}

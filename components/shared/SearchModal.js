@@ -2,10 +2,27 @@ import React, { useState, useEffect, useRef } from "react";
 import FetchSearchResults from "../functions/search";
 import Link from "next/link";
 import DateTimeToUsersTimezone from "../functions/DatetimeToUsersTimezone";
-import { buildLeaguePath } from '@/components/functions/leagueUrl';
+import {
+  buildCountryPath,
+  buildLeaguePath,
+  buildMatchPath,
+  buildTeamPath,
+} from '@/components/functions/detailsUrls';
 
 const leagueSearchHref = (result) =>
   buildLeaguePath(result.search_country, result.search_res_name, result.search_res_id);
+
+const teamSearchHref = (result) =>
+  buildTeamPath(result.search_res_name, result.search_res_id);
+
+const countrySearchHref = (result) =>
+  buildCountryPath(result.search_res_name);
+
+const matchSearchHref = (result) => {
+  const parts = String(result.search_res_name || '').split(/\s+VS\s+/i);
+  if (parts.length < 2) return '/';
+  return buildMatchPath(parts[0], parts[1], result.search_res_id);
+};
 
 // Regular function component - no forwardRef needed
 const SearchModal = ({ isOpen, onClose }) => {
@@ -204,7 +221,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                         {groupedResults.teams.map((result, index) => (
                                             <a
                                                 key={index}
-                                                href={encodeURI("/team/" + result.search_res_name.toLowerCase().replace(/\s+/g, '-') + "-" + result.search_res_id) + "/results"}
+                                                href={teamSearchHref(result)}
                                                 className="result-item"
                                                 onClick={handleSearchItemClick}
                                             >
@@ -242,7 +259,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                         {groupedResults.countries.map((result, index) => (
                                             <a
                                                 key={index}
-                                                href={encodeURI("/country/football-predictions-for-" + result.search_res_name.toLowerCase().replace(/\s+/g, '-')) + "/fixtures"}
+                                                href={countrySearchHref(result)}
                                                 className="result-item"
                                                 onClick={handleSearchItemClick}
                                             >
@@ -260,11 +277,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                     {groupedResults.fixtures.map((result, index) => (
                                         <a
                                             key={index}
-                                            href={'/match/football-predictions-' + 
-                                                result.search_res_name.split(' VS ')[0].replace(/\s+/g, '-').toLowerCase()
-                                                + '-vs-' + 
-                                                result.search_res_name.split(' VS ')[1].replace(/\s+/g, '-').toLowerCase()
-                                                + '-' + result.search_res_id + "/matches"}
+                                            href={matchSearchHref(result)}
                                             className="result-item"
                                             onClick={handleSearchItemClick}
                                         >
@@ -288,7 +301,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                     groupedResults.teams.map((result, index) => (
                                         <a
                                             key={index}
-                                            href={encodeURI("/team/" + result.search_res_name.toLowerCase().replace(/\s+/g, '-') + "-" + result.search_res_id) + "/results"}
+                                            href={teamSearchHref(result)}
                                             className="result-item"
                                             onClick={handleSearchItemClick}
                                         >
@@ -336,7 +349,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                     groupedResults.countries.map((result, index) => (
                                         <a
                                             key={index}
-                                            href={encodeURI("/country/football-predictions-for-" + result.search_res_name.toLowerCase().replace(/\s+/g, '-')) + "/fixtures"}
+                                            href={countrySearchHref(result)}
                                             className="result-item"
                                             onClick={handleSearchItemClick}
                                         >
@@ -359,11 +372,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                     groupedResults.fixtures.map((result, index) => (
                                         <a
                                             key={index}
-                                            href={'/match/football-predictions-' + 
-                                            result.search_res_name.split(' VS ')[0].replace(/\s+/g, '-').toLowerCase()
-                                            + '-vs-' + 
-                                            result.search_res_name.split(' VS ')[1].replace(/\s+/g, '-').toLowerCase()
-                                            + '-' + result.search_res_id + "/matches"}
+                                            href={matchSearchHref(result)}
                                             className="result-item"
                                             onClick={handleSearchItemClick}
                                         >
@@ -413,7 +422,7 @@ const SearchModal = ({ isOpen, onClose }) => {
                                 {suggestedTeams.slice(0, 8).map((team) => (
                                     <a
                                         key={team.id}
-                                        href={`/team/${team.name.toLowerCase().replace(/\s+/g, '-')}-${team.id}/results`}
+                                        href={buildTeamPath(team.name, team.id)}
                                         className="suggestion-item"
                                         onClick={handleSearchItemClick}
                                     >

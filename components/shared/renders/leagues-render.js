@@ -10,7 +10,9 @@ function LeaguesPageRender(props) {
 
   // For leagues page, group the data in the same round with the same title bar (heading round name)
   if (
-    // Fixtures pages on all predictions
+    props.url_name === "league/[countrySegment]/[leagueSlug]" ||
+    props.url_name?.startsWith("league/[countrySegment]/[leagueSlug]") ||
+    // Fixtures pages on all predictions (legacy pathnames)
     props.url_name === "league/[country-name]/[football-prediction-for-league]/fixtures" ||
     props.url_name === "league/[country-name]/[football-prediction-for-league]/fixtures/double-chance-predictions" ||
     props.url_name === "league/[country-name]/[football-prediction-for-league]/fixtures/predictions-halftime-fulltime" ||

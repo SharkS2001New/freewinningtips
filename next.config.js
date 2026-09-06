@@ -20,6 +20,32 @@ const nextConfig = {
         destination: '/predictions/betnumbers-prediction',
         permanent: true,
       },
+      // Legacy Pitch Predictions league URLs → FreeWinningTips canonical paths
+      {
+        source: '/league/football-predictions-for-:country/:league/fixtures',
+        destination: '/league/football-tips-and-predictions-for-:country/:league',
+        permanent: true,
+      },
+      {
+        source: '/league/football-predictions-for-:country/:league/results',
+        destination: '/league/football-tips-and-predictions-for-:country/:league?tab=results',
+        permanent: true,
+      },
+      {
+        source: '/league/football-predictions-for-:country/:league/standings',
+        destination: '/league/football-tips-and-predictions-for-:country/:league?tab=standings',
+        permanent: true,
+      },
+      {
+        source: '/league/football-predictions-for-:country/:league/trends',
+        destination: '/league/football-tips-and-predictions-for-:country/:league?tab=trends',
+        permanent: true,
+      },
+      {
+        source: '/league/football-predictions-for-:country/:league',
+        destination: '/league/football-tips-and-predictions-for-:country/:league',
+        permanent: true,
+      },
     ];
   },
   async headers() {

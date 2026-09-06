@@ -20,23 +20,26 @@ function RenderData(props) {
     const currentPath = router.pathname.substring(1);
     
     // Determine which renderer to use based on route
-    const isCountryFixturesOrResults = currentPath === "country/[football-prediction-for-country]/fixtures" || 
-                                        currentPath === "country/[football-prediction-for-country]/results";
-    
-    const isLeaguePage = currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures" || 
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/results" ||
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/standings" || 
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/trends" ||
-                        // League fixture sub-pages (prediction markets)
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/double-chance-predictions" ||
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/predictions-halftime-fulltime" ||
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/predictions-under-over" ||
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/predictions-both-to-score" ||
-                        
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/results/double-chance-predictions" ||
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/results/predictions-halftime-fulltime" ||
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/results/predictions-under-over" ||
-                        currentPath === "league/[country-name]/[football-prediction-for-league]/results/predictions-both-to-score";
+    const isCountryFixturesOrResults =
+      currentPath === "country/[football-prediction-for-country]/fixtures" ||
+      currentPath === "country/[football-prediction-for-country]/results";
+
+    const isLeaguePage =
+      currentPath === "league/[countrySegment]/[leagueSlug]" ||
+      currentPath.startsWith("league/[countrySegment]/[leagueSlug]") ||
+      // Legacy pathname patterns (kept for safety)
+      currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/double-chance-predictions" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/predictions-halftime-fulltime" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/predictions-under-over" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/fixtures/predictions-both-to-score" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/results" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/results/double-chance-predictions" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/results/predictions-halftime-fulltime" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/results/predictions-under-over" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/results/predictions-both-to-score" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/standings" ||
+      currentPath === "league/[country-name]/[football-prediction-for-league]/trends";
     
     return (
         <React.Fragment>          

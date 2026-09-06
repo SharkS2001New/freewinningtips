@@ -1,3 +1,5 @@
+import { buildMatchPathFromFixture } from '@/components/functions/detailsUrls';
+
 function MatchOutcomesAway(props){
     let away_team_matches = props.props;
     
@@ -5,58 +7,62 @@ function MatchOutcomesAway(props){
     
     if(away_team_matches && away_team_matches.length>5){
          for(let y =0;y<5;y++){
+            const match = away_team_matches[y];
+            if (!match) continue;
 
-            var tooltipTitle = away_team_matches[y].home_team_name +'  ('+ away_team_matches[y].goals_home +'-'+away_team_matches[y].goals_away +')  '+ away_team_matches[y].away_team_name+ "\n"
-                                +away_team_matches[y].date;
+            var tooltipTitle = (match.home_team_name || match.home_team?.name || '') +'  ('+ match.goals_home +'-'+match.goals_away +')  '+ (match.away_team_name || match.away_team?.name || '')+ "\n"
+                                +match.date;
             
-            let url_name = encodeURIComponent(away_team_matches[y].home_team_name.replace(/\s+/g, '-').toLowerCase()+'-vs-'+away_team_matches[y].away_team_name.replace(/\s+/g, '-').toLowerCase()+'-'+away_team_matches[y].fixture_id);
+            const matchHref = buildMatchPathFromFixture(match);
+            const homeId = match.home_team_id || match.home_team?.id;
+            const awayId = match.away_team_id || match.away_team?.id;
 
-            if(props.away_team_id == away_team_matches[y].home_team_id){
-                if(away_team_matches[y].goals_home > away_team_matches[y].goals_away){
+            if(props.away_team_id == homeId){
+                if(match.goals_home > match.goals_away){
                     computedWins.push(
-                    <a href={'/match/football-predictions-' + url_name+"/matches"} title="Click to View Match details" key={y}>       
+                    <a href={matchHref} title="Click to View Match details" key={y}>       
                         <span className="number-circle rounded-square" data-toggle="tooltip" style={{backgroundColor:"green",margin:"0.5px",cursor:'pointer'}} title={tooltipTitle}>
                             W
                         </span>
                     </a>
                     )
-                }else if(away_team_matches[y].goals_home===away_team_matches[y].goals_away){
+                }else if(match.goals_home===match.goals_away){
                     computedWins.push(
-                    <a href={'/match/football-predictions-' + url_name+"/matches"} title="Click to View Match details" key={y}>      
+                    <a href={matchHref} title="Click to View Match details" key={y}>      
                         <span className="number-circle rounded-square cursor-pointer" data-toggle="tooltip" style={{backgroundColor:"#ffb400",margin:"0.5px",cursor:'pointer'}} title={tooltipTitle}>
                             D
                         </span>
                     </a>
                     )        
-                }else if(away_team_matches[y].goals_home < away_team_matches[y].goals_away){
+                }else if(match.goals_home < match.goals_away){
                     computedWins.push(
-                    <a href={'/match/football-predictions-' + url_name+"/matches"} title="Click to View Match details" key={y}>      
+                    <a href={matchHref} title="Click to View Match details" key={y}>      
                         <span className="number-circle rounded-square cursor-pointer"  data-toggle="tooltip" style={{backgroundColor:"red",margin:"0.5px",cursor:'pointer'}} title={tooltipTitle}>
                             L
                         </span>
                     </a>
                     )
                 }
-            }else if(props.away_team_id == away_team_matches[y].away_team_id){
-                if(away_team_matches[y].goals_away > away_team_matches[y].goals_home){
+            }else if(props.away_team_id == awayId){
+                if(match.goals_away > match.goals_home){
                     computedWins.push(
-                    <a href={'/match/football-predictions-' + url_name+"/matches"} title="Click to View Match details" key={y}>      
+                    <a href={matchHref} title="Click to View Match details" key={y}>      
                         <span className="number-circle rounded-square cursor-pointer" data-toggle="tooltip" style={{backgroundColor:"green",margin:"0.5px",cursor:'pointer'}} title={tooltipTitle}>
                             W
                         </span>
                     </a>
                     )
-                }else if(away_team_matches[y].goals_away===away_team_matches[y].goals_home){
+                }else if(match.goals_away===match.goals_home){
                     computedWins.push(
-                    <a href={'/match/football-predictions-' + url_name+"/matches"} title="Click to View Match details" key={y}>      
+                    <a href={matchHref} title="Click to View Match details" key={y}>      
                         <span className="number-circle rounded-square cursor-pointer" data-toggle="tooltip" style={{backgroundColor:"#ffb400",margin:"0.5px",cursor:'pointer'}} title={tooltipTitle}>
                             D
                         </span>
                     </a>
                     )        
-                }else if(away_team_matches[y].goals_away < away_team_matches[y].goals_home){
+                }else if(match.goals_away < match.goals_home){
                     computedWins.push(
-                    <a href={'/match/football-predictions-' + url_name+"/matches"} title="Click to View Match details" key={y}>      
+                    <a href={matchHref} title="Click to View Match details" key={y}>      
                         <span className="number-circle rounded-square cursor-pointer"  data-toggle="tooltip" style={{backgroundColor:"red",margin:"0.5px",cursor:'pointer'}} title={tooltipTitle}>
                             L
                         </span>

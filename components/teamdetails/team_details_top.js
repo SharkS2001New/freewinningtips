@@ -1,6 +1,10 @@
 import React from 'react';
 import PreLoader from '../includes/loader';
 import MatchOutcomesHome from '../matchdetails/match_outcomes_home_drawings';
+import {
+  buildCountryPath,
+  buildLeaguePath,
+} from '@/components/functions/detailsUrls';
 
 function TeamDetailsTop(props) {    
     let team_details = props.props;
@@ -28,6 +32,12 @@ function TeamDetailsTop(props) {
         const countryLogo = league.country_logo || team_details.downloaded_country_flag || '';
         const leagueLogo = league.logo || team_details.downloaded_league_logo || '';
 
+        const countryHref = countryName ? buildCountryPath(countryName) : null;
+        const leagueHref =
+          countryName && leagueName && leagueId
+            ? buildLeaguePath(countryName, leagueName, leagueId)
+            : null;
+
         return (
             <React.Fragment>
                 <div className="col-sm-12 text-left text-nowrap pb-1 pt-1 mb-3">
@@ -45,23 +55,23 @@ function TeamDetailsTop(props) {
                         &nbsp;
 
                         <span style={{ fontWeight: "bold", whiteSpace: "break-spaces" }} className="fixturesTextSize">
-                            {countryName && (
+                            {countryHref ? (
                                 <a 
-                                    href={encodeURI("/country/football-predictions-for-" + countryName.toLowerCase()) + "/fixtures"} 
+                                    href={countryHref} 
                                     className="ml-2 linkTxt"
                                 >
                                     {countryName.toUpperCase()}
                                 </a>
-                            )}
+                            ) : null}
                             {countryName && leagueName && " : "}
-                            {leagueName && leagueId && (
+                            {leagueHref ? (
                                 <a 
-                                    href={encodeURI("/league/football-predictions-for-" + countryName.toLowerCase() + "/" + leagueName.replace(/\s+/g, '-').toLowerCase() + "-" + leagueId + "/fixtures")} 
+                                    href={leagueHref} 
                                     className="ml-2 linkTxt"
                                 >
                                     {leagueName.toUpperCase()}
                                 </a>
-                            )}
+                            ) : null}
                         </span>
                     </div>
                 </div>
@@ -98,7 +108,7 @@ function TeamDetailsTop(props) {
             </React.Fragment>
         );
     } else {
-        return <PreLoader />;
+        return <PreLoader/>
     }
 }
 

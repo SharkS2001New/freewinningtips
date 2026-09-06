@@ -7,6 +7,11 @@ import {
   resolveFixtureDateTime,
 } from '../functions/DatetimeToUsersTimezone';
 import DetermineLiveScores from '../functions/determine_live_scores';
+import {
+  buildCountryPath,
+  buildLeaguePath,
+  buildTeamPath,
+} from '@/components/functions/detailsUrls';
 
 function MatchDetailsTop(props) {    
     let game_details = props.props;
@@ -111,13 +116,17 @@ function MatchDetailsTop(props) {
                         />&nbsp;
                             
                         <span style={{fontWeight:"bold", whiteSpace:"break-spaces"}} className="fixturesTextSize">
-                            <a href={encodeURI("/country/football-predictions-for-" + (league.country || "").toLowerCase()) + "/fixtures"} className="ml-2 aTxt">
+                            {league.country ? (
+                            <a href={buildCountryPath(league.country)} className="ml-2 linkTxt aTxt">
                                 {(league.country || "").toUpperCase()}
                             </a>
-                            &nbsp;:&nbsp;
-                            <a href={encodeURI("/league/football-predictions-for-" + (league.country || "").toLowerCase() + "/" + (league.name || "").replace(/\s+/g, '-').toLowerCase() + "-" + league.id + "/fixtures")} className="ml-2 aTxt">
+                            ) : null}
+                            {league.country && league.name ? <>&nbsp;:&nbsp;</> : null}
+                            {league.country && league.name && league.id ? (
+                            <a href={buildLeaguePath(league.country, league.name, league.id)} className="ml-2 linkTxt aTxt">
                                 {(league.name || "").toUpperCase()}
                             </a>
+                            ) : null}
                         </span>
                     </div>
                 </div>
@@ -136,12 +145,12 @@ function MatchDetailsTop(props) {
             <div className="row">
                 <div className="col-4 text-center">
                     <span className="matchdetailsTextSize mb-2" style={{fontWeight:"bold", whiteSpace:"nowrap"}}>
-                        <a href={encodeURI("/team/" + (homeTeam.name || "").toLowerCase().replace(/\s+/g, '-') + "-" + homeTeam.id) + "/results"} className="ml-2 aTxt">
+                        <a href={buildTeamPath(homeTeam.name, homeTeam.id)} className="ml-2 linkTxt aTxt">
                             {homeTeam.name}
                         </a>
                     </span>
                     <div>
-                        <a href={encodeURI("/team/" + (homeTeam.name || "").toLowerCase().replace(/\s+/g, '-') + "-" + homeTeam.id) + "/results"} className="ml-2 aTxt">
+                        <a href={buildTeamPath(homeTeam.name, homeTeam.id)} className="ml-2 linkTxt aTxt">
                             <img className="image_class" src={homeTeam.logo} alt={homeTeam.name + "-predictions-and-fixtures"} onError={(e) => { e.target.src = '/placeholder.png'; }} />
                         </a>
                     </div>
@@ -174,12 +183,12 @@ function MatchDetailsTop(props) {
                 
                 <div className="col-4 text-center">
                     <span className="matchdetailsTextSize mb-2" style={{fontWeight:"bold", whiteSpace:"pre-wrap"}}>
-                        <a href={encodeURI("/team/" + (awayTeam.name || "").toLowerCase().replace(/\s+/g, '-') + "-" + awayTeam.id) + "/results"} className="ml-2 aTxt">
+                        <a href={buildTeamPath(awayTeam.name, awayTeam.id)} className="ml-2 linkTxt aTxt">
                             {awayTeam.name}
                         </a>
                     </span>
                     <div>
-                        <a href={encodeURI("/team/" + (awayTeam.name || "").toLowerCase().replace(/\s+/g, '-') + "-" + awayTeam.id) + "/results"} className="ml-2 aTxt">
+                        <a href={buildTeamPath(awayTeam.name, awayTeam.id)} className="ml-2 linkTxt aTxt">
                             <img className="image_class" src={awayTeam.logo} alt={awayTeam.name + "-predictions-and-fixtures"} onError={(e) => { e.target.src = '/placeholder.png'; }} />
                         </a>
                     </div>

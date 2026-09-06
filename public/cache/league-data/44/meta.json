@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-09-06T12:07:40.353Z",
+  "data": [
+    {
+      "league_id": 44,
+      "league_name": "FA WSL",
+      "league_short_name": "WSL",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/44.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/FA WSL.jpg",
+      "country_name": "England",
+      "country_flag": "https://media.api-sports.io/flags/gb-eng.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/England.svg"
+    }
+  ]
+}

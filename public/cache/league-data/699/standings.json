@@ -1,0 +1,545 @@
+{
+  "generatedAt": "2026-09-06T12:07:41.132Z",
+  "data": [
+    {
+      "all": {
+        "win": 14,
+        "draw": 2,
+        "lose": 6,
+        "goals": {
+          "for": 46,
+          "against": 24
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 7,
+        "draw": 2,
+        "lose": 2,
+        "goals": {
+          "for": 19,
+          "against": 8
+        },
+        "played": 11
+      },
+      "form": "WLWWW",
+      "home": {
+        "win": 7,
+        "draw": 0,
+        "lose": 4,
+        "goals": {
+          "for": 27,
+          "against": 16
+        },
+        "played": 11
+      },
+      "rank": 1,
+      "team": {
+        "id": 1845,
+        "logo": "https://media.api-sports.io/football/teams/1845.png",
+        "name": "Birmingham City W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 44,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": 22,
+      "description": "Promotion"
+    },
+    {
+      "all": {
+        "win": 13,
+        "draw": 5,
+        "lose": 4,
+        "goals": {
+          "for": 44,
+          "against": 26
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 6,
+        "draw": 2,
+        "lose": 3,
+        "goals": {
+          "for": 16,
+          "against": 13
+        },
+        "played": 11
+      },
+      "form": "WWWWD",
+      "home": {
+        "win": 7,
+        "draw": 3,
+        "lose": 1,
+        "goals": {
+          "for": 28,
+          "against": 13
+        },
+        "played": 11
+      },
+      "rank": 2,
+      "team": {
+        "id": 15409,
+        "logo": "https://media.api-sports.io/football/teams/15409.png",
+        "name": "Crystal Palace W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 44,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": 18,
+      "description": "Promotion"
+    },
+    {
+      "all": {
+        "win": 12,
+        "draw": 6,
+        "lose": 4,
+        "goals": {
+          "for": 31,
+          "against": 21
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 5,
+        "draw": 4,
+        "lose": 2,
+        "goals": {
+          "for": 16,
+          "against": 11
+        },
+        "played": 11
+      },
+      "form": "LDLLW",
+      "home": {
+        "win": 7,
+        "draw": 2,
+        "lose": 2,
+        "goals": {
+          "for": 15,
+          "against": 10
+        },
+        "played": 11
+      },
+      "rank": 3,
+      "team": {
+        "id": 15402,
+        "logo": "https://media.api-sports.io/football/teams/15402.png",
+        "name": "Charlton Athletic W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 42,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": 10,
+      "description": "Promotion Playoffs"
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 4,
+        "lose": 7,
+        "goals": {
+          "for": 47,
+          "against": 31
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 4,
+        "draw": 4,
+        "lose": 3,
+        "goals": {
+          "for": 22,
+          "against": 20
+        },
+        "played": 11
+      },
+      "form": "WWDLW",
+      "home": {
+        "win": 7,
+        "draw": 0,
+        "lose": 4,
+        "goals": {
+          "for": 25,
+          "against": 11
+        },
+        "played": 11
+      },
+      "rank": 4,
+      "team": {
+        "id": 1846,
+        "logo": "https://media.api-sports.io/football/teams/1846.png",
+        "name": "Bristol City W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 37,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": 16,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 10,
+        "draw": 5,
+        "lose": 7,
+        "goals": {
+          "for": 44,
+          "against": 26
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 6,
+        "draw": 2,
+        "lose": 3,
+        "goals": {
+          "for": 21,
+          "against": 12
+        },
+        "played": 11
+      },
+      "form": "WDWWD",
+      "home": {
+        "win": 4,
+        "draw": 3,
+        "lose": 4,
+        "goals": {
+          "for": 23,
+          "against": 14
+        },
+        "played": 11
+      },
+      "rank": 5,
+      "team": {
+        "id": 15454,
+        "logo": "https://media.api-sports.io/football/teams/15454.png",
+        "name": "Southampton W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 35,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": 18,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 8,
+        "draw": 9,
+        "lose": 5,
+        "goals": {
+          "for": 32,
+          "against": 25
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 4,
+        "draw": 4,
+        "lose": 3,
+        "goals": {
+          "for": 19,
+          "against": 17
+        },
+        "played": 11
+      },
+      "form": "LLDDD",
+      "home": {
+        "win": 4,
+        "draw": 5,
+        "lose": 2,
+        "goals": {
+          "for": 13,
+          "against": 8
+        },
+        "played": 11
+      },
+      "rank": 6,
+      "team": {
+        "id": 15515,
+        "logo": "https://media.api-sports.io/football/teams/15515.png",
+        "name": "Newcastle United W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 33,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": 7,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 9,
+        "draw": 3,
+        "lose": 10,
+        "goals": {
+          "for": 27,
+          "against": 35
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 4,
+        "draw": 3,
+        "lose": 4,
+        "goals": {
+          "for": 11,
+          "against": 16
+        },
+        "played": 11
+      },
+      "form": "LWDWW",
+      "home": {
+        "win": 5,
+        "draw": 0,
+        "lose": 6,
+        "goals": {
+          "for": 16,
+          "against": 19
+        },
+        "played": 11
+      },
+      "rank": 7,
+      "team": {
+        "id": 15450,
+        "logo": "https://media.api-sports.io/football/teams/15450.png",
+        "name": "Nottingham Forest W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 30,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": -8,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 6,
+        "draw": 6,
+        "lose": 10,
+        "goals": {
+          "for": 28,
+          "against": 35
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 3,
+        "draw": 2,
+        "lose": 6,
+        "goals": {
+          "for": 13,
+          "against": 17
+        },
+        "played": 11
+      },
+      "form": "LLLDW",
+      "home": {
+        "win": 3,
+        "draw": 4,
+        "lose": 4,
+        "goals": {
+          "for": 15,
+          "against": 18
+        },
+        "played": 11
+      },
+      "rank": 8,
+      "team": {
+        "id": 1848,
+        "logo": "https://media.api-sports.io/football/teams/1848.png",
+        "name": "Sunderland W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 24,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": -7,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 6,
+        "draw": 5,
+        "lose": 11,
+        "goals": {
+          "for": 26,
+          "against": 42
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 2,
+        "draw": 3,
+        "lose": 6,
+        "goals": {
+          "for": 10,
+          "against": 22
+        },
+        "played": 11
+      },
+      "form": "WWWLL",
+      "home": {
+        "win": 4,
+        "draw": 2,
+        "lose": 5,
+        "goals": {
+          "for": 16,
+          "against": 20
+        },
+        "played": 11
+      },
+      "rank": 9,
+      "team": {
+        "id": 15422,
+        "logo": "https://media.api-sports.io/football/teams/15422.png",
+        "name": "Ipswich Town W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 23,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": -16,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 5,
+        "draw": 7,
+        "lose": 10,
+        "goals": {
+          "for": 27,
+          "against": 35
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 2,
+        "draw": 1,
+        "lose": 8,
+        "goals": {
+          "for": 11,
+          "against": 22
+        },
+        "played": 11
+      },
+      "form": "WWDLD",
+      "home": {
+        "win": 3,
+        "draw": 6,
+        "lose": 2,
+        "goals": {
+          "for": 16,
+          "against": 13
+        },
+        "played": 11
+      },
+      "rank": 10,
+      "team": {
+        "id": 15403,
+        "logo": "https://media.api-sports.io/football/teams/15403.png",
+        "name": "Durham W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 22,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": -8,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 4,
+        "draw": 6,
+        "lose": 12,
+        "goals": {
+          "for": 21,
+          "against": 43
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 1,
+        "draw": 3,
+        "lose": 7,
+        "goals": {
+          "for": 11,
+          "against": 24
+        },
+        "played": 11
+      },
+      "form": "LLLLW",
+      "home": {
+        "win": 3,
+        "draw": 3,
+        "lose": 5,
+        "goals": {
+          "for": 10,
+          "against": 19
+        },
+        "played": 11
+      },
+      "rank": 11,
+      "team": {
+        "id": 15407,
+        "logo": "https://media.api-sports.io/football/teams/15407.png",
+        "name": "Sheffield United W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 18,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": -22,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 4,
+        "draw": 2,
+        "lose": 16,
+        "goals": {
+          "for": 23,
+          "against": 53
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 2,
+        "draw": 0,
+        "lose": 9,
+        "goals": {
+          "for": 13,
+          "against": 32
+        },
+        "played": 11
+      },
+      "form": "LLLLD",
+      "home": {
+        "win": 2,
+        "draw": 2,
+        "lose": 7,
+        "goals": {
+          "for": 10,
+          "against": 21
+        },
+        "played": 11
+      },
+      "rank": 12,
+      "team": {
+        "id": 15452,
+        "logo": "https://media.api-sports.io/football/teams/15452.png",
+        "name": "Portsmouth W"
+      },
+      "group": "Super League 2, Women ",
+      "points": 14,
+      "status": "same",
+      "update": "2026-05-03T00:00:00+00:00",
+      "goalsDiff": -30,
+      "description": "Relegation"
+    }
+  ]
+}

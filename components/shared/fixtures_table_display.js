@@ -9,6 +9,7 @@ import {
 import PopupProbabilityTooltip from "./popup-probability";
 import CheckiffixtureIsSelected from "../functions/CheckIfFixtureisSelected";
 import FetchFixtureByIdMyFav from "../functions/FetchfixturesById-Myfavourites";
+import { buildMatchPathFromFixture } from "@/components/functions/detailsUrls";
 
 function FixturesTableDisplay({ props: fixtureProps, marketRoute }) {
     const router = useRouter();
@@ -43,13 +44,7 @@ function FixturesTableDisplay({ props: fixtureProps, marketRoute }) {
     }, [game.fixture_id]);
 
     // Form the dynamic url
-    let url_name = encodeURIComponent(
-        (game.home_team?.name || '').replace(/\s+/g, '-').toLowerCase() + 
-        '-vs-' + 
-        (game.away_team?.name || '').replace(/\s+/g, '-').toLowerCase() + 
-        '-' + 
-        game.fixture_id
-    );
+    const matchHref = buildMatchPathFromFixture(game);
    
     // Click to select matches
     const selectMyMatches = (game_details) => {
@@ -445,7 +440,7 @@ function FixturesTableDisplay({ props: fixtureProps, marketRoute }) {
             {/* Team names and date */}
             <div className="responsive-cell team-link" style={{ textAlign: "left", fontWeight:"bold", whiteSpace: "pre-wrap" }} title={toottiptitle}>                
                 {currentRoute !== "match/[match-details]" ?
-                <a href={'/match/football-predictions-' + url_name + "/matches"}>
+                <a href={matchHref}>
                     <div className="teamNameLink">
                         <span>{homeTeamName}</span><br/>
                         <span>{awayTeamName}</span><br/>

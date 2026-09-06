@@ -5,6 +5,7 @@ import DateTimeToUsersTimezone from "../functions/DatetimeToUsersTimezone";
 import { Adsense } from "@/components/shared/client-adsense";
 import InPagePreLoader from "../includes/inpagepreloader";
 import DataNotFoundPage from "../includes/datanotfound";
+import { buildMatchPathFromFixture } from "@/components/functions/detailsUrls";
 
 function H2HFixturesData({ 
     home_team_id, 
@@ -160,11 +161,7 @@ function H2HFixturesData({
 
     if (h2h_match_details.length > 0) {
         h2h_match_details.slice(0, postNum).forEach((match, index) => {
-            const url_name = encodeURIComponent(
-                (match.home_team_name || '').replace(/\s+/g, '-').toLowerCase() + '-vs-' +
-                (match.away_team_name || '').replace(/\s+/g, '-').toLowerCase() + '-' +
-                match.fixture_id
-            );
+            const matchHref = buildMatchPathFromFixture(match);
 
             const homeTeamStyle = {};
             const awayTeamStyle = {};
@@ -182,7 +179,7 @@ function H2HFixturesData({
 
             h2hmatchdetailslist.push(
                 <React.Fragment key={match.fixture_id || index}>
-                    <a href={'/match/football-predictions-' + url_name + "/matches"} title="Click to View Match details">
+                    <a href={matchHref} title="Click to View Match details">
                         <div className="responsive-row fixturesTextSize matchDetailsLink">
                             <div className="responsive-cell team-link-probability">
                                 {match.match_date ? DateTimeToUsersTimezone(match.match_date).split(' ')[0] : '-'}

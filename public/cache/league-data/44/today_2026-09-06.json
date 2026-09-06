@@ -1,0 +1,485 @@
+{
+  "generatedAt": "2026-09-06T12:07:40.211Z",
+  "data": [
+    {
+      "fixture_id": 1607665,
+      "league_id": 44,
+      "home_team": {
+        "id": 1857,
+        "name": "Brighton W",
+        "logo": "https://media.api-sports.io/football/teams/1857.png"
+      },
+      "away_team": {
+        "id": 1850,
+        "name": "Arsenal W",
+        "logo": "https://media.api-sports.io/football/teams/1850.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T11:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "2H",
+        "status_long": "Second Half",
+        "elapsed": 50
+      },
+      "score": {
+        "home": 0,
+        "away": 1,
+        "half_time": {
+          "home": 0,
+          "away": 1
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (12% home, 20% draw, 68% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 53% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 12,
+          "draw": 20,
+          "away": 68
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 88
+        },
+        "half_time": {
+          "home": 5,
+          "draw": 25,
+          "away": 70
+        },
+        "both_teams_to_score": {
+          "prediction": "Yes",
+          "probability": 53
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 8.5,
+        "draw": 4.8,
+        "away": 1.3,
+        "double_chance": {
+          "home_draw": "3.30",
+          "home_away": "1.17",
+          "draw_away": "1.07"
+        },
+        "ht_ft": {
+          "ht_home": "6.00",
+          "ht_draw": "2.70",
+          "ht_away": "1.73"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.75,
+          "no": 2
+        }
+      },
+      "league": {
+        "id": 44,
+        "name": "FA WSL",
+        "short_name": "WSL",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/FA WSL.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1607666,
+      "league_id": 44,
+      "home_team": {
+        "id": 4899,
+        "name": "Tottenham Hotspur W",
+        "logo": "https://media.api-sports.io/football/teams/4899.png"
+      },
+      "away_team": {
+        "id": 1856,
+        "name": "West Ham W",
+        "logo": "https://media.api-sports.io/football/teams/1856.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T11:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "2H",
+        "status_long": "Second Half",
+        "elapsed": 50
+      },
+      "score": {
+        "home": 2,
+        "away": 0,
+        "half_time": {
+          "home": 2,
+          "away": 0
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Home win after combining the prediction probabilities (67% home, 13% draw, 20% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 55% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 67,
+          "draw": 13,
+          "away": 20
+        },
+        "double_chance": {
+          "type": "12",
+          "probability": 87
+        },
+        "half_time": {
+          "home": 69,
+          "draw": 20,
+          "away": 11
+        },
+        "both_teams_to_score": {
+          "prediction": "Yes",
+          "probability": 55
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 1.5,
+        "draw": 3.9,
+        "away": 5.5,
+        "double_chance": {
+          "home_draw": "1.14",
+          "home_away": "1.22",
+          "draw_away": "2.30"
+        },
+        "ht_ft": {
+          "ht_home": "1.91",
+          "ht_draw": "2.40",
+          "ht_away": "5.50"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.7,
+          "no": 2.05
+        }
+      },
+      "league": {
+        "id": 44,
+        "name": "FA WSL",
+        "short_name": "WSL",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/FA WSL.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1607667,
+      "league_id": 44,
+      "home_team": {
+        "id": 15402,
+        "name": "Charlton Athletic W",
+        "logo": "https://media.api-sports.io/football/teams/15402.png"
+      },
+      "away_team": {
+        "id": 1847,
+        "name": "Liverpool W",
+        "logo": "https://media.api-sports.io/football/teams/1847.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (16% home, 20% draw, 64% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 54% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 16,
+          "draw": 20,
+          "away": 64
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 84
+        },
+        "half_time": {
+          "home": 40,
+          "draw": 35,
+          "away": 25
+        },
+        "both_teams_to_score": {
+          "prediction": "Yes",
+          "probability": 54
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 4,
+        "draw": 3.4,
+        "away": 1.75,
+        "double_chance": {
+          "home_draw": "1.95",
+          "home_away": "1.29",
+          "draw_away": "1.20"
+        },
+        "ht_ft": {
+          "ht_home": "4.40",
+          "ht_draw": "2.25",
+          "ht_away": "2.30"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.73,
+          "no": 2.05
+        }
+      },
+      "league": {
+        "id": 44,
+        "name": "FA WSL",
+        "short_name": "WSL",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/FA WSL.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1607668,
+      "league_id": 44,
+      "home_team": {
+        "id": 15409,
+        "name": "Crystal Palace W",
+        "logo": "https://media.api-sports.io/football/teams/15409.png"
+      },
+      "away_team": {
+        "id": 1855,
+        "name": "Everton W",
+        "logo": "https://media.api-sports.io/football/teams/1855.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:00:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Away win after combining the prediction probabilities (10% home, 21% draw, 69% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 55% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 10,
+          "draw": 21,
+          "away": 69
+        },
+        "double_chance": {
+          "type": "X2",
+          "probability": 90
+        },
+        "half_time": {
+          "home": 40,
+          "draw": 35,
+          "away": 25
+        },
+        "both_teams_to_score": {
+          "prediction": "Yes",
+          "probability": 55
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 3.5,
+        "draw": 3.5,
+        "away": 1.85,
+        "double_chance": {
+          "home_draw": "1.85",
+          "home_away": "1.25",
+          "draw_away": "1.25"
+        },
+        "ht_ft": {
+          "ht_home": "3.90",
+          "ht_draw": "2.25",
+          "ht_away": "2.40"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.7,
+          "no": 2.05
+        }
+      },
+      "league": {
+        "id": 44,
+        "name": "FA WSL",
+        "short_name": "WSL",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/FA WSL.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    },
+    {
+      "fixture_id": 1607669,
+      "league_id": 44,
+      "home_team": {
+        "id": 1854,
+        "name": "Manchester City W",
+        "logo": "https://media.api-sports.io/football/teams/1854.png"
+      },
+      "away_team": {
+        "id": 1845,
+        "name": "Birmingham City W",
+        "logo": "https://media.api-sports.io/football/teams/1845.png"
+      },
+      "match": {
+        "datetime": "2026-09-06T13:30:00+00:00",
+        "unformatted_date": "2026-09-06",
+        "venue": null,
+        "status": "NS",
+        "status_long": "Not Started",
+        "elapsed": null
+      },
+      "score": {
+        "home": null,
+        "away": null,
+        "half_time": {
+          "home": null,
+          "away": null
+        },
+        "extra_time": {
+          "home": null,
+          "away": null
+        },
+        "penalties": {
+          "home": null,
+          "away": null
+        }
+      },
+      "predictions": {
+        "recommendation": "The model favors Home win after combining the prediction probabilities (79% home, 10% draw, 11% away).\nThis conclusion blends market odds, expected goals and historical team performance data to reach a single preferred result.\nHome side form is reflected by 0 goals scored and 0 conceded across 0 matches, while the away side has produced 0 goals and conceded 0 across 0 matches.\nThe recommendation also accounts for projected match flow, BTTS probability of 49% and average goals of N/A.",
+        "avg_goals": null,
+        "1x2": {
+          "home": 79,
+          "draw": 10,
+          "away": 11
+        },
+        "double_chance": {
+          "type": "12",
+          "probability": 90
+        },
+        "half_time": {
+          "home": 58,
+          "draw": 34,
+          "away": 8
+        },
+        "both_teams_to_score": {
+          "prediction": "No",
+          "probability": 49
+        },
+        "over_under_2_5": {
+          "prediction": null,
+          "probability": null
+        }
+      },
+      "odds": {
+        "home": 1.06,
+        "draw": 12,
+        "away": 36,
+        "double_chance": {
+          "home_draw": null,
+          "home_away": "1.04",
+          "draw_away": "9.00"
+        },
+        "ht_ft": {
+          "ht_home": "1.30",
+          "ht_draw": "4.00",
+          "ht_away": "13.00"
+        },
+        "over_under": {
+          "over_2_5": null,
+          "under_2_5": null
+        },
+        "btts": {
+          "yes": 1.91,
+          "no": 1.83
+        }
+      },
+      "league": {
+        "id": 44,
+        "name": "FA WSL",
+        "short_name": "WSL",
+        "round": "Regular Season - 1",
+        "logo": "https://www.pitchpredictions.com/images/leagues/FA WSL.jpg",
+        "country": "England",
+        "country_logo": "https://www.pitchpredictions.com/images/countries/England.svg"
+      }
+    }
+  ]
+}

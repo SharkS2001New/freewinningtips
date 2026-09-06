@@ -4,6 +4,7 @@ import PreLoader from '../includes/loader';
 import StandingsFormWinLose from '../functions/standings_win_lose_form';
 import assignColorToDescription from '../functions/standing_description_color';
 import { Adsense } from "@/components/shared/client-adsense";
+import { buildTeamPath } from '@/components/functions/detailsUrls';
 
 function DisplayIndependentLeagueStandings(props) {
     const router = useRouter();
@@ -47,7 +48,7 @@ function DisplayIndependentLeagueStandings(props) {
               ,border: standing.description ? `1px solid ${assignColorToDescription(standing.description)["color"]}` : '', borderRadius: "5px"  }} title={standing.description}>&nbsp;{i + 1}.&nbsp;</span>
               </div>
               <div className="responsive-cell team-link" style={{ textAlign: "left" }}>
-                <a href={encodeURI("/team/" + standing.team.name.toLowerCase().replace(/\s+/g, '-')+"-"+standing.team.id)+"/results"}>
+                <a href={buildTeamPath(standing.team.name, standing.team.id)}>
                   {standing.team.name}
                 </a>
               </div>
@@ -88,7 +89,7 @@ function DisplayIndependentLeagueStandings(props) {
                 {i + 1}.
               </div>{/* {standing.rank} */}
               <div className="responsive-cell team-link">
-                <a href={encodeURI("/team/" + standing.team.name.toLowerCase().replace(/\s+/g, '-')+"-"+standing.team.id)+"/results"}>
+                <a href={buildTeamPath(standing.team.name, standing.team.id)}>
                   {standing.team.name}
                 </a>
               </div>
@@ -127,7 +128,7 @@ function DisplayIndependentLeagueStandings(props) {
                 {i + 1}.&nbsp;
               </div>{/* {standing.rank} */}
               <div className="responsive-cell team-link">
-                <a href={encodeURI("/team/" + standing.team.name.toLowerCase().replace(/\s+/g, '-')+"-"+standing.team.id)+"/results"}>
+                <a href={buildTeamPath(standing.team.name, standing.team.id)}>
                   {standing.team.name}
                 </a>
                 </div>

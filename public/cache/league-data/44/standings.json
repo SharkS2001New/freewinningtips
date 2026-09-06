@@ -1,0 +1,545 @@
+{
+  "generatedAt": "2026-09-06T12:07:40.492Z",
+  "data": [
+    {
+      "all": {
+        "win": 18,
+        "draw": 1,
+        "lose": 3,
+        "goals": {
+          "for": 62,
+          "against": 19
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 7,
+        "draw": 1,
+        "lose": 3,
+        "goals": {
+          "for": 24,
+          "against": 11
+        },
+        "played": 11
+      },
+      "form": "WWLWW",
+      "home": {
+        "win": 11,
+        "draw": 0,
+        "lose": 0,
+        "goals": {
+          "for": 38,
+          "against": 8
+        },
+        "played": 11
+      },
+      "rank": 1,
+      "team": {
+        "id": 1854,
+        "logo": "https://media.api-sports.io/football/teams/1854.png",
+        "name": "Manchester City W"
+      },
+      "group": "Super League, Women ",
+      "points": 55,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": 43,
+      "description": "Champions League"
+    },
+    {
+      "all": {
+        "win": 15,
+        "draw": 6,
+        "lose": 1,
+        "goals": {
+          "for": 53,
+          "against": 14
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 7,
+        "draw": 3,
+        "lose": 1,
+        "goals": {
+          "for": 25,
+          "against": 8
+        },
+        "played": 11
+      },
+      "form": "WWWDW",
+      "home": {
+        "win": 8,
+        "draw": 3,
+        "lose": 0,
+        "goals": {
+          "for": 28,
+          "against": 6
+        },
+        "played": 11
+      },
+      "rank": 2,
+      "team": {
+        "id": 1850,
+        "logo": "https://media.api-sports.io/football/teams/1850.png",
+        "name": "Arsenal W"
+      },
+      "group": "Super League, Women ",
+      "points": 51,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": 39,
+      "description": "Champions League"
+    },
+    {
+      "all": {
+        "win": 15,
+        "draw": 4,
+        "lose": 3,
+        "goals": {
+          "for": 44,
+          "against": 20
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 6,
+        "draw": 4,
+        "lose": 1,
+        "goals": {
+          "for": 24,
+          "against": 12
+        },
+        "played": 11
+      },
+      "form": "WWWWD",
+      "home": {
+        "win": 9,
+        "draw": 0,
+        "lose": 2,
+        "goals": {
+          "for": 20,
+          "against": 8
+        },
+        "played": 11
+      },
+      "rank": 3,
+      "team": {
+        "id": 1853,
+        "logo": "https://media.api-sports.io/football/teams/1853.png",
+        "name": "Chelsea W"
+      },
+      "group": "Super League, Women ",
+      "points": 49,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": 24,
+      "description": "Champions League Qualification"
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 7,
+        "lose": 4,
+        "goals": {
+          "for": 38,
+          "against": 22
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 6,
+        "draw": 3,
+        "lose": 2,
+        "goals": {
+          "for": 20,
+          "against": 9
+        },
+        "played": 11
+      },
+      "form": "LDDLW",
+      "home": {
+        "win": 5,
+        "draw": 4,
+        "lose": 2,
+        "goals": {
+          "for": 18,
+          "against": 13
+        },
+        "played": 11
+      },
+      "rank": 4,
+      "team": {
+        "id": 4898,
+        "logo": "https://media.api-sports.io/football/teams/4898.png",
+        "name": "Manchester United W"
+      },
+      "group": "Super League, Women ",
+      "points": 40,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": 16,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 11,
+        "draw": 3,
+        "lose": 8,
+        "goals": {
+          "for": 35,
+          "against": 38
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 5,
+        "draw": 1,
+        "lose": 5,
+        "goals": {
+          "for": 24,
+          "against": 26
+        },
+        "played": 11
+      },
+      "form": "WWDLL",
+      "home": {
+        "win": 6,
+        "draw": 2,
+        "lose": 3,
+        "goals": {
+          "for": 11,
+          "against": 12
+        },
+        "played": 11
+      },
+      "rank": 5,
+      "team": {
+        "id": 4899,
+        "logo": "https://media.api-sports.io/football/teams/4899.png",
+        "name": "Tottenham Hotspur W"
+      },
+      "group": "Super League, Women ",
+      "points": 36,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -3,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 8,
+        "draw": 3,
+        "lose": 11,
+        "goals": {
+          "for": 28,
+          "against": 35
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 3,
+        "draw": 2,
+        "lose": 6,
+        "goals": {
+          "for": 12,
+          "against": 19
+        },
+        "played": 11
+      },
+      "form": "WLWDD",
+      "home": {
+        "win": 5,
+        "draw": 1,
+        "lose": 5,
+        "goals": {
+          "for": 16,
+          "against": 16
+        },
+        "played": 11
+      },
+      "rank": 6,
+      "team": {
+        "id": 15406,
+        "logo": "https://media.api-sports.io/football/teams/15406.png",
+        "name": "London City Lionesses W"
+      },
+      "group": "Super League, Women ",
+      "points": 27,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -7,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 7,
+        "draw": 5,
+        "lose": 10,
+        "goals": {
+          "for": 27,
+          "against": 28
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 3,
+        "draw": 2,
+        "lose": 6,
+        "goals": {
+          "for": 10,
+          "against": 13
+        },
+        "played": 11
+      },
+      "form": "LDDWW",
+      "home": {
+        "win": 4,
+        "draw": 3,
+        "lose": 4,
+        "goals": {
+          "for": 17,
+          "against": 15
+        },
+        "played": 11
+      },
+      "rank": 7,
+      "team": {
+        "id": 1857,
+        "logo": "https://media.api-sports.io/football/teams/1857.png",
+        "name": "Brighton W"
+      },
+      "group": "Super League, Women ",
+      "points": 26,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -1,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 7,
+        "draw": 2,
+        "lose": 13,
+        "goals": {
+          "for": 25,
+          "against": 37
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 4,
+        "draw": 2,
+        "lose": 5,
+        "goals": {
+          "for": 14,
+          "against": 15
+        },
+        "played": 11
+      },
+      "form": "WLLLL",
+      "home": {
+        "win": 3,
+        "draw": 0,
+        "lose": 8,
+        "goals": {
+          "for": 11,
+          "against": 22
+        },
+        "played": 11
+      },
+      "rank": 8,
+      "team": {
+        "id": 1855,
+        "logo": "https://media.api-sports.io/football/teams/1855.png",
+        "name": "Everton W"
+      },
+      "group": "Super League, Women ",
+      "points": 23,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -12,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 5,
+        "draw": 5,
+        "lose": 12,
+        "goals": {
+          "for": 28,
+          "against": 48
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 3,
+        "draw": 2,
+        "lose": 6,
+        "goals": {
+          "for": 14,
+          "against": 22
+        },
+        "played": 11
+      },
+      "form": "LLLLW",
+      "home": {
+        "win": 2,
+        "draw": 3,
+        "lose": 6,
+        "goals": {
+          "for": 14,
+          "against": 26
+        },
+        "played": 11
+      },
+      "rank": 9,
+      "team": {
+        "id": 14219,
+        "logo": "https://media.api-sports.io/football/teams/14219.png",
+        "name": "Aston Villa W"
+      },
+      "group": "Super League, Women ",
+      "points": 20,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -20,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 5,
+        "draw": 4,
+        "lose": 13,
+        "goals": {
+          "for": 20,
+          "against": 45
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 3,
+        "draw": 0,
+        "lose": 8,
+        "goals": {
+          "for": 7,
+          "against": 21
+        },
+        "played": 11
+      },
+      "form": "LWWDL",
+      "home": {
+        "win": 2,
+        "draw": 4,
+        "lose": 5,
+        "goals": {
+          "for": 13,
+          "against": 24
+        },
+        "played": 11
+      },
+      "rank": 10,
+      "team": {
+        "id": 1856,
+        "logo": "https://media.api-sports.io/football/teams/1856.png",
+        "name": "West Ham W"
+      },
+      "group": "Super League, Women ",
+      "points": 19,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -25,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 4,
+        "draw": 5,
+        "lose": 13,
+        "goals": {
+          "for": 21,
+          "against": 34
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 1,
+        "draw": 2,
+        "lose": 8,
+        "goals": {
+          "for": 8,
+          "against": 19
+        },
+        "played": 11
+      },
+      "form": "LLLWD",
+      "home": {
+        "win": 3,
+        "draw": 3,
+        "lose": 5,
+        "goals": {
+          "for": 13,
+          "against": 15
+        },
+        "played": 11
+      },
+      "rank": 11,
+      "team": {
+        "id": 1847,
+        "logo": "https://media.api-sports.io/football/teams/1847.png",
+        "name": "Liverpool W"
+      },
+      "group": "Super League, Women ",
+      "points": 17,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -13,
+      "description": null
+    },
+    {
+      "all": {
+        "win": 2,
+        "draw": 3,
+        "lose": 17,
+        "goals": {
+          "for": 11,
+          "against": 52
+        },
+        "played": 22
+      },
+      "away": {
+        "win": 0,
+        "draw": 2,
+        "lose": 9,
+        "goals": {
+          "for": 3,
+          "against": 32
+        },
+        "played": 11
+      },
+      "form": "DLLLL",
+      "home": {
+        "win": 2,
+        "draw": 1,
+        "lose": 8,
+        "goals": {
+          "for": 8,
+          "against": 20
+        },
+        "played": 11
+      },
+      "rank": 12,
+      "team": {
+        "id": 15404,
+        "logo": "https://media.api-sports.io/football/teams/15404.png",
+        "name": "Leicester City FC W"
+      },
+      "group": "Super League, Women ",
+      "points": 9,
+      "status": "same",
+      "update": "2026-05-24T00:00:00+00:00",
+      "goalsDiff": -41,
+      "description": "Relegation Playoffs"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import ComputedWinDrawings from "../functions/computed_win_lose_draw_drawing";
 import Teamwinsdrawsloses from "../functions/Teamswinsdrawsloses";
 import DateTimeToUsersTimezone from "../functions/DatetimeToUsersTimezone";
 import InPagePreLoader from "../includes/inpagepreloader";
+import { buildMatchPathFromFixture } from "@/components/functions/detailsUrls";
 
 function GamesPlayedByTeam({ 
     props: initialMatches = [], 
@@ -165,11 +166,7 @@ function GamesPlayedByTeam({
 
     if (team_matches.length > 0) {
         team_matches.slice(0, teamMatchesNum).forEach((match, index) => {
-            const url_name = encodeURIComponent(
-                match.home_team_name.replace(/\s+/g, '-').toLowerCase() + '-vs-' +
-                match.away_team_name.replace(/\s+/g, '-').toLowerCase() + '-' +
-                match.fixture_id
-            );
+            const matchHref = buildMatchPathFromFixture(match);
 
             // Determine styles based on team IDs
             const homeTeamStyle = {};
@@ -186,7 +183,7 @@ function GamesPlayedByTeam({
 
             team_matches_array.push(
                 <React.Fragment key={index}>
-                    <a href={'/match/football-predictions-' + url_name + "/matches"} title="Click to View Match details">
+                    <a href={matchHref} title="Click to View Match details">
                         <div className="responsive-row fixturesTextSize matchDetailsLink">
                             <div className="responsive-cell team-link-probability">
                                 {DateTimeToUsersTimezone(match.date).split(' ')[0].replace(/^(\d{2})\/(\d{2})\/(\d{2})(\d{2})$/, '$1.$2.$4')}

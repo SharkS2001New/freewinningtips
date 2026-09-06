@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-09-06T12:07:40.825Z",
+  "data": [
+    {
+      "league_id": 699,
+      "league_name": "Women's Championship",
+      "league_short_name": "CHA",
+      "league_type": "League",
+      "logo": "https://media.api-sports.io/football/leagues/699.png",
+      "downloaded_league_logo": "https://www.pitchpredictions.com/images/leagues/Women's Championship.jpg",
+      "country_name": "England",
+      "country_flag": "https://media.api-sports.io/flags/gb-eng.svg",
+      "downloaded_country_flag": "https://www.pitchpredictions.com/images/countries/England.svg"
+    }
+  ]
+}

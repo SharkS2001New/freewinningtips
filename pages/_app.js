@@ -2,10 +2,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../styles/globals.css';
+import '../styles/new-styles.css';
+import '../styles/matchdetails.css';
+import '../styles/details-pages.css';
 import "../styles/blog.css"; 
 import "../styles/auth-css.css";
 import "../styles/customer-pay.css";
-import "../styles/matchdetails.css";
 import Head from 'next/head';
 import Navbar from '../components/includes/navbar';
 import Footer from '../components/includes/footer';
@@ -76,7 +78,7 @@ function App({ Component, pageProps }) {
         <link rel="preconnect" href={SITE_ORIGIN} crossOrigin />
         <link rel="dns-prefetch" href="https://api.pitchpredictions.com" crossOrigin />
         <link rel="preconnect" href="https://api.pitchpredictions.com" crossOrigin />
-        <link rel="canonical" href={`${SITE_ORIGIN}${router.pathname}`} key="canonical" />
+        <link rel="canonical" href={`${SITE_ORIGIN}${router.asPath.split('?')[0]}`} key="canonical" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="en" />
         <meta name="revisit-after" content="7 days" />
@@ -91,13 +93,13 @@ function App({ Component, pageProps }) {
         <meta name="twitter:title" content={ogTitle} />
         <meta name="twitter:description" content={ogDescription} />
         <meta name="twitter:image" content={`${SITE_ORIGIN}/freewinningtips-icon.png`} />
-        <meta name="twitter:url" content={`${SITE_ORIGIN}${router.pathname}`} />
+        <meta name="twitter:url" content={`${SITE_ORIGIN}${router.asPath.split('?')[0]}`} />
 
         <meta property="og:title" content={ogTitle} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${SITE_ORIGIN}/freewinningtips-icon.png`} />
         <meta property="og:description" content={ogDescription} />
-        <meta property="og:url" content={`${SITE_ORIGIN}${router.pathname}`} />
+        <meta property="og:url" content={`${SITE_ORIGIN}${router.asPath.split('?')[0]}`} />
       </Head>
 
       {/* Google Analytics */}
