@@ -429,7 +429,6 @@ button.tabs__tab {
   .matchdetailsheader { font-size: 12px; }
   .standingsheader { font-size: 11px; }
   .tabs__tab { font-size: 11px; padding: 8px 10px; }
-  .hide-on-mobile { display: none; }
   .sites-card { padding: 10px; border-radius: 12px; }
   .team-link-l {
     flex-basis: calc(100% / 2);
@@ -439,11 +438,23 @@ button.tabs__tab {
 }
 
 @media (min-width: 769px) {
-  .hide-on-mobile { display: flex; }
   .teamimage_class {
     height: auto;
     width: 100%;
     max-width: 128px;
+  }
+
+  /* Desktop odds sit in one horizontal cell */
+  .team-link-y {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  .team-link-y .odds-card {
+    display: inline-block;
+    white-space: nowrap;
   }
 }
 
@@ -453,6 +464,26 @@ button.tabs__tab {
     padding: 12px 16px;
   }
   .matchdetailsheader { font-size: 13px; }
+}
+
+/* Critical: fixture rows render BOTH desktop + mobile cells.
+   Without these, odds/predictions/status duplicate and stack. */
+@media (min-width: 769px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+  .hide-on-mobile {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  .hide-on-desktop {
+    display: flex !important;
+  }
 }
 
 .o-hidden {
