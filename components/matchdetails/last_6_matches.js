@@ -340,7 +340,7 @@ function Last6Matches({
             const isActive = league.league_id == activeLeagueIdHome;
             homeLeaguesDisplay.push(
                 <li key={league.league_id || index} className="nav-item" 
-                    style={{ color: 'white', backgroundColor: isActive ? '#eb4d68' : 'transparent', cursor: "pointer" }}
+                    style={{ color: 'white', backgroundColor: isActive ? '#2e7d32' : 'transparent', cursor: "pointer" }}
                     onClick={() => filterHomeMatchesByLeagues(league.league_id)}>
                     <a className="nav-link link-light last6mhovereffects">{league.league_name}</a>
                 </li>
@@ -355,7 +355,7 @@ function Last6Matches({
             const isActive = league.league_id == activeLeagueIdAway;
             awayLeaguesDisplay.push(
                 <li key={league.league_id || index} className="nav-item"
-                    style={{ color: "white", backgroundColor: isActive ? '#eb4d68' : 'transparent', cursor: "pointer" }}
+                    style={{ color: "white", backgroundColor: isActive ? '#2e7d32' : 'transparent', cursor: "pointer" }}
                     onClick={() => filterAwayMatchesByLeagues(league.league_id)}>
                     <a className="nav-link link-light last6mhovereffects">{league.league_name}</a>
                 </li>
@@ -396,7 +396,7 @@ function Last6Matches({
                             <div className="flex-grow-1 w-100 o-hidden">
                                 <ul className="nav nav-fill position-relative flex-nowrap">
                                     <li className="nav-item" 
-                                        style={{ textAlign: "left", maxWidth: "15%", backgroundColor: activeLeagueIdHome == "all" ? "#eb4d68" : "", cursor: "pointer" }}
+                                        style={{ textAlign: "left", maxWidth: "15%", backgroundColor: activeLeagueIdHome == "all" ? "#2e7d32" : "", cursor: "pointer" }}
                                         onClick={allHomeFixtures}>
                                         <a className="nav-link link-light last6mhovereffects">All</a>
                                     </li>
@@ -450,7 +450,7 @@ function Last6Matches({
                             <div className="flex-grow-1 w-100 o-hidden">
                                 <ul className="nav scrollable nav-fill position-relative flex-nowrap">
                                     <li className="nav-item"
-                                        style={{ textAlign: "left", maxWidth: "15%", backgroundColor: activeLeagueIdAway == "all" ? "#eb4d68" : "", cursor: "pointer" }}
+                                        style={{ textAlign: "left", maxWidth: "15%", backgroundColor: activeLeagueIdAway == "all" ? "#2e7d32" : "", cursor: "pointer" }}
                                         onClick={allAwayFixtures}>
                                         <a className="nav-link link-light last6mhovereffects">All</a>
                                     </li>

@@ -228,7 +228,7 @@ function GamesPlayedByTeam({
             team_matches_leagues_display_array.push(
                 <React.Fragment key={index}>
                     <li className="nav-item" 
-                        style={{ color: "white", backgroundColor: isActive ? '#eb4d68' : 'transparent' }}
+                        style={{ color: "white", backgroundColor: isActive ? '#2e7d32' : 'transparent' }}
                         onClick={() => filterMatchesByLeagues(league.league_id)}>
                         <a className="nav-link link-light last6mhovereffects">{league.league_name}</a>
                     </li>
@@ -262,7 +262,7 @@ function GamesPlayedByTeam({
                                         style={{ 
                                             textAlign: "left", 
                                             maxWidth: "15%", 
-                                            backgroundColor: activeLeagueIdTeams == "all" ? "#eb4d68" : "" 
+                                            backgroundColor: activeLeagueIdTeams == "all" ? "#2e7d32" : "" 
                                         }} 
                                         onClick={allFixturesTeamMatches}>
                                         <a className="nav-link link-light last6mhovereffects">All</a>

@@ -30,6 +30,15 @@ body {
   color: var(--text-dark);
 }
 
+/* Match Pitch Predictions: fixture/game rows are <a> wrappers — never look like hyperlinks */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: inherit;
+}
+
 /* ============================================ */
 /* LAYOUT WRAPPER - FLEX/GRID BASED (No Bootstrap Columns) */
 /* ============================================ */

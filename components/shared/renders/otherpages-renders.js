@@ -138,7 +138,7 @@ function OtherPagesRenders(props) {
       return (
         <React.Fragment key={`${formedleagueName}-${index}`}>
           {/* League header row */}
-          <div style={{ backgroundColor: "#eef7ff", padding: "2px" }} className="responsive-row fixturesTextSize pb-1 pt-1">
+          <div style={{ backgroundColor: "#f0f7f0", padding: "2px" }} className="responsive-row fixturesTextSize pb-1 pt-1">
             {/* Empty cell for star column - desktop only */}
             <div className="responsive-cell hide-on-mobile"></div>
             

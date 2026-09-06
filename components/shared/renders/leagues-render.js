@@ -67,7 +67,7 @@ function LeaguesPageRender(props) {
         activeRounds.map(([roundName, group], index) => (
           <React.Fragment key={`${roundName}-${index}`}>
             {/* Round header */}
-            <div style={{ backgroundColor: "#eef7ff", fontWeight: "bold" }} className="table-row fixturesTextSize">
+            <div style={{ backgroundColor: "#f0f7f0", fontWeight: "bold" }} className="table-row fixturesTextSize">
               <div className="table-cell pb-1 pt-1">
                 {roundName}
               </div>

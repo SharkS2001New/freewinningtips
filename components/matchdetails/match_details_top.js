@@ -135,7 +135,7 @@ function MatchDetailsTop(props) {
             <div className="row mb-2">
                 <div className="col-3"></div>
                 <div className="col-6 text-center">
-                    <span className="text-center matchdetailsTextSize" style={{fontFamily: "Arial", fontWeight: "bold"}}>
+                    <span className="text-center matchdetailsTextSize" style={{fontWeight: "bold"}}>
                         {formatFixtureDateTime(matchDatetime)}
                     </span>
                 </div>  
@@ -172,7 +172,7 @@ function MatchDetailsTop(props) {
                     {livescores}
                     <br/>
                     <br className="hide-on-mobile" />
-                    <span className="fixturesTextSize" style={{color:"#B11111", fontWeight:"bold"}}>
+                    <span className="fixturesTextSize" style={{color:"var(--green-bright, #2e7d32)", fontWeight:"bold"}}>
                         {matchStatus === "PEN" || matchStatus === "P" ? "AFTER PENALTIES" : 
                          matchStatus === "AET" ? "AFTER EXTRA TIME" : 
                          matchStatus === "NS" ? formatFixtureTime(matchDatetime) :

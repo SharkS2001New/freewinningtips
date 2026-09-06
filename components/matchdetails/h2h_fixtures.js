@@ -223,7 +223,7 @@ function H2HFixturesData({
             const isActive = league.league_id == activeLeagueIdH2H;
             leaguesdisplayList.push(
                 <li className="nav-item ullinks" key={league.league_id || index}
-                    style={{ color: "white", backgroundColor: isActive ? '#eb4d68' : 'transparent', cursor: "pointer" }} 
+                    style={{ color: "white", backgroundColor: isActive ? '#2e7d32' : 'transparent', cursor: "pointer" }} 
                     onClick={() => filterByLeagues(league.league_id)}>
                     <a className="nav-link link-light last6mhovereffects">{league.league_name}</a>
                 </li>
@@ -272,7 +272,7 @@ function H2HFixturesData({
                     <div className="flex-grow-1 w-100 o-hidden">
                         <ul className="nav nav-fill position-relative flex-nowrap myUlLinks">
                             <li className="nav-item ullinks" 
-                                style={{ textAlign: "left", maxWidth: "20%", backgroundColor: activeLeagueIdH2H == "all" ? "#eb4d68" : "", cursor: "pointer" }}>
+                                style={{ textAlign: "left", maxWidth: "20%", backgroundColor: activeLeagueIdH2H == "all" ? "#2e7d32" : "", cursor: "pointer" }}>
                                 <a onClick={allFixturesFilter} className="nav-link link-light last6mhovereffects">All</a>
                             </li>
                             {leaguesdisplayList}
