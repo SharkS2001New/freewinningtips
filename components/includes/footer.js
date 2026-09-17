@@ -107,9 +107,11 @@ function Footer() {
           Copyright © 2023 - {year} FreeWinningTips.com. All rights reserved.
         </p>
         <p className="footer-tags">
-          <a href="https://www.pitchpredictions.com" target="_blank" rel="noopener noreferrer">PitchPredictions.com</a> |{' '}
-          <a href="https://www.betsassured.com" target="_blank" rel="noopener noreferrer">Betsassured.com</a> |{' '}
-          <a href="https://windrawtips.com" target="_blank" rel="noopener noreferrer">Windrawtips.com</a> |{' '}
+          <a href="https://www.pitchpredictions.com" target="_blank">PitchPredictions.com</a> |{' '}
+          <a href="https://www.betsassured.com" target="_blank">Betsassured.com</a> |{' '}
+          <a href="https://windrawtips.com" target="_blank">Windrawtips.com</a> |{' '}
+          <a href="https://www.alljackpotpredictions.com" target="_blank">All Jackpot Predictions</a> |{' '}
+          <a href="https://www.baopredictions.com" target="_blank">Bao Predictions</a> |{' '}
           <a href="/our-partners" className="footer-partner-a">Our Partners</a>
         </p>
       </div>
