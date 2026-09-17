@@ -17,6 +17,8 @@ function OurPartners() {
                     <li><a target="_blank" href="https://builder-bet.com/">Builder Bet</a></li>
                     <li><a href="https://www.mwanasoka.co.ke" target="blank">Check predictions on Mwanasoka</a></li>
                     <li><a href="https://www.statarea.co.ke" target="blank">www.statarea.co.ke</a></li>
+                    <li><a href="https://www.alljackpotpredictions.com" target="blank">All Jackpot Predictions</a></li>
+                    <li><a href="https://www.baopredictions.com" target="blank">Bao Predictions</a></li>
                 </ol>
                 <br/>
                 <h2>How to Submit Your Site</h2>
