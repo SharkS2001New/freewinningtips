@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-09-17T22:15:03.108Z",
+  "fixtureDate": "2026-09-18",
+  "teamIds": "1065,10713,1945,20696,442,8008,8378,8392,920,933",
+  "data": {
+    "442": {
+      "form_string": "W L W W D W",
+      "form_array": [
+        "W",
+        "L",
+        "W",
+        "W",
+        "D",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "920": {
+      "form_string": "D W",
+      "form_array": [
+        "D",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "933": {
+      "form_string": "",
+      "form_array": [],
+      "has_matches": false,
+      "matches_count": 0
+    },
+    "1065": {
+      "form_string": "L L D L L W",
+      "form_array": [
+        "L",
+        "L",
+        "D",
+        "L",
+        "L",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "1945": {
+      "form_string": "W D W W L L",
+      "form_array": [
+        "W",
+        "D",
+        "W",
+        "W",
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "8008": {
+      "form_string": "D W W L W D",
+      "form_array": [
+        "D",
+        "W",
+        "W",
+        "L",
+        "W",
+        "D"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "8378": {
+      "form_string": "D W L W L L",
+      "form_array": [
+        "D",
+        "W",
+        "L",
+        "W",
+        "L",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "8392": {
+      "form_string": "W W D W L W",
+      "form_array": [
+        "W",
+        "W",
+        "D",
+        "W",
+        "L",
+        "W"
+      ],
+      "has_matches": true,
+      "matches_count": 6
+    },
+    "10713": {
+      "form_string": "D L",
+      "form_array": [
+        "D",
+        "L"
+      ],
+      "has_matches": true,
+      "matches_count": 2
+    },
+    "20696": {
+      "form_string": "",
+      "form_array": [],
+      "has_matches": false,
+      "matches_count": 0
+    }
+  }
+}

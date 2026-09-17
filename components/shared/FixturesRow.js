@@ -103,6 +103,20 @@ const safeOdds = (val) => {
   return String(val);
 };
 
+function formatMatchTime(dateValue) {
+  if (!dateValue) return '19:00';
+
+  const date = new Date(dateValue);
+  if (Number.isNaN(date.getTime())) return '19:00';
+
+  return date.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+    timeZone: 'UTC',
+  });
+}
+
 function parseGoalScore(value) {
   if (value === null || value === undefined || value === '') return null;
   const parsed = Number(value);
@@ -377,9 +391,7 @@ const MatchRow = ({ fixture, predictionType = 'all', teamForms = {}, formsLoadin
     ? determineTipResult(tipText, homeScore, awayScore)
     : null;
 
-  const matchTime = match.datetime 
-    ? new Date(match.datetime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    : '19:00';
+  const matchTime = formatMatchTime(match.datetime);
 
   const renderFormDots = (showSkeleton, form) => {
     if (showSkeleton) return <FormDotsSkeleton />;
