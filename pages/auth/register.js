@@ -107,7 +107,7 @@ export default function Register() {
     setLoading(true); // Show preloader
 
     try {
-      await api.post('/register', { full_name, email, phone_number, country, password, password_confirmation });
+      await api.post('/register', { full_name, email, phone_number, country, password, password_confirmation, site: 'freetips' });
       
        // Display the success message and countdown
        const alertUserMsg = document.getElementById('alertUserMsg');

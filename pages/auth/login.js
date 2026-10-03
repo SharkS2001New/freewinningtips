@@ -46,7 +46,7 @@ function Login() {
     }
 
     try {
-      const response = await api.post('/login', { email, password });
+      const response = await api.post('/login', { email, password, site: 'freetips' });
 
       if (response.data && response.data.token) {
         nookies.set(null, 'token', response.data.token, { path: '/'});

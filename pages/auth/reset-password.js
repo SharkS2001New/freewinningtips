@@ -60,12 +60,14 @@ const ResetPassword = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-Site-Key': 'freetips',
         },
         body: JSON.stringify({
           token,
           email,
           password,
           password_confirmation: passwordConfirmation,
+          site: 'freetips',
         }),
       });
 

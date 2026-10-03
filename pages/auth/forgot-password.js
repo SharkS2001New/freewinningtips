@@ -55,7 +55,7 @@ function ForgotPassword() {
 
     try {
       // API call for forgot password
-      const response = await api.post('/forgot_password', { email });
+      const response = await api.post('/forgot_password', { email, site: 'freetips' });
 
       setSuccessMessage(response.data.message || 'Password reset link sent to your email.');
       
